@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${outfit.className} antialiased bg-black`}>
+      <body className={`${outfit.className} antialiased bg-white dark:bg-black`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

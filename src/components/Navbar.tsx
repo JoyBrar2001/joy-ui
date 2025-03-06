@@ -5,10 +5,10 @@ import Link from "next/link";
 
 import { Github } from "lucide-react";
 
+import CreativeButton from "@/components/shared/CreativeButton";
 import ModeToggle from "@/components/ModeToggle";
+import Button from "@/components/shared/Button";
 import { cn } from "@/utils";
-import Button from "./shared/Button";
-import CreativeButton from "./shared/CreativeButton";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState<boolean>(false);

@@ -3,15 +3,13 @@ import { ButtonHTMLAttributes } from "react";
 import { cn } from "@/utils";
 import { Loader2, LucideIcon } from "lucide-react";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "primary" | "secondary" | "outline" | "ghost";
-  isLoading?: boolean;
   icon?: LucideIcon;
 }
 
 export default function Button({
   variant = "primary",
-  isLoading = false,
   icon: Icon,
   className,
   children,
@@ -36,7 +34,6 @@ export default function Button({
       )}
       {...props}
     >
-      {/* {isLoading ? <Loader2 className="size-4 animate-spin" /> : <Icon />} */}
       {children}
     </button>
   );

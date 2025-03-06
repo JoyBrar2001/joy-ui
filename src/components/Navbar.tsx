@@ -8,6 +8,7 @@ import { Github } from "lucide-react";
 import ModeToggle from "@/components/ModeToggle";
 import { cn } from "@/utils";
 import Button from "./shared/Button";
+import CreativeButton from "./shared/CreativeButton";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState<boolean>(false);
@@ -38,26 +39,27 @@ export default function Navbar() {
       scrolled && "top-5 scale-95 md:w-[90%] lg:w-[85%] mx-auto border-1 border-neutral-200 dark:border-neutral-700 rounded-[2.5rem] backdrop-blur-xl",
     )}>
       <div className="flex items-center gap-8">
-        <h1 className="text-xl font-bold tracking-wide text-black dark:text-white">
-          JOY UI
-        </h1>
+        <Link href="/">
+          <h1 className="text-xl font-bold tracking-wide text-black dark:text-white">
+            JOY UI
+          </h1>
+        </Link>
 
         <nav>
-          <ul className="flex gap-6 text-sm md:text-base font-medium text-gray-700 dark:text-gray-300">
+          <ul className="flex gap-2 text-sm md:text-base font-medium text-gray-700 dark:text-gray-300">
             <li>
-              <Link
-                href="/components/ui"
-                className="hover:text-black dark:hover:text-white transition-colors duration-300"
-              >
-                UI Components
-              </Link>
+              <Button variant="ghost" className="text-neutral-700 hover:text-black dark:text-neutral-300 dark:hover:text-white transition-colors duration-300 rounded-sm text-base px-2">
+                <Link href="/components/ui">
+                  UI Components
+                </Link>
+              </Button>
             </li>
+
             <li>
-              <Link
-                href="/components/creative"
-                className="hover:text-black dark:hover:text-white transition-colors duration-300"
-              >
-                Creative
+              <Link href="/components/creative">
+                <CreativeButton>
+                  Creative
+                </CreativeButton>
               </Link>
             </li>
           </ul>

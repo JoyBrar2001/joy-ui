@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes } from "react";
 
 import { cn } from "@/utils";
-import { Loader2, LucideIcon } from "lucide-react";
+import { LucideIcon } from "lucide-react";
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "primary" | "secondary" | "outline" | "ghost";

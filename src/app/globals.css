@@ -2,6 +2,16 @@
 
 @theme {
   --font-outfit: "Outfit", "sans-serif";
+  --font-montserrat: "Montserrat", "sans-serif";
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+@layer components {
+  .grid_item_border {
+    @apply before:content-[''] before:absolute before:bg-neutral-600 before:z-[1] 
+           after:content-[''] after:absolute after:bg-neutral-600 after:z-[1] 
+           before:w-px before:h-screen before:left-[-2px] before:top-0 
+           after:w-screen after:h-px after:left-0 after:top-[-2px];
+  }
+}

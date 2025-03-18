@@ -1,13 +1,13 @@
+import { cn } from "@/utils";
 import { ArrowRight, CircleCheck, Info, AlertTriangle, XCircle } from "lucide-react";
 import Link from "next/link";
-import { twMerge } from "tailwind-merge";
 
 type AlertProps = {
   label: string;
   icon?: React.ReactNode;
   variant: "success" | "info" | "warning" | "alert";
   customColor?: string;
-  logoOnlyColored?: boolean;
+  colored?: boolean;
   buttonText?: string;
   link?: string;
 };
@@ -31,7 +31,7 @@ export default function Alert({
   icon,
   variant,
   customColor,
-  logoOnlyColored = false,
+  colored = false,
   buttonText,
   link,
 }: AlertProps) {
@@ -39,9 +39,9 @@ export default function Alert({
 
   return (
     <div
-      className={twMerge(
+      className={cn(
         "flex flex-col w-full px-6 py-4 border rounded-md",
-        logoOnlyColored ? "border-neutral-800" : alertColor
+        colored ? "border-neutral-800" : alertColor
       )}
     >
       <div className="flex justify-between items-center">

@@ -9,6 +9,7 @@ const sidebarItems = [
   { name: "Alert", path: "/components/ui/alert" },
   { name: "Button", path: "/components/ui/button" },
   { name: "Card", path: "/components/ui/card" },
+  { name: "Chip", path: "/components/ui/chip" },
   { name: "Input", path: "/components/ui/input" },
 ];
 

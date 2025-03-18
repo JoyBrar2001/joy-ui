@@ -1,5 +1,5 @@
 import React from "react";
-import { twMerge } from "tailwind-merge";
+import { cn } from "@/utils";
 
 export type Input02Props = React.InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
@@ -9,7 +9,6 @@ export type Input02Props = React.InputHTMLAttributes<HTMLInputElement> & {
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
 };
-
 
 export default function Input02({
   label,
@@ -30,7 +29,7 @@ export default function Input02({
           </div>
         )}
         <input
-          className={twMerge(
+          className={cn(
             "w-full px-3 py-2 rounded-lg border border-neutral-600 shadow-sm text-sm placeholder:text-sm placeholder:text-zinc-400 focus:outline-none",
             "disabled:bg-neutral-400 dark:disabled:bg-neutral-600 disabled:cursor-not-allowed",
             leftIcon && "rounded-l-none border-l-0",

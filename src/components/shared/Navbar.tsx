@@ -5,9 +5,9 @@ import Link from "next/link";
 
 import { Github } from "lucide-react";
 
-import CreativeButton from "@/components/shared/CreativeButton";
+import CreativeButton from "@/components/creative/CreativeButton";
 import ModeToggle from "@/components/ModeToggle";
-import Button from "@/components/shared/Button";
+import Button from "../ui/Button";
 import { cn } from "@/utils";
 
 export default function Navbar() {

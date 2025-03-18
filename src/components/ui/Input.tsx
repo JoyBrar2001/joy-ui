@@ -1,7 +1,7 @@
 import React from "react";
 import { cn } from "@/utils";
 
-export type Input02Props = React.InputHTMLAttributes<HTMLInputElement> & {
+export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
   error?: string;
   className?: string;
@@ -10,7 +10,7 @@ export type Input02Props = React.InputHTMLAttributes<HTMLInputElement> & {
   rightIcon?: React.ReactNode;
 };
 
-export default function Input02({
+export default function Input({
   label,
   error,
   className = "",
@@ -18,7 +18,7 @@ export default function Input02({
   leftIcon,
   rightIcon,
   ...props
-}: Input02Props) {
+}: InputProps) {
   return (
     <div className="flex flex-col gap-y-1 w-full">
       {label && <label className="text-sm font-medium">{label}</label>}

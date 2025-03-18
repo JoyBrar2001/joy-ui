@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Children, useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -13,6 +13,10 @@ import {
 import CodeBlock from "./CodeBlock";
 import language from "react-syntax-highlighter/dist/esm/languages/hljs/1c";
 import Chip from "@/components/ui/Chip";
+
+import * as TooltipPrimitive from "@radix-ui/react-tooltip";
+import Button from "@/components/ui/Button";
+import { Tooltip, TooltipContent, TooltipTrigger } from "./Tooltip";
 
 export default function Test() {
   const [open, setOpen] = useState(false);
@@ -121,6 +125,19 @@ export default function Test() {
         <Chip variant="custom" rounded className="bg-blue-500 text-white select-none">
           Chip
         </Chip>
+
+        <div className="mt-4"></div>
+
+        <Tooltip>
+          <TooltipTrigger>
+            <Button>
+              Hello There
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent side="top" size="sm" variant="custom" className="bg-gradient-to-br from-blue-500 to-sky-500">
+            This is hello there
+          </TooltipContent>
+        </Tooltip>
       </section>
     </div>
   );

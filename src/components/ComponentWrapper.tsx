@@ -4,9 +4,12 @@ import { cn } from "@/utils";
 import Button from "@/components/ui/Button";
 import { Code } from "lucide-react";
 
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "./ui/Dialog";
-import CodeBlock from "@/app/components/test/CodeBlock";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/Dialog";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/Tooltip";
+
 import { DependeciesStep, SourceStep, UtilitiesStep } from "@/constants/data";
+
+import CodeBlock from "@/app/components/test/CodeBlock";
 
 type ComponentWrapperProps = {
   title: string;
@@ -34,16 +37,20 @@ export default function ComponentWrapper({ title, cols = 4, steps, children }: C
 
         <Dialog>
           <DialogTrigger>
-            <Button
-              className="relative group size-10 rounded-md transition-all duration-300 text-black"
-              variant="outline"
-            >
-              <span className="absolute text-nowrap text-xs -top-2 right-0 -translate-y-[100%] border border-neutral-700 rounded-md px-2 py-1 opacity-0 scale-95 transition-all duration-300 group-hover:opacity-100 group-hover:scale-100 group-hover:-translate-y-[110%] bg-white dark:bg-black"
-              >
+            <Tooltip>
+              <TooltipTrigger>
+                <Button
+                  className="relative group size-10 rounded-md transition-all duration-300 text-black"
+                  variant="outline"
+                >
+                  <Code className="size-4 transition-all duration-300 absolute rotate-0 scale-100" />
+                </Button>
+              </TooltipTrigger>
+
+              <TooltipContent size="xs">
                 View Code
-              </span>
-              <Code className="size-4 transition-all duration-300 absolute rotate-0 scale-100" />
-            </Button>
+              </TooltipContent>
+            </Tooltip>
           </DialogTrigger>
 
           <DialogContent className="max-w-4xl">

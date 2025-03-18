@@ -11,6 +11,7 @@ const sidebarItems = [
   { name: "Card", path: "/components/ui/card" },
   { name: "Chip", path: "/components/ui/chip" },
   { name: "Input", path: "/components/ui/input" },
+  { name: "Tooltip", path: "/components/ui/tooltip" },
 ];
 
 export default function Sidebar() {

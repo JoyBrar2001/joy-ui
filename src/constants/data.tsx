@@ -1,10 +1,14 @@
-import Alert from "@/components/ui/Alert";
-import Button from "@/components/ui/Button";
-import Chip from "@/components/ui/Chip";
-import Input from "@/components/ui/Input";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/Accordion";
+import { Alert } from "@/components/ui/Alert";
+import { Button } from "@/components/ui/Button";
+import { Chip } from "@/components/ui/Chip";
+import { Input } from "@/components/ui/Input";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/Tooltip";
-import { ArrowRight, Lock, Search, Send } from "lucide-react";
+
+import { ArrowRight, FireExtinguisher, Lock, Pin, Search, Send, TimerIcon } from "lucide-react";
 import { FaGithub, FaGoogle, FaMicrosoft, FaTwitter } from "react-icons/fa";
+
+import CopyButton from "./CopyButton";
 
 export type ComponentEntry = {
   title: string;
@@ -50,6 +54,329 @@ export type ComponentCategory = {
 export type ComponentData = Record<string, ComponentCategory>;
 
 export const data: ComponentData = {
+  accordion: {
+    cols: 6,
+    title: "Accordions",
+    subtitle: "A collection of Accordions for you to use",
+    steps: [
+      {
+        type: "dependencies",
+        libraries: [
+          "clsx",
+          "tailwind-merge",
+          "lucide-react",
+          "@radix-ui/react-accordion"
+        ]
+      },
+      {
+        type: "utilities",
+        files: [
+          {
+            name: "cn.ts",
+            path: "@/utils/cn.ts",
+            language: "typescript",
+            code: `import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}`
+          },
+          {
+            name: "globals.css",
+            path: "@/globals.css",
+            language: "css",
+            code: `@import "tailwindcss";
+            
+theme {
+  --animate-slideUp: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-slideDown: slideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  @keyframes slideUp {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+}`
+          }
+        ]
+      },
+      {
+        type: "source",
+        name: "Accordion.tsx",
+        path: "@/components/ui/Accordion.tsx",
+        language: "tsx",
+        code: `import { ComponentProps } from "react";
+import { ChevronDown } from "lucide-react";
+
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
+
+import { cn } from "@/utils";
+
+export function Accordion({ className, children, ...props }: AccordionPrimitive.AccordionSingleProps | AccordionPrimitive.AccordionMultipleProps) {
+  return (
+    <AccordionPrimitive.Root className={cn("w-full", className)} {...props} >
+      {children}
+    </AccordionPrimitive.Root>
+  );
+}
+
+type AccordionItemProps = ComponentProps<typeof AccordionPrimitive.Item>;
+
+export function AccordionItem({ children, className, ...props }: AccordionItemProps) {
+  return (
+    <AccordionPrimitive.Item
+      className={cn("border-b border-neutral-700 last:border-none", className)}
+      {...props}
+    >
+      {children}
+    </AccordionPrimitive.Item>
+  );
+}
+
+type AccordionTriggerProps = ComponentProps<typeof AccordionPrimitive.Trigger>;
+
+export function AccordionTrigger({ children, className, ...props }: AccordionTriggerProps) {
+  return (
+    <AccordionPrimitive.Header className="flex">
+      <AccordionPrimitive.Trigger
+        className={cn(
+          "group flex h-[45px] flex-1 cursor-default items-center justify-between px-5 text-[15px] leading-none outline-none",
+          className
+        )}
+        {...props}
+      >
+        {children}
+        <ChevronDown
+          size={20}
+          className="ml-2 transition-all duration-300 group-data-[state=open]:rotate-180"
+        />
+      </AccordionPrimitive.Trigger>
+    </AccordionPrimitive.Header>
+  );
+}
+
+type AccordionContentProps = ComponentProps<typeof AccordionPrimitive.Content>;
+
+export function AccordionContent({ children, className, ...props }: AccordionContentProps) {
+  return (
+    <AccordionPrimitive.Content
+      className={cn(
+        "w-full overflow-hidden bg-neutral-950 text-sm data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown",
+        className
+      )}
+      {...props}
+    >
+      <div className="px-4 py-2">
+        {children}
+      </div>
+    </AccordionPrimitive.Content>
+  );
+}`
+      }
+    ],
+    components: [
+      {
+        title: "Simple Accordion",
+        component: () => (
+          <Accordion type="single" collapsible>
+            <AccordionItem value="ui-components">
+              <AccordionTrigger>High-Quality UI Components</AccordionTrigger>
+              <AccordionContent>
+                Our library offers well-designed, accessible, and customizable UI components for modern web applications.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="performance">
+              <AccordionTrigger>Optimized for Performance</AccordionTrigger>
+              <AccordionContent>
+                The components are lightweight and optimized for speed, ensuring a smooth user experience.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="customization">
+              <AccordionTrigger>Fully Customizable</AccordionTrigger>
+              <AccordionContent>
+                You can easily modify colors, styles, and animations to fit your brand’s identity.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        ),
+      },
+      {
+        title: "Left Icons",
+        component: () => (
+          <Accordion type="single" collapsible>
+            <AccordionItem value="installation">
+              <AccordionTrigger left>Installation Guide</AccordionTrigger>
+              <AccordionContent>
+                Install the package using npm or yarn and start building your UI instantly.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="integration">
+              <AccordionTrigger left>Easy Integration</AccordionTrigger>
+              <AccordionContent>
+                Works seamlessly with popular frameworks like React, Next.js, and Vue.js.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="support">
+              <AccordionTrigger left>Comprehensive Documentation</AccordionTrigger>
+              <AccordionContent>
+                Detailed documentation and examples to help you get started quickly.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        ),
+      },
+      {
+        title: "Outlined Accodion",
+        component: () => (
+          <Accordion type="single" collapsible className="border border-neutral-800 rounded-md">
+            <AccordionItem value="installation">
+              <AccordionTrigger>Installation Guide</AccordionTrigger>
+              <AccordionContent>
+                Install the package using npm or yarn and start building your UI instantly.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="integration">
+              <AccordionTrigger>Easy Integration</AccordionTrigger>
+              <AccordionContent>
+                Works seamlessly with popular frameworks like React, Next.js, and Vue.js.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="support">
+              <AccordionTrigger>Comprehensive Documentation</AccordionTrigger>
+              <AccordionContent>
+                Detailed documentation and examples to help you get started quickly.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        ),
+      },
+      {
+        title: "Nested Sections",
+        component: () => (
+          <Accordion type="single" collapsible>
+            <AccordionItem value="features">
+              <AccordionTrigger>Feature Overview</AccordionTrigger>
+              <AccordionContent>
+                <Accordion type="single" collapsible className="ml-4 border-l border-neutral-800 pl-4">
+                  <AccordionItem value="nested-1">
+                    <AccordionTrigger>Custom Styling</AccordionTrigger>
+                    <AccordionContent>
+                      Tailor the look and feel of the components using CSS or utility classes.
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="nested-2">
+                    <AccordionTrigger>State Management</AccordionTrigger>
+                    <AccordionContent>
+                      Built-in support for controlled and uncontrolled states.
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="performance">
+              <AccordionTrigger>Performance Optimizations</AccordionTrigger>
+              <AccordionContent>
+                Our components are designed for high efficiency and minimal re-renders.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        ),
+      },
+      {
+        title: "Accordion with Icons",
+        component: () => (
+          <Accordion type="single" collapsible>
+            <AccordionItem value="pinned">
+              <AccordionTrigger>
+                <span className="flex items-center gap-2">
+                  <Pin size={16} className="-rotate-45" /> Pinned Section
+                </span>
+              </AccordionTrigger>
+              <AccordionContent>
+                This section has an icon next to the trigger text.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="trending">
+              <AccordionTrigger>
+                <span className="flex items-center gap-2">
+                  <FireExtinguisher size={16} /> Trending Topic
+                </span>
+              </AccordionTrigger>
+              <AccordionContent>
+                This section is styled with an icon-based trigger.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="newest">
+              <AccordionTrigger>
+                <span className="flex items-center gap-2">
+                  <TimerIcon size={16} /> Newest First
+                </span>
+              </AccordionTrigger>
+              <AccordionContent>
+                This section is styled with an icon-based trigger.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        ),
+      },
+      {
+        title: "Custom Styled Accordion",
+        component: () => (
+          <Accordion type="single" collapsible className="bg-gradient-to-r from-blue-500 to-sky-500 rounded-md p-4">
+            <AccordionItem value="unique-design">
+              <AccordionTrigger className="bg-white text-neutral-800 px-4 py-2 rounded-t-md">
+                Unique Design
+              </AccordionTrigger>
+              <AccordionContent className="bg-sky-500 text-white">
+                This accordion has a gradient background and custom styling for a modern look.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="animations">
+              <AccordionTrigger className="bg-white text-neutral-800 px-4 py-2">
+                Smooth Animations
+              </AccordionTrigger>
+              <AccordionContent className="bg-sky-500 text-white">
+                Includes custom animations for a sleek user experience.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="dark-mode">
+              <AccordionTrigger className="bg-white text-neutral-800 px-4 py-2 rounded-b-md data-[state=open]:rounded-none">
+                Dark Mode Ready
+              </AccordionTrigger>
+              <AccordionContent className="bg-sky-500 text-white">
+                Perfect for dark-themed websites with consistent styling.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        ),
+      },
+    ]
+  },
   alert: {
     cols: 6,
     title: "Alerts",
@@ -379,6 +706,10 @@ export default function Button({
           <div className="absolute top-1/2 left-1/2 -translate-1/2 bg-green-500 size-2 rounded-full" />
         </div>
         }>Online</Button>
+      },
+      {
+        title: "Copy Button",
+        component: CopyButton,
       },
       {
         title: "Auth Icon Buttons",

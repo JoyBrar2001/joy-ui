@@ -10,7 +10,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   loadingIcon?: React.ReactNode;
 };
 
-export default function Button({
+export function Button({
   variant = "primary",
   leftIcon,
   rightIcon,

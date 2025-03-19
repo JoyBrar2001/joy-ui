@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/utils";
-import Button from "@/components/ui/Button";
+import { Button } from "@/components/ui/Button";
 import { Code } from "lucide-react";
 
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/Dialog";
@@ -19,8 +19,6 @@ type ComponentWrapperProps = {
 };
 
 export default function ComponentWrapper({ title, cols = 4, steps, children }: ComponentWrapperProps) {
-  console.log(steps);
-
   return (
     <div
       className={cn(

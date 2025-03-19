@@ -12,11 +12,18 @@ import {
 } from "./Dialog"; // Adjust path as needed
 import CodeBlock from "./CodeBlock";
 import language from "react-syntax-highlighter/dist/esm/languages/hljs/1c";
-import Chip from "@/components/ui/Chip";
+import { Chip } from "@/components/ui/Chip";
 
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
-import Button from "@/components/ui/Button";
+import { Button } from "@/components/ui/Button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./Tooltip";
+
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
+import { cn } from "@/utils"; // Utility function for class merging
+import { ChevronDown } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./Accordion";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./Card";
+
 
 export default function Test() {
   const [open, setOpen] = useState(false);
@@ -138,6 +145,40 @@ export default function Test() {
             This is hello there
           </TooltipContent>
         </Tooltip>
+
+        <Accordion type="single" collapsible>
+          <AccordionItem value="item-1">
+            <AccordionTrigger>Section 1</AccordionTrigger>
+            <AccordionContent>
+              This is the content of Section 1. It expands when you click the trigger.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-2">
+            <AccordionTrigger>Section 2</AccordionTrigger>
+            <AccordionContent>
+              This is the content of Section 2. It expands when you click the trigger.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+
+        <Card className="w-96">
+          <CardHeader>
+            <CardTitle>Premium UI Components</CardTitle>
+            <CardDescription>Reusable, customizable, and modern components</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p>
+              Our UI component library helps developers build beautiful and accessible interfaces faster.
+              Each component is optimized for dark mode, responsive design, and high performance.
+            </p>
+          </CardContent>
+          <CardFooter className="flex justify-end">
+            <Button variant="primary">
+              Get Started
+            </Button>
+          </CardFooter>
+        </Card>
       </section>
     </div>
   );

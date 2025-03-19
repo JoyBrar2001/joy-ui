@@ -7,7 +7,7 @@ type ChipProps = {
   rounded?: boolean;
 } & React.HTMLAttributes<HTMLSpanElement>;
 
-export default function Chip({
+export function Chip({
   children,
   variant = "primary",
   rounded = false,

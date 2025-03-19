@@ -5,7 +5,7 @@ import { Copy, Check } from "lucide-react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark, oneDark, oneLight } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { cn } from "@/utils";
-import Chip from "@/components/ui/Chip";
+import { Chip } from "@/components/ui/Chip";
 
 interface CodeTab {
   name: string;
@@ -45,16 +45,15 @@ export default function CodeBlock({
         </Chip>
       )}
       <div className="relative bg-neutral-800 dark:bg-neutral-900 border border-neutral-800 text-white rounded-lg overflow-hidden">
-
         {tabs.length > 1 && (
           <div className="flex px-4 gap-2 border-b border-neutral-800">
             {tabs.map((tab, index) => (
               <button
                 key={index}
-                className={`py-2 px-1.5 text-sm font-medium ${activeTab === index
-                  ? "border-b border-b-white text-white"
-                  : "text-neutral-300"
-                  }`}
+                className={cn(
+                  "py-2 px-1.5 text-sm font-medium cursor-pointer",
+                  activeTab === index ? "border-b border-b-white text-white" : "text-neutral-300"
+                )}
                 onClick={() => setActiveTab(index)}
               >
                 {tab.name}

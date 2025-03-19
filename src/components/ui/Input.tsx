@@ -10,7 +10,7 @@ export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   rightIcon?: React.ReactNode;
 };
 
-export default function Input({
+export function Input({
   label,
   error,
   className = "",

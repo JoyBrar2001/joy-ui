@@ -1,6 +1,7 @@
-import Button from "@/components/ui/Button";
-import { cn } from "@/utils";
 import { ArrowRight } from "lucide-react";
+
+import { Button } from "@/components/ui/Button";
+import { cn } from "@/utils";
 
 export default function HomePage() {
   return (

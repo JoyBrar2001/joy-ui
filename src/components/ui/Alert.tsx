@@ -26,7 +26,7 @@ const DEFAULT_ICONS = {
   alert: <XCircle className="size-5" />,
 };
 
-export default function Alert({
+export function Alert({
   label,
   icon,
   variant,

@@ -9,17 +9,17 @@
   --animate-contentShow: contentShow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   --animate-contentHide: contentHide 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* --animate-slideUpAndFadeIn: slideUpAndFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  --animate-slideDownAndFadeOut: slideDownAndFadeOut 0.4s cubic-bezier(0.16, 1, 0.3, 1); */
+  --animate-slideUpAndFadeIn: slideUpAndFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-slideDownAndFadeIn: slideDownAndFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-slideLeftAndFadeIn: slideLeftAndFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-slideRightAndFadeIn: slideRightAndFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-slideDownAndFadeOut: slideDownAndFadeOut 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-slideUpAndFadeOut: slideUpAndFadeOut 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-slideLeftAndFadeOut: slideLeftAndFadeOut 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-slideRightAndFadeOut: slideRightAndFadeOut 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 
-  --animate-slideUpAndFadeIn: slideUpAndFadeIn 0.4S cubic-bezier(0.16, 1, 0.3, 1);
-  --animate-slideDownAndFadeIn: slideDownAndFadeIn 0.4S cubic-bezier(0.16, 1, 0.3, 1);
-  --animate-slideLeftAndFadeIn: slideLeftAndFadeIn 0.4S cubic-bezier(0.16, 1, 0.3, 1);
-  --animate-slideRightAndFadeIn: slideRightAndFadeIn 0.4S cubic-bezier(0.16, 1, 0.3, 1);
-  --animate-slideDownAndFadeOut: slideDownAndFadeOut 0.4S cubic-bezier(0.16, 1, 0.3, 1);
-  --animate-slideUpAndFadeOut: slideUpAndFadeOut 0.4S cubic-bezier(0.16, 1, 0.3, 1);
-  --animate-slideLeftAndFadeOut: slideLeftAndFadeOut 0.4S cubic-bezier(0.16, 1, 0.3, 1);
-  --animate-slideRightAndFadeOut: slideRightAndFadeOut 0.4S cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-slideUp: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-slideDown: slideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 
   @keyframes overlayShow {
     from {
@@ -149,6 +149,23 @@
     }
   }
   
+  @keyframes slideUp {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
 }
 
 @custom-variant dark (&:where(.dark, .dark *));

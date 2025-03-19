@@ -1,9 +1,10 @@
-import { capitalize, cn } from "@/utils";
-import { ChevronRight } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { data } from "@/constants/data";
+import { ChevronRight } from "lucide-react";
+
 import ComponentWrapper from "@/components/ComponentWrapper";
+import { capitalize } from "@/utils";
+import { data } from "@/constants/data";
 
 type Props = {
   params: Promise<{ component: string }>;
@@ -66,7 +67,7 @@ export default async function ComponentPage({ params }: Props) {
             cols={componentData.cols}
             steps={componentData.steps}
           >
-            <Component label="Label" placeholder="Enter text" />
+            <Component />
           </ComponentWrapper>
         ))}
       </div>

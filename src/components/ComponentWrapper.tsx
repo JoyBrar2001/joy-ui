@@ -9,7 +9,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/Tooltip
 
 import { DependeciesStep, SourceStep, UtilitiesStep } from "@/constants/data";
 
-import CodeBlock from "@/app/components/test/CodeBlock";
+import { CodeBlock } from "@/components/ui/CodeBlock";
 
 type ComponentWrapperProps = {
   title: string;

@@ -1,11 +1,13 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/Accordion";
+import { CodeBlock } from "@/components/ui/CodeBlock";
 import { Alert } from "@/components/ui/Alert";
+import { Avatar, AvatarFallback, AvatarIcon, AvatarImage } from "@/components/ui/Avatar";
 import { Button } from "@/components/ui/Button";
 import { Chip } from "@/components/ui/Chip";
 import { Input } from "@/components/ui/Input";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/Tooltip";
 
-import { ArrowRight, FireExtinguisher, Lock, Pin, Search, Send, TimerIcon } from "lucide-react";
+import { ArrowRight, FireExtinguisher, Lock, Pin, Search, Send, TimerIcon, User } from "lucide-react";
 import { FaGithub, FaGoogle, FaMicrosoft, FaTwitter } from "react-icons/fa";
 
 import CopyButton from "./CopyButton";
@@ -17,7 +19,7 @@ export type ComponentEntry = {
 
 export type StepType = "dependencies" | "utilities" | "source";
 
-export type LanguageType = "css" | "shell" | "typescript" | "tsx" | "javascript" | "jsx";
+export type LanguageType = "css" | "shell" | "typescript" | "tsx" | "javascript" | "jsx" | "python" | "cpp";
 
 export type DependeciesStep = {
   type: StepType;
@@ -540,6 +542,229 @@ export default function Alert({
       }
     ],
   },
+  avatar: {
+    cols: 4,
+    title: "Avatar",
+    subtitle: "A collection of avatars to choose from.",
+    steps: [
+      {
+        type: "dependencies",
+        libraries: [
+          "clsx",
+          "tailwind-merge",
+          "@radix-ui/react-avatar"
+        ]
+      },
+      {
+        type: "utilities",
+        files: [
+          {
+            name: "cn.ts",
+            path: "@/utils/cn.ts",
+            language: "typescript",
+            code: `import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}`
+          }
+        ]
+      },
+      {
+        type: "source",
+        name: "Avatar.tsx",
+        path: "@/components/ui/Avatar.tsx",
+        language: "tsx",
+        code: `import React from "react";
+import * as AvatarPrimitive from "@radix-ui/react-avatar";
+import { cn } from "@/utils";
+
+export function Avatar({
+  children,
+  rounded = true,
+  className,
+  ...props
+}: AvatarPrimitive.AvatarProps & {
+  rounded?: boolean;
+}) {
+  return (
+    <AvatarPrimitive.Root
+      className={cn(
+        "relative inline-flex size-[45px] select-none items-center justify-center rounded-sm bg-blackA1 align-middle",
+        rounded && "rounded-full",
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </AvatarPrimitive.Root>
+  );
+}
+
+export function AvatarImage({ className, ...props }: AvatarPrimitive.AvatarImageProps) {
+  return (
+    <AvatarPrimitive.Image
+      className={cn(
+        "leading-1 flex size-full items-center justify-center bg-white text-sm font-medium rounded-[inherit]",
+        className
+      )}
+      {...props}
+    />
+  );
+}
+
+export function AvatarFallback({ children, className, ...props }: AvatarPrimitive.AvatarFallbackProps) {
+  return (
+    <AvatarPrimitive.Fallback
+      className="leading-1 flex size-full items-center justify-center bg-neutral-800 text-sm font-medium rounded-[inherit]"
+      {...props}
+    >
+      {children}
+    </AvatarPrimitive.Fallback>
+  );
+}
+
+export function AvatarIcon({
+  children,
+  className,
+  position = "top-right"
+}: {
+  children: React.ReactNode;
+  className?: string;
+  position?: "top-right" | "top-left" | "bottom-right" | "bottom-left"
+}) {
+  return (
+    <div
+      className={cn(
+        "absolute z-10 flex items-center justify-center rounded-full bg-white shadow-md",
+        position === "top-right" && "top-[6%] right-[6%]",
+        position === "top-left" && "top-[6%] left-[6%]",
+        position === "bottom-right" && "bottom-[6%] right-[6%]",
+        position === "bottom-left" && "bottom-[6%] left-[6%]",
+        className
+      )}
+    >
+      {children}
+    </div>
+  );
+}`
+      }
+    ],
+    components: [
+      {
+        title: "Avatar With Image and Fallback",
+        component: () => <Avatar rounded>
+          <AvatarImage src="https://avatars.githubusercontent.com/u/194884352?v=4" />
+
+          <AvatarFallback>
+            JB
+          </AvatarFallback>
+        </Avatar>
+      },
+      {
+        title: "Avatar with Fallback Text",
+        component: () => <Avatar rounded>
+          <AvatarImage src="" />
+
+          <AvatarFallback>
+            JB
+          </AvatarFallback>
+        </Avatar>
+      },
+      {
+        title: "Avatar with Fallback Text",
+        component: () => <Avatar rounded>
+          <AvatarImage src="" />
+
+          <AvatarFallback>
+            <User size={20} />
+          </AvatarFallback>
+        </Avatar>
+      },
+      {
+        title: "Avatar with Icon (Top Right)",
+        component: () => <Avatar rounded>
+          <AvatarIcon position="top-right">
+            <div className="size-2 rounded-full bg-green-500 outline-2 outline-neutral-950" />
+          </AvatarIcon>
+
+          <AvatarImage src="https://avatars.githubusercontent.com/u/194884352?v=4" />
+
+          <AvatarFallback>
+            JB
+          </AvatarFallback>
+        </Avatar>
+      },
+      {
+        title: "Avatar with Icon (Bottom Right)",
+        component: () => <Avatar rounded>
+          <AvatarIcon position="bottom-right">
+            <div className="flex text-xs justify-center items-center size-4 rounded-full bg-neutral-800">
+              5
+            </div>
+          </AvatarIcon>
+
+          <AvatarImage src="https://avatars.githubusercontent.com/u/194884352?v=4" />
+
+          <AvatarFallback>
+            JB
+          </AvatarFallback>
+        </Avatar>
+      },
+      {
+        title: "Avatar with Icon (Top Left)",
+        component: () => <Avatar rounded>
+          <AvatarIcon position="top-left">
+            <div className="flex text-xs justify-center items-center size-4 rounded-full bg-neutral-800">
+              5
+            </div>
+          </AvatarIcon>
+
+          <AvatarImage src="https://avatars.githubusercontent.com/u/194884352?v=4" />
+
+          <AvatarFallback>
+            JB
+          </AvatarFallback>
+        </Avatar>
+      },
+      {
+        title: "Group Avatars",
+        component: () => (
+          <div className="flex">
+            <Avatar rounded className="not-first:-ml-3">
+              <AvatarImage src="https://avatars.githubusercontent.com/u/194884352?v=4" />
+
+              <AvatarFallback>
+                JB
+              </AvatarFallback>
+            </Avatar>
+            <Avatar rounded className="not-first:-ml-3">
+              <AvatarImage src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+
+              <AvatarFallback>
+                JB
+              </AvatarFallback>
+            </Avatar>
+            <Avatar rounded className="not-first:-ml-3">
+              <AvatarImage src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+
+              <AvatarFallback>
+                JB
+              </AvatarFallback>
+            </Avatar>
+            <Avatar rounded className="not-first:-ml-3">
+              <AvatarImage src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+
+              <AvatarFallback>
+                JB
+              </AvatarFallback>
+            </Avatar>
+          </div>
+        )
+      }
+    ]
+  },
   button: {
     cols: 4,
     title: "Button",
@@ -852,6 +1077,278 @@ export default function Chip({
       {
         title: "Rounded Chip",
         component: () => <Chip rounded>Rounded</Chip>
+      },
+    ]
+  },
+  codeblock: {
+    cols: 6,
+    title: "Code Block",
+    subtitle: "A collection of Codeblocks for you to use",
+    steps: [
+      {
+        type: "dependencies",
+        libraries: [
+          "clsx",
+          "tailwind-merge",
+          "react-syntax-highlighter"
+        ]
+      },
+      {
+        type: "utilities",
+        files: [
+          {
+            name: "cn.ts",
+            path: "@/utils/cn.ts",
+            language: "typescript",
+            code: `import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}`
+          }
+        ]
+      },
+      {
+        type: "source",
+        name: "CodeBlock.tsx",
+        path: "@/components/ui/CodeBlock.tsx",
+        language: "tsx",
+        code: `"use client";
+
+import { useState } from "react";
+import { Copy, Check } from "lucide-react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+
+import { Chip } from "@/components/ui/Chip";
+import { cn } from "@/utils";
+
+interface CodeTab {
+  name: string;
+  code: string;
+  path?: string;
+  language?: string;
+  highlightLines?: number[];
+}
+
+interface CodeBlockProps {
+  tabs?: CodeTab[];
+  wrapLines?: boolean;
+  showLineNumbers?: boolean;
+}
+
+export default function CodeBlock({
+  tabs = [],
+  wrapLines = true,
+  showLineNumbers = true,
+}: CodeBlockProps) {
+  const [activeTab, setActiveTab] = useState(0);
+  const [copied, setCopied] = useState(false);
+
+  const activeCode = tabs[activeTab] || tabs[0];
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(activeCode.code);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <>
+      {activeCode.path && (
+        <Chip className="text-xs" variant="secondary">
+          {activeCode.path}
+        </Chip>
+      )}
+      <div className="relative bg-neutral-800 dark:bg-neutral-900 border border-neutral-800 text-white rounded-lg overflow-hidden">
+        {tabs.length > 1 && (
+          <div className="flex px-4 gap-2 border-b border-neutral-800">
+            {tabs.map((tab, index) => (
+              <button
+                key={index}
+                className={cn(
+                  "py-2 px-1.5 text-sm font-medium cursor-pointer",
+                  activeTab === index ? "border-b border-b-white text-white" : "text-neutral-300"
+                )}
+                onClick={() => setActiveTab(index)}
+              >
+                {tab.name}
+              </button>
+            ))}
+          </div>
+        )}
+
+        <button
+          onClick={handleCopy}
+          className="absolute top-2 right-2 size-6 bg-neutral-700 dark:bg-neutral-800 hover:bg-neutral-600 dark:hover:bg-neutral-500 border border-neutral-600 text-white rounded"
+        >
+          <Check size={16} className={cn(
+            "size-3 absolute left-1/2 top-1/2 -translate-1/2 scale-0 opacity-0 transition-all duration-300",
+            copied && "scale-100 opacity-100"
+          )} />
+          <Copy size={16} className={cn(
+            "size-3 absolute left-1/2 top-1/2 -translate-1/2 scale-100 opacity-100 transition-all duration-300",
+            copied && "scale-0 opacity-0"
+          )} />
+        </button>
+
+        <SyntaxHighlighter
+          language={activeCode.language || "javascript"}
+          style={atomDark}
+          wrapLines={wrapLines}
+          showLineNumbers={showLineNumbers}
+          lineProps={(lineNumber) =>
+            activeCode.highlightLines?.includes(lineNumber)
+              ? { style: { backgroundColor: "rgba(255, 255, 0, 0.2)" } }
+              : {}
+          }
+          customStyle={{
+            margin: 0,
+            padding: "0.5rem 1rem",
+            background: "transparent",
+            fontSize: "0.875rem",
+          }}
+        >
+          {activeCode.code}
+        </SyntaxHighlighter>
+      </div>
+    </>
+  );
+}`
+      }
+    ],
+    components: [
+      {
+        title: "Simple One file CodeBlock",
+        component: () => <CodeBlock
+          tabs={[
+            {
+              name: "JavaScript",
+              code: `function greet(name) {
+  return \`Hello, \${name}!\`;
+}
+
+console.log(greet("Joy"));`,
+              language: "javascript",
+            },
+          ]}
+          showLineNumbers
+          wrapLines
+        />
+      },
+      {
+        title: "CodeBlock without Line Numbers",
+        component: () => <CodeBlock
+          tabs={[
+            {
+              name: "JavaScript",
+              code: `function greet(name) {
+  return \`Hello, \${name}!\`;
+}
+
+console.log(greet("Joy"));`,
+              language: "javascript",
+            },
+          ]}
+          showLineNumbers={false}
+          wrapLines
+        />
+      },
+      {
+        title: "CodeBlock with line Highlights",
+        component: () => <CodeBlock
+          tabs={[
+            {
+              name: "JavaScript",
+              code: `function greet(name) {
+  return \`Hello, \${name}!\`;
+}
+
+console.log(greet("Joy"));`,
+              language: "javascript",
+              highlightLines: [2, 5],
+            },
+          ]}
+          showLineNumbers
+          wrapLines
+        />
+      },
+      {
+        title: "CodeBlock with Path",
+        component: () => <CodeBlock
+          tabs={[
+            {
+              name: "JavaScript",
+              code: `function greet(name) {
+  return \`Hello, \${name}!\`;
+}
+
+console.log(greet("Joy"));`,
+              language: "javascript",
+              path: "@/lib/greet.js",
+              highlightLines: [1, 3],
+            },
+          ]}
+          showLineNumbers
+          wrapLines
+        />
+      },
+      {
+        title: "CodeBlock with Path",
+        component: () => <CodeBlock
+          tabs={[
+            {
+              name: "JavaScript",
+              code: `function greet(name) {
+  return \`Hello, \${name}!\`;
+}
+
+console.log(greet("Joy"));`,
+              path: "/src/utils/greet.js",
+              language: "javascript",
+              highlightLines: [2, 5],
+            },
+            {
+              name: "TypeScript",
+              code: `function greet(name: string): string {
+  return \`Hello, \${name}!\`;
+}
+
+console.log(greet("Joy"));`,
+              path: "/src/utils/greet.ts",
+              language: "typescript",
+            },
+            {
+              name: "Python",
+              code: `def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("Joy"))`,
+              path: "/src/utils/greet.py",
+              language: "python",
+            },
+            {
+              name: "C++",
+              code: `#include <iostream>
+#include <string>
+
+std::string greet(std::string name) {
+    return "Hello, " + name + "!";
+}
+
+int main() {
+    std::cout << greet("Joy") << std::endl;
+    return 0;
+}`,
+              path: "/src/utils/greet.cpp",
+              language: "cpp",
+              highlightLines: [5, 9]
+            }
+          ]}
+          showLineNumbers
+          wrapLines
+        />
       },
     ]
   },

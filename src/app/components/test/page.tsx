@@ -23,6 +23,8 @@ import { cn } from "@/utils"; // Utility function for class merging
 import { ChevronDown } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./Accordion";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./Card";
+import { Avatar, AvatarImage, AvatarFallback, AvatarIcon } from "@/components/ui/Avatar";
+import { ToastProvider, useToast } from "./ToastProvider";
 
 
 export default function Test() {
@@ -179,7 +181,47 @@ export default function Test() {
             </Button>
           </CardFooter>
         </Card>
+
+        <Avatar rounded>
+          <AvatarIcon position="top-right">
+            <div className="size-2 rounded-full bg-green-500 outline-2 outline-neutral-950" />
+          </AvatarIcon>
+
+          <AvatarImage src="https://avatars.githubusercontent.com/u/67324809?v=4" />
+
+          <AvatarFallback>
+            JB
+          </AvatarFallback>
+        </Avatar>
+
+
+        <ToastProvider>
+          <ToastComp />
+        </ToastProvider>
       </section>
     </div>
   );
+}
+
+
+function ToastComp() {
+  const { addToast } = useToast();
+
+  return (
+    <div className="p-10">
+      <button
+        onClick={() => addToast("Success!", "Your action was successful", "success")}
+        className="px-4 py-2 bg-green-600 text-white rounded-md"
+      >
+        Show Success Toast
+      </button>
+
+      <button
+        onClick={() => addToast("Error!", "Something went wrong", "error")}
+        className="px-4 py-2 bg-red-600 text-white rounded-md ml-4"
+      >
+        Show Error Toast
+      </button>
+    </div>
+  )
 }

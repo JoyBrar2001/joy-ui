@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { capitalize, cn } from "@/utils";
 import { useEffect, useState } from "react";
 import { data } from "@/constants/data";
+import { Button } from "../ui/Button";
 
 const sidebarItems = Array.from(
   Object
@@ -13,7 +14,7 @@ const sidebarItems = Array.from(
       name: capitalize(component),
       path: `/components/ui/${component}`
     }))
-  );
+);
 
 export default function Sidebar() {
   const pathname = usePathname();
@@ -47,14 +48,17 @@ export default function Sidebar() {
           <Link
             key={item.path}
             href={item.path}
-            className={cn(
-              "block px-4 py-2 rounded-md transition-colors",
-              pathname === item.path
-                ? "bg-blue-500 text-white"
-                : "text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-black"
-            )}
+            className={"block rounded-md transition-colors"}
           >
-            {item.name}
+            <Button
+              variant="ghost"
+              className={cn(
+                "w-full justify-start",
+                pathname === item.path && "text-white bg-neutral-900"
+              )}
+            >
+              {item.name}
+            </Button>
           </Link>
         ))}
       </nav>

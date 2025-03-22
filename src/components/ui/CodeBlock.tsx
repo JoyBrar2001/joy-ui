@@ -4,14 +4,16 @@ import { useState } from "react";
 import { Copy, Check } from "lucide-react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { cn } from "@/utils";
+
 import { Chip } from "@/components/ui/Chip";
+import { cn } from "@/utils";
+import { LanguageType } from "@/constants/data";
 
 interface CodeTab {
   name: string;
   code: string;
   path?: string;
-  language?: string;
+  language?: LanguageType;
   highlightLines?: number[];
 }
 
@@ -21,7 +23,7 @@ interface CodeBlockProps {
   showLineNumbers?: boolean;
 }
 
-export default function CodeBlock({
+export function CodeBlock({
   tabs = [],
   wrapLines = true,
   showLineNumbers = true,
@@ -44,7 +46,7 @@ export default function CodeBlock({
           {activeCode.path}
         </Chip>
       )}
-      <div className="relative bg-neutral-800 dark:bg-neutral-900 border border-neutral-800 text-white rounded-lg overflow-hidden">
+      <div className="w-full relative bg-neutral-800 dark:bg-neutral-900 border border-neutral-800 text-white rounded-lg overflow-hidden">
         {tabs.length > 1 && (
           <div className="flex px-4 gap-2 border-b border-neutral-800">
             {tabs.map((tab, index) => (

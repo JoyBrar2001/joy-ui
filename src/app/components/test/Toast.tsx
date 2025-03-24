@@ -2,14 +2,12 @@ import * as ToastPrimitive from "@radix-ui/react-toast";
 import { cn } from "@/utils";
 import { CheckCircle, XCircle, Info, X } from "lucide-react";
 
-interface ToastProps {
+export function Toast({ id: _, title, description, type = "info" }: ToastPrimitive.ToastProps & {
   id: number;
   title: string;
   description?: string;
   type?: "success" | "error" | "info";
-}
-
-export function Toast({ id, title, description, type = "info" }: ToastProps) {
+}) {
   return (
     <ToastPrimitive.Root
       className={cn(

@@ -11,6 +11,7 @@ import { ArrowRight, FireExtinguisher, Lock, Pin, Search, Send, TimerIcon, User 
 import { FaGithub, FaGoogle, FaMicrosoft, FaTwitter } from "react-icons/fa";
 
 import CopyButton from "./CopyButton";
+import { Checkbox, CheckboxDescription, CheckboxLabel, CheckboxRoot, CheckboxSubLabel } from "@/components/ui/Checkbox";
 
 export type ComponentEntry = {
   title: string;
@@ -980,6 +981,276 @@ export default function Button({
         </div>
       },
     ],
+  },
+  checkbox: {
+    cols: 4,
+    title: "Checkbox",
+    subtitle: "A collection of Checkboxes for you to use",
+    steps: [
+      {
+        type: "dependencies",
+        libraries: [
+          "clsx",
+          "tailwind-merge",
+          "@radix-ui/react-checkbox"
+        ]
+      },
+      {
+        type: "utilities",
+        files: [
+          {
+            name: "cn.ts",
+            path: "@/utils/cn.ts",
+            language: "typescript",
+            code: `import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}`
+          }
+        ]
+      },
+      {
+        type: "source",
+        name: "Chip.tsx",
+        path: "@/components/ui/Chip.tsx",
+        language: "tsx",
+        code: `import { cn } from "@/utils";
+import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
+import { CheckIcon } from "lucide-react";
+import { ComponentPropsWithoutRef } from "react";
+
+export function CheckboxRoot({ children, className, ...props }: ComponentPropsWithoutRef<"div">) {
+  return (
+    <div className={cn("flex items-center gap-2.5", className)} {...props}>
+      {children}
+    </div>
+  );
+}
+
+export function Checkbox({
+  checked,
+  defaultChecked,
+  onCheckedChange,
+  disabled = false,
+  animate = true,
+  size = "md",
+  className,
+  ...props
+}: CheckboxPrimitive.CheckboxProps & {
+  animate?: boolean;
+  size?: "sm" | "md" | "lg";
+}) {
+  const sizeClasses = {
+    sm: "size-4",
+    md: "size-5",
+    lg: "size-6",
+  };
+
+  const iconSize = {
+    sm: 12,
+    md: 16,
+    lg: 20,
+  };
+
+  return (
+    <CheckboxPrimitive.Root
+      checked={checked}
+      defaultChecked={defaultChecked}
+      onCheckedChange={onCheckedChange}
+      disabled={disabled}
+      className={cn(
+        "flex items-center justify-center appearance-none rounded bg-neutral-800 outline-2 outline-neutral-600 transition-all",
+        disabled && "opacity-50 cursor-not-allowed",
+        sizeClasses[size],
+        className
+      )}
+      {...props}
+    >
+      <CheckboxPrimitive.CheckboxIndicator
+        className={cn(
+          "transition-transform duration-300",
+          animate && "data-[state=checked]:animate-scaleUp data-[state=unchecked]:animate-scaleDown"
+        )}
+      >
+        <CheckIcon size={iconSize[size]} />
+      </CheckboxPrimitive.CheckboxIndicator>
+    </CheckboxPrimitive.Root>
+  );
+}
+
+// ✅ Main Label
+export function CheckboxLabel({ children, className, htmlFor, ...props }: ComponentPropsWithoutRef<"label">) {
+  return (
+    <label className={cn("text-base leading-none text-white flex items-center gap-1", className)} htmlFor={htmlFor} {...props}>
+      {children}
+    </label>
+  );
+}
+
+// ✅ SubLabel (Appears Next to Label)
+export function CheckboxSubLabel({ children, className, ...props }: ComponentPropsWithoutRef<"span">) {
+  return (
+    <span className={cn("text-sm text-neutral-400", className)} {...props}>
+      {children}
+    </span>
+  );
+}
+
+// ✅ Description (Appears Below)
+export function CheckboxDescription({ children, className, ...props }: ComponentPropsWithoutRef<"p">) {
+  return (
+    <p className={cn("text-sm leading-none text-neutral-700", className)} {...props}>
+      {children}
+    </p>
+  );
+}
+`
+      }
+    ],
+    components: [
+      {
+        title: "Simple Checkbox",
+        component: () => <Checkbox size="sm" />
+      },
+      {
+        title: "Animate Checkbox",
+        component: () => <Checkbox size="sm" animate />
+      },
+      {
+        title: "Default Checked",
+        component: () => <Checkbox size="sm" defaultChecked />
+      },
+      {
+        title: "Labeled Checkbox",
+        component: () => <CheckboxRoot>
+          <Checkbox id="terms1" size="sm" animate />
+          <CheckboxLabel htmlFor="terms1">
+            Accept Terms and Conditions
+          </CheckboxLabel>
+        </CheckboxRoot>
+      },
+      {
+        title: "Sub-Labeled Checkbox",
+        component: () => <CheckboxRoot>
+          <Checkbox id="terms2" size="sm" animate />
+          <CheckboxLabel htmlFor="terms2">
+            Accept Terms and Conditions
+            <CheckboxSubLabel>
+              (Required)
+            </CheckboxSubLabel>
+          </CheckboxLabel>
+        </CheckboxRoot>
+      },
+      {
+        title: "Checkbox Description",
+        component: () => <CheckboxRoot className="items-start">
+          <Checkbox id="terms3" size="sm" animate />
+          <div className="flex flex-col gap-1">
+            <CheckboxLabel htmlFor="terms3">
+              Accept Terms and Conditions
+              <CheckboxSubLabel>
+                (Required)
+              </CheckboxSubLabel>
+            </CheckboxLabel>
+            <CheckboxDescription>
+              Please go through the terms and conditions throughly before accepting them.
+            </CheckboxDescription>
+          </div>
+        </CheckboxRoot>
+      },
+      {
+        title: "Colored Checkbox",
+        component: () => <CheckboxRoot className="items-start">
+          <Checkbox
+            id="terms4"
+            size="sm"
+            animate
+            defaultChecked
+            className="data-[state=checked]:bg-green-500 text-neutral-950"
+          />
+          <CheckboxLabel htmlFor="terms4">
+            Accept Terms and Conditions
+          </CheckboxLabel>
+        </CheckboxRoot>
+      },
+      {
+        title: "Strikethrough Checkbox",
+        component: () => <CheckboxRoot>
+          <Checkbox
+            id="terms5"
+            size="sm"
+            animate
+            className="peer"
+            defaultChecked
+          />
+          <CheckboxLabel htmlFor="terms5" className="peer-data-[state=checked]:line-through">
+            Accept Terms and Conditions
+          </CheckboxLabel>
+        </CheckboxRoot>
+      },
+      {
+        title: "Strikethrough Checkbox",
+        component: () => <CheckboxRoot className="w-full flex flex-row-reverse justify-between pr-2">
+          <Checkbox
+            id="terms6"
+            size="sm"
+            animate
+            defaultChecked
+          />
+          <CheckboxLabel htmlFor="terms6" className="peer-data-[state=checked]:line-through">
+            Accept Terms and Conditions
+          </CheckboxLabel>
+        </CheckboxRoot>
+      },
+      {
+        title: "Labeled Checkbox",
+        component: () => <div className="flex gap-4">
+          <CheckboxRoot>
+            <Checkbox id="l1" size="sm" animate />
+            <CheckboxLabel htmlFor="l1">
+              iPhone
+            </CheckboxLabel>
+          </CheckboxRoot>
+          <CheckboxRoot>
+            <Checkbox id="l2" size="sm" animate />
+            <CheckboxLabel htmlFor="l2">
+              Android
+            </CheckboxLabel>
+          </CheckboxRoot>
+          <CheckboxRoot>
+            <Checkbox id="l3" size="sm" animate />
+            <CheckboxLabel htmlFor="l3">
+              Other
+            </CheckboxLabel>
+          </CheckboxRoot>
+        </div>
+      },
+      {
+        title: "Labeled Checkbox (Col)",
+        component: () => <div className="flex flex-col gap-4">
+          <CheckboxRoot>
+            <Checkbox id="l4" size="sm" animate />
+            <CheckboxLabel htmlFor="l4">
+              iPhone
+            </CheckboxLabel>
+          </CheckboxRoot>
+          <CheckboxRoot>
+            <Checkbox id="l5" size="sm" animate />
+            <CheckboxLabel htmlFor="l5">
+              Android
+            </CheckboxLabel>
+          </CheckboxRoot>
+          <CheckboxRoot>
+            <Checkbox id="termsl6" size="sm" animate />
+            <CheckboxLabel htmlFor="termsl6">
+              Other
+            </CheckboxLabel>
+          </CheckboxRoot>
+        </div>
+      },
+    ]
   },
   chip: {
     cols: 4,

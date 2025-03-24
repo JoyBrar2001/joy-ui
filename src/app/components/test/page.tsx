@@ -20,12 +20,15 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "./Tooltip";
 
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { cn } from "@/utils"; // Utility function for class merging
-import { ChevronDown } from "lucide-react";
+import { CheckIcon, ChevronDown } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./Accordion";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./Card";
 import { Avatar, AvatarImage, AvatarFallback, AvatarIcon } from "@/components/ui/Avatar";
 import { ToastProvider, useToast } from "./ToastProvider";
 
+
+import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
+import { Checkbox, CheckboxRoot, CheckboxLabel, CheckboxDescription, CheckboxSubLabel } from "./Checkbox";
 
 export default function Test() {
   const [open, setOpen] = useState(false);
@@ -198,6 +201,18 @@ export default function Test() {
         <ToastProvider>
           <ToastComp />
         </ToastProvider>
+
+        <CheckboxRoot>
+          <Checkbox id="terms" size="sm" animate />
+          <div className="flex flex-col">
+            <CheckboxLabel htmlFor="terms">
+              Accept Terms
+              <CheckboxSubLabel>(Required)</CheckboxSubLabel>
+            </CheckboxLabel>
+            <CheckboxDescription>You must agree to continue.</CheckboxDescription>
+          </div>
+        </CheckboxRoot>
+
       </section>
     </div>
   );

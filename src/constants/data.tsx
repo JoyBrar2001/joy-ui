@@ -4,14 +4,15 @@ import { Alert } from "@/components/ui/Alert";
 import { Avatar, AvatarFallback, AvatarIcon, AvatarImage } from "@/components/ui/Avatar";
 import { Button } from "@/components/ui/Button";
 import { Chip } from "@/components/ui/Chip";
+import { Checkbox, CheckboxRoot, CheckboxLabel, CheckboxSubLabel, CheckboxDescription } from "@/components/ui/Checkbox";
 import { Input } from "@/components/ui/Input";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/Tooltip";
 
-import { ArrowRight, FireExtinguisher, Lock, Pin, Search, Send, TimerIcon, User } from "lucide-react";
+import { ArrowRight, BellIcon, FilmIcon, FireExtinguisher, Lock, MoonIcon, Pin, SaveIcon, Scissors, Search, Send, StarIcon, TimerIcon, User, UserCircle } from "lucide-react";
 import { FaGithub, FaGoogle, FaMicrosoft, FaTwitter } from "react-icons/fa";
 
 import CopyButton from "./CopyButton";
-import { Checkbox, CheckboxDescription, CheckboxLabel, CheckboxRoot, CheckboxSubLabel } from "@/components/ui/Checkbox";
+import { Card, CardContent, CardFooter } from "@/components/ui/Card";
 
 export type ComponentEntry = {
   title: string;
@@ -1013,8 +1014,8 @@ export function cn(...inputs: ClassValue[]) {
       },
       {
         type: "source",
-        name: "Chip.tsx",
-        path: "@/components/ui/Chip.tsx",
+        name: "Checkbox.tsx",
+        path: "@/components/ui/Checkbox.tsx",
         language: "tsx",
         code: `import { cn } from "@/utils";
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
@@ -1061,7 +1062,7 @@ export function Checkbox({
       onCheckedChange={onCheckedChange}
       disabled={disabled}
       className={cn(
-        "flex items-center justify-center appearance-none rounded bg-neutral-800 outline-2 outline-neutral-600 transition-all",
+        "shrink-0 flex items-center justify-center appearance-none rounded bg-neutral-950 outline-[1px] outline-neutral-800 transition-all hover:bg-neutral-800 active:bg-neutral-900",
         disabled && "opacity-50 cursor-not-allowed",
         sizeClasses[size],
         className
@@ -1080,39 +1081,35 @@ export function Checkbox({
   );
 }
 
-// ✅ Main Label
 export function CheckboxLabel({ children, className, htmlFor, ...props }: ComponentPropsWithoutRef<"label">) {
   return (
-    <label className={cn("text-base leading-none text-white flex items-center gap-1", className)} htmlFor={htmlFor} {...props}>
+    <label className={cn("text-sm leading-none text-white flex items-center gap-1", className)} htmlFor={htmlFor} {...props}>
       {children}
     </label>
   );
 }
 
-// ✅ SubLabel (Appears Next to Label)
 export function CheckboxSubLabel({ children, className, ...props }: ComponentPropsWithoutRef<"span">) {
   return (
-    <span className={cn("text-sm text-neutral-400", className)} {...props}>
+    <span className={cn("text-xs text-neutral-400", className)} {...props}>
       {children}
     </span>
   );
 }
 
-// ✅ Description (Appears Below)
 export function CheckboxDescription({ children, className, ...props }: ComponentPropsWithoutRef<"p">) {
   return (
-    <p className={cn("text-sm leading-none text-neutral-700", className)} {...props}>
+    <p className={cn("text-xs leading-none text-neutral-600", className)} {...props}>
       {children}
     </p>
   );
-}
-`
+}`
       }
     ],
     components: [
       {
         title: "Simple Checkbox",
-        component: () => <Checkbox size="sm" />
+        component: () => <Checkbox size="sm" animate={false} />
       },
       {
         title: "Animate Checkbox",
@@ -1125,8 +1122,8 @@ export function CheckboxDescription({ children, className, ...props }: Component
       {
         title: "Labeled Checkbox",
         component: () => <CheckboxRoot>
-          <Checkbox id="terms1" size="sm" animate />
-          <CheckboxLabel htmlFor="terms1">
+          <Checkbox id="terms0" size="sm" animate />
+          <CheckboxLabel htmlFor="terms0">
             Accept Terms and Conditions
           </CheckboxLabel>
         </CheckboxRoot>
@@ -1176,7 +1173,7 @@ export function CheckboxDescription({ children, className, ...props }: Component
         </CheckboxRoot>
       },
       {
-        title: "Strikethrough Checkbox",
+        title: "Reversed Checkbox",
         component: () => <CheckboxRoot>
           <Checkbox
             id="terms5"
@@ -1246,10 +1243,165 @@ export function CheckboxDescription({ children, className, ...props }: Component
             <Checkbox id="termsl6" size="sm" animate />
             <CheckboxLabel htmlFor="termsl6">
               Other
+              <CheckboxSubLabel>
+                (like Blackberry, Nokia, Windows, etc...)
+              </CheckboxSubLabel>
             </CheckboxLabel>
           </CheckboxRoot>
         </div>
       },
+      {
+        title: "Checkbox Card",
+        component: () => <Card className="w-full">
+          <CardContent>
+            <CheckboxRoot className="w-full flex flex-row-reverse justify-between">
+              <Checkbox
+                id="card1"
+                size="sm"
+                animate
+                defaultChecked
+              />
+              <CheckboxLabel htmlFor="card1">
+                Label
+                <CheckboxSubLabel>
+                  (Sublabel)
+                </CheckboxSubLabel>
+              </CheckboxLabel>
+            </CheckboxRoot>
+            <CheckboxDescription className="mt-1">
+              (This is some description for the checkbox)
+            </CheckboxDescription>
+          </CardContent>
+        </Card >
+      },
+      {
+        title: "Checkbox with Icon",
+        component: () => (
+          <Card className="w-full">
+            <CardContent>
+              <CheckboxRoot className="w-full flex flex-row-reverse justify-between items-center">
+                <Checkbox id="card2" size="md" animate />
+                <div className="flex gap-2">
+                  <Button variant="outline" className="p-2">
+                    <StarIcon size={16} />
+                  </Button>
+
+                  <div className="flex flex-col">
+                    <CheckboxLabel htmlFor="card2" className="flex items-center gap-2">
+                      Starred Item
+                      <CheckboxSubLabel>(Mark as favorite)</CheckboxSubLabel>
+                    </CheckboxLabel>
+                    <CheckboxDescription className="mt-1">
+                      (This item will be added to your starred list)
+                    </CheckboxDescription>
+                  </div>
+                </div>
+              </CheckboxRoot>
+            </CardContent>
+          </Card >
+        )
+      },
+      {
+        title: "Checkbox with Footer",
+        component: () => (
+          <Card className="w-full">
+            <CardContent className="flex flex-col gap-2">
+              <CheckboxRoot className="w-full flex flex-row-reverse justify-between">
+                <Checkbox id="card3" size="sm" animate />
+                <CheckboxLabel htmlFor="card3">
+                  Enable Notifications
+                  <CheckboxSubLabel>(Receive email updates)</CheckboxSubLabel>
+                </CheckboxLabel>
+              </CheckboxRoot>
+              <CheckboxRoot className="w-full flex flex-row-reverse justify-between">
+                <Checkbox id="card4" size="sm" animate />
+                <CheckboxLabel htmlFor="card4">
+                  Newletter
+                  <CheckboxSubLabel>(Subscribe to newsletter)</CheckboxSubLabel>
+                </CheckboxLabel>
+              </CheckboxRoot>
+              <CheckboxRoot className="w-full flex flex-row-reverse justify-between">
+                <Checkbox id="card5" size="sm" animate />
+                <CheckboxLabel htmlFor="card5">
+                  Promotional Updates
+                </CheckboxLabel>
+              </CheckboxRoot>
+            </CardContent>
+            <CardFooter className="flex justify-end p-4">
+              <Button variant="outline">
+                Save Settings
+              </Button>
+            </CardFooter>
+          </Card>
+        )
+      },
+      {
+        title: "Cards Grid",
+        component: () => (
+          <div className="grid grid-cols-2 gap-2">
+            <Card className="w-full">
+              <CardContent className="flex flex-col gap-2">
+                <CheckboxRoot className="w-full flex flex-row-reverse justify-between">
+                  <Checkbox id="grid1" size="sm" animate />
+                  <CheckboxLabel htmlFor="grid1" className="flex items-center gap-2">
+                    <FilmIcon size={16} />
+                    Enable Editing
+                  </CheckboxLabel>
+                </CheckboxRoot>
+                <CheckboxDescription>
+                  (Allow modifications)
+                </CheckboxDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="w-full">
+              <CardContent className="flex flex-col gap-2">
+                <CheckboxRoot className="w-full flex flex-row-reverse justify-between">
+                  <Checkbox id="grid2" size="sm" animate />
+                  <CheckboxLabel htmlFor="grid2" className="flex items-center gap-2">
+                    <MoonIcon size={16} />
+                    Dark Mode
+                  </CheckboxLabel>
+                </CheckboxRoot>
+                <CheckboxDescription>
+                  (Reduce eye strain)
+                </CheckboxDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="w-full">
+              <CardContent className="flex flex-col gap-2">
+                <CheckboxRoot className="w-full flex flex-row-reverse justify-between">
+                  <Checkbox id="grid3" size="sm" animate />
+                  <CheckboxLabel htmlFor="grid3" className="flex items-center gap-2">
+                    <BellIcon size={16} />
+                    Notifications
+                  </CheckboxLabel>
+                </CheckboxRoot>
+                <CheckboxDescription>
+                  (Receive alerts)
+                </CheckboxDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="w-full">
+              <CardContent className="flex flex-col gap-2">
+                <CheckboxRoot className="w-full flex flex-row-reverse justify-between">
+                  <Checkbox id="grid4" size="sm" animate />
+                  <CheckboxLabel htmlFor="grid4" className="flex items-center gap-2">
+                    <SaveIcon size={16} />
+                    Auto-Save
+                  </CheckboxLabel>
+                </CheckboxRoot>
+                <CheckboxDescription>
+                  (Save changes automatically)
+                </CheckboxDescription>
+              </CardContent>
+            </Card>
+          </div>
+
+        )
+      }
     ]
   },
   chip: {

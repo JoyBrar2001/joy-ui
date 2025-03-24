@@ -33,7 +33,7 @@ export const CardHeader = forwardRef<HTMLDivElement, ComponentProps<"div">>(
     return (
       <div
         ref={ref}
-        className={cn("p-4 md:p-6 border-b border-neutral-200 dark:border-neutral-800", className)}
+        className={cn("p-2 md:p-3 border-b border-neutral-200 dark:border-neutral-800", className)}
         {...props}
       >
         {children}
@@ -68,7 +68,7 @@ CardDescription.displayName = "CardDescription";
 export const CardContent = forwardRef<HTMLDivElement, ComponentProps<"div">>(
   ({ children, className, ...props }, ref) => {
     return (
-      <div ref={ref} className={cn("p-4 md:p-6 text-neutral-700 dark:text-neutral-300", className)} {...props}>
+      <div ref={ref} className={cn("p-2 md:py-3 md:px-4 text-neutral-700 dark:text-neutral-300", className)} {...props}>
         {children}
       </div>
     );
@@ -79,7 +79,7 @@ CardContent.displayName = "CardContent";
 export const CardFooter = forwardRef<HTMLDivElement, ComponentProps<"div">>(
   ({ children, className, ...props }, ref) => {
     return (
-      <div ref={ref} className={cn("p-4 md:p-6 border-t border-neutral-200 dark:border-neutral-800", className)} {...props}>
+      <div ref={ref} className={cn("p-2 md:py-3 md:px-4 border-t border-neutral-200 dark:border-neutral-800", className)} {...props}>
         {children}
       </div>
     );

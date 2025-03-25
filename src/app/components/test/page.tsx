@@ -6,6 +6,11 @@ import { SheetRef } from "react-modal-sheet";
 import { Button } from "@/components/ui/Button";
 import { Drawer, DrawerBackdrop, DrawerContainer, DrawerContent, DrawerHeader, DrawerTitle } from "./Drawer";
 
+import * as TabsPrimitive from "@radix-ui/react-tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./Tabs";
+import { Label } from "./Label";
+import { Input } from "@/components/ui/Input";
+
 export default function Example() {
   const [isOpen, setOpen] = useState(false);
   const ref = useRef<SheetRef>(null);
@@ -14,7 +19,7 @@ export default function Example() {
   return (
     <div className="max-w-[100rem] mx-auto h-full flex pt-24 bg-neutral-100 dark:bg-black">
       <section className="flex-1 p-6 min-h-screen h-full">
-        <button
+        {/* <button
           onClick={() => setOpen(true)}
           className="rounded-lg bg-indigo-500 px-5 py-2 text-white font-medium transition hover:bg-indigo-600"
         >
@@ -71,7 +76,49 @@ export default function Example() {
               </div>
             </DrawerContent>
           </DrawerContainer>
-        </Drawer>
+        </Drawer> */}
+
+        <Tabs defaultValue="account" className="w-[400px]">
+          <TabsList className="grid w-full grid-cols-2">
+            <TabsTrigger value="account">Account</TabsTrigger>
+            <TabsTrigger value="password">Password</TabsTrigger>
+          </TabsList>
+
+          {/* Account Tab Content */}
+          <TabsContent value="account">
+            <div className="space-y-4">
+              <div>
+                <Label htmlFor="name" className="text-neutral-300">Name</Label>
+                <Input id="name" defaultValue="Pedro Duarte" className="mt-1 w-full bg-neutral-700 text-white" />
+              </div>
+              <div>
+                <Label htmlFor="username" className="text-neutral-300">Username</Label>
+                <Input id="username" defaultValue="@peduarte" className="mt-1 w-full bg-neutral-700 text-white" />
+              </div>
+              <Button className="w-full bg-neutral-700 hover:bg-neutral-600 text-white">Save changes</Button>
+            </div>
+          </TabsContent>
+
+          {/* Password Tab Content */}
+          <TabsContent value="password">
+            <div className="space-y-4">
+              <div>
+                <Label htmlFor="current" className="text-neutral-300">Current password</Label>
+                <Input id="current" type="password" className="mt-1 w-full bg-neutral-700 text-white" />
+              </div>
+              <div>
+                <Label htmlFor="new" className="text-neutral-300">New password</Label>
+                <Input id="new" type="password" className="mt-1 w-full bg-neutral-700 text-white" />
+              </div>
+              <div>
+                <Label htmlFor="confirm" className="text-neutral-300">Confirm password</Label>
+                <Input id="confirm" type="password" className="mt-1 w-full bg-neutral-700 text-white" />
+              </div>
+              <Button className="w-full bg-neutral-700 hover:bg-neutral-600 text-white">Change password</Button>
+            </div>
+          </TabsContent>
+        </Tabs>
+
       </section>
     </div>
   );

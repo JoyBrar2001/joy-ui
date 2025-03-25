@@ -2224,7 +2224,7 @@ export function RadioGroupItem({
           <form className="w-full">
             <RadioGroup defaultValue="performance" className="mt-4">
               <div className="flex flex-col space-y-2 w-full">
-                <Card className="flex items-center space-x-2 p-3">
+                <Card className="flex items-center space-x-2 p-3 has-data-[state=checked]:border-white">
                   <CardContent className="w-full flex flex-row-reverse justify-between items-center gap-4">
                     <RadioGroupItem value="battery" id="rc4" />
                     <div className="flex items-center gap-2">
@@ -2234,7 +2234,7 @@ export function RadioGroupItem({
                   </CardContent>
                 </Card>
 
-                <Card className="flex items-center space-x-2 p-3">
+                <Card className="flex items-center space-x-2 p-3 has-data-[state=checked]:border-white">
                   <CardContent className="w-full flex flex-row-reverse justify-between items-center gap-4">
                     <RadioGroupItem value="balance" id="rc5" />
                     <div className="flex items-center gap-2">
@@ -2244,7 +2244,7 @@ export function RadioGroupItem({
                   </CardContent>
                 </Card>
 
-                <Card className="flex items-center space-x-2 p-3">
+                <Card className="flex items-center space-x-2 p-3 has-data-[state=checked]:border-white">
                   <CardContent className="w-full flex flex-row-reverse justify-between items-center gap-4">
                     <RadioGroupItem value="performance" id="rc6" />
                     <div className="flex items-center gap-2">
@@ -2257,6 +2257,66 @@ export function RadioGroupItem({
             </RadioGroup>
           </form>
         ),
+      },
+      {
+        title: "Plans Picker",
+        component: () => (
+          <form className="w-full">
+            <RadioGroup defaultValue="basic" className="mt-4">
+              <div className="flex flex-col w-full">
+                <Card className="flex items-center space-x-2 p-3 has-data-[state=checked]:border-white has-data-[state=checked]:bg-neutral-900 rounded-none rounded-t-lg">
+                  <CardContent className="w-full flex justify-between items-center gap-4">
+                    <div className="flex items-center gap-2">
+                      <RadioGroupItem value="basic" id="rc7" />
+                      <div className="flex items-center gap-2">
+                        <Label htmlFor="rc7">Basic</Label>
+                      </div>
+                    </div>
+
+                    <p className="text-sm text-neutral-400">$10/mo</p>
+                  </CardContent>
+                </Card>
+                <Card className="flex items-center space-x-2 p-3 has-data-[state=checked]:border-white has-data-[state=checked]:bg-neutral-900 rounded-none">
+                  <CardContent className="w-full flex justify-between items-center gap-4">
+                    <div className="flex items-center gap-2">
+                      <RadioGroupItem value="advanced" id="rc8" />
+                      <div className="flex items-center gap-2">
+                        <Label htmlFor="rc8">Advanced</Label>
+                        <Chip rounded className="text-xs">Popular</Chip>
+                      </div>
+                    </div>
+
+                    <p className="text-sm text-neutral-400">$15/mo</p>
+                  </CardContent>
+                </Card>
+                <Card className="flex items-center space-x-2 p-3 has-data-[state=checked]:border-white has-data-[state=checked]:bg-neutral-900 rounded-none">
+                  <CardContent className="w-full flex justify-between items-center gap-4">
+                    <div className="flex items-center gap-2">
+                      <RadioGroupItem value="team" id="rc9" />
+                      <div className="flex items-center gap-2">
+                        <Label htmlFor="rc9">Teams</Label>
+                      </div>
+                    </div>
+
+                    <p className="text-sm text-neutral-400">$8/mo/plan</p>
+                  </CardContent>
+                </Card>
+                <Card className="flex items-center space-x-2 p-3 has-data-[state=checked]:border-white has-data-[state=checked]:bg-neutral-900 rounded-none rounded-b-lg">
+                  <CardContent className="w-full flex justify-between items-center gap-4">
+                    <div className="flex items-center gap-2">
+                      <RadioGroupItem value="enterprise" id="rc10" />
+                      <div className="flex items-center gap-2">
+                        <Label htmlFor="rc10">Enterprise</Label>
+                      </div>
+                    </div>
+
+                    <p className="text-sm text-neutral-400">Custom</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </RadioGroup>
+          </form>
+        )
       }
     ],
   },

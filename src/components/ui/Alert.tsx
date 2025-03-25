@@ -41,7 +41,7 @@ export function Alert({
     <div
       className={cn(
         "flex flex-col w-full px-6 py-4 border rounded-md",
-        colored ? "border-neutral-800" : alertColor
+        colored ? alertColor : "border-neutral-800"
       )}
     >
       <div className="flex justify-between items-center">

@@ -1,99 +1,77 @@
 "use client";
 
-import { Check, CheckCircle, Cross, Star } from "lucide-react";
-import { Label } from "./Label";
-import { RadioGroup, RadioGroupItem } from "./RadioGroup";
+import { useState, useRef } from "react";
+import { X } from "lucide-react";
+import { SheetRef } from "react-modal-sheet";
+import { Button } from "@/components/ui/Button";
+import { Drawer, DrawerBackdrop, DrawerContainer, DrawerContent, DrawerHeader, DrawerTitle } from "./Drawer";
 
-export default function Test() {
+export default function Example() {
+  const [isOpen, setOpen] = useState(false);
+  const ref = useRef<SheetRef>(null);
+  const snapTo = (i: number) => ref.current?.snapTo(i);
+
   return (
     <div className="max-w-[100rem] mx-auto h-full flex pt-24 bg-neutral-100 dark:bg-black">
       <section className="flex-1 p-6 min-h-screen h-full">
-        <h1 className="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-6">
-          Select Display Mode
-        </h1>
+        <button
+          onClick={() => setOpen(true)}
+          className="rounded-lg bg-indigo-500 px-5 py-2 text-white font-medium transition hover:bg-indigo-600"
+        >
+          Open Drawer
+        </button>
 
-        <form action="">
-          {/* ✅ Basic RadioGroup with Custom Icons */}
-          <RadioGroup defaultValue="checked">
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem value="unchecked" id="r1" icon={Check} />
-              <Label htmlFor="r1">Unchecked</Label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem value="checked" id="r2" icon={Check} size="md" />
-              <Label htmlFor="r2">Checked</Label>
-            </div>
-          </RadioGroup>
+        <Drawer ref={ref} isOpen={isOpen} setOpen={setOpen} snapPoints={[800, 400, 200]} initialSnap={0} disableDrag={false}>
+          <DrawerBackdrop setOpen={setOpen} />
+          
+          <DrawerContainer>
+            <DrawerHeader>
+              <DrawerTitle>Sheet Title</DrawerTitle>
+              <Button
+                onClick={() => setOpen(false)}
+                className="p-2 rounded-full bg-neutral-700 hover:bg-neutral-600"
+              >
+                <X className="w-5 h-5" />
+              </Button>
+            </DrawerHeader>
 
-          {/* ✅ RadioGroup with Different Sizes */}
-          <RadioGroup defaultValue="medium" className="mt-4">
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem value="small" id="r3" size="sm" />
-              <Label htmlFor="r3">Small</Label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem value="medium" id="r4" size="md" />
-              <Label htmlFor="r4">Medium</Label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem value="large" id="r5" size="lg" />
-              <Label htmlFor="r5">Large</Label>
-            </div>
-          </RadioGroup>
+            <DrawerContent>
+              <p className="text-neutral-300">
+                This is a smooth, draggable modal sheet with different snap points.
+              </p>
 
-          {/* ✅ RadioGroup with Custom Icons */}
-          <RadioGroup defaultValue="star" className="mt-4">
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem value="check" id="r6" icon={Check} />
-              <Label htmlFor="r6">Check</Label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem value="star" id="r7" icon={Star} />
-              <Label htmlFor="r7">Star</Label>
-            </div>
-          </RadioGroup>
+              <ul className="space-y-2">
+                <li className="p-3 bg-neutral-800 rounded-md">Item 1</li>
+                <li className="p-3 bg-neutral-800 rounded-md">Item 2</li>
+                <li className="p-3 bg-neutral-800 rounded-md">Item 3</li>
+              </ul>
 
-          {/* ✅ RadioGroup with Sublabel */}
-          <RadioGroup defaultValue="performance" className="mt-4">
-            <div className="flex flex-col space-y-2">
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="battery" id="r8" />
-                <div>
-                  <Label htmlFor="r8">Battery Saver</Label>
-                  <p className="text-sm text-gray-500">Extends battery life</p>
-                </div>
+              <div className="flex space-x-2 mt-4">
+                <Button
+                  variant="custom"
+                  onClick={() => snapTo(0)}
+                  className="px-4 py-2 bg-indigo-600 text-white rounded-md"
+                >
+                  Snap to 800px
+                </Button>
+                <Button
+                  variant="custom"
+                  onClick={() => snapTo(1)}
+                  className="px-4 py-2 bg-blue-600 text-white rounded-md"
+                >
+                  Snap to 400px
+                </Button>
+                <Button
+                  variant="custom"
+                  onClick={() => snapTo(2)}
+                  className="px-4 py-2 bg-green-600 text-white rounded-md"
+                >
+                  Snap to 200px
+                </Button>
               </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="performance" id="r9" />
-                <div>
-                  <Label htmlFor="r9">Performance Mode</Label>
-                  <p className="text-sm text-gray-500">Higher power usage</p>
-                </div>
-              </div>
-            </div>
-          </RadioGroup>
-
-          {/* ✅ RadioGroup with Description */}
-          <RadioGroup defaultValue="personal" className="mt-4">
-            <div className="flex flex-col space-y-2">
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="personal" id="r10" />
-                <div>
-                  <Label htmlFor="r10">Personal</Label>
-                  <p className="text-xs text-gray-400">For individual use</p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="business" id="r11" />
-                <div>
-                  <Label htmlFor="r11">Business</Label>
-                  <p className="text-xs text-gray-400">For business teams</p>
-                </div>
-              </div>
-            </div>
-          </RadioGroup>
-        </form>
-
+            </DrawerContent>
+          </DrawerContainer>
+        </Drawer>
       </section>
     </div>
   );

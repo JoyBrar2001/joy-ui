@@ -19,7 +19,7 @@ export function DialogContent({
           className
         )}
         {...props}
-      >
+      >``
         {children}
       </DialogPrimitive.Content>
     </DialogPrimitive.Portal>

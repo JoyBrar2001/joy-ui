@@ -27,9 +27,12 @@ import { Avatar, AvatarImage, AvatarFallback, AvatarIcon } from "@/components/ui
 import { ToastProvider, useToast } from "./ToastProvider";
 
 
+import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area";
+
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import { Checkbox, CheckboxRoot, CheckboxLabel, CheckboxDescription, CheckboxSubLabel } from "./Checkbox";
 import { Separator } from "./Separator";
+import { ScrollArea } from "./ScrollArea";
 
 export default function Test() {
   const [open, setOpen] = useState(false);
@@ -104,7 +107,7 @@ export default function Test() {
                 </button>
                 <button
                   type="button"
-                  className="px-4 py-2 bg-gray-300 dark:bg-gray-700 text-black dark:text-white rounded-md"
+                  className="px-4 py-2 bg-neutral-300 dark:bg-neutral-700 text-black dark:text-white rounded-md"
                   onClick={() => setOpen(false)}
                 >
                   Close
@@ -228,6 +231,87 @@ export default function Test() {
           <p className="">Item 2</p>
         </div>
 
+        <div className="flex">
+          <ScrollArea>
+            <div className="px-5 py-4">
+              <h3 className="text-sm font-semibold text-neutral-300">Tags</h3>
+              {Array.from({ length: 10 })
+                .map((_, i, a) => `v1.2.0-beta.${a.length - i}`)
+                .map((tag) => (
+                  <div
+                    key={tag}
+                    className="mt-2 border-t border-neutral-700 pt-2 text-xs text-neutral-400"
+                  >
+                    {tag}
+                  </div>
+                ))}
+            </div>
+          </ScrollArea>
+
+          <ScrollArea>
+            <h3 className="text-sm font-semibold text-neutral-300 bg-neutral-900/80 backdrop-blur-md sticky top-0 left-0 py-2 px-5">
+              Scrollable Tags
+            </h3>
+
+            <div className="whitespace-nowrap px-5 py-3">
+              <div className="flex gap-4">
+                {Array.from({ length: 15 }).map((_, i) => (
+                  <div
+                    key={i}
+                    className="flex justify-center items-center min-h-[120px] min-w-[120px] rounded-lg bg-neutral-800 px-4 py-2 text-center text-xs text-neutral-300 border border-neutral-700"
+                  >
+                    Tag {i + 1}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </ScrollArea>
+
+
+          <ScrollArea>
+            <div className="px-5 py-4">
+              <h3 className="text-sm font-semibold text-neutral-300 bg-neutral-900 sticky top-0 py-2">
+                Tags
+              </h3>
+
+              {Array.from({ length: 10 })
+                .map((_, i, a) => `v1.2.0-beta.${a.length - i}`)
+                .map((tag) => (
+                  <div
+                    key={tag}
+                    className="mt-2 border-t border-neutral-700 pt-2 text-xs text-neutral-400"
+                  >
+                    {tag}
+                  </div>
+                ))}
+            </div>
+          </ScrollArea>
+
+          <ScrollArea>
+            <div className="px-5 py-4 flex flex-col h-[250px]">
+              <h3 className="text-sm font-semibold text-neutral-300 bg-neutral-900/80 backdrop-blur-md sticky top-0 py-2">
+                Tags
+              </h3>
+
+              <div className="flex-1">
+                {Array.from({ length: 10 })
+                  .map((_, i, a) => `v1.2.0-beta.${a.length - i}`)
+                  .map((tag) => (
+                    <div
+                      key={tag}
+                      className="mt-2 border-t border-neutral-700 pt-2 text-xs text-neutral-400"
+                    >
+                      {tag}
+                    </div>
+                  ))}
+              </div>
+
+              <div className="sticky bottom-0 bg-neutral-900/80 backdrop-blur-md py-2 text-center text-xs text-neutral-400 border-t border-neutral-700">
+                End of List
+              </div>
+            </div>
+          </ScrollArea>
+        </div>
       </section>
     </div>
   );

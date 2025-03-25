@@ -17,7 +17,7 @@ export function Chip({
   return (
     <span
       className={cn(
-        "text-sm px-2 py-0.5 rounded-md transition-colors duration-300",
+        "flex items-center gap-1.5 text-sm px-2 py-0.5 rounded-md transition-colors duration-300",
         rounded && "rounded-full",
         variant === "primary" &&
         "bg-black text-white hover:bg-neutral-900 dark:bg-white dark:text-black dark:hover:bg-neutral-200",

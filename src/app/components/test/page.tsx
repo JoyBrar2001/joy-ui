@@ -29,6 +29,7 @@ import { ToastProvider, useToast } from "./ToastProvider";
 
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import { Checkbox, CheckboxRoot, CheckboxLabel, CheckboxDescription, CheckboxSubLabel } from "./Checkbox";
+import { Separator } from "./Separator";
 
 export default function Test() {
   const [open, setOpen] = useState(false);
@@ -212,6 +213,20 @@ export default function Test() {
             <CheckboxDescription>You must agree to continue.</CheckboxDescription>
           </div>
         </CheckboxRoot>
+
+
+        <div className="flex flex-col gap-2">
+          <p>Section 1</p>
+          <Separator />
+          <p>Section 2</p>
+        </div>
+
+
+        <div className="flex items-center gap-4 h-6">
+          <p>Item 1</p>
+          <Separator orientation="vertical" />
+          <p className="">Item 2</p>
+        </div>
 
       </section>
     </div>

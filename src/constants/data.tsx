@@ -259,7 +259,7 @@ export function CheckboxDescription({ children, className, ...props }: Component
         </CheckboxRoot>
       },
       {
-        title: "Reversed Checkbox",
+        title: "Strikethrough Checkbox",
         component: () => <CheckboxRoot>
           <Checkbox
             id="terms5"
@@ -274,7 +274,7 @@ export function CheckboxDescription({ children, className, ...props }: Component
         </CheckboxRoot>
       },
       {
-        title: "Strikethrough Checkbox",
+        title: "Reversed Checkbox",
         component: () => <CheckboxRoot className="w-full flex flex-row-reverse justify-between pr-2">
           <Checkbox
             id="terms6"
@@ -822,7 +822,7 @@ console.log(greet("Joy"));`,
         />
       },
       {
-        title: "CodeBlock with Path",
+        title: "CodeBlock with Multiple Files",
         component: () => <CodeBlock
           tabs={[
             {

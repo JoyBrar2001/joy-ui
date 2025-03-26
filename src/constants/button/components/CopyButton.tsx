@@ -6,7 +6,7 @@ import { cn } from "@/utils";
 import { Check, Copy } from "lucide-react";
 import { useState } from "react";
 
-export default function CopyButton({ props }: any) {
+export function CopyButton({ props }: any) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {

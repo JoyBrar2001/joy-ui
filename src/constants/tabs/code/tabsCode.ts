@@ -1,4 +1,4 @@
-import { cn } from "@/utils";
+export const tabsCode = `import { cn } from "@/utils";
 import * as TabsPrimitive from "@radix-ui/react-tabs";
 
 export function Tabs({ children, className, ...props }: TabsPrimitive.TabsProps) {
@@ -43,4 +43,4 @@ export function TabsContent({ children, className, ...props }: TabsPrimitive.Tab
       {children}
     </TabsPrimitive.Content>
   );
-}
+}`;

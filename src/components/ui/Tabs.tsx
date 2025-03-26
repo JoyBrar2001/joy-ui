@@ -26,7 +26,7 @@ export function TabsList({ children, className, ...props }: TabsPrimitive.TabsLi
 export function TabsTrigger({ children, className, ...props }: TabsPrimitive.TabsTriggerProps) {
   return (
     <TabsPrimitive.Trigger
-      className={cn("flex h-12 flex-1 select-none items-center justify-center px-5 text-[15px] leading-none text-neutral-400 outline-none first:rounded-tl-md last:rounded-tr-md hover:text-neutral-100", className)}
+      className={cn("flex flex-1 select-none items-center justify-center px-5 py-3 text-sm leading-none text-neutral-400 outline-none hover:text-neutral-100", className)}
       {...props}
     >
       {children}

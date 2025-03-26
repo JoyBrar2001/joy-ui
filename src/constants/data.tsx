@@ -22,6 +22,7 @@ import React from "react";
 
 import { accordionData } from "./accordion";
 import { alertData } from "./alert";
+import { tabsData } from "./tabs";
 
 export type ComponentEntry = {
   title: string;
@@ -1965,6 +1966,7 @@ export function Separator({
       },
     ],
   },
+  tabs: tabsData,
   tooltip: {
     cols: 4,
     title: "Tooltip",

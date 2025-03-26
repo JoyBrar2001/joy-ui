@@ -78,10 +78,14 @@ export default function Example() {
           </DrawerContainer>
         </Drawer> */}
 
-        <Tabs defaultValue="account" className="w-[400px]">
+        <Tabs defaultValue="account">
           <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="account">Account</TabsTrigger>
-            <TabsTrigger value="password">Password</TabsTrigger>
+            <TabsTrigger value="account" className="border-b-2 border-b-transparent data-[state=active]:border-b-white data-[state=active]:text-white">
+              Account
+            </TabsTrigger>
+            <TabsTrigger value="password" className="border-b-2 border-b-transparent data-[state=active]:border-b-white data-[state=active]:text-white">
+              Password
+            </TabsTrigger>
           </TabsList>
 
           {/* Account Tab Content */}

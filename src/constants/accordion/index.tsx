@@ -1,6 +1,7 @@
 import { cnFile } from "../common";
 import { ComponentCategory } from "../data"
 import { accordionCss, accordionCode } from "./code";
+import { accordionWithIconsCode, customStyledAccordionCode, leftIconsCode, nestedSectionsCode, outlinedAccordionCode, simpleAccordionCode } from "./code/componentCodes";
 import {
   SimpleAccordion,
   LeftIcons,
@@ -52,27 +53,33 @@ export const accordionData: ComponentCategory = {
   components: [
     {
       title: "Simple Accordion",
-      component: SimpleAccordion
+      component: SimpleAccordion,
+      code: simpleAccordionCode,
     },
     {
       title: "Left Icons",
-      component: LeftIcons
+      component: LeftIcons,
+      code: leftIconsCode
     },
     {
       title: "Outlined Accodion",
-      component: OutlinedAccordion
+      component: OutlinedAccordion,
+      code: outlinedAccordionCode
     },
     {
       title: "Nested Sections",
-      component: NestedSections
+      component: NestedSections,
+      code: nestedSectionsCode
     },
     {
       title: "Accordion with Icons",
-      component: AccordionWithIcons
+      component: AccordionWithIcons,
+      code: accordionWithIconsCode
     },
     {
       title: "Custom Styled Accordion",
-      component: CustomStyledAccordion
+      component: CustomStyledAccordion,
+      code: customStyledAccordionCode
     },
   ]
 };

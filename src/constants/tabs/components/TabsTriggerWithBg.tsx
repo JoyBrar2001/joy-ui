@@ -2,7 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 
 export function TabsTriggerWithBg() {
   return (
-    <Tabs defaultValue="t1" className="mx-auto">
+    <Tabs defaultValue="t1" className="mx-auto w-96">
       <TabsList className="w-full flex border-none">
         <TabsTrigger value="t1" className="data-[state=active]:text-white data-[state=active]:bg-neutral-800 data-[state=active]:rounded-lg">
           Tab 1

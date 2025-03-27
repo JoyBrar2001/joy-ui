@@ -4,7 +4,7 @@ import * as TabsPrimitive from "@radix-ui/react-tabs";
 export function Tabs({ children, className, ...props }: TabsPrimitive.TabsProps) {
   return (
     <TabsPrimitive.Root
-      className={cn("flex w-96 flex-col bg-neutral-950 rounded-lg", className)}
+      className={cn("flex w-full flex-col bg-neutral-950 rounded-lg", className)}
       {...props}
     >
       {children}
@@ -37,7 +37,7 @@ export function TabsTrigger({ children, className, ...props }: TabsPrimitive.Tab
 export function TabsContent({ children, className, ...props }: TabsPrimitive.TabsContentProps) {
   return (
     <TabsPrimitive.Content
-      className={cn("grow rounded-b-md bg-neutral-950 p-5 outline-none", className)}
+      className={cn("grow bg-neutral-950 p-5 outline-none", className)}
       {...props}
     >
       {children}

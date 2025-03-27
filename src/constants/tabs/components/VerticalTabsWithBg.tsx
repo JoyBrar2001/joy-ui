@@ -2,7 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 
 export function VerticalTabsWithBg() {
   return (
-    <Tabs defaultValue="t1" className="flex-row mx-auto">
+    <Tabs defaultValue="t1" className="flex-row mx-auto w-96">
       <TabsList className="flex flex-col bg-neutral-950 p-1 shrink border-none mr-2">
         <TabsTrigger value="t1" className="flex-none rounded-lg data-[state=active]:bg-neutral-800 data-[state=active]:text-white">
           Tab 1

@@ -3,7 +3,7 @@ import { ChartBar, House, Settings } from "lucide-react";
 
 export function VerticalTabsWithIcons() {
   return (
-    <Tabs defaultValue="t1" className="flex-row mx-auto">
+    <Tabs defaultValue="t1" className="flex-row mx-auto w-96">
       <TabsList className="flex flex-col rounded-lg bg-neutral-900 p-1 shrink border-none mr-2">
         <TabsTrigger value="t1" className="flex-none p-2.5 rounded-lg data-[state=active]:bg-black data-[state=active]:text-white">
           <House size={20} />

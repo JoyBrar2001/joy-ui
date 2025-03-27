@@ -25,6 +25,7 @@ import { tabsData } from "./tabs";
 export type ComponentEntry = {
   title: string;
   component: (props?: any) => React.ReactNode;
+  code: string;
 };
 
 export type StepType = "dependencies" | "utilities" | "source";

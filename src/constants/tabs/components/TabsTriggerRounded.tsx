@@ -2,7 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 
 export function TabsTriggerRounded() {
   return (
-    <Tabs defaultValue="t1" className="mx-auto">
+    <Tabs defaultValue="t1" className="mx-auto w-96">
       <TabsList className="w-full flex border-none bg-neutral-950 rounded-lg p-1">
         <TabsTrigger value="t1" className="data-[state=active]:rounded-full data-[state=active]:text-neutral-950 data-[state=active]:bg-white">
           Tab 1

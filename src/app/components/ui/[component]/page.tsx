@@ -60,12 +60,13 @@ export default async function ComponentPage({ params }: Props) {
       </h6>
 
       <div className="grid grid-cols-12 gap-8 overflow-hidden w-full mt-6">
-        {componentData.components.map(({ title, component: Component }, index) => (
+        {componentData.components.map(({ title, component: Component, code }, index) => (
           <ComponentWrapper
             key={index}
             title={title}
             cols={componentData.cols}
             steps={componentData.steps}
+            code={code}
           >
             <Component />
           </ComponentWrapper>

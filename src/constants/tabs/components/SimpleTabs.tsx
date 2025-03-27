@@ -2,7 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 
 export function SimpleTabs() {
   return (
-    <Tabs defaultValue="t1" className="mx-auto">
+    <Tabs defaultValue="t1" className="mx-auto w-96">
       <TabsList className="w-full flex">
         <TabsTrigger value="t1" className="border-b-2 border-b-transparent data-[state=active]:border-b-white data-[state=active]:text-white">
           Tab 1

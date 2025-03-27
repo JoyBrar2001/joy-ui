@@ -1,10 +1,34 @@
-import { Alert } from "@/components/ui/Alert";
 import { ComponentCategory } from "../data";
 import { alertCode } from "./code";
 import { cnFile } from "../common";
-import { Info } from "./components/Info";
-import { InfoColored } from "./components/InfoColored";
-import { AlertColored, AlertComponent, AlertWithButtonAndLink, InfoWithButton, Success, SuccessColored, SuccessWithButton, Warning, WarningColored, WarningWithButtonAndLink } from "./components";
+import { 
+  AlertComponent, 
+  AlertColored, 
+  AlertWithButtonAndLink, 
+  Info, 
+  InfoColored, 
+  InfoWithButton, 
+  Success, 
+  SuccessColored, 
+  SuccessWithButton, 
+  Warning, 
+  WarningColored, 
+  WarningWithButtonAndLink 
+} from "./components";
+import { 
+  infoCode, 
+  infoColoredCode, 
+  successCode, 
+  successColoredCode, 
+  successWithButtonCode, 
+  warningCode, 
+  warningColoredCode, 
+  warningWithButtonAndLinkCode, 
+  alertComponentCode, 
+  alertColoredCode, 
+  alertWithButtonAndLinkCode, 
+  infoWithButtonCode 
+} from "./code/componentCodes";
 
 export const alertData: ComponentCategory = {
   cols: 6,
@@ -41,51 +65,63 @@ export const alertData: ComponentCategory = {
   components: [
     {
       title: "Info",
-      component: Info
+      component: Info,
+      code: infoCode
     },
     {
       title: "Info (Colored)",
-      component: InfoColored
+      component: InfoColored,
+      code: infoColoredCode
     },
     {
       title: "Success",
-      component: Success
+      component: Success,
+      code: successCode
     },
     {
       title: "Success (Colored)",
-      component: SuccessColored
+      component: SuccessColored,
+      code: successColoredCode
     },
     {
       title: "Warning",
-      component: Warning
+      component: Warning,
+      code: warningCode
     },
     {
       title: "Warning (Colored)",
-      component: WarningColored
+      component: WarningColored,
+      code: warningColoredCode
     },
     {
       title: "Alert",
-      component: AlertComponent
+      component: AlertComponent,
+      code: alertComponentCode
     },
     {
       title: "Alert (Colored)",
-      component: AlertColored
+      component: AlertColored,
+      code: alertColoredCode
     },
     {
       title: "Info with Button",
-      component: InfoWithButton
+      component: InfoWithButton,
+      code: infoWithButtonCode
     },
     {
       title: "Success with Button",
-      component: SuccessWithButton
+      component: SuccessWithButton,
+      code: successWithButtonCode
     },
     {
       title: "Warning with Button & Link",
-      component: WarningWithButtonAndLink
+      component: WarningWithButtonAndLink,
+      code: warningWithButtonAndLinkCode
     },
     {
       title: "Alert with Button & Link",
-      component: AlertWithButtonAndLink
+      component: AlertWithButtonAndLink,
+      code: alertWithButtonAndLinkCode
     }
   ],
 };

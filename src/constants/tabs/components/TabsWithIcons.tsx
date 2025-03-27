@@ -3,7 +3,7 @@ import { ChartBar, House, Settings } from "lucide-react";
 
 export function TabsWithIcons() {
   return (
-    <Tabs defaultValue="t1" className="mx-auto bg-black">
+    <Tabs defaultValue="t1" className="mx-auto bg-black w-96">
       <TabsList className="flex border-none bg-neutral-900 rounded-lg p-1 shrink mx-auto">
         <TabsTrigger value="t1" className="flex-none p-2.5 data-[state=active]:text-white data-[state=active]:bg-black data-[state=active]:rounded-lg">
           <House size={20} />

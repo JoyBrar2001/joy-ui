@@ -1,7 +1,53 @@
 import { cnFile } from "../common";
 import { ComponentCategory } from "../data";
 import { buttonCode } from "./code/buttonCode";
-import { AuthButtonsWithTitles, AuthIconButtons, ButtonWithCustomAnimation, ButtonWithLoadingState, ColoredAuthButtonsWithTitles, CopyButton, CustomVariantButton, DestructiveButton, DisabledOutlineButton, DisabledPrimaryButton, DisabledWhileLoadingButton, FullWidthButton, GhostButton, OutlineButton, PrimaryButton, PrimaryButtonWithBothIcons, PrimaryButtonWithLeftIcon, PrimaryButtonWithRightIcon, RightIconWithAnimation, SecondaryButton, SpacedBetweenButton } from "./components";
+import {
+  AuthButtonsWithTitles,
+  AuthIconButtons,
+  ButtonWithCustomAnimation,
+  ButtonWithLoadingState,
+  ColoredAuthButtonsWithTitles,
+  CopyButton,
+  CustomVariantButton,
+  DestructiveButton,
+  DisabledOutlineButton,
+  DisabledPrimaryButton,
+  DisabledWhileLoadingButton,
+  FullWidthButton,
+  GhostButton,
+  OutlineButton,
+  PrimaryButton,
+  PrimaryButtonWithBothIcons,
+  PrimaryButtonWithLeftIcon,
+  PrimaryButtonWithRightIcon,
+  RightIconWithAnimation,
+  SecondaryButton,
+  SpacedBetweenButton
+} from "./components";
+import {
+  authButtonsWithTitlesCode,
+  authIconButtonsCode,
+  buttonWithCustomAnimationCode,
+  buttonWithLoadingStateCode,
+  coloredAuthButtonsWithTitlesCode,
+  copyButtonCode,
+  customVariantButtonCode,
+  destructiveButtonCode,
+  disabledOutlineButtonCode,
+  disabledPrimaryButtonCode,
+  disabledWhileLoadingButtonCode,
+  fullWidthButtonCode,
+  ghostButtonCode,
+  outlinedButtonCode,
+  primaryButtonCode,
+  primaryButtonWithBothIconsCode,
+  primaryButtonWithLeftIconCode,
+  primaryButtonWithRightIconCode,
+  rightIconWithAnimationCode,
+  secondaryButtonCode,
+  spacedBetweenButtonCode
+} from "./code/componentCodes";
+
 
 export const buttonData: ComponentCategory = {
   cols: 4,
@@ -10,10 +56,7 @@ export const buttonData: ComponentCategory = {
   steps: [
     {
       type: "dependencies",
-      libraries: [
-        "clsx",
-        "tailwind-merge"
-      ]
+      libraries: ["clsx", "tailwind-merge"],
     },
     {
       type: "utilities",
@@ -22,102 +65,123 @@ export const buttonData: ComponentCategory = {
           name: "cn.ts",
           path: "@/utils/cn.ts",
           language: "typescript",
-          code: cnFile
-        }
-      ]
+          code: cnFile,
+        },
+      ],
     },
     {
       type: "source",
       name: "Button.tsx",
       path: "@/components/ui/Button.tsx",
       language: "tsx",
-      code: buttonCode
-    }
+      code: buttonCode,
+    },
   ],
   components: [
     {
       title: "Primary Button",
-      component: PrimaryButton
+      component: PrimaryButton,
+      code: primaryButtonCode,
     },
     {
       title: "Secondary Button",
-      component: SecondaryButton
+      component: SecondaryButton,
+      code: secondaryButtonCode,
     },
     {
       title: "Outline Button",
-      component: OutlineButton
+      component: OutlineButton,
+      code: outlinedButtonCode,
     },
     {
       title: "Ghost Button",
-      component: GhostButton
+      component: GhostButton,
+      code: ghostButtonCode,
     },
     {
       title: "Destructive Button",
-      component: DestructiveButton
+      component: DestructiveButton,
+      code: destructiveButtonCode,
     },
     {
       title: "Primary Button with Left Icon",
-      component: PrimaryButtonWithLeftIcon
+      component: PrimaryButtonWithLeftIcon,
+      code: primaryButtonWithLeftIconCode,
     },
     {
       title: "Primary Button with Right Icon",
-      component: PrimaryButtonWithRightIcon
+      component: PrimaryButtonWithRightIcon,
+      code: primaryButtonWithRightIconCode,
     },
     {
       title: "Primary Button with Both Icons",
-      component: PrimaryButtonWithBothIcons
+      component: PrimaryButtonWithBothIcons,
+      code: primaryButtonWithBothIconsCode,
     },
     {
       title: "Disabled Primary Button",
-      component: DisabledPrimaryButton
+      component: DisabledPrimaryButton,
+      code: disabledPrimaryButtonCode,
     },
     {
       title: "Disabled Outline Button",
-      component: DisabledOutlineButton
+      component: DisabledOutlineButton,
+      code: disabledOutlineButtonCode,
     },
     {
       title: "Full Width button",
-      component: FullWidthButton
+      component: FullWidthButton,
+      code: fullWidthButtonCode,
     },
     {
       title: "Spaced Between Button",
-      component: SpacedBetweenButton
+      component: SpacedBetweenButton,
+      code: spacedBetweenButtonCode,
     },
     {
       title: "Right Icon with Animation",
-      component: RightIconWithAnimation
+      component: RightIconWithAnimation,
+      code: rightIconWithAnimationCode,
     },
     {
       title: "Button with Custom Animation",
-      component: ButtonWithCustomAnimation
+      component: ButtonWithCustomAnimation,
+      code: buttonWithCustomAnimationCode,
     },
     {
       title: "Button with Loading State",
-      component: ButtonWithLoadingState
+      component: ButtonWithLoadingState,
+      code: buttonWithLoadingStateCode,
     },
     {
       title: "Disabled while Loading button",
-      component: DisabledWhileLoadingButton
+      component: DisabledWhileLoadingButton,
+      code: disabledWhileLoadingButtonCode,
     },
     {
       title: "Custom Variant Button",
-      component: CustomVariantButton
+      component: CustomVariantButton,
+      code: customVariantButtonCode,
     },
     {
       title: "Copy Button",
       component: CopyButton,
+      code: copyButtonCode,
     },
     {
       title: "Auth Icon Buttons",
-      component: AuthIconButtons
+      component: AuthIconButtons,
+      code: authIconButtonsCode,
     },
     {
       title: "Auth Buttons with Titles",
-      component: AuthButtonsWithTitles
+      component: AuthButtonsWithTitles,
+      code: authButtonsWithTitlesCode,
     },
     {
       title: "Colored Auth Buttons with Titles",
-      component: ColoredAuthButtonsWithTitles
+      component: ColoredAuthButtonsWithTitles,
+      code: coloredAuthButtonsWithTitlesCode,
     },
   ],
 };

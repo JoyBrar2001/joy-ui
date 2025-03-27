@@ -1,7 +1,24 @@
 import { ComponentCategory } from "../data";
 import { cnFile } from "../common";
 import { avatarCode } from "./code/avatarCode";
-import { AvatarWithFallbackIcon, AvatarWithFallbackText, AvatarWithIconBottomRight, AvatarWithIconTopLeft, AvatarWithIconTopRight, AvatarWithImageAndFallback, GroupAvatars } from "./components";
+import {
+  AvatarWithFallbackIcon,
+  AvatarWithFallbackText,
+  AvatarWithIconBottomRight,
+  AvatarWithIconTopLeft,
+  AvatarWithIconTopRight,
+  AvatarWithImageAndFallback,
+  GroupAvatars
+} from "./components";
+import {
+  avatarWithFallbackIconCode,
+  avatarWithFallbackTextCode,
+  avatarWithIconBottomRightCode,
+  avatarWithIconTopLeftCode,
+  avatarWithIconTopRightCode,
+  avatarWithImageAndFallbackCode,
+  groupAvatarsCode,
+} from "./code/componentCodes";
 
 export const avatarData: ComponentCategory = {
   cols: 4,
@@ -38,31 +55,38 @@ export const avatarData: ComponentCategory = {
   components: [
     {
       title: "Avatar With Image and Fallback",
-      component: AvatarWithImageAndFallback
+      component: AvatarWithImageAndFallback,
+      code: avatarWithImageAndFallbackCode,
     },
     {
       title: "Avatar with Fallback Text",
-      component: AvatarWithFallbackText
+      component: AvatarWithFallbackText,
+      code: avatarWithFallbackTextCode
     },
     {
       title: "Avatar with Fallback Icon",
-      component: AvatarWithFallbackIcon
+      component: AvatarWithFallbackIcon,
+      code: avatarWithFallbackIconCode
     },
     {
       title: "Avatar with Icon (Top Right)",
-      component: AvatarWithIconTopRight
+      component: AvatarWithIconTopRight,
+      code: avatarWithIconTopRightCode
     },
     {
       title: "Avatar with Icon (Bottom Right)",
-      component: AvatarWithIconBottomRight
+      component: AvatarWithIconBottomRight,
+      code: avatarWithIconBottomRightCode
     },
     {
       title: "Avatar with Icon (Top Left)",
-      component: AvatarWithIconTopLeft
+      component: AvatarWithIconTopLeft,
+      code: avatarWithIconTopLeftCode
     },
     {
       title: "Group Avatars",
-      component: GroupAvatars
+      component: GroupAvatars,
+      code: groupAvatarsCode
     }
   ]
 };

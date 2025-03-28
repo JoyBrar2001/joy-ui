@@ -11,10 +11,11 @@ import { Label } from "./Label";
 import { Input } from "@/components/ui/Input";
 
 import * as PopoverPrimitive from "@radix-ui/react-popover";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/Card";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/Card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar";
 import { cn } from "@/utils";
 import { Popover, PopoverClose, PopoverContent, PopoverTrigger } from "./Popover";
+import { HoverCard, HoverCardArrow, HoverCardContent, HoverCardTrigger } from "./HoverCard";
 
 export default function Example() {
   const [isOpen, setOpen] = useState(false);
@@ -24,7 +25,7 @@ export default function Example() {
   return (
     <div className="max-w-[100rem] mx-auto h-full flex pt-24 bg-neutral-100 dark:bg-black">
       <section className="flex-1 p-6 min-h-screen h-full">
-        {/* <button
+        <button
           onClick={() => setOpen(true)}
           className="rounded-lg bg-indigo-500 px-5 py-2 text-white font-medium transition hover:bg-indigo-600"
         >
@@ -83,7 +84,7 @@ export default function Example() {
           </DrawerContainer>
         </Drawer>
 
-        <Tabs defaultValue="account">
+        {/* <Tabs defaultValue="account">
           <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="account" className="border-b-2 border-b-transparent data-[state=active]:border-b-white data-[state=active]:text-white">
               Account
@@ -125,7 +126,7 @@ export default function Example() {
           </TabsContent>
         </Tabs> */}
 
-        <Popover>
+        {/* <Popover>
           <PopoverTrigger>
             <Button variant="outline" className="p-2 m-64">
               <User className="size-5" />
@@ -160,7 +161,63 @@ export default function Example() {
               </CardFooter>
             </Card>
           </PopoverContent>
-        </Popover>
+        </Popover> */}
+
+        {/* <HoverCard>
+          <HoverCardTrigger>
+            <Button variant="outline">Hover Me</Button>
+          </HoverCardTrigger>
+
+          <HoverCardContent className="p-4">
+            <h3 className="text-lg font-semibold">Hover Card Title</h3>
+            <p className="text-sm text-neutral-500">This is additional information.</p>
+
+            <HoverCardArrow className="fill-neutral-600" />
+          </HoverCardContent>
+        </HoverCard>
+
+        <HoverCard>
+          <HoverCardTrigger>
+            <Avatar className="cursor-pointer">
+              <AvatarImage src="https://avatars.githubusercontent.com/u/194884352?v=4" alt="@radix_ui" />
+              <AvatarFallback>JB</AvatarFallback>
+            </Avatar>
+          </HoverCardTrigger>
+
+          <HoverCardContent className="p-0 w-80">
+            <Card className="rounded-lg bg-white dark:bg-neutral-900 shadow-lg border border-neutral-200 dark:border-neutral-700">
+              <CardHeader className="flex gap-2 pb-2">
+                <Avatar className="cursor-pointer">
+                  <AvatarImage src="https://avatars.githubusercontent.com/u/194884352?v=4" alt="@radix_ui" />
+                  <AvatarFallback>JB</AvatarFallback>
+                </Avatar>
+
+                <div className="flex flex-col">
+                  <CardTitle className="text-lg font-semibold">Joy Brar</CardTitle>
+                  <CardDescription className="-mt-1">@joybrar2001</CardDescription>
+                </div>
+              </CardHeader>
+
+              <CardContent className="text-sm text-neutral-600 dark:text-neutral-300">
+                <p className="text-neutral-500 dark:text-neutral-400">
+                  Full stack developer, mind behind Joy UI (obviously), and proficient in Next js. React, Typescript...
+                </p>
+              </CardContent>
+
+              <CardFooter className="flex justify-between border-t border-neutral-200 dark:border-neutral-700 p-3">
+                <div className="flex flex-col items-center">
+                  <p className="text-lg font-semibold">500</p>
+                  <p className="text-xs text-neutral-500">Following</p>
+                </div>
+                <div className="flex flex-col items-center">
+                  <p className="text-lg font-semibold">2,900</p>
+                  <p className="text-xs text-neutral-500">Followers</p>
+                </div>
+                <Button variant="outline" className="text-sm">Follow</Button>
+              </CardFooter>
+            </Card>
+          </HoverCardContent>
+        </HoverCard> */}
       </section>
     </div >
   );

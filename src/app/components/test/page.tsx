@@ -17,6 +17,9 @@ import { cn } from "@/utils";
 import { Popover, PopoverClose, PopoverContent, PopoverTrigger } from "./Popover";
 import { HoverCard, HoverCardArrow, HoverCardContent, HoverCardTrigger } from "./HoverCard";
 
+import * as SwitchPrimitive from "@radix-ui/react-switch"
+import { Switch, SwitchThumb } from "./Switch";
+
 export default function Example() {
   const [isOpen, setOpen] = useState(false);
   const ref = useRef<SheetRef>(null);
@@ -25,7 +28,19 @@ export default function Example() {
   return (
     <div className="max-w-[100rem] mx-auto h-full flex pt-24 bg-neutral-100 dark:bg-black">
       <section className="flex-1 p-6 min-h-screen h-full">
-        <button
+        <div className="flex items-center">
+          <label
+            className="pr-[15px] text-[15px] leading-none text-white"
+            htmlFor="airplane-mode"
+          >
+            Airplane mode
+          </label>
+          <Switch>
+            <SwitchThumb />
+          </Switch>
+        </div>
+
+        {/* <button
           onClick={() => setOpen(true)}
           className="rounded-lg bg-indigo-500 px-5 py-2 text-white font-medium transition hover:bg-indigo-600"
         >
@@ -82,7 +97,7 @@ export default function Example() {
               </div>
             </DrawerContent>
           </DrawerContainer>
-        </Drawer>
+        </Drawer> */}
 
         {/* <Tabs defaultValue="account">
           <TabsList className="grid w-full grid-cols-2">

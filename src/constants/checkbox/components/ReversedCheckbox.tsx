@@ -9,7 +9,7 @@ export function ReversedCheckbox() {
         animate
         defaultChecked
       />
-      <CheckboxLabel htmlFor="terms6" className="peer-data-[state=checked]:line-through">
+      <CheckboxLabel htmlFor="terms6">
         Accept Terms and Conditions
       </CheckboxLabel>
     </CheckboxRoot>

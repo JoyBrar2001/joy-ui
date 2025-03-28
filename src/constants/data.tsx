@@ -15,6 +15,8 @@ import { tabsData } from "./tabs";
 import { tooltipData } from "./tooltip";
 import { popoverData } from "./popover";
 import { hoverCardData } from "./hovercard";
+import { drawerData } from "./drawer";
+import { switchData } from "./switch";
 
 export type ComponentEntry = {
   title: string;
@@ -67,12 +69,14 @@ export const data: ComponentData = {
   checkbox: checkboxData,
   chip: chipData,
   codeblock: codeblockData,
+  drawer: drawerData,
   hoverCard: hoverCardData,
   input: inputData,
   popover: popoverData,
   radioGroup: radioData,
   scrollarea: scrollareaData,
   separator: separatorData,
+  switch: switchData,
   tabs: tabsData,
   tooltip: tooltipData,
 };

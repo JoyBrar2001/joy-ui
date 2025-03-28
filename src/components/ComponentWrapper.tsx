@@ -156,7 +156,8 @@ export default function ComponentWrapper({ title, cols = 4, steps, code, childre
                     },
                   ]}
                   wrapLines={false}
-                  showLineNumbers={false}
+                  showLineNumbers={true}
+                  collapsible={false}
                 />
               </TabsContent>
             </Tabs>

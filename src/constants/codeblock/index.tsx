@@ -1,12 +1,13 @@
 import { ComponentCategory } from "../data";
 import { cnFile } from "../common";
-import { codeblockCode } from "./code/codeBlockCode";
+import { codeblockCode } from "./code/codeblockCode";
 
 import {
   CodeblockWithLineHighlights,
   CodeblockWithMultipleFiles,
   CodeblockWithoutLineNumbers,
   CodeblockWithPath,
+  CollapsibleCodeblock,
   SimpleOneFileCodeblock
 } from "./components";
 import {
@@ -73,6 +74,11 @@ export const codeblockData: ComponentCategory = {
     {
       title: "CodeBlock with Multiple Files",
       component: CodeblockWithMultipleFiles,
+      code: codeblockWithMultipleFilesCode
+    },
+    {
+      title: "Collapsible CodeBlock",
+      component: CollapsibleCodeblock,
       code: codeblockWithMultipleFilesCode
     },
   ]

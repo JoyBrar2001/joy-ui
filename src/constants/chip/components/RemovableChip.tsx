@@ -4,7 +4,7 @@ import { Chip } from "@/components/ui/Chip";
 import { X } from "lucide-react";
 import { useState } from "react";
 
-export default function RemovableChip() {
+export function RemovableChip() {
   const [visible, setVisible] = useState(true);
 
   if (!visible) {

@@ -1,5 +1,7 @@
 import { Chip } from "@/components/ui/Chip";
 import { ComponentCategory } from "../data";
+import { CustomChip, DoneChip, GhostChip, OutlinedChip, PrimaryChip, RemovableChip, SecondaryChip } from "./components";
+import { RoundedChip } from "./components/RoundedChip";
 
 export const chipData: ComponentCategory = {
   cols: 4,
@@ -76,45 +78,39 @@ return (
   components: [
     {
       title: "Primary Chip",
-      component: () => <Chip>Primary</Chip>
+      component: PrimaryChip
     },
     {
       title: "Secondary Chip",
-      component: () => <Chip variant="secondary">Secondary</Chip>
+      component: SecondaryChip
     },
     {
       title: "Outlined Chip",
-      component: () => <Chip variant="outline">Outlined</Chip>
+      component: OutlinedChip
     },
     {
       title: "Ghost Chip",
-      component: () => <Chip variant="ghost">Ghost</Chip>
+      component: GhostChip
     },
     {
       title: "Custom Chip",
-      component: () => <Chip variant="custom" className="bg-blue-500 text-white">Custom</Chip>
+      component: CustomChip
     },
     {
       title: "Rounded Chip",
-      component: () => <Chip rounded>Rounded</Chip>
+      component: RoundedChip
     },
     {
       title: "Online Chip",
-      component: () => <Chip rounded variant="outline">
-        <div className="size-2 bg-green-500 rounded-full" />
-        Online
-      </Chip>
+      component: OutlinedChip
     },
     {
       title: "Done Chip",
-      component: () => <Chip variant="outline">
-        Task Done
-        <Check size={16} />
-      </Chip>
+      component: DoneChip
     },
     {
       title: "Removable Chip",
-      component: () => <RemovableChip />
+      component: RemovableChip
     },
   ]
 };

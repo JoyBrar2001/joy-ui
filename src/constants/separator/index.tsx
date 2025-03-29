@@ -1,5 +1,3 @@
-import { Card, CardContent } from "@/components/ui/Card";
-import { Separator } from "@/components/ui/Separator";
 import { ComponentCategory } from "../data";
 import { cnFile } from "../common";
 import { separatorCode } from "./code/separatorCode";

@@ -20,7 +20,7 @@ import { switchData } from "./switch";
 
 export type ComponentEntry = {
   title: string;
-  component: (props?: any) => React.ReactNode;
+  component: () => React.ReactNode;
   code: string;
 };
 

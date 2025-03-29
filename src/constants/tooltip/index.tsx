@@ -1,5 +1,3 @@
-import { Button } from "@/components/ui/Button";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/Tooltip";
 import { ComponentCategory } from "../data";
 import { cnFile } from "../common";
 import { tooltipCss } from "./code/tooltipCss";

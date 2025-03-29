@@ -11,7 +11,7 @@ export function TopTooltip() {
       </TooltipTrigger>
 
       <TooltipContent side="top">
-        Hi, I'm the tooltip
+        Hi, I&apos;m the tooltip
       </TooltipContent>
     </Tooltip >
   );

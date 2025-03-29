@@ -1,10 +1,6 @@
 export const tooltipCode = `import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { cn } from "@/utils";
 
-type TooltipProps = {
-  children: React.ReactNode;
-};
-
 export function Tooltip({ children, ...props }: TooltipPrimitive.TooltipProps) {
   return (
     <TooltipPrimitive.Provider {...props}>
@@ -72,12 +68,11 @@ export function TooltipContent({
         )}
         sideOffset={sideOffset}
         side={side}
-        align="center"
+        align={align}
         {...props}
       >
         {children}
       </TooltipPrimitive.Content>
     </TooltipPrimitive.Portal>
   );
-}
-`;
+}`;

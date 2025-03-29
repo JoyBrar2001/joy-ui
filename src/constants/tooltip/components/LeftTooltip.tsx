@@ -11,7 +11,7 @@ export function LeftTooltip() {
       </TooltipTrigger>
 
       <TooltipContent side="left">
-        Hi, I'm the tooltip
+        Hi, I&apos;m the tooltip
       </TooltipContent>
     </Tooltip>
   );

@@ -1,9 +1,3 @@
-import { Card, CardContent } from "@/components/ui/Card";
-import { Chip } from "@/components/ui/Chip";
-import { Label } from "@/components/ui/Label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/RadioGroup";
-import { BatteryMedium, Check, Cpu, X } from "lucide-react";
-import { FaBalanceScale } from "react-icons/fa";
 import { ComponentCategory } from "../data";
 import { cnFile } from "../common";
 import { radioCode } from "./code/radioCode";

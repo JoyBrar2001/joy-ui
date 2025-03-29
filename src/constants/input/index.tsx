@@ -65,7 +65,7 @@ export default function Input({
             {leftIcon}
           </div>
         )}
-        <input
+        () => <input
           className={cn(
             "w-full px-3 py-2 rounded-lg border border-neutral-600 shadow-sm text-sm placeholder:text-sm placeholder:text-zinc-400 focus:outline-none",
             "disabled:bg-neutral-400 dark:disabled:bg-neutral-600 disabled:cursor-not-allowed",
@@ -92,37 +92,37 @@ export default function Input({
   components: [
     {
       title: "Simple Input",
-      component: (props: any) => <Input {...props} label="Username" placeholder="Enter Username" />,
+      component: () => <Input label="Username" placeholder="Enter Username" />,
       code: ""
     },
     {
       title: "Input with Description",
-      component: (props: any) => <Input {...props} label="Username" description="Username must contain alphabets, at least one numeric value, and no special symbols." placeholder="Enter Username" />,
+      component: () => <Input label="Username" description="Username must contain alphabets, at least one numeric value, and no special symbols." placeholder="Enter Username" />,
       code: ""
     },
     {
       title: "Input with Left Icon",
-      component: (props: any) => <Input {...props} label="Search" placeholder="Search for users..." leftIcon={<Search className="size-[18px]" />} />,
+      component: () => <Input label="Search" placeholder="Search for users..." leftIcon={<Search className="size-[18px]" />} />,
       code: ""
     },
     {
       title: "Input with Right Icon",
-      component: (props: any) => <Input {...props} label="Password" placeholder="Enter password" type="password" rightIcon={<Lock className="size-[18px]" />} />,
+      component: () => <Input label="Password" placeholder="Enter password" type="password" rightIcon={<Lock className="size-[18px]" />} />,
       code: ""
     },
     {
       title: "Input with Both Icons",
-      component: (props: any) => <Input {...props} label="Just for Fun" placeholder="I have 2 icons" leftIcon={<Search className="size-[18px]" />} rightIcon={<Lock className="size-[18px]" />} />,
+      component: () => <Input label="Just for Fun" placeholder="I have 2 icons" leftIcon={<Search className="size-[18px]" />} rightIcon={<Lock className="size-[18px]" />} />,
       code: ""
     },
     {
       title: "Disabled Input",
-      component: (props: any) => <Input {...props} label="Username" placeholder="Enter Username" defaultValue="JoyBrar2001" description="Username can no longer be changed" disabled={true} />,
+      component: () => <Input label="Username" placeholder="Enter Username" defaultValue="JoyBrar2001" description="Username can no longer be changed" disabled={true} />,
       code: ""
     },
     {
       title: "Error Input",
-      component: (props: any) => <Input label="Username" placeholder="Enter Username" defaultValue="JoyBrar" error="Invalid Entry - Username must contain one numeric" {...props} />,
+      component: () => <Input label="Username" placeholder="Enter Username" defaultValue="JoyBrar" error="Invalid Entry - Username must contain one numeric" />,
       code: ""
     },
   ],

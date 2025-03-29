@@ -11,7 +11,7 @@ export function SimpleTooltip() {
       </TooltipTrigger>
 
       <TooltipContent>
-        Hi, I'm the tooltip
+        Hi, I&apos;m the tooltip
       </TooltipContent>
     </Tooltip>
   );

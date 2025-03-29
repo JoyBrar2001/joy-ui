@@ -11,7 +11,7 @@ export function DestructiveTooltip() {
       </TooltipTrigger>
 
       <TooltipContent variant="destructive" side="top">
-        Hi, I'm the tooltip
+        Hi, I&apos;m the tooltip
       </TooltipContent>
     </Tooltip>
   );

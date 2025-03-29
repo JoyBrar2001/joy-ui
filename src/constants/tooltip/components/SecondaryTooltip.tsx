@@ -11,7 +11,7 @@ export function SecondaryTooltip() {
       </TooltipTrigger>
 
       <TooltipContent variant="secondary" side="top">
-        Hi, I'm the tooltip
+        Hi, I&apos;m the tooltip
       </TooltipContent>
     </Tooltip>
   );

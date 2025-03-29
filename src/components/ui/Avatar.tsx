@@ -39,7 +39,10 @@ export function AvatarImage({ className, ...props }: AvatarPrimitive.AvatarImage
 export function AvatarFallback({ children, className, ...props }: AvatarPrimitive.AvatarFallbackProps) {
   return (
     <AvatarPrimitive.Fallback
-      className="leading-1 flex size-full items-center justify-center bg-neutral-800 text-sm font-medium rounded-[inherit]"
+      className={cn(
+        "leading-1 flex size-full items-center justify-center bg-neutral-800 text-sm font-medium rounded-[inherit]",
+        className
+      )}
       {...props}
     >
       {children}

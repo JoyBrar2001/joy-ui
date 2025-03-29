@@ -11,7 +11,7 @@ export function GhostTooltip() {
       </TooltipTrigger>
 
       <TooltipContent variant="ghost" side="bottom">
-        Hi, I'm the tooltip
+        Hi, I&apos;m the tooltip
       </TooltipContent>
     </Tooltip>
   );

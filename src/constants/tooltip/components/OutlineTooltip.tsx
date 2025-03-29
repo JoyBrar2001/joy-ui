@@ -11,7 +11,7 @@ export function OutlineTooltip() {
       </TooltipTrigger>
 
       <TooltipContent variant="outline" side="top">
-        Hi, I'm the tooltip
+        Hi, I&apos;m the tooltip
       </TooltipContent>
     </Tooltip>
   );

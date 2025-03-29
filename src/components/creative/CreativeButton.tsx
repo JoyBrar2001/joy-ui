@@ -7,8 +7,6 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 }
 
 export default function CreativeButton({
-  variant,
-  width,
   children,
   ...props
 }: ButtonProps) {

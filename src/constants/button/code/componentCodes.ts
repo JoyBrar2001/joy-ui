@@ -93,13 +93,13 @@ export function ColoredAuthButtonsWithTitles() {
 
 export const copyButtonCode = `"use client";
 
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/Button"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/Tooltip";
 import { cn } from "@/utils";
 import { Check, Copy } from "lucide-react";
 import { useState } from "react";
 
-export function CopyButton({ props }: any) {
+export function CopyButton() {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
@@ -111,7 +111,7 @@ export function CopyButton({ props }: any) {
   return (
     <Tooltip>
       <TooltipTrigger>
-        <Button {...props} variant="outline" className="relative size-4 p-4" onClick={handleCopy}>
+        <Button variant="outline" className="relative size-4 p-4" onClick={handleCopy}>
           <Check size={15} className={cn(
             "absolute left-1/2 top-1/2 -translate-1/2 scale-0 opacity-0 transition-all duration-300",
             copied && "scale-100 opacity-100"
@@ -126,7 +126,7 @@ export function CopyButton({ props }: any) {
         Click to copy code
       </TooltipContent>
     </Tooltip>
-  );
+  )
 }`;
 
 export const customVariantButtonCode = `import { Button } from "@/components/ui/Button";

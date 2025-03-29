@@ -1,9 +1,7 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar";
 import { Button } from "@/components/ui/Button";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/Card";
-import { Popover, PopoverClose, PopoverContent, PopoverTrigger } from "@/components/ui/Popover";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/Popover";
 import { Separator } from "@/components/ui/Separator";
-import { ChartArea, ChevronDown, ChevronUp, Facebook, Github, HelpCircle, LogOut, Settings, User, X } from "lucide-react";
+import { ChartArea, ChevronDown, ChevronUp, Facebook, Github, HelpCircle, LogOut, Settings, User } from "lucide-react";
 
 export function MenuPopover() {
   return (

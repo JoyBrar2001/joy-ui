@@ -1,6 +1,5 @@
 import { Label } from "@/components/ui/Label";
 import { Switch, SwitchThumb } from "@/components/ui/Switch";
-import { Moon, Sun } from "lucide-react";
 
 export function OnOffDual() {
   return (

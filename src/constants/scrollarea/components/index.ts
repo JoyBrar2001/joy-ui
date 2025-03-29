@@ -1,7 +1,7 @@
 import { HorizontalScrollArea } from "./HorizontalScrollArea";
 import { ScrollAreaWithStickyHeader } from "./ScrollAreaWithStickyHeader";
 import { ScrollAreaWithStickyFooter } from "./ScrollAreaWithStickyFooter";
-import { SimpleScrollArea } from "./SimpleScrollarea";
+import { SimpleScrollArea } from "./SimpleScrollArea";
 
 export {
   HorizontalScrollArea,

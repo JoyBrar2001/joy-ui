@@ -1,4 +1,4 @@
-import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
+export const radioCode = `import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 import { Circle } from "lucide-react";
 import { cn } from "@/utils";
 
@@ -23,10 +23,12 @@ export function RadioGroup({
 export function RadioGroupItem({
   className,
   size = "sm",
+  animate = false,
   icon: Icon = Circle,
   ...props
 }: RadioGroupPrimitive.RadioGroupItemProps & {
   size?: "sm" | "md" | "lg";
+  animate?: boolean;
   icon?: React.ElementType;
 }) {
   const itemSize = {
@@ -44,7 +46,8 @@ export function RadioGroupItem({
   return (
     <RadioGroupPrimitive.Item
       className={cn(
-        "cursor-pointer rounded-full border border-neutral-400 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 shadow-sm transition-all duration-200 hover:border-white focus:ring-2 focus:ring-white",
+        "flex justify-center items-center shrink-0 cursor-pointer rounded-full border border-neutral-400 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 shadow-sm transition-all duration-200 hover:border-white focus:ring-1 focus:ring-white",
+        animate && "data-[state=checked]:animate-scaleUp data-[state=unchecked]:animate-scaleDown",
         itemSize[size],
         className
       )}
@@ -55,4 +58,4 @@ export function RadioGroupItem({
       </RadioGroupPrimitive.Indicator>
     </RadioGroupPrimitive.Item>
   );
-}
+}`

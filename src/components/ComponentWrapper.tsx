@@ -4,7 +4,7 @@ import { cn } from "@/utils";
 import { Button } from "@/components/ui/Button";
 import { Code } from "lucide-react";
 
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/Dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/Dialog";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/Tooltip";
 
 import { DependeciesStep, SourceStep, UtilitiesStep } from "@/constants/data";

@@ -5,47 +5,43 @@ type TooltipProps = {
   children: React.ReactNode;
 };
 
-export function Tooltip({ children }: TooltipProps) {
+export function Tooltip({ children, ...props }: TooltipPrimitive.TooltipProps) {
   return (
-    <TooltipPrimitive.Provider>
+    <TooltipPrimitive.Provider {...props}>
       <TooltipPrimitive.Root>{children}</TooltipPrimitive.Root>
     </TooltipPrimitive.Provider>
   );
 }
 
-export function TooltipTrigger({ children }: TooltipProps) {
+export function TooltipTrigger({ children, ...props }: TooltipPrimitive.TooltipTriggerProps) {
   return (
-    <TooltipPrimitive.Trigger asChild>
+    <TooltipPrimitive.Trigger asChild {...props}>
       {children}
     </TooltipPrimitive.Trigger>
   );
 }
 
-type TooltipContentProps = {
-  children: React.ReactNode;
-  variant?: "primary" | "secondary" | "outline" | "ghost" | "destructive" | "custom";
-  size?: "xs" | "sm" | "md" | "lg" | "xl";
-  side?: "top" | "right" | "bottom" | "left";
-  sideOffset?: number;
-  className?: string;
-};
-
 export function TooltipContent({
   children,
   variant = "primary",
-  size = "md",
+  size = "sm",
   side = "top",
+  align = "center",
   sideOffset = 5,
-  className = "",
-}: TooltipContentProps) {
+  className,
+  ...props
+}: TooltipPrimitive.TooltipContentProps & {
+  variant?: "primary" | "secondary" | "outline" | "ghost" | "destructive" | "custom";
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
+}) {
   const variantClasses = {
     primary:
-      "bg-black text-white hover:bg-neutral-900 dark:bg-white dark:text-black dark:hover:bg-neutral-200",
+      "bg-white text-black dark:bg-black dark:text-white border border-neutral-800",
     secondary:
-      "bg-neutral-200 text-black hover:bg-neutral-300 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700",
+      "bg-neutral-200 text-black dark:bg-neutral-800 dark:text-white",
     outline:
-      "border border-neutral-300 text-black hover:bg-neutral-100 dark:border-neutral-800 dark:text-white dark:hover:bg-neutral-800",
-    ghost: "text-neutral-500 hover:text-black dark:hover:text-white",
+      "border border-neutral-300 text-black dark:border-neutral-800 dark:text-white backdrop-blur",
+    ghost: "text-neutral-500 hover:text-black",
     destructive: "bg-red-500 hover:bg-red-600 text-white",
     custom: className,
   };
@@ -76,9 +72,12 @@ export function TooltipContent({
         )}
         sideOffset={sideOffset}
         side={side}
+        align="center"
+        {...props}
       >
         {children}
       </TooltipPrimitive.Content>
     </TooltipPrimitive.Portal>
   );
-}`;
+}
+`;

@@ -5,39 +5,35 @@ type TooltipProps = {
   children: React.ReactNode;
 };
 
-export function Tooltip({ children }: TooltipProps) {
+export function Tooltip({ children, ...props }: TooltipPrimitive.TooltipProps) {
   return (
-    <TooltipPrimitive.Provider>
+    <TooltipPrimitive.Provider {...props}>
       <TooltipPrimitive.Root>{children}</TooltipPrimitive.Root>
     </TooltipPrimitive.Provider>
   );
 }
 
-export function TooltipTrigger({ children }: TooltipProps) {
+export function TooltipTrigger({ children, ...props }: TooltipPrimitive.TooltipTriggerProps) {
   return (
-    <TooltipPrimitive.Trigger asChild>
+    <TooltipPrimitive.Trigger asChild {...props}>
       {children}
     </TooltipPrimitive.Trigger>
   );
 }
-
-type TooltipContentProps = {
-  children: React.ReactNode;
-  variant?: "primary" | "secondary" | "outline" | "ghost" | "destructive" | "custom";
-  size?: "xs" | "sm" | "md" | "lg" | "xl";
-  side?: "top" | "right" | "bottom" | "left";
-  sideOffset?: number;
-  className?: string;
-};
 
 export function TooltipContent({
   children,
   variant = "primary",
   size = "sm",
   side = "top",
+  align = "center",
   sideOffset = 5,
-  className = "",
-}: TooltipContentProps) {
+  className,
+  ...props
+}: TooltipPrimitive.TooltipContentProps & {
+  variant?: "primary" | "secondary" | "outline" | "ghost" | "destructive" | "custom";
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
+}) {
   const variantClasses = {
     primary:
       "bg-white text-black dark:bg-black dark:text-white border border-neutral-800",
@@ -76,6 +72,8 @@ export function TooltipContent({
         )}
         sideOffset={sideOffset}
         side={side}
+        align="center"
+        {...props}
       >
         {children}
       </TooltipPrimitive.Content>

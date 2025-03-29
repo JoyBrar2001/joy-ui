@@ -1,6 +1,7 @@
 import { cnFile } from "../common";
 import { ComponentCategory } from "../data";
 import { tabsCode } from "./code";
+import { simpleTabsCode, tabsListWithBgCode, tabsTriggerRoundedCode, tabsTriggerWithBgCode, tabsWithIconsAndTextCode, tabsWithIconsCode, verticalTabsCode, verticalTabsWithBgCode, verticalTabsWithCommonBgCode, verticalTabsWithIconsAndTextCode, verticalTabsWithIconsCode } from "./code/componentCodes";
 import { SimpleTabs, TabsListWithBg, TabsTriggerRounded, TabsTriggerWithBg, TabsWithIcons, TabsWithIconsAndText, VerticalTabs, VerticalTabsWithBg, VerticalTabsWithCommonBg, VerticalTabsWithIcons, VerticalTabsWithIconsAndText } from "./components";
 
 export const tabsData: ComponentCategory = {
@@ -39,47 +40,58 @@ export const tabsData: ComponentCategory = {
   components: [
     {
       title: "Simple Tabs",
-      component: SimpleTabs
+      component: SimpleTabs,
+      code: simpleTabsCode
     },
     {
       title: "Tabs Trigger with Background",
-      component: TabsTriggerWithBg
+      component: TabsTriggerWithBg,
+      code: tabsTriggerWithBgCode
     },
     {
       title: "Tabs Rounded Trigger",
-      component: TabsTriggerRounded
+      component: TabsTriggerRounded,
+      code: tabsTriggerRoundedCode
     },
     {
       title: "Tabs List with Common Background",
-      component: TabsListWithBg
+      component: TabsListWithBg,
+      code: tabsListWithBgCode
     },
     {
       title: "Tabs with Icons",
-      component: TabsWithIcons
+      component: TabsWithIcons,
+      code: tabsWithIconsCode
     },
     {
       title: "Tabs with Icons and Text",
-      component: TabsWithIconsAndText
+      component: TabsWithIconsAndText,
+      code: tabsWithIconsAndTextCode
     },
     {
       title: "Vertical Tabs",
-      component: VerticalTabs
+      component: VerticalTabs,
+      code: verticalTabsCode
     },
     {
       title: "Vertical Tabs with Icons and Text",
-      component: VerticalTabsWithIconsAndText
+      component: VerticalTabsWithIconsAndText,
+      code: verticalTabsWithIconsAndTextCode
     },
     {
       title: "Vertical Tabs with Background",
-      component: VerticalTabsWithBg
+      component: VerticalTabsWithBg,
+      code: verticalTabsWithBgCode
     },
     {
       title: "Vertical Tabs with Common Background",
-      component: VerticalTabsWithCommonBg
+      component: VerticalTabsWithCommonBg,
+      code: verticalTabsWithCommonBgCode
     },
     {
       title: "Vertical Tabs with Icons",
-      component: VerticalTabsWithIcons
+      component: VerticalTabsWithIcons,
+      code: verticalTabsWithIconsCode
     },
   ],
 };

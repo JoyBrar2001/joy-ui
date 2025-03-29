@@ -1,15 +1,7 @@
-import { Input } from "@/components/ui/Input";
-import { Lock, Search, User, X } from "lucide-react";
 import { ComponentCategory } from "../data";
 import { cnFile } from "../common";
 import { popoverCode } from "./code/popoverCode";
-import { Popover, PopoverClose } from "@radix-ui/react-popover";
-import { PopoverContent, PopoverTrigger } from "@/components/ui/Popover";
-import { Button } from "@/components/ui/Button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/Card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar";
 import { popoverCss } from "./code/popoverCss";
-import { Label } from "@/components/ui/Label";
 import { MenuPopover, ProfileCardPopover, SimpleBottomPopover, SimpleLeftPopover, SimpleRightPopover, SimpleTopPopover } from "./components";
 import { menuPopoverCode, profileCardPopoverCode, simpleBottomPopoverCode, simpleLeftPopoverCode, simpleRightPopoverCode, simpleTopPopoverCode } from "./code/componentCodes";
 
@@ -45,8 +37,8 @@ export const popoverData: ComponentCategory = {
     },
     {
       type: "source",
-      name: "Input.tsx",
-      path: "@/components/ui/Input.tsx",
+      name: "Popover.tsx",
+      path: "@/components/ui/Popover.tsx",
       language: "tsx",
       code: popoverCode
     }

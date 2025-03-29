@@ -30,8 +30,8 @@ export const hoverCardData: ComponentCategory = {
     },
     {
       type: "source",
-      name: "Input.tsx",
-      path: "@/components/ui/Input.tsx",
+      name: "HoverCard.tsx",
+      path: "@/components/ui/HoverCard.tsx",
       language: "tsx",
       code: hoverCardCode
     }

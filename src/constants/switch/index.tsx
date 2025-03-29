@@ -30,8 +30,8 @@ export const switchData: ComponentCategory = {
     },
     {
       type: "source",
-      name: "Drawer.tsx",
-      path: "@/components/ui/Drawer.tsx",
+      name: "Switch.tsx",
+      path: "@/components/ui/Switch.tsx",
       language: "tsx",
       code: switchCode
     }

@@ -2,7 +2,7 @@
 import { Card, CardContent } from "@/components/ui/Card";
 import { Label } from "@/components/ui/Label";
 import { Switch, SwitchThumb } from "@/components/ui/Switch";
-import { Cloud, CloudLightning } from "lucide-react";
+import { Cloud } from "lucide-react";
 
 export function CardSwitchWithIcon() {
   return (

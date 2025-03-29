@@ -1,7 +1,7 @@
 import { Label } from "@/components/ui/Label";
 import { Switch, SwitchThumb } from "@/components/ui/Switch";
 
-export function LabeledCheckbox() {
+export function LabeledSwitch() {
   return (
     <div className="flex items-center">
       <Label

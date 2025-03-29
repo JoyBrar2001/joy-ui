@@ -1,31 +1,31 @@
 import { CardSwitch } from "./CardSwitch";
 import { CardSwitchWithIcon } from "./CardSwitchWithIcon";
-import { CustomStyledCheckbox } from "./CustomStyledSwitch";
+import { CustomStyledSwitch } from "./CustomStyledSwitch";
 import { DefaultCheckedSwitch } from "./DefaultCheckedSwitch";
-import { DynamicLabelCheckbox } from "./DynamicLabelCheckbox";
-import { LabeledCheckbox } from "./LabeledCheckbox";
+import { DynamicLabelSwitch } from "./DynamicLabelSwitch";
+import { LabeledSwitch } from "./LabeledSwitch";
 import { LightDarkDual } from "./LightDarkDual";
 import { LightDarkSimple } from "./LightDarkSingle";
 import { OnOffSingle } from "./OnOffSingle";
 import { OnOffDual } from "./OnOffDual";
 import { SimpleSwitch } from "./SimpleSwitch";
-import { SquareCheckbox } from "./SquareCheckbox";
+import { SquareSwitch } from "./SquareSwitch";
 import { SwitchSmall } from "./SwitchSmall";
-import { ThinCheckbox } from "./ThinCheckbox";
+import { ThinSwitch } from "./ThinSwitch";
 
 export {
   CardSwitch,
   CardSwitchWithIcon,
-  CustomStyledCheckbox,
+  CustomStyledSwitch,
   DefaultCheckedSwitch,
-  DynamicLabelCheckbox,
-  LabeledCheckbox,
+  DynamicLabelSwitch,
+  LabeledSwitch,
   LightDarkDual,
   LightDarkSimple,
   OnOffSingle,
   OnOffDual,
   SimpleSwitch,
-  SquareCheckbox,
+  SquareSwitch,
   SwitchSmall,
-  ThinCheckbox,
+  ThinSwitch,
 };

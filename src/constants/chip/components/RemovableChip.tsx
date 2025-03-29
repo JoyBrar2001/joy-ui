@@ -1,8 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import { Chip } from "@/components/ui/Chip";
 import { X } from "lucide-react";
-import { useState } from "react";
 
 export function RemovableChip() {
   const [visible, setVisible] = useState(true);

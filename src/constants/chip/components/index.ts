@@ -5,6 +5,7 @@ import { OnlineChip } from "./OnlineChip";
 import { OutlinedChip } from "./OutlinedChip";
 import { PrimaryChip } from "./PrimaryChip";
 import { RemovableChip } from "./RemovableChip";
+import { RoundedChip } from "./RoundedChip";
 import { SecondaryChip } from "./SecondaryChip";
 
 export {
@@ -15,5 +16,6 @@ export {
   OutlinedChip,
   PrimaryChip,
   RemovableChip,
+  RoundedChip,
   SecondaryChip,
 };

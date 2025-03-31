@@ -1,5 +1,5 @@
 import { Input } from "@/components/ui/Input";
-import { Lock, Search } from "lucide-react";
+import { Lock, Search, Send } from "lucide-react";
 import { ComponentCategory } from "../data";
 
 export const inputData: ComponentCategory = {
@@ -123,6 +123,22 @@ export default function Input({
     {
       title: "Error Input",
       component: () => <Input label="Username" placeholder="Enter Username" defaultValue="JoyBrar" error="Invalid Entry - Username must contain one numeric" />,
+      code: ""
+    },
+    {
+      title: "Left inline icon",
+      component: () => <Input
+        placeholder="Search for things..."
+        leftInlineIcon={<Search size={16} />}
+      />,
+      code: ""
+    },
+    {
+      title: "Right inline icon",
+      component: () => <Input
+        placeholder="Search for things..."
+        rightInlineIcon={<Send size={16} />}
+      />,
       code: ""
     },
   ],

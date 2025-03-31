@@ -1,12 +1,12 @@
 import { ComponentCategory } from "../data";
 import { cnFile } from "../common";
 import { selectCode } from "./code/selectCode";
-import { SimpleSelect } from "./components";
+import { SelectDisabled, SelectStatus, SelectWithAvatar, SelectWithCustomIcon, SelectWithDefaultValue, SelectWithDisabledOptions, SelectWithGroups, SelectWithIcons, SelectWithScroll, SelectWithScrollIcons, SelectWithSearch, SelectWithSeparator, SimpleSelect, SimpleSelectAnimated } from "./components";
 
 export const selectData: ComponentCategory = {
-  cols: 6,
-  title: "Scroll Area",
-  subtitle: "A collection of Scroll Areas for you to use",
+  cols: 4,
+  title: "Select",
+  subtitle: "A collection of Selects for you to use",
   steps: [
     {
       type: "dependencies",
@@ -41,5 +41,71 @@ export const selectData: ComponentCategory = {
       component: SimpleSelect,
       code: ""
     },
+    {
+      title: "Disabled Select",
+      component: SelectDisabled,
+      code: ""
+    },
+    {
+      title: "Simple Select (Animated)",
+      component: SimpleSelectAnimated,
+      code: ""
+    },
+    {
+      title: "Select with default value",
+      component: SelectWithDefaultValue,
+      code: ""
+    },
+    {
+      title: "Select with Icons",
+      component: SelectWithIcons,
+      code: ""
+    },
+    {
+      title: "Select Status",
+      component: SelectStatus,
+      code: ""
+    },
+    {
+      title: "Select With Avatar",
+      component: SelectWithAvatar,
+      code: ""
+    },
+    {
+      title: "Select with custom icon",
+      component: SelectWithCustomIcon,
+      code: ""
+    },
+    {
+      title: "Select with disabled options",
+      component: SelectWithDisabledOptions,
+      code: ""
+    },
+    {
+      title: "Select with groups",
+      component: SelectWithGroups,
+      code: ""
+    },
+    {
+      title: "Select with Separators",
+      component: SelectWithSeparator,
+      code: ""
+    },
+    {
+      title: "Select with Search",
+      component: SelectWithSearch,
+      code: ""
+    },
+    {
+      title: "Select with Scroll",
+      component: SelectWithScroll,
+      code: ""
+    },
+    {
+      title: "Select with Scroll Icons",
+      component: SelectWithScrollIcons,
+      code: ""
+    },
+
   ],
 };

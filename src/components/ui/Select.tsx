@@ -24,7 +24,8 @@ export function SelectTrigger({
   return (
     <SelectPrimitive.Trigger
       className={cn(
-        "group inline-flex h-9 items-center justify-between gap-[5px] rounded px-4 py-2 text-sm bg-black border-[1px] border-neutral-800 text-white outline-none",
+        "group inline-flex h-9 items-center justify-between gap-[5px] rounded px-4 py-2 text-sm bg-black border-[1px] border-neutral-800 text-white outline-none data-[placeholder]:text-neutral-400",
+        "disabled:opacity-60",
         className
       )}
       {...props}
@@ -42,6 +43,7 @@ export function SelectContent({
   className,
   position = "popper",
   side = "bottom",
+  sideOffset = 5,
   align = "center",
   animate = true,
   ...props
@@ -53,10 +55,11 @@ export function SelectContent({
       <SelectPrimitive.Content
         position={position}
         side={side}
+        sideOffset={sideOffset}
         align={align}
         className={cn(
           "overflow-hidden rounded bg-black border-[1px] border-neutral-800 text-white py-4 px-2",
-          animate && "will-change-transform data-[state=open]:animate-openSelect data-[state=closed]:animate-closeSelect",
+          animate && "will-change-transform data-[side=bottom]:data-[state=open]:animate-openSelectBottom data-[side=top]:data-[state=open]:animate-openSelectTop",
           className
         )}
         {...props}
@@ -107,7 +110,7 @@ export function SelectLabel({
   ...props
 }: SelectPrimitive.SelectLabelProps) {
   return (
-    <SelectPrimitive.Label className={cn("px-2 mb-2 text-sm leading-4 text-gray-300")} {...props}>
+    <SelectPrimitive.Label className={cn("px-1 py-0.5 text-sm leading-4 text-gray-300")} {...props}>
       {children}
     </SelectPrimitive.Label>
   );

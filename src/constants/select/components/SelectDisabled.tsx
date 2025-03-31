@@ -1,8 +1,8 @@
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, SelectViewport } from "@/components/ui/Select";
 
-export function SimpleSelect() {
+export function SelectDisabled() {
   return (
-    <Select>
+    <Select disabled>
       <SelectTrigger className="w-[200px]">
         <SelectValue placeholder="Select Theme" />
       </SelectTrigger>

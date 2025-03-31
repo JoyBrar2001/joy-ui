@@ -17,6 +17,7 @@ import { popoverData } from "./popover";
 import { hoverCardData } from "./hovercard";
 import { drawerData } from "./drawer";
 import { switchData } from "./switch";
+import { selectData } from "./select";
 
 export type ComponentEntry = {
   title: string;
@@ -75,6 +76,7 @@ export const data: ComponentData = {
   popover: popoverData,
   radioGroup: radioData,
   scrollarea: scrollareaData,
+  select: selectData,
   separator: separatorData,
   switch: switchData,
   tabs: tabsData,

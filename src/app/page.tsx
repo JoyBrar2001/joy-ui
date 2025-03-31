@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/utils";
+import Link from "next/link";
 
 export default function HomePage() {
   return (
@@ -17,7 +18,9 @@ export default function HomePage() {
 
         <div className="mt-6 flex flex-wrap justify-center gap-4">
           <Button variant="primary" className="px-6 py-3 text-lg">
-            Get Started <ArrowRight className="ml-2 size-5" />
+            <Link href={"/components/ui"} className="flex items-center">
+              Get Started <ArrowRight className="ml-2 size-5" />
+            </Link>
           </Button>
 
           <Button variant="outline" className="px-6 py-3 text-lg">

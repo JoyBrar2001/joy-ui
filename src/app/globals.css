@@ -24,6 +24,35 @@
   --animate-scaleUp: scaleUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   --animate-scaleDown: scaleDown 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 
+  --animate-openSelect: openSelect 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-closeSelect: closeSelect 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  @keyframes openSelect {
+    from {
+      transform-origin: top;
+      transform: scale(0.8) translateY(-25px);
+      opacity: 0;
+    }
+    to {
+      transform-origin: top;
+      transform: scale(1) translateY(0px);
+      opacity: 1;
+    }
+  }
+
+  @keyframes closeSelect {
+    from {
+      transform-origin: top;
+      transform: scale(1) translateY(0px);
+      opacity: 1;
+    }
+    to {
+      transform-origin: top;
+      transform: scale(0.8) translateY(-25px);
+      opacity: 0;
+    }
+  }
+
   @keyframes scaleUp {
     from {
       transform: scale(0);

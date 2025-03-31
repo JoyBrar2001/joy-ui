@@ -1,7 +1,7 @@
 import { ComponentCategory } from "../data";
 import { chipCode } from "./code/chipCode";
 import { cnFile } from "../common";
-import { CustomChip, DoneChip, GhostChip, OutlinedChip, PrimaryChip, RemovableChip, RoundedChip, SecondaryChip } from "./components";
+import { CustomChip, DoneChip, GhostChip, OnlineChip, OutlinedChip, PrimaryChip, RemovableChip, RoundedChip, SecondaryChip } from "./components";
 import { customChipCode, doneChipCode, ghostChipCode, onlineChipCode, outlinedChipCode, primaryChipCode, removableChipCode, roundedChipCode, secondaryChipCode } from "./code/componentCodes";
 
 export const chipData: ComponentCategory = {
@@ -68,7 +68,7 @@ export const chipData: ComponentCategory = {
     },
     {
       title: "Online Chip",
-      component: OutlinedChip,
+      component: OnlineChip,
       code: onlineChipCode
     },
     {

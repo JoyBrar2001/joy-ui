@@ -36,21 +36,23 @@ export default function ComponentWrapper({ title, cols = 4, steps, code, childre
         </label>
 
         <Dialog>
-          <DialogTrigger>
-            <Tooltip>
-              <TooltipTrigger>
-                <Button
-                  className="relative group size-10 rounded-md transition-all duration-300 text-black"
-                  variant="outline"
-                >
-                  <Code className="size-4 transition-all duration-300 absolute rotate-0 scale-100" />
-                </Button>
-              </TooltipTrigger>
+          <DialogTrigger asChild>
+            <span>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button
+                    className="relative group size-10 rounded-md transition-all duration-300 text-black"
+                    variant="outline"
+                  >
+                    <Code className="size-4 transition-all duration-300 absolute rotate-0 scale-100" />
+                  </Button>
+                </TooltipTrigger>
 
-              <TooltipContent size="xs">
-                View Code
-              </TooltipContent>
-            </Tooltip>
+                <TooltipContent size="xs">
+                  View Code
+                </TooltipContent>
+              </Tooltip>
+            </span>
           </DialogTrigger>
 
           <DialogContent className="max-w-4xl">

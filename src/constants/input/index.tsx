@@ -130,6 +130,7 @@ export default function Input({
       component: () => <Input
         placeholder="Search for things..."
         leftInlineIcon={<Search size={16} />}
+        label="Search for Anything"
       />,
       code: ""
     },
@@ -138,6 +139,7 @@ export default function Input({
       component: () => <Input
         placeholder="Search for things..."
         rightInlineIcon={<Send size={16} />}
+        label="Send Message"
       />,
       code: ""
     },

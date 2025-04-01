@@ -1,9 +1,10 @@
 import { capitalize } from "./capitalize";
 import { cn } from "./cn";
-import { outfit } from "./fonts";
+import { outfit, montserrat } from "./fonts";
 
 export {
   capitalize,
   cn,
   outfit,
+  montserrat,
 };

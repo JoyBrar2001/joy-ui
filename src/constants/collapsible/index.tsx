@@ -2,6 +2,8 @@ import { ComponentCategory } from "../data";
 import { cnFile } from "../common";
 import { collapsibleCode } from "./code/collapsibleCode";
 import { AnimatedCollapsible, ProfileSelector, ProfileSelectorControlled, SelectableCollapsible, SimpleCollapsible, SimpleCollapsibleOutlined, SimpleCollapsibleSecondary, StatusSelector } from "./components";
+import { collapsibleCss } from "./code/collapsibleCss";
+import { animatedCollapsibleCode, profileSelectorCode, profileSelectorControlledCode, selectableCollapsibleCode, simpleCollapsibleCode, simpleCollapsibleOutlinedCode, simpleCollapsibleSecondaryCode, statusSelectorCode } from "./code/componentCodes";
 
 export const collapsibleData: ComponentCategory = {
   cols: 4,
@@ -24,6 +26,12 @@ export const collapsibleData: ComponentCategory = {
           path: "@/utils/cn.ts",
           language: "typescript",
           code: cnFile
+        },
+        {
+          name: "globals.css",
+          path: "@/globals.css",
+          language: "css",
+          code: collapsibleCss
         }
       ]
     },
@@ -39,47 +47,42 @@ export const collapsibleData: ComponentCategory = {
     {
       title: "Simple Collapsible",
       component: SimpleCollapsible,
-      code: ""
+      code: simpleCollapsibleCode
     },
     {
       title: "Animated Collapsible",
       component: AnimatedCollapsible,
-      code: ""
+      code: animatedCollapsibleCode
     },
     {
       title: "Simple Collapsible (Secondary)",
       component: SimpleCollapsibleSecondary,
-      code: ""
+      code: simpleCollapsibleSecondaryCode
     },
     {
       title: "Simple Collapsible (Outlined)",
       component: SimpleCollapsibleOutlined,
-      code: ""
-    },
-    {
-      title: "Simple Collapsible (Outlined)",
-      component: SimpleCollapsibleOutlined,
-      code: ""
+      code: simpleCollapsibleOutlinedCode
     },
     {
       title: "Selectable Collapsible (Controlled)",
       component: SelectableCollapsible,
-      code: ""
+      code: selectableCollapsibleCode
     },
     {
       title: "Status Selector (Controlled)",
       component: StatusSelector,
-      code: ""
+      code: statusSelectorCode
     },
     {
       title: "Profile Selector",
       component: ProfileSelector,
-      code: ""
+      code: profileSelectorCode
     },
     {
       title: "Profile Selector (Controlled)",
       component: ProfileSelectorControlled,
-      code: ""
+      code: profileSelectorControlledCode
     },
   ]
 };

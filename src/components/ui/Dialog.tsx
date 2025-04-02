@@ -9,7 +9,7 @@ export function DialogContent({
   className,
   children,
   ...props
-}: React.ComponentProps<typeof DialogPrimitive.Content>) {
+}: DialogPrimitive.DialogContentProps) {
   return (
     <DialogPrimitive.Portal>
       <DialogPrimitive.Overlay className="fixed inset-0 bg-black/70 data-[state=open]:animate-overlayShow data-[state=closed]:animate-overlayHide" />

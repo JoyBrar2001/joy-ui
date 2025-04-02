@@ -1,54 +1,75 @@
-import React from "react";
-import { ChevronsUpDown, ExpandIcon, X } from "lucide-react";
-import { Collapsible, CollapsibleCard, CollapsibleContent, CollapsibleTrigger } from "./Collapsible";
+"use client";
+
+import React, { useState } from "react";
+import { format } from "date-fns";
+import "react-day-picker/style.css";
+
+import { Button } from "@/components/ui/Button";
+import { DateRange } from "react-day-picker";
+import { Calendar } from "../../../components/ui/Calendar";
 
 export default function Example() {
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
+  const [selectedRange, setSelectedRange] = useState<DateRange | undefined>();
+
   return (
     <div className="max-w-[100rem] mx-auto h-full flex pt-24 bg-neutral-100 dark:bg-black">
       <section className="flex-1 p-6 min-h-screen h-full">
-        <Collapsible className="w-64 items-center justify-between">
-          <div className="flex items-center justify-between">
-            <span className="text-sm leading-6 text-white">
-              @peduarte starred 3 repositories
-            </span>
+        <h2 className="text-sm font-medium mb-2">Pick a Date</h2>
 
-            <CollapsibleTrigger asChild>
-              <button className="text-white inline-flex items-center justify-center p-1.5 rounded-full transition duration-200 hover:bg-neutral-800 group data-[state=open]:bg-neutral-800">
-                <X size={16} className="hidden group-data-[state=open]:block" />  
-                <ChevronsUpDown size={16} className="block group-data-[state=open]:hidden" />
-              </button>
-            </CollapsibleTrigger>
-          </div>
+        <Calendar
+          mode="single"
+          numberOfMonths={1}
+          selected={selectedDate}
+          onSelect={setSelectedDate}
+          enableDropdown={true}
+        />
 
-          <CollapsibleCard>
-            <span className="text-[15px] leading-[25px] text-neutral-800">
-              @radix-ui/primitives
-            </span>
-          </CollapsibleCard>
+        <Calendar
+          mode="single"
+          numberOfMonths={1}
+          selected={selectedDate}
+          onSelect={setSelectedDate}
+        />
 
-          <CollapsibleContent>
-            <CollapsibleCard variant="secondary">
-              <span className="text-[15px] leading-[25px]">
-                @radix-ui/colors
-              </span>
-            </CollapsibleCard>
-            <CollapsibleCard variant="outline">
-              <span className="text-[15px] leading-[25px]">
-                @radix-ui/themes
-              </span>
-            </CollapsibleCard>
-            <CollapsibleCard variant="ghost">
-              <span className="text-[15px] leading-[25px]">
-                @radix-ui/scroll-area
-              </span>
-            </CollapsibleCard>
-            <CollapsibleCard variant="destructive">
-              <span className="text-[15px] leading-[25px]">
-                @radix-ui/collapsible
-              </span>
-            </CollapsibleCard>
-          </CollapsibleContent>
-        </Collapsible>
+        <p className="text-xs text-neutral-400 mt-2">
+          Selected: {selectedDate ? format(selectedDate, "PPP") : "None"}
+        </p>
+
+        <Button
+          variant="outline"
+          className="mt-4 w-full border-white hover:bg-neutral-800"
+          onClick={() => setSelectedDate(undefined)}
+        >
+          Clear Date
+        </Button>
+
+        <h2 className="text-sm font-medium mb-2">Pick a Date Range</h2>
+
+        {/* ✅ Calendar without Dropdowns */}
+        <Calendar
+          enableDropdown={false}
+          mode="range"
+          numberOfMonths={2}
+          selected={selectedRange}
+          onSelect={setSelectedRange}
+        />
+
+        <p className="text-xs text-neutral-400 mt-2">
+          {selectedRange?.from && selectedRange?.to
+            ? `Selected: ${format(selectedRange.from, "PPP")} - ${format(selectedRange.to, "PPP")}`
+            : selectedRange?.from
+              ? `Selected Start: ${format(selectedRange.from, "PPP")}`
+              : "No dates selected"}
+        </p>
+
+        <Button
+          variant="outline"
+          className="mt-4 w-full border-white hover:bg-neutral-800"
+          onClick={() => setSelectedRange(undefined)}
+        >
+          Clear Dates
+        </Button>
       </section>
     </div>
   );

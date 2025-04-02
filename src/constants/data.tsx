@@ -19,6 +19,7 @@ import { drawerData } from "./drawer";
 import { switchData } from "./switch";
 import { selectData } from "./select";
 import { collapsibleData } from "./collapsible";
+import { calendarData } from "./calendar";
 
 export type ComponentEntry = {
   title: string;
@@ -68,6 +69,7 @@ export const data: ComponentData = {
   alert: alertData,
   avatar: avatarData,
   button: buttonData,
+  calendar: calendarData,
   checkbox: checkboxData,
   collapsible: collapsibleData,
   chip: chipData,

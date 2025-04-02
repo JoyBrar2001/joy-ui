@@ -55,7 +55,7 @@ export function SelectContent({
         side={side}
         align={align}
         className={cn(
-          "overflow-hidden rounded bg-black border-[1px] border-neutral-800 text-white py-4 px-2",
+          "overflow-hidden rounded z-50 bg-black border-[1px] border-neutral-800 text-white py-4 px-2",
           animate && "will-change-transform data-[state=open]:animate-openSelect data-[state=closed]:animate-closeSelect",
           className
         )}

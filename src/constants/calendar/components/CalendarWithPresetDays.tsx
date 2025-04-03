@@ -10,6 +10,7 @@ export function CalendarWithPresetDays() {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
 
   const buttons = [
+    { label: "Today", date: new Date() },
     { label: "Yesterday", date: subDays(new Date(), 1) },
     { label: "Tomorrow", date: addDays(new Date(), 1) },
     { label: "Last Week", date: subDays(new Date(), 7) },

@@ -9,6 +9,7 @@ import { DropdownCalendarWithDefaultValue } from "./DropdownCalendarWithDefaultV
 import { DropddownCalendarWithPlaceholder } from "./DropdownCalendarWithPlaceholder";
 import { DropdownRangeSelector } from "./DropdownRangeSelector";
 import { DropdownRangeWithDefaultValue } from "./DropdownRangeWithDefaultValue";
+import { DropdownRangeWithMultipleMonths } from "./DropdownRangeWithMultipleMonths";
 import { MultipleDaysSelector } from "./MultipleDaysSelector";
 import { MultipleMonthsSelector } from "./MultipleMonthsSelector";
 import { SimpleCalendar } from "./SimpleCalendar";
@@ -26,6 +27,7 @@ export {
   DropddownCalendarWithPlaceholder,
   DropdownRangeSelector,
   DropdownRangeWithDefaultValue,
+  DropdownRangeWithMultipleMonths,
   MultipleDaysSelector,
   MultipleMonthsSelector,
   SimpleCalendar,

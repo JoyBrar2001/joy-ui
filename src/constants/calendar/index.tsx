@@ -1,7 +1,7 @@
 import { cnFile } from "../common";
 import { ComponentCategory } from "../data";
 import { calendarCode } from "./code/calendarCode";
-import { CalendarWithDisabledDates, CalendarWithDropdown, CalendarWithoutOutsideDays, CalendarWithPresetDays, CalendarWithPresetRange, CustomStyledCalendar, DropddownCalendar, DropddownCalendarWithPlaceholder, DropdownCalendarWithDefaultValue, DropdownRangeSelector, DropdownRangeWithDefaultValue, MultipleDaysSelector, MultipleMonthsSelector, SimpleCalendar, SimpleRangeSelector } from "./components";
+import { CalendarWithDisabledDates, CalendarWithDropdown, CalendarWithoutOutsideDays, CalendarWithPresetDays, CalendarWithPresetRange, CustomStyledCalendar, DropddownCalendar, DropddownCalendarWithPlaceholder, DropdownCalendarWithDefaultValue, DropdownRangeSelector, DropdownRangeWithDefaultValue, DropdownRangeWithMultipleMonths, MultipleDaysSelector, MultipleMonthsSelector, SimpleCalendar, SimpleRangeSelector } from "./components";
 
 export const calendarData: ComponentCategory = {
   cols: 6,
@@ -100,6 +100,11 @@ export const calendarData: ComponentCategory = {
     {
       title: "Dropdown Range Selector",
       component: DropdownRangeSelector,
+      code: "",
+    },
+    {
+      title: "Dropdown With Multiple Months",
+      component: DropdownRangeWithMultipleMonths,
       code: "",
     },
     {

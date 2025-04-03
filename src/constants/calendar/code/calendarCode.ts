@@ -1,4 +1,5 @@
-export const calendarCode = `import { DayPicker, DayPickerProps, DropdownNavProps, DropdownProps } from "react-day-picker";
+export const calendarCode = `import React from "react";
+import { DayPicker, DayPickerProps, DropdownNavProps, DropdownProps } from "react-day-picker";
 
 import {
   Select,
@@ -37,14 +38,14 @@ export function Calendar({
         weekdays: "grid grid-cols-7 w-full my-2",
         weekday: "inline-flex flex justify-center items-center text-sm font-light",
         week: "grid grid-cols-7 w-full",
-        day: "my-0.5 rounded-md",
-        day_button: "size-10 flex justify-center items-center transition hover:bg-neutral-800 aria-[selected=true]:hover:bg-white disabled:hover:bg-black",
+        day: "my-0.5 rounded-md transition disabled:cursor-not-allowed data-[hidden=true]:bg-black hover:bg-neutral-800",
+        day_button: "size-10 flex justify-center items-center disabled:text-neutral-700 disabled:hover:bg-black",
         disabled: "text-neutral-700 line-through",
         outside: "text-neutral-700",
         today: "outline outline-neutral-800 rounded-md",
-        selected: props.mode === "range" ? "" : "bg-white text-neutral-900 rounded-md",
-        range_start: "bg-white text-neutral-900 rounded-l-md rounded-r-none",
-        range_end: "bg-white text-neutral-900 rounded-r-md rounded-l-none",
+        selected: props.mode === "range" ? "" : "bg-white hover:bg-white text-neutral-900 rounded-md",
+        range_start: "bg-white text-neutral-900 rounded-l-md rounded-r-none hover:bg-white",
+        range_end: "bg-white text-neutral-900 rounded-r-md rounded-l-none hover:bg-white",
         range_middle: "bg-neutral-800 text-white rounded-none",
         ...classNames,
       }}
@@ -73,13 +74,13 @@ export function Calendar({
               <Select
                 value={String(value)}
                 onValueChange={(newValue) =>
-                  onChange && onChange({ target: { value: newValue } } as any)
+                  onChange && onChange({ target: { value: newValue } } as React.ChangeEvent<HTMLSelectElement>)
                 }
               >
                 <SelectTrigger className="h-8 w-fit font-medium">
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent className="min-w-32 max-h-80 py-2 w-full">
+                <SelectContent className="z-[60] min-w-32 max-h-80 py-2 w-full">
                   <SelectViewport>
                     {options?.map((option) => (
                       <SelectItem

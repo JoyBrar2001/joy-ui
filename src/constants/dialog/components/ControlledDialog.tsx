@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from "@/components/ui/Dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/Dialog";
 import { Button } from "@/components/ui/Button";
 
 export function ControlledDialog() {

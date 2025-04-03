@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Lock, Mail } from "lucide-react";
 
-import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from "@/components/ui/Dialog";
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogClose } from "@/components/ui/Dialog";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 

@@ -110,7 +110,7 @@ export function SelectLabel({
   ...props
 }: SelectPrimitive.SelectLabelProps) {
   return (
-    <SelectPrimitive.Label className={cn("px-1 py-0.5 text-sm leading-4 text-gray-300")} {...props}>
+    <SelectPrimitive.Label className={cn("px-1 py-0.5 text-sm leading-4 text-gray-300", className)} {...props}>
       {children}
     </SelectPrimitive.Label>
   );

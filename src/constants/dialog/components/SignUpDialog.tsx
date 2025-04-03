@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { CalendarIcon, Lock, Mail, User } from "lucide-react";
 
-import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogClose } from "@/components/ui/Dialog";
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/Dialog";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { Calendar } from "@/components/ui/Calendar";

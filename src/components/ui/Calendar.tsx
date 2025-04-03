@@ -1,3 +1,4 @@
+import React from "react";
 import { DayPicker, DayPickerProps, DropdownNavProps, DropdownProps } from "react-day-picker";
 
 import {
@@ -73,7 +74,7 @@ export function Calendar({
               <Select
                 value={String(value)}
                 onValueChange={(newValue) =>
-                  onChange && onChange({ target: { value: newValue } } as any)
+                  onChange && onChange({ target: { value: newValue } } as React.ChangeEvent<HTMLSelectElement>)
                 }
               >
                 <SelectTrigger className="h-8 w-fit font-medium">

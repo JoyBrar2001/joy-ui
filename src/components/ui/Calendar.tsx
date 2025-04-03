@@ -79,7 +79,7 @@ export function Calendar({
                 <SelectTrigger className="h-8 w-fit font-medium">
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent className="min-w-32 max-h-80 py-2 w-full">
+                <SelectContent className="z-[60] min-w-32 max-h-80 py-2 w-full">
                   <SelectViewport>
                     {options?.map((option) => (
                       <SelectItem

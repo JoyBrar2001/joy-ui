@@ -20,6 +20,7 @@ import { switchData } from "./switch";
 import { selectData } from "./select";
 import { collapsibleData } from "./collapsible";
 import { calendarData } from "./calendar";
+import { dialogData } from "./dialog";
 
 export type ComponentEntry = {
   title: string;
@@ -74,6 +75,7 @@ export const data: ComponentData = {
   collapsible: collapsibleData,
   chip: chipData,
   codeblock: codeblockData,
+  dialog: dialogData,
   drawer: drawerData,
   hoverCard: hoverCardData,
   input: inputData,

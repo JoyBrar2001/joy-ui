@@ -1,7 +1,6 @@
-import * as DialogPrimitive from "@radix-ui/react-dialog";
+export const dialogCode = `import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
 import { cn } from "@/utils";
-import { ComponentPropsWithoutRef } from "react";
 
 export const Dialog = DialogPrimitive.Root;
 
@@ -27,7 +26,7 @@ export function DialogContent({
       <DialogPrimitive.Overlay className="fixed inset-0 bg-black/70 data-[state=open]:animate-overlayShow data-[state=closed]:animate-overlayHide" />
       <DialogPrimitive.Content
         className={cn(
-          "fixed inset-0 m-auto bg-white dark:bg-neutral-950 border border-neutral-600 p-6 rounded-lg shadow-xl max-w-md h-fit max-h-[75vh] overflow-y-auto w-full data-[state=open]:animate-contentShow data-[state=closed]:animate-contentHide",
+          "fixed inset-0 m-auto bg-white dark:bg-neutral-950 border border-neutral-600 p-6 rounded-lg shadow-xl max-w-md max-h-[75vh] overflow-y-auto w-full data-[state=open]:animate-contentShow data-[state=closed]:animate-contentHide",
           className
         )}
         {...props}
@@ -39,19 +38,15 @@ export function DialogContent({
 }
 
 export function DialogHeader({
-  children,
-  className,
-  ...props
-}: ComponentPropsWithoutRef<"div">) {
+  children
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <div
-      className={cn(
-        "flex justify-between items-start mb-4",
-        className
-      )}
-      {...props}
-    >
-      {children}
+    <div className="flex justify-between items-start mb-4">
+      <div>
+        {children}
+      </div>
 
       <DialogPrimitive.Close className="cursor-pointer p-1 text-gray-500 hover:text-gray-800 dark:hover:text-gray-200">
         <X size={20} />
@@ -94,4 +89,4 @@ export function DialogFooter({
       {children}
     </div>
   );
-}
+}`;

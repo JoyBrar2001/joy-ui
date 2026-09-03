@@ -18,7 +18,7 @@ type AccordionItemProps = ComponentProps<typeof AccordionPrimitive.Item>;
 export function AccordionItem({ children, className, ...props }: AccordionItemProps) {
   return (
     <AccordionPrimitive.Item
-      className={cn("border-b border-neutral-700 last:border-none", className)}
+      className={cn("border-b border-neutral-200 last:border-none dark:border-neutral-700", className)}
       {...props}
     >
       {children}
@@ -33,7 +33,7 @@ export function AccordionTrigger({ children, left = false, className, ...props }
     <AccordionPrimitive.Header className="flex">
       <AccordionPrimitive.Trigger
         className={cn(
-          "group text-white flex gap-2 h-12 flex-1 cursor-default items-center justify-between px-5 text-[15px] leading-none outline-none",
+          "group flex h-12 flex-1 cursor-default items-center justify-between gap-2 px-5 text-[15px] leading-none text-neutral-900 outline-none dark:text-white",
           left && "flex-row-reverse justify-end",
           className
         )}
@@ -55,7 +55,7 @@ export function AccordionContent({ children, className, ...props }: AccordionCon
   return (
     <AccordionPrimitive.Content
       className={cn(
-        "overflow-hidden bg-neutral-950 text-neutral-400 pl-2 text-sm data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown",
+        "overflow-hidden bg-neutral-50 pl-2 text-sm text-neutral-600 data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown dark:bg-neutral-950 dark:text-neutral-400",
         className
       )}
       {...props}

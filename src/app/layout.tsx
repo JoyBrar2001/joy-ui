@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${outfit.className} antialiased bg-white dark:bg-black`}>
+      <body className={`${outfit.className} antialiased bg-white text-neutral-900 dark:bg-black dark:text-white`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -27,7 +27,7 @@ export default function RootLayout({
 
           {children}
 
-          <footer className="p-4 bg-white dark:bg-black border-t border-gray-200 dark:border-neutral-700 text-center">
+          <footer className="border-t border-gray-200 bg-white p-4 text-center dark:border-neutral-700 dark:bg-black">
             <p className="text-sm text-gray-600 dark:text-gray-300">© 2025 Joy UI. All rights reserved.</p>
           </footer>
         </ThemeProvider>

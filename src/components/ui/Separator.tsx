@@ -13,7 +13,7 @@ export function Separator({
       decorative={decorative}
       orientation={orientation}
       className={cn(
-        "bg-neutral-800",
+        "bg-neutral-200 dark:bg-neutral-800",
         orientation === "horizontal" && "h-[1px] w-full",
         orientation === "vertical" && "w-[1px] h-full",
         className

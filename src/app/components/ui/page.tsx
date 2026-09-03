@@ -10,13 +10,13 @@ export default function UiPage() {
           <span>Components</span>
         </Link>
         <ChevronRight className="size-6" />
-        <Link href="/components/ui" className="text-white">
+        <Link href="/components/ui" className="text-neutral-900 dark:text-white">
           <span>UI</span>
         </Link>
       </p>
 
-      <h1 className="text-5xl font-bold text-white mt-2">UI Components</h1>
-      <p className="text-neutral-400 mt-2">
+      <h1 className="mt-2 text-5xl font-bold text-neutral-900 dark:text-white">UI Components</h1>
+      <p className="mt-2 text-neutral-600 dark:text-neutral-400">
         Select a component below to view its details and usage.
       </p>
 
@@ -25,12 +25,12 @@ export default function UiPage() {
           <Link
             key={component}
             href={`/components/ui/${component}`}
-            className="col-span-12 md:col-span-6 lg:col-span-4 bg-neutral-900 border border-neutral-700 p-4 rounded-lg flex items-center justify-between hover:border-white transition"
+            className="col-span-12 flex items-center justify-between rounded-lg border border-neutral-200 bg-neutral-50 p-4 transition hover:border-neutral-900 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:border-white md:col-span-6 lg:col-span-4"
           >
-            <span className="text-white font-medium text-lg">
+            <span className="text-lg font-medium text-neutral-900 dark:text-white">
               {data[component].title}
             </span>
-            <ChevronRight className="size-5 text-neutral-400" />
+            <ChevronRight className="size-5 text-neutral-500 dark:text-neutral-400" />
           </Link>
         ))}
       </div>

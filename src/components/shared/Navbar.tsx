@@ -7,7 +7,6 @@ import { Github } from "lucide-react";
 
 import CreativeButton from "@/components/creative/CreativeButton";
 import ModeToggle from "@/components/ModeToggle";
-import { Button } from "@/components/ui/Button";
 import { cn } from "@/utils";
 
 export default function Navbar() {
@@ -48,11 +47,12 @@ export default function Navbar() {
         <nav>
           <ul className="flex gap-2 text-sm md:text-base font-medium text-gray-700 dark:text-gray-300">
             <li>
-              <Button variant="ghost" className="text-neutral-700 hover:text-black dark:text-neutral-300 dark:hover:text-white transition-colors duration-300 rounded-sm text-base px-2">
-                <Link href="/components/ui">
-                  UI Components
-                </Link>
-              </Button>
+              <Link
+                href="/components/ui"
+                className="flex items-center justify-center rounded-sm px-2 py-2 text-base font-medium text-neutral-700 transition-colors duration-300 hover:text-black dark:text-neutral-300 dark:hover:text-white"
+              >
+                UI Components
+              </Link>
             </li>
 
             <li>
@@ -70,15 +70,12 @@ export default function Navbar() {
         <ModeToggle />
 
         <Link
-          href="https://github.com/joybrar2001"
+          href="https://github.com/JoyBrar2001/joy-ui"
           target="_blank"
         >
-          <Button
-            className="size-10 rounded-md transition-all duration-300 text-black dark:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800"
-            variant="ghost"
-          >
+          <span className="flex size-10 items-center justify-center rounded-md text-black transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-800">
             <Github className="size-5 absolute" />
-          </Button>
+          </span>
         </Link>
       </div>
     </header>

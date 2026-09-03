@@ -21,6 +21,7 @@ import { selectData } from "./select";
 import { collapsibleData } from "./collapsible";
 import { calendarData } from "./calendar";
 import { dialogData } from "./dialog";
+import { textareaData } from "./textarea";
 
 export type ComponentEntry = {
   title: string;
@@ -86,5 +87,6 @@ export const data: ComponentData = {
   separator: separatorData,
   switch: switchData,
   tabs: tabsData,
+  textarea: textareaData,
   tooltip: tooltipData,
 };

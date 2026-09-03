@@ -22,6 +22,7 @@ import { collapsibleData } from "./collapsible";
 import { calendarData } from "./calendar";
 import { dialogData } from "./dialog";
 import { textareaData } from "./textarea";
+import { dropdownMenuData } from "./dropdown-menu";
 
 export type ComponentEntry = {
   title: string;
@@ -77,6 +78,7 @@ export const data: ComponentData = {
   chip: chipData,
   codeblock: codeblockData,
   dialog: dialogData,
+  dropdownMenu: dropdownMenuData,
   drawer: drawerData,
   hoverCard: hoverCardData,
   input: inputData,

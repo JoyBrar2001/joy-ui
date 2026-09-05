@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
-import { ArrowRight, Command as CommandIcon, Github, Home, Moon, Palette, Search, Sun } from "lucide-react";
+import { ArrowRight, Command as CommandIcon, Home, Moon, Palette, Search, Sun } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 import { data } from "@/constants/data";
 import { Button } from "@/components/ui/Button";
 import { CommandPalette, CommandPaletteGroup, CommandPaletteItem } from "@/components/ui/CommandPalette";
@@ -53,7 +54,7 @@ export default function WebsiteCommandPalette() {
           <CommandPaletteItem onSelect={() => setTheme("system")}><CommandIcon className="size-4" />System theme</CommandPaletteItem>
         </CommandPaletteGroup>
         <CommandPaletteGroup heading="External">
-          <CommandPaletteItem onSelect={() => { setOpen(false); window.open("https://github.com/JoyBrar2001/joy-ui", "_blank", "noopener,noreferrer"); }}><Github className="size-4" />GitHub repository</CommandPaletteItem>
+          <CommandPaletteItem onSelect={() => { setOpen(false); window.open("https://github.com/JoyBrar2001/joy-ui", "_blank", "noopener,noreferrer"); }}><FaGithub className="size-4" />GitHub repository</CommandPaletteItem>
         </CommandPaletteGroup>
       </CommandPalette>
       <span className="sr-only">Current path: {pathname}; current theme: {theme}</span>

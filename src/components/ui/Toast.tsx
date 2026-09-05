@@ -21,7 +21,10 @@ const viewportPositions: Record<ToastPosition, string> = {
 export function ToastViewport({ className, position = "bottom-right", ...props }: ToastPrimitive.ToastViewportProps & { position?: ToastPosition }) {
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(frame);
+  }, []);
 
   if (!mounted) return null;
 

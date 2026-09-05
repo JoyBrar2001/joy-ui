@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/Button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/Popover";
 import { Separator } from "@/components/ui/Separator";
-import { ChartArea, ChevronDown, ChevronUp, Facebook, Github, HelpCircle, LogOut, Settings, User } from "lucide-react";
+import { ChartArea, ChevronDown, ChevronUp, HelpCircle, LogOut, Settings, User } from "lucide-react";
+import { FaFacebook, FaGithub } from "react-icons/fa";
 
 export function MenuPopover() {
   return (
@@ -41,11 +42,11 @@ export function MenuPopover() {
         <Separator orientation="horizontal" className="my-1" />
 
         <Button variant="ghost" className="w-full flex justify-start gap-2 text-white py-1.5 hover:bg-neutral-800">
-          <Github className="size-4" />
+          <FaGithub className="size-4" />
           Github
         </Button>
         <Button variant="ghost" className="w-full flex justify-start gap-2 text-white py-1.5 hover:bg-neutral-800">
-          <Facebook className="size-4" />
+          <FaFacebook className="size-4" />
           Facebook
         </Button>
         <Button variant="ghost" className="w-full flex justify-start gap-2 text-white py-1.5 hover:bg-neutral-800">

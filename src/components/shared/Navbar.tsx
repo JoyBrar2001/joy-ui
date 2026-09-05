@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-import { Github } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 
 import CreativeButton from "@/components/creative/CreativeButton";
 import ModeToggle from "@/components/ModeToggle";
@@ -76,7 +76,7 @@ export default function Navbar() {
           target="_blank"
         >
           <span className="flex size-10 items-center justify-center rounded-md text-black transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-800">
-            <Github className="size-5 absolute" />
+            <FaGithub className="size-5 absolute" />
           </span>
         </Link>
       </div>

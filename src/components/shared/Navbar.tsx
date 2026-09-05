@@ -63,6 +63,15 @@ export default function Navbar() {
                 </CreativeButton>
               </Link>
             </li>
+
+            <li>
+              <Link
+                href="/components/charts"
+                className="flex items-center justify-center rounded-sm px-2 py-2 text-base font-medium text-neutral-700 transition-colors duration-300 hover:text-black dark:text-neutral-300 dark:hover:text-white"
+              >
+                Charts
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>

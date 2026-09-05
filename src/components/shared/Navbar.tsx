@@ -8,6 +8,7 @@ import { Github } from "lucide-react";
 import CreativeButton from "@/components/creative/CreativeButton";
 import ModeToggle from "@/components/ModeToggle";
 import { cn } from "@/utils";
+import WebsiteCommandPalette from "@/components/shared/WebsiteCommandPalette";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState<boolean>(false);
@@ -32,7 +33,7 @@ export default function Navbar() {
   return (
     <header className={cn(
       "h-20 max-w-[100rem] px-10 mx-auto",
-      "fixed top-0 left-0 right-0 flex justify-between items-center z-50",
+      "fixed top-0 left-0 right-0 flex justify-between items-center z-10",
       "bg-white dark:bg-black border-0 border-neutral-200/0 dark:border-neutral-700/0",
       "transition-all duration-500 ease-in-out",
       scrolled && "top-5 scale-95 md:w-[90%] lg:w-[85%] mx-auto border-1 border-neutral-200 dark:border-neutral-700 rounded-[2.5rem] backdrop-blur-xl",
@@ -67,6 +68,7 @@ export default function Navbar() {
       </div>
 
       <div className="flex items-center gap-2">
+        <WebsiteCommandPalette />
         <ModeToggle />
 
         <Link

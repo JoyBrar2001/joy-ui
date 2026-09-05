@@ -27,6 +27,7 @@ import { multiSelectData } from "./multi-select";
 import { toastData } from "./toast";
 import { progressData } from "./progress";
 import { sliderData } from "./slider";
+import { commandPaletteData } from "./command-palette";
 
 export type ComponentEntry = {
   title: string;
@@ -78,6 +79,7 @@ export const data: ComponentData = {
   button: buttonData,
   calendar: calendarData,
   checkbox: checkboxData,
+  commandPalette: commandPaletteData,
   collapsible: collapsibleData,
   chip: chipData,
   codeblock: codeblockData,

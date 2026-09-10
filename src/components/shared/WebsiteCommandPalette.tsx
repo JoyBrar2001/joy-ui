@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
-import { useTheme } from "next-themes";
+import { useRouter } from "next/navigation";
+import { useTheme } from "@/providers/ThemeProvider";
 import { ArrowRight, Command as CommandIcon, Home, Moon, Palette, Search, Sun } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import { data } from "@/constants/data";
@@ -12,8 +12,7 @@ import { CommandPalette, CommandPaletteGroup, CommandPaletteItem } from "@/compo
 export default function WebsiteCommandPalette() {
   const [open, setOpen] = useState(false);
   const router = useRouter();
-  const pathname = usePathname();
-  const { theme, setTheme } = useTheme();
+  const { setTheme } = useTheme();
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -57,7 +56,6 @@ export default function WebsiteCommandPalette() {
           <CommandPaletteItem onSelect={() => { setOpen(false); window.open("https://github.com/JoyBrar2001/joy-ui", "_blank", "noopener,noreferrer"); }}><FaGithub className="size-4" />GitHub repository</CommandPaletteItem>
         </CommandPaletteGroup>
       </CommandPalette>
-      <span className="sr-only">Current path: {pathname}; current theme: {theme}</span>
     </>
   );
 }

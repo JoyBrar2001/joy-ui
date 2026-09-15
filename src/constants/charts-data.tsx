@@ -91,8 +91,55 @@ const sankeyCharts = chartWithExamples("Sankey Graphs", "Monochrome flow diagram
   ["Gradient edge", "gradientEdge"],
 ]);
 
+const sunburstCharts = chartWithExamples("Sunburst Charts", "Hierarchical ring charts for nested proportions and large data sets.", "sunburst", [
+  ["Basic Sunburst", "basic"],
+  ["Rounded Edges", "roundedEdges"],
+  ["Label Rotation", "labelRotate"],
+  ["Large Sunburst with hundreds of entries", "largeSunburst"],
+]);
+
+const parallelCharts = chartWithExamples("Parallel Charts", "Compare multiple dimensions across rows of high-dimensional data.", "parallel", [
+  ["Basic Parallel Coordinates", "parallelBasic"],
+  ["Parallel Comparison", "parallelComparison"],
+  ["Parallel Metrics", "parallelMetrics"],
+]);
+
+const funnelCharts = chartWithExamples("Funnel Charts", "Conversion and stage-based comparisons with flexible funnel layouts.", "funnel", [
+  ["Basic Funnel", "basic"],
+  ["Upside down funnel", "upsideDown"],
+  ["Funnel compare", "compareFunnels"],
+  ["Customized funnel", "customFunnel"],
+  ["Multiple funnel", "multipleFunnels"],
+]);
+
+const calendarCharts = chartWithExamples("Calendar Charts", "Calendar-based heatmaps, activity graphs, and date-driven visualizations.", "calendar", [
+  ["Simple Calendar", "simpleCalendar"],
+  ["Heatmap Calendar", "heatmapCalendar"],
+  ["Calendar Graph", "calendarGraph"],
+  ["Calendar Lunar", "calendarLunar"],
+  ["Calendar Charts", "calendarCharts"],
+  ["Custom Calendar", "customCalendar"],
+  ["Calendar with Pies", "calendarPies"],
+]);
+
+const chordCharts = chartWithExamples("Chord Graphs", "Circular relationship graphs for flows between groups and entities.", "chord", [
+  ["Basic Chord Graph", "chordBasic"],
+  ["Directional Chord Graph", "chordDirectional"],
+  ["Weighted Chord Graph", "chordWeighted"],
+  ["Dense Chord Graph", "chordDense"],
+  ["Emphasized Chord Graph", "chordEmphasis"],
+]);
+
+const candlestickCharts = chartWithExamples("Candlestick Charts", "Financial time-series examples with moving averages, volume, and zooming.", "candlestick", [
+  ["Basic Candlestick", "candlestickBasic"],
+  ["Candlestick with Moving Average", "movingAverage"],
+  ["Candlestick with Volume", "volumeCandlestick"],
+  ["Zoomable Candlestick", "zoomCandlestick"],
+  ["Styled Candlestick", "styledCandlestick"],
+]);
+
 function exampleCode(kind: ChartKind, variant: ChartVariant) {
-  const names = { line: "lineOption", bar: "barOption", pie: "pieOption", radar: "radarOption", tree: "treeOption", treemap: "treemapOption", sankey: "sankeyOption" };
+  const names = { line: "lineOption", bar: "barOption", pie: "pieOption", radar: "radarOption", tree: "treeOption", treemap: "treemapOption", sankey: "sankeyOption", sunburst: "sunburstOption", parallel: "parallelOption", funnel: "funnelOption", calendar: "calendarOption", chord: "chordOption", candlestick: "candlestickOption" };
   const option = names[kind];
   let body = `xAxis: { type: "category", data: ["Jan", "Feb", "Mar", "Apr"] },\nyAxis: { type: "value" },\nseries: [{ name: "Visitors", type: "line", data: [420, 680, 540, 890] }]`;
 
@@ -150,7 +197,7 @@ function exampleCode(kind: ChartKind, variant: ChartVariant) {
       diskUsage: `series: [{ type: "treemap", data: diskUsage, levels: [{}, { itemStyle: { borderWidth: 3 } }] }]`,
     };
     body = options[variant] ?? options.basic;
-  } else {
+  } else if (kind === "sankey") {
     const options: Record<string, string> = {
       basic: `series: [{ type: "sankey", data: nodes, links }]`,
       verticalSankey: `series: [{ type: "sankey", orient: "vertical", data: nodes, links }]`,
@@ -160,8 +207,61 @@ function exampleCode(kind: ChartKind, variant: ChartVariant) {
       gradientEdge: `series: [{ type: "sankey", lineStyle: { color: "gradient", curveness: 0.5 }, data: nodes, links }]`,
     };
     body = options[variant] ?? options.basic;
+  } else if (kind === "sunburst") {
+    const options: Record<string, string> = {
+      basic: `series: [{ type: "sunburst", radius: ["10%", "86%"], data: hierarchy }]`,
+      roundedEdges: `series: [{ type: "sunburst", data: hierarchy, itemStyle: { borderRadius: 8 } }]`,
+      labelRotate: `series: [{ type: "sunburst", data: hierarchy, label: { rotate: "radial" } }]`,
+      largeSunburst: `series: [{ type: "sunburst", data: hundredsOfEntries }]`,
+    };
+    body = options[variant] ?? options.basic;
+  } else if (kind === "parallel") {
+    const options: Record<string, string> = {
+      parallelBasic: `parallelAxis: dimensions,\nseries: [{ type: "parallel", data: rows }]`,
+      parallelComparison: `parallelAxis: dimensions,\nseries: [{ type: "parallel", lineStyle: { color: "#525252" }, data: comparisonRows }]`,
+      parallelMetrics: `parallelAxis: dimensions,\nseries: [{ type: "parallel", data: metrics }]`,
+    };
+    body = options[variant] ?? options.parallelBasic;
+  } else if (kind === "funnel") {
+    const options: Record<string, string> = {
+      basic: `series: [{ type: "funnel", data: funnelData }]`,
+      upsideDown: `series: [{ type: "funnel", sort: "ascending", data: funnelData }]`,
+      compareFunnels: `series: [{ type: "funnel", name: "Current", data: current }, { type: "funnel", name: "Previous", data: previous }]`,
+      customFunnel: `series: [{ type: "funnel", label: { position: "inside" }, itemStyle: { borderWidth: 2 }, data: funnelData }]`,
+      multipleFunnels: `series: [{ type: "funnel", name: "Product", data: product }, { type: "funnel", name: "Marketing", data: marketing }]`,
+    };
+    body = options[variant] ?? options.basic;
+  } else if (kind === "calendar") {
+    const options: Record<string, string> = {
+      simpleCalendar: `calendar: { range: 2025 },\nseries: [{ type: "heatmap", coordinateSystem: "calendar", data: activity }]`,
+      heatmapCalendar: `visualMap: { min: 0, max: 50 },\nseries: [{ type: "heatmap", coordinateSystem: "calendar", data: activity }]`,
+      calendarGraph: `series: [{ type: "scatter", coordinateSystem: "calendar", data: activity }]`,
+      calendarLunar: `calendar: { range: ["2025-02-01", "2026-01-31"] },\nseries: [{ type: "heatmap", coordinateSystem: "calendar", data: lunarActivity }]`,
+      calendarCharts: `calendar: { range: 2025 },\nseries: [{ type: "heatmap", coordinateSystem: "calendar", data: activity }]`,
+      customCalendar: `calendar: { range: 2025, cellSize: [16, 16] },\nseries: [{ type: "heatmap", coordinateSystem: "calendar", data: activity }]`,
+      calendarPies: `calendar: { range: 2025 },\nseries: [{ type: "heatmap", coordinateSystem: "calendar", data: activity }, { type: "scatter", coordinateSystem: "calendar", data: milestones }]`,
+    };
+    body = options[variant] ?? options.simpleCalendar;
+  } else if (kind === "chord") {
+    const options: Record<string, string> = {
+      chordBasic: `series: [{ type: "graph", layout: "circular", data: nodes, links }]`,
+      chordDirectional: `series: [{ type: "graph", layout: "circular", lineStyle: { color: "source" }, data: nodes, links }]`,
+      chordWeighted: `series: [{ type: "graph", layout: "circular", lineStyle: { width: 3 }, data: nodes, links: weightedLinks }]`,
+      chordDense: `series: [{ type: "graph", layout: "circular", data: nodes, links: denseLinks }]`,
+      chordEmphasis: `series: [{ type: "graph", layout: "circular", emphasis: { focus: "adjacency" }, data: nodes, links }]`,
+    };
+    body = options[variant] ?? options.chordBasic;
+  } else {
+    const options: Record<string, string> = {
+      candlestickBasic: `xAxis: { type: "category", data: dates },\nseries: [{ type: "candlestick", data: ohlc }]`,
+      movingAverage: `series: [{ type: "candlestick", data: ohlc }, { type: "line", data: movingAverage, symbol: "none" }]`,
+      volumeCandlestick: `series: [{ type: "candlestick", data: ohlc }, { type: "bar", data: volume }]`,
+      zoomCandlestick: `dataZoom: [{ type: "inside" }, { type: "slider" }],\nseries: [{ type: "candlestick", data: ohlc }]`,
+      styledCandlestick: `series: [{ type: "candlestick", itemStyle: { color: "#171717", color0: "#a3a3a3" }, data: ohlc }]`,
+    };
+    body = options[variant] ?? options.candlestickBasic;
   }
-  return `"use client";\n\nimport EChart from "@/components/charts/EChart";\n\nconst ${option} = {\n  tooltip: { trigger: "${kind === "pie" || kind === "radar" || kind === "tree" || kind === "treemap" || kind === "sankey" ? "item" : "axis"}" },\n  ${body}\n};\n\nexport function ${variant}${kind[0].toUpperCase()}${kind.slice(1)}Chart() {\n  return <EChart option={${option}} />;\n}`;
+  return `"use client";\n\nimport EChart from "@/components/charts/EChart";\n\nconst ${option} = {\n  tooltip: { trigger: "${kind === "pie" || kind === "radar" || kind === "tree" || kind === "treemap" || kind === "sankey" || kind === "sunburst" || kind === "parallel" || kind === "funnel" || kind === "calendar" || kind === "chord" || kind === "candlestick" ? "item" : "axis"}" },\n  ${body}\n};\n\nexport function ${variant}${kind[0].toUpperCase()}${kind.slice(1)}Chart() {\n  return <EChart option={${option}} />;\n}`;
 }
 
 export const chartsData: Record<string, ComponentCategory> = {
@@ -172,4 +272,10 @@ export const chartsData: Record<string, ComponentCategory> = {
   tree: treeCharts,
   treemap: treemapCharts,
   sankey: sankeyCharts,
+  sunburst: sunburstCharts,
+  parallel: parallelCharts,
+  funnel: funnelCharts,
+  calendar: calendarCharts,
+  chord: chordCharts,
+  candlestick: candlestickCharts,
 };

@@ -6,6 +6,7 @@ import { useTheme } from "@/providers/ThemeProvider";
 import { ArrowRight, Command as CommandIcon, Home, Moon, Palette, Search, Sun } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import { data } from "@/constants/data";
+import { chartsData } from "@/constants/charts-data";
 import { Button } from "@/components/ui/Button";
 import { CommandPalette, CommandPaletteGroup, CommandPaletteItem } from "@/components/ui/CommandPalette";
 
@@ -42,10 +43,18 @@ export default function WebsiteCommandPalette() {
         <CommandPaletteGroup heading="Navigation">
           <CommandPaletteItem onSelect={() => navigate("/")}><Home className="size-4" />Home</CommandPaletteItem>
           <CommandPaletteItem onSelect={() => navigate("/components/ui")}><Palette className="size-4" />UI Components</CommandPaletteItem>
+          <CommandPaletteItem onSelect={() => navigate("/components/charts")}><ArrowRight className="size-4" />Charts</CommandPaletteItem>
           <CommandPaletteItem onSelect={() => navigate("/components/creative")}><ArrowRight className="size-4" />Creative Components</CommandPaletteItem>
         </CommandPaletteGroup>
         <CommandPaletteGroup heading="UI Components">
           {Object.entries(data).map(([slug, component]) => <CommandPaletteItem key={slug} value={`${component.title} ${slug}`} onSelect={() => navigate(`/components/ui/${slug}`)}>{component.title}</CommandPaletteItem>)}
+        </CommandPaletteGroup>
+        <CommandPaletteGroup heading="Charts">
+          {Object.entries(chartsData).map(([slug, chart]) => (
+            <CommandPaletteItem key={slug} value={`${chart.title} chart ${slug}`} onSelect={() => navigate(`/components/charts/${slug}`)}>
+              {chart.title}
+            </CommandPaletteItem>
+          ))}
         </CommandPaletteGroup>
         <CommandPaletteGroup heading="Appearance">
           <CommandPaletteItem onSelect={() => setTheme("light")}><Sun className="size-4" />Light theme</CommandPaletteItem>

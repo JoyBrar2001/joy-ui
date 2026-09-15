@@ -17,10 +17,11 @@ type ComponentWrapperProps = {
   cols?: 4 | 6 | 12;
   steps: Array<DependeciesStep | UtilitiesStep | SourceStep>;
   code: string;
+  codePath?: string;
   children: React.ReactNode;
 };
 
-export default function ComponentWrapper({ title, cols = 4, steps, code, children }: ComponentWrapperProps) {
+export default function ComponentWrapper({ title, cols = 4, steps, code, codePath, children }: ComponentWrapperProps) {
   return (
     <div
       className={cn(
@@ -152,7 +153,7 @@ export default function ComponentWrapper({ title, cols = 4, steps, code, childre
                   tabs={[
                     {
                       name: title,
-                      path: `@/components/ui/${title.split(" ").join("")}.tsx`,
+                      path: codePath ?? `@/components/ui/${title.split(" ").join("")}.tsx`,
                       code: code,
                       language: "tsx",
                     },

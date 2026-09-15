@@ -288,6 +288,11 @@
   to { opacity: 0; filter: blur(4px); transform: translateY(calc(100% + 1rem)); }
 }
 
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
 .toast-viewport[data-toast-position="top-left"] > [data-state="open"],
 .toast-viewport[data-toast-position="bottom-left"] > [data-state="open"] { animation: toast-in-left 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
 .toast-viewport[data-toast-position="top-right"] > [data-state="open"],

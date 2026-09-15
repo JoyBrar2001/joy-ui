@@ -155,6 +155,7 @@ Chart examples use a consistent black, white, and gray palette that adapts to th
 - [Radix UI](https://www.radix-ui.com/) for accessible primitives
 - [Apache ECharts](https://echarts.apache.org/) for charts
 - [echarts-for-react](https://github.com/hustcc/echarts-for-react) for React integration
+- [GSAP](https://gsap.com/) and ScrollTrigger for homepage motion and scroll-based reveals
 - [cmdk](https://github.com/pacocoursey/cmdk) for the command palette
 - [Lucide React](https://lucide.dev/) for icons
 

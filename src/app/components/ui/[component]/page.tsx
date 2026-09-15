@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import { notFound } from "next/navigation";
 
 import ComponentWrapper from "@/components/ComponentWrapper";
 import { capitalize } from "@/utils";
@@ -23,13 +24,7 @@ export default async function ComponentPage({ params }: Props) {
 
   const componentData = data[component];
 
-  if (!componentData) {
-    return (
-      <div className="flex-1 p-6 min-h-screen h-full">
-        <div className="text-center text-black dark:text-white text-2xl mt-10">🚀 Coming Soon...</div>
-      </div>
-    );
-  }
+  if (!componentData) notFound();
 
   return (
     <section className="flex-1 p-6 min-h-screen h-full">

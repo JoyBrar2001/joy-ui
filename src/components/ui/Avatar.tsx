@@ -13,7 +13,7 @@ export function Avatar({
   return (
     <AvatarPrimitive.Root
       className={cn(
-        "relative inline-flex size-12 select-none items-center justify-center rounded-sm bg-blackA1 align-middle",
+        "relative inline-flex size-12 select-none items-center justify-center rounded-sm bg-neutral-200 align-middle dark:bg-neutral-800",
         rounded && "rounded-full",
         className
       )}
@@ -40,7 +40,7 @@ export function AvatarFallback({ children, className, ...props }: AvatarPrimitiv
   return (
     <AvatarPrimitive.Fallback
       className={cn(
-        "leading-1 flex size-full items-center justify-center bg-neutral-800 text-sm font-medium rounded-[inherit]",
+        "leading-1 flex size-full items-center justify-center rounded-[inherit] bg-neutral-200 text-sm font-medium text-neutral-900 dark:bg-neutral-800 dark:text-white",
         className
       )}
       {...props}

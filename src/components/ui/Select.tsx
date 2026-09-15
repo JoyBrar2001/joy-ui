@@ -24,14 +24,14 @@ export function SelectTrigger({
   return (
     <SelectPrimitive.Trigger
       className={cn(
-        "group inline-flex h-9 items-center justify-between gap-[5px] rounded px-4 py-2 text-sm bg-black border-[1px] border-neutral-800 text-white outline-none data-[placeholder]:text-neutral-400",
+        "group inline-flex h-9 items-center justify-between gap-[5px] rounded border border-neutral-300 bg-white px-4 py-2 text-sm text-neutral-900 outline-none data-[placeholder]:text-neutral-500 dark:border-neutral-800 dark:bg-black dark:text-white dark:data-[placeholder]:text-neutral-400",
         "disabled:opacity-60",
         className
       )}
       {...props}
     >
       {children}
-      <SelectPrimitive.Icon className="text-white">
+      <SelectPrimitive.Icon className="text-neutral-900 dark:text-white">
         {icon}
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
@@ -58,7 +58,7 @@ export function SelectContent({
         sideOffset={sideOffset}
         align={align}
         className={cn(
-          "overflow-hidden rounded bg-black border-[1px] border-neutral-800 text-white py-4 px-2",
+          "overflow-hidden rounded border border-neutral-300 bg-white py-4 px-2 text-neutral-900 dark:border-neutral-800 dark:bg-black dark:text-white",
           animate && "will-change-transform data-[side=bottom]:data-[state=open]:animate-openSelectBottom data-[side=top]:data-[state=open]:animate-openSelectTop",
           className
         )}
@@ -79,7 +79,7 @@ export function SelectScrollUpButton({
 }) {
   return (
     <SelectPrimitive.ScrollUpButton
-      className={cn("flex h-6 items-center justify-center bg-black text-white", className)}
+      className={cn("flex h-6 items-center justify-center bg-white text-neutral-900 dark:bg-black dark:text-white", className)}
       {...props}
     >
       {icon}
@@ -96,7 +96,7 @@ export function SelectScrollDownButton({
 }) {
   return (
     <SelectPrimitive.ScrollDownButton
-      className={cn("flex h-6 items-center justify-center bg-black text-white", className)}
+      className={cn("flex h-6 items-center justify-center bg-white text-neutral-900 dark:bg-black dark:text-white", className)}
       {...props}
     >
       {icon}
@@ -110,7 +110,7 @@ export function SelectLabel({
   ...props
 }: SelectPrimitive.SelectLabelProps) {
   return (
-    <SelectPrimitive.Label className={cn("px-1 py-0.5 text-sm leading-4 text-gray-300", className)} {...props}>
+    <SelectPrimitive.Label className={cn("px-1 py-0.5 text-sm leading-4 text-neutral-600 dark:text-gray-300", className)} {...props}>
       {children}
     </SelectPrimitive.Label>
   );
@@ -127,7 +127,7 @@ export function SelectItem({
   return (
     <SelectPrimitive.Item
       className={cn(
-        "relative flex justify-between h-[25px] select-none items-center rounded-[3px] px-2 py-2 text-sm leading-none text-white data-[disabled]:pointer-events-none data-[highlighted]:bg-neutral-800 data-[disabled]:text-gray-500 data-[highlighted]:text-white data-[highlighted]:outline-none",
+        "relative flex justify-between h-[25px] select-none items-center rounded-[3px] px-2 py-2 text-sm leading-none text-neutral-900 data-[disabled]:pointer-events-none data-[highlighted]:bg-neutral-100 data-[disabled]:text-gray-400 data-[highlighted]:text-neutral-900 data-[highlighted]:outline-none dark:text-white dark:data-[highlighted]:bg-neutral-800 dark:data-[disabled]:text-gray-500 dark:data-[highlighted]:text-white",
         className,
       )}
       {...props}

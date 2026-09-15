@@ -53,10 +53,10 @@ export function CollapsibleCard({
       className={cn(
         "my-2.5 rounded p-2.5",
         {
-          "bg-white text-neutral-800": variant === "primary",
-          "bg-neutral-800 text-white border border-neutral-600": variant === "secondary",
-          "bg-black text-white border border-neutral-800": variant === "outline",
-          "bg-transparent text-white": variant === "ghost",
+          "bg-neutral-100 text-neutral-800 dark:bg-white": variant === "primary",
+          "border border-neutral-300 bg-neutral-200 text-neutral-900 dark:border-neutral-600 dark:bg-neutral-800 dark:text-white": variant === "secondary",
+          "border border-neutral-300 bg-white text-neutral-900 dark:border-neutral-800 dark:bg-black dark:text-white": variant === "outline",
+          "bg-transparent text-neutral-900 dark:text-white": variant === "ghost",
           "bg-red-500 text-white border border-red-800": variant === "destructive",
         },
         className

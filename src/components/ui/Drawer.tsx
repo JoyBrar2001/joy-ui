@@ -58,7 +58,7 @@ export function DrawerContainer({
   className?: string;
 }) {
   return (
-    <DrawerPrimitive.Container className={cn("!rounded-t-3xl !bg-neutral-900 text-white shadow-xl", className)}>
+    <DrawerPrimitive.Container className={cn("!rounded-t-3xl !bg-white text-neutral-900 shadow-xl dark:!bg-neutral-900 dark:text-white", className)}>
       {children}
     </DrawerPrimitive.Container>
   );
@@ -72,7 +72,7 @@ export function DrawerHeader({
   className?: string;
 }) {
   return (
-    <DrawerPrimitive.Header className={cn("p-4 border-b border-neutral-700 flex justify-between items-center", className)}>
+    <DrawerPrimitive.Header className={cn("flex items-center justify-between border-b border-neutral-200 p-4 dark:border-neutral-700", className)}>
       {children}
     </DrawerPrimitive.Header>
   );

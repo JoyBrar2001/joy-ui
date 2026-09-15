@@ -26,27 +26,27 @@ export function Calendar({
   return (
     <DayPicker
       className={cn(
-        "relative rounded-lg px-0 py-2 bg-black w-fit border border-neutral-800",
+        "relative w-fit rounded-lg border border-neutral-200 bg-white px-0 py-2 text-neutral-900 dark:border-neutral-800 dark:bg-black dark:text-white",
         className
       )}
       classNames={{
         nav: "absolute px-4 top-[1.125rem] w-full flex justify-between",
-        chevron: "size-6 p-1 border border-neutral-800 rounded-sm fill-white cursor-pointer transition hover:bg-neutral-800",
+        chevron: "size-6 cursor-pointer rounded-sm border border-neutral-300 fill-neutral-900 p-1 transition hover:bg-neutral-100 dark:border-neutral-800 dark:fill-white dark:hover:bg-neutral-800",
         months: "flex",
         month: "px-4 not-last:border-r not-last:border-r-neutral-800",
         month_caption: "flex justify-center items-center py-3",
         weekdays: "grid grid-cols-7 w-full my-2",
         weekday: "inline-flex flex justify-center items-center text-sm font-light",
         week: "grid grid-cols-7 w-full",
-        day: "my-0.5 rounded-md transition disabled:cursor-not-allowed data-[hidden=true]:bg-black hover:bg-neutral-800",
-        day_button: "size-10 flex justify-center items-center disabled:text-neutral-700 disabled:hover:bg-black",
-        disabled: "text-neutral-700 line-through",
-        outside: "text-neutral-700",
+        day: "my-0.5 rounded-md transition disabled:cursor-not-allowed data-[hidden=true]:bg-white hover:bg-neutral-100 dark:data-[hidden=true]:bg-black dark:hover:bg-neutral-800",
+        day_button: "flex size-10 items-center justify-center disabled:text-neutral-400 disabled:hover:bg-white dark:disabled:text-neutral-700 dark:disabled:hover:bg-black",
+        disabled: "text-neutral-400 line-through dark:text-neutral-700",
+        outside: "text-neutral-400 dark:text-neutral-700",
         today: "outline outline-neutral-800 rounded-md",
-        selected: props.mode === "range" ? "" : "bg-white hover:bg-white text-neutral-900 rounded-md",
-        range_start: "bg-white text-neutral-900 rounded-l-md rounded-r-none hover:bg-white",
-        range_end: "bg-white text-neutral-900 rounded-r-md rounded-l-none hover:bg-white",
-        range_middle: "bg-neutral-800 text-white rounded-none",
+        selected: props.mode === "range" ? "" : "rounded-md bg-neutral-900 text-white hover:bg-neutral-900 dark:bg-white dark:text-neutral-900 dark:hover:bg-white",
+        range_start: "rounded-l-md rounded-r-none bg-neutral-900 text-white hover:bg-neutral-900 dark:bg-white dark:text-neutral-900 dark:hover:bg-white",
+        range_end: "rounded-r-md rounded-l-none bg-neutral-900 text-white hover:bg-neutral-900 dark:bg-white dark:text-neutral-900 dark:hover:bg-white",
+        range_middle: "rounded-none bg-neutral-200 text-neutral-900 dark:bg-neutral-800 dark:text-white",
         ...classNames,
       }}
       showOutsideDays={props.showOutsideDays ?? (!props.numberOfMonths || props.numberOfMonths <= 1)}

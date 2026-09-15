@@ -41,7 +41,7 @@ export default function ComponentWrapper({ title, cols = 4, steps, code, childre
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Button
-                    className="relative group size-10 rounded-md transition-all duration-300 text-black"
+                    className="relative group size-10 rounded-md transition-all duration-300 text-neutral-900 dark:text-white"
                     variant="outline"
                   >
                     <Code className="size-4 transition-all duration-300 absolute rotate-0 scale-100" />
@@ -61,11 +61,11 @@ export default function ComponentWrapper({ title, cols = 4, steps, code, childre
             </DialogHeader>
 
             <Tabs defaultValue="installation" className="w-full">
-              <TabsList className="w-fit flex gap-2 border-none bg-neutral-800 rounded-lg p-1">
-                <TabsTrigger value="installation" className=" transition-all duration-300 rounded-lg data-[state=active]:rounded-lg data-[state=active]:text-white data-[state=active]:bg-black">
+              <TabsList className="w-fit flex gap-2 border-none bg-neutral-200 dark:bg-neutral-800 rounded-lg p-1">
+                <TabsTrigger value="installation" className="transition-all duration-300 rounded-lg data-[state=active]:rounded-lg data-[state=active]:text-white data-[state=active]:bg-neutral-900 dark:data-[state=active]:bg-black">
                   Installation
                 </TabsTrigger>
-                <TabsTrigger value="code" className=" transition-all duration-300 rounded-lg data-[state=active]:rounded-lg data-[state=active]:text-white data-[state=active]:bg-black">
+                <TabsTrigger value="code" className="transition-all duration-300 rounded-lg data-[state=active]:rounded-lg data-[state=active]:text-white data-[state=active]:bg-neutral-900 dark:data-[state=active]:bg-black">
                   Code
                 </TabsTrigger>
               </TabsList>

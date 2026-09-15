@@ -17,11 +17,12 @@ export default function HomePage() {
         </p>
 
         <div className="mt-6 flex flex-wrap justify-center gap-4">
-          <Button variant="primary" className="px-6 py-3 text-lg">
-            <Link href={"/components/ui"} className="flex items-center">
-              Get Started <ArrowRight className="ml-2 size-5" />
-            </Link>
-          </Button>
+          <Link
+            href="/components/ui"
+            className="flex items-center justify-center gap-3 rounded-md bg-black px-6 py-3 text-lg font-medium text-white transition-all duration-300 hover:bg-neutral-900 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
+          >
+            Get Started <ArrowRight className="size-5" />
+          </Link>
 
           <Button variant="outline" className="px-6 py-3 text-lg">
             Learn More

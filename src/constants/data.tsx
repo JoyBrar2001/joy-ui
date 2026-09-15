@@ -23,6 +23,10 @@ import { calendarData } from "./calendar";
 import { dialogData } from "./dialog";
 import { textareaData } from "./textarea";
 import { dropdownMenuData } from "./dropdown-menu";
+import { multiSelectData } from "./multi-select";
+import { toastData } from "./toast";
+import { progressData } from "./progress";
+import { sliderData } from "./slider";
 
 export type ComponentEntry = {
   title: string;
@@ -79,6 +83,7 @@ export const data: ComponentData = {
   codeblock: codeblockData,
   dialog: dialogData,
   dropdownMenu: dropdownMenuData,
+  multiSelect: multiSelectData,
   drawer: drawerData,
   hoverCard: hoverCardData,
   input: inputData,
@@ -88,6 +93,9 @@ export const data: ComponentData = {
   select: selectData,
   separator: separatorData,
   switch: switchData,
+  toast: toastData,
+  progress: progressData,
+  slider: sliderData,
   tabs: tabsData,
   textarea: textareaData,
   tooltip: tooltipData,

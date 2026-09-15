@@ -28,6 +28,7 @@ import { toastData } from "./toast";
 import { progressData } from "./progress";
 import { sliderData } from "./slider";
 import { commandPaletteData } from "./command-palette";
+import { cardData } from "./card";
 
 export type ComponentEntry = {
   title: string;
@@ -80,6 +81,7 @@ export const data: ComponentData = {
   calendar: calendarData,
   checkbox: checkboxData,
   commandPalette: commandPaletteData,
+  card: cardData,
   collapsible: collapsibleData,
   chip: chipData,
   codeblock: codeblockData,

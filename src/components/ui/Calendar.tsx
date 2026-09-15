@@ -32,8 +32,8 @@ export function Calendar({
       classNames={{
         nav: "absolute px-4 top-[1.125rem] w-full flex justify-between",
         chevron: "size-6 cursor-pointer rounded-sm border border-neutral-300 fill-neutral-900 p-1 transition hover:bg-neutral-100 dark:border-neutral-800 dark:fill-white dark:hover:bg-neutral-800",
-        months: "flex",
-        month: "px-4 not-last:border-r not-last:border-r-neutral-800",
+        months: "flex flex-col md:flex-row",
+        month: "px-4 not-last:border-b not-last:border-b-neutral-800 md:not-last:border-b-0 md:not-last:border-r md:not-last:border-r-neutral-800",
         month_caption: "flex justify-center items-center py-3",
         weekdays: "grid grid-cols-7 w-full my-2",
         weekday: "inline-flex flex justify-center items-center text-sm font-light",

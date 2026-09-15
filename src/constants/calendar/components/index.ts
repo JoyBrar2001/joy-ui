@@ -14,6 +14,7 @@ import { MultipleDaysSelector } from "./MultipleDaysSelector";
 import { MultipleMonthsSelector } from "./MultipleMonthsSelector";
 import { SimpleCalendar } from "./SimpleCalendar";
 import { SimpleRangeSelector } from "./SimpleRangeSelector";
+import { BasicCalendar, DayPickerExample, RangePicker, RangePickerTwoMonths, ThreeMonthView, MultipleDayPicker, DatePickerWithFooter, CalendarWithDisabledWeekends } from "./PickerExamples";
 
 export {
   CalendarWithDisabledDates,
@@ -32,4 +33,12 @@ export {
   MultipleMonthsSelector,
   SimpleCalendar,
   SimpleRangeSelector,
+  BasicCalendar,
+  DayPickerExample,
+  RangePicker,
+  RangePickerTwoMonths,
+  ThreeMonthView,
+  MultipleDayPicker,
+  DatePickerWithFooter,
+  CalendarWithDisabledWeekends,
 };

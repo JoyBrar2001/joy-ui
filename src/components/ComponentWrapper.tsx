@@ -25,7 +25,7 @@ export default function ComponentWrapper({ title, cols = 4, steps, code, codePat
   return (
     <div
       className={cn(
-        "relative pl-4 py-10 flex gap-2 flex-col justify-start items-start min-h-48 grid_item_border",
+        "relative min-w-0 pl-4 py-10 flex gap-2 flex-col justify-start items-start min-h-48 grid_item_border",
         cols === 4 && "col-span-12 md:col-span-6 lg:col-span-4",
         cols === 6 && "col-span-12 md:col-span-6",
         cols === 12 && "col-span-12"

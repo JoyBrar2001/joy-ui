@@ -9,7 +9,7 @@ export default function UiLayout({
 }>) {
   return (
     <>
-      <div className="max-w-[100rem] mx-auto h-full flex pt-24 bg-white dark:bg-black">
+      <div className="mx-auto flex h-full max-w-[100rem] flex-col bg-white pt-20 dark:bg-black md:flex-row md:pt-24">
         <Sidebar />
 
         {children}

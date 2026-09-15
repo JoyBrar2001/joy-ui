@@ -31,19 +31,19 @@ export default function Sidebar() {
   }, []);
 
   return (
-    <aside className="w-64 h-screen sticky top-0 overflow-y-auto px-4 pb-4 bg-white dark:bg-black border-r border-gray-200 dark:border-neutral-700 [&::-webkit-scrollbar]:w-0">
+    <aside className="sticky top-16 z-[5] h-auto w-full shrink-0 overflow-x-auto border-b border-gray-200 bg-white px-3 pb-2 dark:border-neutral-700 dark:bg-black md:top-0 md:h-screen md:w-64 md:overflow-y-auto md:overflow-x-hidden md:border-b-0 md:border-r md:px-4 md:pb-4 [&::-webkit-scrollbar]:h-0 [&::-webkit-scrollbar]:w-0">
       <Link href="/components/ui">
         <h2
           className={cn(
-            "text-xl font-bold mb-4 transition-all duration-500",
-            scrolled && "pt-28"
+            "mb-2 whitespace-nowrap text-lg font-bold transition-all duration-500 md:mb-4 md:text-xl",
+            scrolled && "md:pt-28"
           )}
         >
           UI Components
         </h2>
       </Link>
 
-      <nav className="flex flex-col space-y-2">
+      <nav className="flex min-w-max flex-row gap-1 md:flex-col md:space-y-2">
         {sidebarItems.map((item) => (
           <Link
             key={item.path}
@@ -53,7 +53,7 @@ export default function Sidebar() {
             <Button
               variant="ghost"
               className={cn(
-                "w-full justify-start",
+                "w-auto justify-start whitespace-nowrap md:w-full",
                 pathname === item.path && "text-white bg-neutral-900"
               )}
             >

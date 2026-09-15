@@ -27,7 +27,7 @@ export default async function ComponentPage({ params }: Props) {
   if (!componentData) notFound();
 
   return (
-    <section className="flex-1 p-6 min-h-screen h-full">
+    <section className="min-w-0 flex-1 p-4 sm:p-6">
       <p className="flex gap-1 items-center text-neutral-500">
         <Link href="/components">
           <span>Components</span>
@@ -46,7 +46,7 @@ export default async function ComponentPage({ params }: Props) {
         </span>
       </p>
 
-      <h1 className="text-5xl font-bold mt-2">
+      <h1 className="mt-2 text-4xl font-bold sm:text-5xl">
         {componentData.title}
       </h1>
 
@@ -54,7 +54,7 @@ export default async function ComponentPage({ params }: Props) {
         {componentData.subtitle}
       </h6>
 
-      <div className="grid grid-cols-12 gap-8 overflow-hidden w-full mt-6">
+      <div className="mt-6 grid w-full min-w-0 grid-cols-12 gap-4 overflow-hidden sm:gap-8">
         {componentData.components.map(({ title, component: Component, code }, index) => (
           <ComponentWrapper
             key={index}

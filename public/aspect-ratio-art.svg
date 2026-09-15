@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract monochrome artwork</title>
+  <desc id="desc">A geometric black, white, and gray composition.</desc>
+  <rect width="1200" height="800" fill="#e5e5e5"/>
+  <circle cx="840" cy="240" r="260" fill="#171717"/>
+  <path d="M0 640L360 270L650 800H0Z" fill="#737373"/>
+  <path d="M440 800L760 340L1200 800Z" fill="#262626"/>
+  <rect x="80" y="90" width="270" height="36" rx="18" fill="#fafafa"/>
+</svg>

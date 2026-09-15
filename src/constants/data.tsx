@@ -29,6 +29,7 @@ import { progressData } from "./progress";
 import { sliderData } from "./slider";
 import { commandPaletteData } from "./command-palette";
 import { cardData } from "./card";
+import { aspectRatioData } from "./aspect-ratio";
 
 export type ComponentEntry = {
   title: string;
@@ -82,6 +83,7 @@ export const data: ComponentData = {
   checkbox: checkboxData,
   commandPalette: commandPaletteData,
   card: cardData,
+  aspectRatio: aspectRatioData,
   collapsible: collapsibleData,
   chip: chipData,
   codeblock: codeblockData,

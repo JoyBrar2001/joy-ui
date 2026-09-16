@@ -16,7 +16,7 @@ export function DraggableDrawer() {
         Draggable Drawer
       </Button>
 
-      <Drawer ref={ref} isOpen={isOpen} setOpen={setOpen} snapPoints={[600]} initialSnap={0} disableDrag={false}>
+      <Drawer ref={ref} isOpen={isOpen} setOpen={setOpen} snapPoints={[0, 600, 1]} initialSnap={1} disableDrag={false}>
         <DrawerBackdrop setOpen={setOpen} className="bg-black/70" />
 
         <DrawerContainer>

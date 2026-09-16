@@ -1,0 +1,1 @@
+export const navigationMenuCode = `import * as Primitive from "@radix-ui/react-navigation-menu";\n\nexport const NavigationMenu = Primitive.Root;\nexport const NavigationMenuList = Primitive.List;\nexport const NavigationMenuItem = Primitive.Item;\nexport const NavigationMenuTrigger = Primitive.Trigger;\nexport const NavigationMenuContent = Primitive.Content;`;

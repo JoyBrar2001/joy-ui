@@ -30,6 +30,13 @@ import { sliderData } from "./slider";
 import { commandPaletteData } from "./command-palette";
 import { cardData } from "./card";
 import { aspectRatioData } from "./aspect-ratio";
+import { breadcrumbData } from "./breadcrumb";
+import { toggleData } from "./toggle";
+import { contextMenuData } from "./context-menu";
+import { alertDialogData } from "./alert-dialog";
+import { toolbarData } from "./toolbar";
+import { navigationMenuData } from "./navigation-menu";
+import { menubarData } from "./menubar";
 
 export type ComponentEntry = {
   title: string;
@@ -84,6 +91,13 @@ export const data: ComponentData = {
   commandPalette: commandPaletteData,
   card: cardData,
   aspectRatio: aspectRatioData,
+  breadcrumb: breadcrumbData,
+  toggle: toggleData,
+  contextMenu: contextMenuData,
+  alertDialog: alertDialogData,
+  toolbar: toolbarData,
+  navigationMenu: navigationMenuData,
+  menubar: menubarData,
   collapsible: collapsibleData,
   chip: chipData,
   codeblock: codeblockData,

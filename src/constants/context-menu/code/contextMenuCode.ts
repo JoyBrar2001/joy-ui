@@ -1,0 +1,1 @@
+export const contextMenuCode = `import * as Primitive from "@radix-ui/react-context-menu";\n\nexport const ContextMenu = Primitive.Root;\nexport const ContextMenuTrigger = Primitive.Trigger;\nexport const ContextMenuContent = Primitive.Content;\nexport const ContextMenuItem = Primitive.Item;`;

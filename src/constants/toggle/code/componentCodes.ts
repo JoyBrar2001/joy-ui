@@ -1,0 +1,11 @@
+const base = (body: string) => `import { Toggle } from "@/components/ui/Toggle";\n\nexport function ToggleExample() {\n  return (${body});\n}`;
+export const regularCode = base(`<Toggle aria-label="Toggle bold">Bold</Toggle>`);
+export const disabledCode = base(`<Toggle disabled>Unavailable</Toggle>`);
+export const alwaysOnCode = base(`<Toggle defaultPressed>Always on</Toggle>`);
+export const outlineCode = base(`<Toggle variant="outline">Favorite</Toggle>`);
+export const iconCode = base(`<Toggle variant="outline" aria-label="Toggle appearance"><Sun /></Toggle>`);
+export const textCode = base(`<div className="flex gap-1"><Toggle aria-label="Bold"><Bold /></Toggle><Toggle aria-label="Italic"><Italic /></Toggle></div>`);
+export const groupCode = `"use client";\n\nimport { useState } from "react";\nimport { Bold, Italic, List } from "lucide-react";\nimport { ToggleGroup, ToggleGroupItem } from "@/components/ui/Toggle";\n\nexport function GroupToggle() {\n  const [value, setValue] = useState("bold");\n  return <ToggleGroup type="single" value={value} onValueChange={(next) => setValue(String(next))}><ToggleGroupItem value="bold"><Bold /></ToggleGroupItem><ToggleGroupItem value="italic"><Italic /></ToggleGroupItem><ToggleGroupItem value="list"><List /></ToggleGroupItem></ToggleGroup>;\n}`;
+export const multipleGroupCode = `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/Toggle";\n\nexport function MultipleGroupToggle() {\n  return <ToggleGroup type="multiple" defaultValue={["bold"]}><ToggleGroupItem value="bold">Bold</ToggleGroupItem><ToggleGroupItem value="italic">Italic</ToggleGroupItem></ToggleGroup>;\n}`;
+export const controlledCode = `"use client";\n\nimport { useState } from "react";\nimport { Toggle } from "@/components/ui/Toggle";\n\nexport function ControlledToggle() {\n  const [pressed, setPressed] = useState(false);\n  return <Toggle pressed={pressed} onPressedChange={setPressed}>Notifications</Toggle>;\n}`;
+export const labelCode = `"use client";\n\nimport { useState } from "react";\nimport { Toggle } from "@/components/ui/Toggle";\n\nexport function ToggleWithLabel() {\n  const [pressed, setPressed] = useState(true);\n  return <Toggle pressed={pressed} onPressedChange={setPressed}>Focus mode</Toggle>;\n}`;

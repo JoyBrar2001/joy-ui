@@ -1,0 +1,1 @@
+export const toolbarCode = `import * as Primitive from "@radix-ui/react-toolbar";\n\nexport const Toolbar = Primitive.Root;\nexport const ToolbarButton = Primitive.Button;\nexport const ToolbarLink = Primitive.Link;\nexport const ToolbarSeparator = Primitive.Separator;\nexport const ToolbarToggleGroup = Primitive.ToggleGroup;`;

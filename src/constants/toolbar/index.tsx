@@ -1,0 +1,5 @@
+import type { ComponentCategory } from "../data";
+import { toolbarCode } from "./code/toolbarCode";
+import { editorCode, formattingCode, groupsCode, linksCode, toggleCode } from "./code/componentCodes";
+import { EditorToolbar, FormattingToolbar, ToolbarWithGroups, ToolbarWithLinks, ToolbarWithToggle } from "./components";
+export const toolbarData: ComponentCategory = { cols: 6, title: "Toolbar", subtitle: "Keyboard-friendly control groups for editors, formatting, navigation, and actions.", steps: [{ type: "dependencies", libraries: ["clsx", "tailwind-merge", "@radix-ui/react-toolbar"] }, { type: "source", name: "Toolbar.tsx", path: "@/components/ui/Toolbar.tsx", language: "tsx", code: toolbarCode }], components: [{ title: "Formatting Toolbar", component: FormattingToolbar, code: formattingCode }, { title: "Toolbar with Links", component: ToolbarWithLinks, code: linksCode }, { title: "Toolbar with Groups", component: ToolbarWithGroups, code: groupsCode }, { title: "Editor Toolbar", component: EditorToolbar, code: editorCode }, { title: "Toolbar with Toggle", component: ToolbarWithToggle, code: toggleCode }] };

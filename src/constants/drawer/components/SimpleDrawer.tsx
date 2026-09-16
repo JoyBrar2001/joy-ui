@@ -20,8 +20,8 @@ export function SimpleDrawer() {
         ref={ref}
         isOpen={isOpen}
         setOpen={setOpen}
-        snapPoints={[600]}
-        initialSnap={0}
+        snapPoints={[0, 600, 1]}
+        initialSnap={1}
         disableDrag={true}
       >
         <DrawerContainer>

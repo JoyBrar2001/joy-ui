@@ -16,8 +16,8 @@ export function Drawer({
   ref,
   isOpen,
   setOpen,
-  snapPoints = [800, 400, 200],
-  initialSnap = 0,
+  snapPoints = [0, 0.5, 1],
+  initialSnap = 1,
   disableDrag = false,
   children,
 }: DrawerProps) {
@@ -26,7 +26,7 @@ export function Drawer({
       ref={ref}
       isOpen={isOpen}
       onClose={() => setOpen(false)}
-      snapPoints={snapPoints}
+      snapPoints={[0, ...snapPoints.filter((point) => point !== 0 && point !== 1), 1]}
       initialSnap={initialSnap}
       disableDrag={disableDrag}
     >
@@ -124,7 +124,7 @@ export function DrawerWithBackdrop() {
         Open Backdrop Drawer
       </Button>
 
-      <Drawer ref={ref} isOpen={isOpen} setOpen={setOpen} snapPoints={[600]} initialSnap={0} disableDrag={true}>
+      <Drawer ref={ref} isOpen={isOpen} setOpen={setOpen} snapPoints={[0, 600, 1]} initialSnap={1} disableDrag={true}>
         <DrawerBackdrop setOpen={setOpen} className="bg-black/70" />
 
         <DrawerContainer>

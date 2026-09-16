@@ -21,7 +21,7 @@ export function SnappableDrawer() {
         Open Snappable Drawer
       </Button>
 
-      <Drawer ref={ref} isOpen={isOpen} setOpen={setOpen} snapPoints={[800, 400, 200]} initialSnap={0} disableDrag={false}>
+      <Drawer ref={ref} isOpen={isOpen} setOpen={setOpen} snapPoints={[0, 200, 400, 800, 1]} initialSnap={3} disableDrag={false}>
         <DrawerBackdrop setOpen={setOpen} />
 
         <DrawerContainer>
@@ -49,21 +49,21 @@ export function SnappableDrawer() {
             <div className="flex space-x-2 mt-4">
               <Button
                 variant="custom"
-                onClick={() => snapTo(0)}
+                onClick={() => snapTo(3)}
                 className="px-4 py-2 bg-indigo-600 text-white rounded-md"
               >
                 Snap to 800px
               </Button>
               <Button
                 variant="custom"
-                onClick={() => snapTo(1)}
+                onClick={() => snapTo(2)}
                 className="px-4 py-2 bg-blue-600 text-white rounded-md"
               >
                 Snap to 400px
               </Button>
               <Button
                 variant="custom"
-                onClick={() => snapTo(2)}
+                onClick={() => snapTo(1)}
                 className="px-4 py-2 bg-green-600 text-white rounded-md"
               >
                 Snap to 200px

@@ -1,0 +1,1 @@
+export const menubarCode = `import * as Primitive from "@radix-ui/react-menubar";\n\nexport const Menubar = Primitive.Root;\nexport const MenubarMenu = Primitive.Menu;\nexport const MenubarTrigger = Primitive.Trigger;\nexport const MenubarContent = Primitive.Content;\nexport const MenubarItem = Primitive.Item;`;

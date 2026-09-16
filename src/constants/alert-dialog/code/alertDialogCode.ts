@@ -1,0 +1,1 @@
+export const alertDialogCode = `import * as Primitive from "@radix-ui/react-alert-dialog";\n\nexport const AlertDialog = Primitive.Root;\nexport const AlertDialogTrigger = Primitive.Trigger;\nexport const AlertDialogAction = Primitive.Action;\nexport const AlertDialogCancel = Primitive.Cancel;`;

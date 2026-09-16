@@ -14,7 +14,7 @@ export default function ChartsSidebar() {
         <h2 className="mb-2 whitespace-nowrap text-lg font-bold text-neutral-900 dark:text-white md:mb-4 md:text-xl">Charts</h2>
       </Link>
       <nav className="flex min-w-max flex-row gap-1 md:flex-col md:space-y-2">
-        {Object.entries(chartsData).map(([slug, chart]) => (
+        {Object.entries(chartsData).sort(([, firstChart], [, secondChart]) => firstChart.title.localeCompare(secondChart.title)).map(([slug, chart]) => (
           <Link key={slug} href={`/components/charts/${slug}`}>
             <Button variant="ghost" className={cn("w-auto justify-start whitespace-nowrap md:w-full", pathname === `/components/charts/${slug}` && "bg-neutral-900 text-white dark:bg-neutral-800")}>
               {chart.title}

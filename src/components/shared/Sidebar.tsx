@@ -10,6 +10,7 @@ import { Button } from "../ui/Button";
 const sidebarItems = Array.from(
   Object
     .keys(data)
+    .sort((a, b) => data[a].title.localeCompare(data[b].title))
     .map((component) => ({
       name: capitalize(component),
       path: `/components/ui/${component}`

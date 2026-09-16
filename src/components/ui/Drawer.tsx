@@ -12,12 +12,17 @@ type DrawerProps = {
   children?: ReactNode;
 };
 
+function normalizeSnapPoints(points: number[]) {
+  const middlePoints = points.filter((point) => point !== 0 && point !== 1).sort((a, b) => a - b);
+  return [0, ...middlePoints, 1];
+}
+
 export function Drawer({
   ref,
   isOpen,
   setOpen,
-  snapPoints = [800, 400, 200],
-  initialSnap = 0,
+  snapPoints = [0, 0.5, 1],
+  initialSnap = 1,
   disableDrag = false,
   children,
 }: DrawerProps) {
@@ -26,7 +31,7 @@ export function Drawer({
       ref={ref}
       isOpen={isOpen}
       onClose={() => setOpen(false)}
-      snapPoints={snapPoints}
+      snapPoints={normalizeSnapPoints(snapPoints)}
       initialSnap={initialSnap}
       disableDrag={disableDrag}
     >

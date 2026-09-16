@@ -47,10 +47,10 @@ export default function WebsiteCommandPalette() {
           <CommandPaletteItem onSelect={() => navigate("/components/creative")}><ArrowRight className="size-4" />Creative Components</CommandPaletteItem>
         </CommandPaletteGroup>
         <CommandPaletteGroup heading="UI Components">
-          {Object.entries(data).map(([slug, component]) => <CommandPaletteItem key={slug} value={`${component.title} ${slug}`} onSelect={() => navigate(`/components/ui/${slug}`)}>{component.title}</CommandPaletteItem>)}
+          {Object.entries(data).sort(([, firstComponent], [, secondComponent]) => firstComponent.title.localeCompare(secondComponent.title)).map(([slug, component]) => <CommandPaletteItem key={slug} value={`${component.title} ${slug}`} onSelect={() => navigate(`/components/ui/${slug}`)}>{component.title}</CommandPaletteItem>)}
         </CommandPaletteGroup>
         <CommandPaletteGroup heading="Charts">
-          {Object.entries(chartsData).map(([slug, chart]) => (
+          {Object.entries(chartsData).sort(([, firstChart], [, secondChart]) => firstChart.title.localeCompare(secondChart.title)).map(([slug, chart]) => (
             <CommandPaletteItem key={slug} value={`${chart.title} chart ${slug}`} onSelect={() => navigate(`/components/charts/${slug}`)}>
               {chart.title}
             </CommandPaletteItem>

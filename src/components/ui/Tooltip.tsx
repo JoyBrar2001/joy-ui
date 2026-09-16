@@ -9,7 +9,10 @@ export function Tooltip({ children, ...props }: TooltipPrimitive.TooltipProps) {
   );
 }
 
-export function TooltipTrigger({ children, ...props }: TooltipPrimitive.TooltipTriggerProps) {
+export function TooltipTrigger({
+  children,
+  ...props
+}: TooltipPrimitive.TooltipTriggerProps) {
   return (
     <TooltipPrimitive.Trigger asChild {...props}>
       {children}
@@ -27,14 +30,14 @@ export function TooltipContent({
   className,
   ...props
 }: TooltipPrimitive.TooltipContentProps & {
-  variant?: "primary" | "secondary" | "outline" | "ghost" | "destructive" | "custom";
+  variant?:
+    "primary" | "secondary" | "outline" | "ghost" | "destructive" | "custom";
   size?: "xs" | "sm" | "md" | "lg" | "xl";
 }) {
   const variantClasses = {
     primary:
       "bg-white text-black dark:bg-black dark:text-white border border-neutral-800",
-    secondary:
-      "bg-neutral-200 text-black dark:bg-neutral-800 dark:text-white",
+    secondary: "bg-neutral-200 text-black dark:bg-neutral-800 dark:text-white",
     outline:
       "border border-neutral-300 text-black dark:border-neutral-800 dark:text-white backdrop-blur",
     ghost: "text-neutral-500 hover:text-black",
@@ -52,9 +55,11 @@ export function TooltipContent({
 
   const animationClasses = {
     top: "data-[state=delayed-open]:animate-slideUpAndFadeIn data-[state=closed]:animate-slideDownAndFadeOut",
-    bottom: "data-[state=delayed-open]:animate-slideDownAndFadeIn data-[state=closed]:animate-slideUpAndFadeOut",
+    bottom:
+      "data-[state=delayed-open]:animate-slideDownAndFadeIn data-[state=closed]:animate-slideUpAndFadeOut",
     left: "data-[state=delayed-open]:animate-slideLeftAndFadeIn data-[state=closed]:animate-slideRightAndFadeOut",
-    right: "data-[state=delayed-open]:animate-slideRightAndFadeIn data-[state=closed]:animate-slideLeftAndFadeOut",
+    right:
+      "data-[state=delayed-open]:animate-slideRightAndFadeIn data-[state=closed]:animate-slideLeftAndFadeOut",
   };
 
   return (
@@ -64,7 +69,7 @@ export function TooltipContent({
           "select-none rounded shadow-lg",
           animationClasses[side],
           variantClasses[variant] || className,
-          sizeClasses[size]
+          sizeClasses[size],
         )}
         sideOffset={sideOffset}
         side={side}

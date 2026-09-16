@@ -4,8 +4,18 @@ import { cn } from "@/utils";
 import { Button } from "@/components/ui/Button";
 import { Code } from "lucide-react";
 
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/Dialog";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/Tooltip";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/Dialog";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/Tooltip";
 
 import { DependeciesStep, SourceStep, UtilitiesStep } from "@/constants/data";
 
@@ -21,14 +31,21 @@ type ComponentWrapperProps = {
   children: React.ReactNode;
 };
 
-export default function ComponentWrapper({ title, cols = 4, steps, code, codePath, children }: ComponentWrapperProps) {
+export default function ComponentWrapper({
+  title,
+  cols = 4,
+  steps,
+  code,
+  codePath,
+  children,
+}: ComponentWrapperProps) {
   return (
     <div
       className={cn(
         "relative min-w-0 pl-4 py-10 flex gap-2 flex-col justify-start items-start min-h-48 grid_item_border",
         cols === 4 && "col-span-12 md:col-span-6 lg:col-span-4",
         cols === 6 && "col-span-12 md:col-span-6",
-        cols === 12 && "col-span-12"
+        cols === 12 && "col-span-12",
       )}
     >
       <div className="w-full flex justify-between items-center mb-2">
@@ -49,9 +66,7 @@ export default function ComponentWrapper({ title, cols = 4, steps, code, codePat
                   </Button>
                 </TooltipTrigger>
 
-                <TooltipContent size="xs">
-                  View Code
-                </TooltipContent>
+                <TooltipContent size="xs">View Code</TooltipContent>
               </Tooltip>
             </span>
           </DialogTrigger>
@@ -63,10 +78,16 @@ export default function ComponentWrapper({ title, cols = 4, steps, code, codePat
 
             <Tabs defaultValue="installation" className="w-full">
               <TabsList className="w-fit flex gap-2 border-none bg-neutral-200 dark:bg-neutral-800 rounded-lg p-1">
-                <TabsTrigger value="installation" className="transition-all duration-300 rounded-lg data-[state=active]:rounded-lg data-[state=active]:text-white data-[state=active]:bg-neutral-900 dark:data-[state=active]:bg-black">
+                <TabsTrigger
+                  value="installation"
+                  className="transition-all duration-300 rounded-lg data-[state=active]:rounded-lg data-[state=active]:text-white data-[state=active]:bg-neutral-900 dark:data-[state=active]:bg-black"
+                >
                   Installation
                 </TabsTrigger>
-                <TabsTrigger value="code" className="transition-all duration-300 rounded-lg data-[state=active]:rounded-lg data-[state=active]:text-white data-[state=active]:bg-neutral-900 dark:data-[state=active]:bg-black">
+                <TabsTrigger
+                  value="code"
+                  className="transition-all duration-300 rounded-lg data-[state=active]:rounded-lg data-[state=active]:text-white data-[state=active]:bg-neutral-900 dark:data-[state=active]:bg-black"
+                >
                   Code
                 </TabsTrigger>
               </TabsList>
@@ -126,7 +147,9 @@ export default function ComponentWrapper({ title, cols = 4, steps, code, codePat
                       const sourceStep = step as SourceStep;
                       return (
                         <div key={`source-${index}`}>
-                          <h2>Copy and paste the following code into your project:</h2>
+                          <h2>
+                            Copy and paste the following code into your project:
+                          </h2>
                           <CodeBlock
                             tabs={[
                               {
@@ -153,7 +176,9 @@ export default function ComponentWrapper({ title, cols = 4, steps, code, codePat
                   tabs={[
                     {
                       name: title,
-                      path: codePath ?? `@/components/ui/${title.split(" ").join("")}.tsx`,
+                      path:
+                        codePath ??
+                        `@/components/ui/${title.split(" ").join("")}.tsx`,
                       code: code,
                       language: "tsx",
                     },
@@ -168,6 +193,6 @@ export default function ComponentWrapper({ title, cols = 4, steps, code, codePat
         </Dialog>
       </div>
       {children}
-    </div >
+    </div>
   );
 }

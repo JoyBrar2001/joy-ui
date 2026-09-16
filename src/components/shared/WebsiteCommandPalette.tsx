@@ -3,12 +3,24 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useTheme } from "@/providers/ThemeProvider";
-import { ArrowRight, Command as CommandIcon, Home, Moon, Palette, Search, Sun } from "lucide-react";
+import {
+  ArrowRight,
+  Command as CommandIcon,
+  Home,
+  Moon,
+  Palette,
+  Search,
+  Sun,
+} from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import { data } from "@/constants/data";
 import { chartsData } from "@/constants/charts-data";
 import { Button } from "@/components/ui/Button";
-import { CommandPalette, CommandPaletteGroup, CommandPaletteItem } from "@/components/ui/CommandPalette";
+import {
+  CommandPalette,
+  CommandPaletteGroup,
+  CommandPaletteItem,
+} from "@/components/ui/CommandPalette";
 
 export default function WebsiteCommandPalette() {
   const [open, setOpen] = useState(false);
@@ -33,36 +45,106 @@ export default function WebsiteCommandPalette() {
 
   return (
     <>
-      <Button variant="outline" className="hidden h-9 w-40 justify-between px-3 text-neutral-600 dark:text-neutral-300 sm:flex" onClick={() => setOpen(true)} aria-label="Open command palette">
-        <span className="flex items-center gap-2"><Search className="size-4" />Search</span>
-        <kbd className="rounded border border-neutral-300 px-1.5 text-xs dark:border-neutral-600"><CommandIcon className="inline size-3" />K</kbd>
+      <Button
+        variant="outline"
+        className="hidden h-9 w-40 justify-between px-3 text-neutral-600 dark:text-neutral-300 sm:flex"
+        onClick={() => setOpen(true)}
+        aria-label="Open command palette"
+      >
+        <span className="flex items-center gap-2">
+          <Search className="size-4" />
+          Search
+        </span>
+        <kbd className="rounded border border-neutral-300 px-1.5 text-xs dark:border-neutral-600">
+          <CommandIcon className="inline size-3" />K
+        </kbd>
       </Button>
-      <button type="button" className="flex size-10 items-center justify-center rounded-md text-neutral-700 hover:bg-neutral-100 dark:text-neutral-200 dark:hover:bg-neutral-800 sm:hidden" onClick={() => setOpen(true)} aria-label="Open command palette"><Search className="size-5" /></button>
+      <button
+        type="button"
+        className="flex size-10 items-center justify-center rounded-md text-neutral-700 hover:bg-neutral-100 dark:text-neutral-200 dark:hover:bg-neutral-800 sm:hidden"
+        onClick={() => setOpen(true)}
+        aria-label="Open command palette"
+      >
+        <Search className="size-5" />
+      </button>
 
       <CommandPalette open={open} onOpenChange={setOpen}>
         <CommandPaletteGroup heading="Navigation">
-          <CommandPaletteItem onSelect={() => navigate("/")}><Home className="size-4" />Home</CommandPaletteItem>
-          <CommandPaletteItem onSelect={() => navigate("/components/ui")}><Palette className="size-4" />UI Components</CommandPaletteItem>
-          <CommandPaletteItem onSelect={() => navigate("/components/charts")}><ArrowRight className="size-4" />Charts</CommandPaletteItem>
-          <CommandPaletteItem onSelect={() => navigate("/components/creative")}><ArrowRight className="size-4" />Creative Components</CommandPaletteItem>
+          <CommandPaletteItem onSelect={() => navigate("/")}>
+            <Home className="size-4" />
+            Home
+          </CommandPaletteItem>
+          <CommandPaletteItem onSelect={() => navigate("/components/ui")}>
+            <Palette className="size-4" />
+            UI Components
+          </CommandPaletteItem>
+          <CommandPaletteItem onSelect={() => navigate("/components/charts")}>
+            <ArrowRight className="size-4" />
+            Charts
+          </CommandPaletteItem>
+          <CommandPaletteItem onSelect={() => navigate("/components/creative")}>
+            <ArrowRight className="size-4" />
+            Creative Components
+          </CommandPaletteItem>
         </CommandPaletteGroup>
         <CommandPaletteGroup heading="UI Components">
-          {Object.entries(data).sort(([, firstComponent], [, secondComponent]) => firstComponent.title.localeCompare(secondComponent.title)).map(([slug, component]) => <CommandPaletteItem key={slug} value={`${component.title} ${slug}`} onSelect={() => navigate(`/components/ui/${slug}`)}>{component.title}</CommandPaletteItem>)}
+          {Object.entries(data)
+            .sort(([, firstComponent], [, secondComponent]) =>
+              firstComponent.title.localeCompare(secondComponent.title),
+            )
+            .map(([slug, component]) => (
+              <CommandPaletteItem
+                key={slug}
+                value={`${component.title} ${slug}`}
+                onSelect={() => navigate(`/components/ui/${slug}`)}
+              >
+                {component.title}
+              </CommandPaletteItem>
+            ))}
         </CommandPaletteGroup>
         <CommandPaletteGroup heading="Charts">
-          {Object.entries(chartsData).sort(([, firstChart], [, secondChart]) => firstChart.title.localeCompare(secondChart.title)).map(([slug, chart]) => (
-            <CommandPaletteItem key={slug} value={`${chart.title} chart ${slug}`} onSelect={() => navigate(`/components/charts/${slug}`)}>
-              {chart.title}
-            </CommandPaletteItem>
-          ))}
+          {Object.entries(chartsData)
+            .sort(([, firstChart], [, secondChart]) =>
+              firstChart.title.localeCompare(secondChart.title),
+            )
+            .map(([slug, chart]) => (
+              <CommandPaletteItem
+                key={slug}
+                value={`${chart.title} chart ${slug}`}
+                onSelect={() => navigate(`/components/charts/${slug}`)}
+              >
+                {chart.title}
+              </CommandPaletteItem>
+            ))}
         </CommandPaletteGroup>
         <CommandPaletteGroup heading="Appearance">
-          <CommandPaletteItem onSelect={() => setTheme("light")}><Sun className="size-4" />Light theme</CommandPaletteItem>
-          <CommandPaletteItem onSelect={() => setTheme("dark")}><Moon className="size-4" />Dark theme</CommandPaletteItem>
-          <CommandPaletteItem onSelect={() => setTheme("system")}><CommandIcon className="size-4" />System theme</CommandPaletteItem>
+          <CommandPaletteItem onSelect={() => setTheme("light")}>
+            <Sun className="size-4" />
+            Light theme
+          </CommandPaletteItem>
+          <CommandPaletteItem onSelect={() => setTheme("dark")}>
+            <Moon className="size-4" />
+            Dark theme
+          </CommandPaletteItem>
+          <CommandPaletteItem onSelect={() => setTheme("system")}>
+            <CommandIcon className="size-4" />
+            System theme
+          </CommandPaletteItem>
         </CommandPaletteGroup>
         <CommandPaletteGroup heading="External">
-          <CommandPaletteItem onSelect={() => { setOpen(false); window.open("https://github.com/JoyBrar2001/joy-ui", "_blank", "noopener,noreferrer"); }}><FaGithub className="size-4" />GitHub repository</CommandPaletteItem>
+          <CommandPaletteItem
+            onSelect={() => {
+              setOpen(false);
+              window.open(
+                "https://github.com/JoyBrar2001/joy-ui",
+                "_blank",
+                "noopener,noreferrer",
+              );
+            }}
+          >
+            <FaGithub className="size-4" />
+            GitHub repository
+          </CommandPaletteItem>
         </CommandPaletteGroup>
       </CommandPalette>
     </>

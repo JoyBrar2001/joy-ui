@@ -5,7 +5,10 @@ export const HoverCard = HoverCardPrimitive.Root;
 
 export const HoverCardArrow = HoverCardPrimitive.Arrow;
 
-export function HoverCardTrigger({ children, ...props }: HoverCardPrimitive.HoverCardTriggerProps) {
+export function HoverCardTrigger({
+  children,
+  ...props
+}: HoverCardPrimitive.HoverCardTriggerProps) {
   return (
     <HoverCardPrimitive.Trigger asChild {...props}>
       {children}
@@ -37,7 +40,7 @@ export function HoverCardContent({
             "data-[state=open]:data-[side=right]:animate-slideRightAndFadeIn data-[state=closed]:data-[side=right]:animate-slideLeftAndFadeOut":
               side === "right",
           },
-          className
+          className,
         )}
         {...props}
       >

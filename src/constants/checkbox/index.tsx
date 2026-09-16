@@ -1,4 +1,3 @@
-
 import { cnFile } from "../common";
 import { ComponentCategory } from "../data";
 import { checkboxCss } from "./code/checkboxCss";
@@ -47,11 +46,7 @@ export const checkboxData: ComponentCategory = {
   steps: [
     {
       type: "dependencies",
-      libraries: [
-        "clsx",
-        "tailwind-merge",
-        "@radix-ui/react-checkbox"
-      ]
+      libraries: ["clsx", "tailwind-merge", "@radix-ui/react-checkbox"],
     },
     {
       type: "utilities",
@@ -60,99 +55,99 @@ export const checkboxData: ComponentCategory = {
           name: "cn.ts",
           path: "@/utils/cn.ts",
           language: "typescript",
-          code: cnFile
+          code: cnFile,
         },
         {
           name: "globals.css",
           path: "@/globals.css",
           language: "css",
-          code: checkboxCss
-        }
-      ]
+          code: checkboxCss,
+        },
+      ],
     },
     {
       type: "source",
       name: "Checkbox.tsx",
       path: "@/components/ui/Checkbox.tsx",
       language: "tsx",
-      code: checkboxCode
-    }
+      code: checkboxCode,
+    },
   ],
   components: [
     {
       title: "Simple Checkbox",
       component: SimpleCheckbox,
-      code: simpleCheckboxCode
+      code: simpleCheckboxCode,
     },
     {
       title: "Animate Checkbox",
       component: AnimateCheckbox,
-      code: animatedCheckboxCode
+      code: animatedCheckboxCode,
     },
     {
       title: "Default Checked",
       component: DefaultCheckedCheckbox,
-      code: defaultCheckedCheckboxCode
+      code: defaultCheckedCheckboxCode,
     },
     {
       title: "Labeled Checkbox",
       component: LabeledCheckbox,
-      code: labeledCheckboxCode
+      code: labeledCheckboxCode,
     },
     {
       title: "Sub-Labeled Checkbox",
       component: SubLabeledCheckbox,
-      code: subLabeledCheckboxCode
+      code: subLabeledCheckboxCode,
     },
     {
       title: "Checkbox Description",
       component: CheckboxDescriptionComponent,
-      code: checkboxDescriptionCode
+      code: checkboxDescriptionCode,
     },
     {
       title: "Colored Checkbox",
       component: ColoredCheckbox,
-      code: coloredCheckboxCode
+      code: coloredCheckboxCode,
     },
     {
       title: "Strikethrough Checkbox",
       component: StrikeThroughCheckbox,
-      code: strikeThroughCheckboxCode
+      code: strikeThroughCheckboxCode,
     },
     {
       title: "Reversed Checkbox",
       component: ReversedCheckbox,
-      code: reversedCheckboxCode
+      code: reversedCheckboxCode,
     },
     {
       title: "Group Checkbox",
       component: GroupCheckbox,
-      code: groupCheckboxCode
+      code: groupCheckboxCode,
     },
     {
       title: "Labeled Checkbox (Col)",
       component: LabeledCheckboxCol,
-      code: labeledCheckboxColCode
+      code: labeledCheckboxColCode,
     },
     {
       title: "Checkbox Card",
       component: CheckboxCard,
-      code: checkboxCardCode
+      code: checkboxCardCode,
     },
     {
       title: "Checkbox with Icon",
       component: CheckboxWithIcon,
-      code: checkboxWithIconCode
+      code: checkboxWithIconCode,
     },
     {
       title: "Checkbox with Footer",
       component: CheckboxWithFooter,
-      code: checkboxWithFooterCode
+      code: checkboxWithFooterCode,
     },
     {
       title: "Cards Grid",
       component: CardsGrid,
-      code: cardGridsCode
-    }
-  ]
+      code: cardGridsCode,
+    },
+  ],
 };

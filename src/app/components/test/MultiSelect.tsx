@@ -14,7 +14,7 @@ export default function MultiSelect() {
 
   const handleSelect = (value: string) => {
     setSelectedValues((prev) =>
-      prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]
+      prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value],
     );
   };
 

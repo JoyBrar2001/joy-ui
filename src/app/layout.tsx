@@ -17,17 +17,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${outfit.className} antialiased bg-white text-neutral-900 dark:bg-black dark:text-white`}>
-        <ThemeProvider
-          defaultTheme="system"
-          enableSystem
-        >
+      <body
+        className={`${outfit.className} antialiased bg-white text-neutral-900 dark:bg-black dark:text-white`}
+      >
+        <ThemeProvider defaultTheme="system" enableSystem>
           <Navbar />
 
           {children}
 
           <footer className="border-t border-gray-200 bg-white p-4 text-center dark:border-neutral-700 dark:bg-black">
-            <p className="text-sm text-gray-600 dark:text-gray-300">© 2025 Joy UI. All rights reserved.</p>
+            <p className="text-sm text-gray-600 dark:text-gray-300">
+              © 2025 Joy UI. All rights reserved.
+            </p>
           </footer>
         </ThemeProvider>
       </body>

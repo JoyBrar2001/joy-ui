@@ -13,13 +13,34 @@ export function CalendarWithPresetRange() {
   });
 
   const presets = [
-    { label: "Yesterday - Today", range: { from: subDays(new Date(), 1), to: new Date() } },
-    { label: "Last Week", range: { from: subDays(new Date(), 7), to: new Date() } },
-    { label: "Next Week", range: { from: new Date(), to: addDays(new Date(), 7) } },
-    { label: "Last Month", range: { from: subDays(new Date(), 30), to: new Date() } },
-    { label: "Next Month", range: { from: new Date(), to: addDays(new Date(), 30) } },
-    { label: "Month Start - Now", range: { from: startOfMonth(new Date()), to: new Date() } },
-    { label: "Last 3 Months", range: { from: subDays(new Date(), 90), to: new Date() } },
+    {
+      label: "Yesterday - Today",
+      range: { from: subDays(new Date(), 1), to: new Date() },
+    },
+    {
+      label: "Last Week",
+      range: { from: subDays(new Date(), 7), to: new Date() },
+    },
+    {
+      label: "Next Week",
+      range: { from: new Date(), to: addDays(new Date(), 7) },
+    },
+    {
+      label: "Last Month",
+      range: { from: subDays(new Date(), 30), to: new Date() },
+    },
+    {
+      label: "Next Month",
+      range: { from: new Date(), to: addDays(new Date(), 30) },
+    },
+    {
+      label: "Month Start - Now",
+      range: { from: startOfMonth(new Date()), to: new Date() },
+    },
+    {
+      label: "Last 3 Months",
+      range: { from: subDays(new Date(), 90), to: new Date() },
+    },
   ];
 
   return (

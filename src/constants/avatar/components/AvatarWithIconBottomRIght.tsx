@@ -1,4 +1,9 @@
-import { Avatar, AvatarFallback, AvatarIcon, AvatarImage } from "@/components/ui/Avatar";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarIcon,
+  AvatarImage,
+} from "@/components/ui/Avatar";
 
 export function AvatarWithIconBottomRight() {
   return (

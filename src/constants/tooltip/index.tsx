@@ -2,8 +2,30 @@ import { ComponentCategory } from "../data";
 import { cnFile } from "../common";
 import { tooltipCss } from "./code/tooltipCss";
 import { tooltipCode } from "./code/tooltipCode";
-import { BottomTooltip, DestructiveTooltip, GhostTooltip, LeftTooltip, OutlineTooltip, PrimaryTooltip, RightTooltip, SecondaryTooltip, SimpleTooltip, TopTooltip } from "./components";
-import { bottomTooltipCode, destructiveTooltipCode, ghostTooltipCode, leftTooltipCode, outlineTooltipCode, primaryTooltipCode, rightTooltipCode, secondaryTooltipCode, simpleTooltipCode, topTooltipCode } from "./code/componentCodes";
+import {
+  BottomTooltip,
+  DestructiveTooltip,
+  GhostTooltip,
+  LeftTooltip,
+  OutlineTooltip,
+  PrimaryTooltip,
+  RightTooltip,
+  SecondaryTooltip,
+  SimpleTooltip,
+  TopTooltip,
+} from "./components";
+import {
+  bottomTooltipCode,
+  destructiveTooltipCode,
+  ghostTooltipCode,
+  leftTooltipCode,
+  outlineTooltipCode,
+  primaryTooltipCode,
+  rightTooltipCode,
+  secondaryTooltipCode,
+  simpleTooltipCode,
+  topTooltipCode,
+} from "./code/componentCodes";
 
 export const tooltipData: ComponentCategory = {
   cols: 4,
@@ -12,11 +34,7 @@ export const tooltipData: ComponentCategory = {
   steps: [
     {
       type: "dependencies",
-      libraries: [
-        "clsx",
-        "tailwind-merge",
-        "@radix-ui/react-tooltip"
-      ]
+      libraries: ["clsx", "tailwind-merge", "@radix-ui/react-tooltip"],
     },
     {
       type: "utilities",
@@ -25,74 +43,74 @@ export const tooltipData: ComponentCategory = {
           name: "cn.ts",
           path: "@/utils/cn.ts",
           language: "typescript",
-          code: cnFile
+          code: cnFile,
         },
         {
           name: "globals.css",
           path: "@/globals.css",
           language: "css",
-          code: tooltipCss
-        }
-      ]
+          code: tooltipCss,
+        },
+      ],
     },
     {
       type: "source",
       name: "Tooltip.tsx",
       path: "@/components/ui/Tooltip.tsx",
       language: "tsx",
-      code: tooltipCode
-    }
+      code: tooltipCode,
+    },
   ],
   components: [
     {
       title: "Simple Tooltip",
       component: SimpleTooltip,
-      code: simpleTooltipCode
+      code: simpleTooltipCode,
     },
     {
       title: "Top Tooltip",
       component: TopTooltip,
-      code: topTooltipCode
+      code: topTooltipCode,
     },
     {
       title: "Left Tooltip",
       component: LeftTooltip,
-      code: leftTooltipCode
+      code: leftTooltipCode,
     },
     {
       title: "Right Tooltip",
       component: RightTooltip,
-      code: rightTooltipCode
+      code: rightTooltipCode,
     },
     {
       title: "Bottom Tooltip",
       component: BottomTooltip,
-      code: bottomTooltipCode
+      code: bottomTooltipCode,
     },
     {
       title: "Primary Tooltip",
       component: PrimaryTooltip,
-      code: primaryTooltipCode
+      code: primaryTooltipCode,
     },
     {
       title: "Secondary Tooltip",
       component: SecondaryTooltip,
-      code: secondaryTooltipCode
+      code: secondaryTooltipCode,
     },
     {
       title: "Outline Tooltip",
       component: OutlineTooltip,
-      code: outlineTooltipCode
+      code: outlineTooltipCode,
     },
     {
       title: "Destructive Tooltip",
       component: DestructiveTooltip,
-      code: destructiveTooltipCode
+      code: destructiveTooltipCode,
     },
     {
       title: "Ghost Tooltip",
       component: GhostTooltip,
-      code: ghostTooltipCode
+      code: ghostTooltipCode,
     },
   ],
 };

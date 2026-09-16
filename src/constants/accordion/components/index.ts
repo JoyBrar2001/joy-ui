@@ -11,5 +11,5 @@ export {
   LeftIcons,
   NestedSections,
   OutlinedAccordion,
-  SimpleAccordion
+  SimpleAccordion,
 };

@@ -51,12 +51,20 @@ export type ComponentEntry = {
 
 export type StepType = "dependencies" | "utilities" | "source";
 
-export type LanguageType = "css" | "shell" | "typescript" | "tsx" | "javascript" | "jsx" | "python" | "cpp";
+export type LanguageType =
+  | "css"
+  | "shell"
+  | "typescript"
+  | "tsx"
+  | "javascript"
+  | "jsx"
+  | "python"
+  | "cpp";
 
 export type DependeciesStep = {
   type: StepType;
   libraries: Array<string>;
-}
+};
 
 export type UtilitiesStep = {
   type: StepType;
@@ -65,7 +73,7 @@ export type UtilitiesStep = {
     path: string;
     language: LanguageType;
     code: string;
-  }>
+  }>;
 };
 
 export type SourceStep = {

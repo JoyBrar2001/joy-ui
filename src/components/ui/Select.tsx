@@ -16,7 +16,12 @@ export const SelectGroup = SelectPrimitive.Group;
 export function SelectTrigger({
   children,
   className,
-  icon = <ChevronDown size={20} className="transition duration-300 group-data-[state=closed]:rotate-0 group-data-[state=open]:-rotate-180" />,
+  icon = (
+    <ChevronDown
+      size={20}
+      className="transition duration-300 group-data-[state=closed]:rotate-0 group-data-[state=open]:-rotate-180"
+    />
+  ),
   ...props
 }: SelectPrimitive.SelectTriggerProps & {
   icon?: React.ReactNode;
@@ -26,7 +31,7 @@ export function SelectTrigger({
       className={cn(
         "group inline-flex h-9 items-center justify-between gap-[5px] rounded border border-neutral-300 bg-white px-4 py-2 text-sm text-neutral-900 outline-none data-[placeholder]:text-neutral-500 dark:border-neutral-800 dark:bg-black dark:text-white dark:data-[placeholder]:text-neutral-400",
         "disabled:opacity-60",
-        className
+        className,
       )}
       {...props}
     >
@@ -59,8 +64,9 @@ export function SelectContent({
         align={align}
         className={cn(
           "overflow-hidden rounded border border-neutral-300 bg-white py-4 px-2 text-neutral-900 dark:border-neutral-800 dark:bg-black dark:text-white",
-          animate && "will-change-transform data-[side=bottom]:data-[state=open]:animate-openSelectBottom data-[side=top]:data-[state=open]:animate-openSelectTop",
-          className
+          animate &&
+            "will-change-transform data-[side=bottom]:data-[state=open]:animate-openSelectBottom data-[side=top]:data-[state=open]:animate-openSelectTop",
+          className,
         )}
         {...props}
       >
@@ -75,11 +81,14 @@ export function SelectScrollUpButton({
   icon = <ChevronUp />,
   ...props
 }: SelectPrimitive.SelectScrollUpButtonProps & {
-  icon?: React.ReactNode
+  icon?: React.ReactNode;
 }) {
   return (
     <SelectPrimitive.ScrollUpButton
-      className={cn("flex h-6 items-center justify-center bg-white text-neutral-900 dark:bg-black dark:text-white", className)}
+      className={cn(
+        "flex h-6 items-center justify-center bg-white text-neutral-900 dark:bg-black dark:text-white",
+        className,
+      )}
       {...props}
     >
       {icon}
@@ -92,11 +101,14 @@ export function SelectScrollDownButton({
   icon = <ChevronDown />,
   ...props
 }: SelectPrimitive.SelectScrollDownButtonProps & {
-  icon?: React.ReactNode
+  icon?: React.ReactNode;
 }) {
   return (
     <SelectPrimitive.ScrollDownButton
-      className={cn("flex h-6 items-center justify-center bg-white text-neutral-900 dark:bg-black dark:text-white", className)}
+      className={cn(
+        "flex h-6 items-center justify-center bg-white text-neutral-900 dark:bg-black dark:text-white",
+        className,
+      )}
       {...props}
     >
       {icon}
@@ -110,7 +122,13 @@ export function SelectLabel({
   ...props
 }: SelectPrimitive.SelectLabelProps) {
   return (
-    <SelectPrimitive.Label className={cn("px-1 py-0.5 text-sm leading-4 text-neutral-600 dark:text-gray-300", className)} {...props}>
+    <SelectPrimitive.Label
+      className={cn(
+        "px-1 py-0.5 text-sm leading-4 text-neutral-600 dark:text-gray-300",
+        className,
+      )}
+      {...props}
+    >
       {children}
     </SelectPrimitive.Label>
   );
@@ -133,7 +151,9 @@ export function SelectItem({
       {...props}
     >
       <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
-      <SelectPrimitive.ItemIndicator>{indicatorIcon}</SelectPrimitive.ItemIndicator>
+      <SelectPrimitive.ItemIndicator>
+        {indicatorIcon}
+      </SelectPrimitive.ItemIndicator>
     </SelectPrimitive.Item>
   );
-};
+}

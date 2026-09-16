@@ -1,4 +1,11 @@
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, SelectViewport } from "@/components/ui/Select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+  SelectViewport,
+} from "@/components/ui/Select";
 
 export function SelectStatus() {
   return (
@@ -21,7 +28,8 @@ export function SelectStatus() {
           </SelectItem>
           <SelectItem value="brb">
             <span className="flex items-center gap-2">
-              <div className="size-2 rounded-full bg-yellow-500" /> Be Right Back
+              <div className="size-2 rounded-full bg-yellow-500" /> Be Right
+              Back
             </span>
           </SelectItem>
           <SelectItem value="dnd">

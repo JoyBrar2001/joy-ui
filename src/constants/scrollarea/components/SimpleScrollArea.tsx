@@ -11,10 +11,7 @@ export function SimpleScrollArea() {
           .map((_, i, a) => `v1.2.0-beta.${a.length - i}`)
           .map((tag, i) => (
             <React.Fragment key={i}>
-              <div
-                key={tag}
-                className="py-2 text-xs text-neutral-400"
-              >
+              <div key={tag} className="py-2 text-xs text-neutral-400">
                 {tag}
               </div>
               <Separator className="last:hidden" />

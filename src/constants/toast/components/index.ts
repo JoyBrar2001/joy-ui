@@ -1,1 +1,8 @@
-export { SimpleToast, ToastWithAction, ToastWithLongMessage, ToastTopLeft, ToastTopCenter, ToastBottomCenter } from "./Examples";
+export {
+  SimpleToast,
+  ToastWithAction,
+  ToastWithLongMessage,
+  ToastTopLeft,
+  ToastTopCenter,
+  ToastBottomCenter,
+} from "./Examples";

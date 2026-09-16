@@ -8,7 +8,7 @@ import {
   CodeblockWithoutLineNumbers,
   CodeblockWithPath,
   CollapsibleCodeblock,
-  SimpleOneFileCodeblock
+  SimpleOneFileCodeblock,
 } from "./components";
 import {
   codeblockWithLineHighlightsCode,
@@ -25,11 +25,7 @@ export const codeblockData: ComponentCategory = {
   steps: [
     {
       type: "dependencies",
-      libraries: [
-        "clsx",
-        "tailwind-merge",
-        "react-syntax-highlighter"
-      ]
+      libraries: ["clsx", "tailwind-merge", "react-syntax-highlighter"],
     },
     {
       type: "utilities",
@@ -38,48 +34,48 @@ export const codeblockData: ComponentCategory = {
           name: "cn.ts",
           path: "@/utils/cn.ts",
           language: "typescript",
-          code: cnFile
-        }
-      ]
+          code: cnFile,
+        },
+      ],
     },
     {
       type: "source",
       name: "CodeBlock.tsx",
       path: "@/components/ui/CodeBlock.tsx",
       language: "tsx",
-      code: codeblockCode
-    }
+      code: codeblockCode,
+    },
   ],
   components: [
     {
       title: "Simple One file CodeBlock",
       component: SimpleOneFileCodeblock,
-      code: simpleOneFileCodeblockCode
+      code: simpleOneFileCodeblockCode,
     },
     {
       title: "CodeBlock without Line Numbers",
       component: CodeblockWithoutLineNumbers,
-      code: codeblockWithoutLineNumbersCode
+      code: codeblockWithoutLineNumbersCode,
     },
     {
       title: "CodeBlock with line Highlights",
       component: CodeblockWithLineHighlights,
-      code: codeblockWithLineHighlightsCode
+      code: codeblockWithLineHighlightsCode,
     },
     {
       title: "CodeBlock with Path",
       component: CodeblockWithPath,
-      code: codeblockWithPathCode
+      code: codeblockWithPathCode,
     },
     {
       title: "CodeBlock with Multiple Files",
       component: CodeblockWithMultipleFiles,
-      code: codeblockWithMultipleFilesCode
+      code: codeblockWithMultipleFilesCode,
     },
     {
       title: "Collapsible CodeBlock",
       component: CollapsibleCodeblock,
-      code: codeblockWithMultipleFilesCode
+      code: codeblockWithMultipleFilesCode,
     },
-  ]
+  ],
 };

@@ -1,4 +1,9 @@
-import { Checkbox, CheckboxRoot, CheckboxLabel, CheckboxSubLabel } from "@/components/ui/Checkbox";
+import {
+  Checkbox,
+  CheckboxRoot,
+  CheckboxLabel,
+  CheckboxSubLabel,
+} from "@/components/ui/Checkbox";
 
 export function SubLabeledCheckbox() {
   return (

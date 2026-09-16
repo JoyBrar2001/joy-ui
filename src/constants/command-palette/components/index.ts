@@ -1,1 +1,5 @@
-export { SimpleCommandPalette, GroupedCommandPalette, CommandPaletteWithShortcuts } from "./Examples";
+export {
+  SimpleCommandPalette,
+  GroupedCommandPalette,
+  CommandPaletteWithShortcuts,
+} from "./Examples";

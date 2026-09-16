@@ -48,7 +48,7 @@ export function Input({
             leftInlineIcon && "pl-8",
             rightInlineIcon && "pr-8",
             error && "border-red-500",
-            className
+            className,
           )}
           {...props}
         />

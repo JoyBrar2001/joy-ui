@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/Card";
 import { Label } from "@/components/ui/Label";
 import { Switch, SwitchThumb } from "@/components/ui/Switch";
@@ -14,9 +13,7 @@ export function CardSwitch() {
             </Switch>
             <div className="flex items-baseline">
               Label
-              <span className="ml-1 text-sm text-neutral-600">
-                (Sublabel)
-              </span>
+              <span className="ml-1 text-sm text-neutral-600">(Sublabel)</span>
             </div>
           </div>
           <p className="text-sm text-neutral-600">

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useState } from "react";
 import {
@@ -26,7 +26,7 @@ export function SelectWithSearch() {
   const filteredOptions = options.map(({ group, items }) => ({
     group,
     items: items.filter((item) =>
-      item.toLowerCase().includes(search.toLowerCase())
+      item.toLowerCase().includes(search.toLowerCase()),
     ),
   }));
 
@@ -37,9 +37,7 @@ export function SelectWithSearch() {
       </SelectTrigger>
 
       <SelectContent className="w-[200px] py-2">
-        <div
-          onPointerDownCapture={(e) => e.stopPropagation()}
-        >
+        <div onPointerDownCapture={(e) => e.stopPropagation()}>
           <Input
             type="text"
             placeholder="Search..."
@@ -54,7 +52,7 @@ export function SelectWithSearch() {
 
         <SelectViewport className="py-2">
           {filteredOptions.map(({ group, items }, index) => {
-            if (items.length <= 0) return null
+            if (items.length <= 0) return null;
             return (
               <React.Fragment key={`${index}-${group}`}>
                 <SelectGroup key={group}>
@@ -67,7 +65,7 @@ export function SelectWithSearch() {
                 </SelectGroup>
                 <Separator className="my-2 last:hidden" />
               </React.Fragment>
-            )
+            );
           })}
         </SelectViewport>
       </SelectContent>

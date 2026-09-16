@@ -1,5 +1,65 @@
 import type { ComponentCategory } from "../data";
 import { navigationMenuCode } from "./code/navigationMenuCode";
-import { activeCode, basicCode, blurCode, dropdownCode, groupsCode, megaCode } from "./code/componentCodes";
-import { BasicNavigation, NavigationMegaMenu, NavigationWithActiveLink, NavigationWithBlurredPopup, NavigationWithDropdown, NavigationWithGroups } from "./components";
-export const navigationMenuData: ComponentCategory = { cols: 6, title: "Navigation Menu", subtitle: "Responsive navigation patterns with links, dropdown content, mega menus, and active states.", steps: [{ type: "dependencies", libraries: ["clsx", "tailwind-merge", "@radix-ui/react-navigation-menu"] }, { type: "source", name: "NavigationMenu.tsx", path: "@/components/ui/NavigationMenu.tsx", language: "tsx", code: navigationMenuCode }], components: [{ title: "Basic Navigation", component: BasicNavigation, code: basicCode }, { title: "Navigation with Dropdown", component: NavigationWithDropdown, code: dropdownCode }, { title: "Navigation Mega Menu", component: NavigationMegaMenu, code: megaCode }, { title: "Navigation with Groups", component: NavigationWithGroups, code: groupsCode }, { title: "Navigation with Active Link", component: NavigationWithActiveLink, code: activeCode }, { title: "Blurred Navigation Popup", component: NavigationWithBlurredPopup, code: blurCode }] };
+import {
+  activeCode,
+  basicCode,
+  blurCode,
+  dropdownCode,
+  groupsCode,
+  megaCode,
+} from "./code/componentCodes";
+import {
+  BasicNavigation,
+  NavigationMegaMenu,
+  NavigationWithActiveLink,
+  NavigationWithBlurredPopup,
+  NavigationWithDropdown,
+  NavigationWithGroups,
+} from "./components";
+export const navigationMenuData: ComponentCategory = {
+  cols: 6,
+  title: "Navigation Menu",
+  subtitle:
+    "Responsive navigation patterns with links, dropdown content, mega menus, and active states.",
+  steps: [
+    {
+      type: "dependencies",
+      libraries: ["clsx", "tailwind-merge", "@radix-ui/react-navigation-menu"],
+    },
+    {
+      type: "source",
+      name: "NavigationMenu.tsx",
+      path: "@/components/ui/NavigationMenu.tsx",
+      language: "tsx",
+      code: navigationMenuCode,
+    },
+  ],
+  components: [
+    { title: "Basic Navigation", component: BasicNavigation, code: basicCode },
+    {
+      title: "Navigation with Dropdown",
+      component: NavigationWithDropdown,
+      code: dropdownCode,
+    },
+    {
+      title: "Navigation Mega Menu",
+      component: NavigationMegaMenu,
+      code: megaCode,
+    },
+    {
+      title: "Navigation with Groups",
+      component: NavigationWithGroups,
+      code: groupsCode,
+    },
+    {
+      title: "Navigation with Active Link",
+      component: NavigationWithActiveLink,
+      code: activeCode,
+    },
+    {
+      title: "Blurred Navigation Popup",
+      component: NavigationWithBlurredPopup,
+      code: blurCode,
+    },
+  ],
+};

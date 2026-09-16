@@ -8,7 +8,7 @@ import {
   AvatarWithIconTopLeft,
   AvatarWithIconTopRight,
   AvatarWithImageAndFallback,
-  GroupAvatars
+  GroupAvatars,
 } from "./components";
 import {
   avatarWithFallbackIconCode,
@@ -27,11 +27,7 @@ export const avatarData: ComponentCategory = {
   steps: [
     {
       type: "dependencies",
-      libraries: [
-        "clsx",
-        "tailwind-merge",
-        "@radix-ui/react-avatar"
-      ]
+      libraries: ["clsx", "tailwind-merge", "@radix-ui/react-avatar"],
     },
     {
       type: "utilities",
@@ -41,8 +37,8 @@ export const avatarData: ComponentCategory = {
           path: "@/utils/cn.ts",
           language: "typescript",
           code: cnFile,
-        }
-      ]
+        },
+      ],
     },
     {
       type: "source",
@@ -50,7 +46,7 @@ export const avatarData: ComponentCategory = {
       path: "@/components/ui/Avatar.tsx",
       language: "tsx",
       code: avatarCode,
-    }
+    },
   ],
   components: [
     {
@@ -61,32 +57,32 @@ export const avatarData: ComponentCategory = {
     {
       title: "Avatar with Fallback Text",
       component: AvatarWithFallbackText,
-      code: avatarWithFallbackTextCode
+      code: avatarWithFallbackTextCode,
     },
     {
       title: "Avatar with Fallback Icon",
       component: AvatarWithFallbackIcon,
-      code: avatarWithFallbackIconCode
+      code: avatarWithFallbackIconCode,
     },
     {
       title: "Avatar with Icon (Top Right)",
       component: AvatarWithIconTopRight,
-      code: avatarWithIconTopRightCode
+      code: avatarWithIconTopRightCode,
     },
     {
       title: "Avatar with Icon (Bottom Right)",
       component: AvatarWithIconBottomRight,
-      code: avatarWithIconBottomRightCode
+      code: avatarWithIconBottomRightCode,
     },
     {
       title: "Avatar with Icon (Top Left)",
       component: AvatarWithIconTopLeft,
-      code: avatarWithIconTopLeftCode
+      code: avatarWithIconTopLeftCode,
     },
     {
       title: "Group Avatars",
       component: GroupAvatars,
-      code: groupAvatarsCode
-    }
-  ]
+      code: groupAvatarsCode,
+    },
+  ],
 };

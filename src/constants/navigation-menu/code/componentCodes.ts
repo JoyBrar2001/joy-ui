@@ -1,2 +1,11 @@
-const code = (label: string) => `import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "@/components/ui/NavigationMenu";\n\nexport function NavigationExample() { return <NavigationMenu><NavigationMenuList><NavigationMenuItem><NavigationMenuLink href="#">${label}</NavigationMenuLink></NavigationMenuItem></NavigationMenuList></NavigationMenu>; }`;
-export const basicCode = code("Overview"); export const dropdownCode = code("Products"); export const megaCode = code("Explore"); export const groupsCode = code("Resources"); export const activeCode = code("Dashboard"); export const blurCode = code("Preview").replace("<NavigationMenuContent>", "<NavigationMenuContent className=\"bg-neutral-950/65 backdrop-blur-xl\">");
+const code = (label: string) =>
+  `import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "@/components/ui/NavigationMenu";\n\nexport function NavigationExample() { return <NavigationMenu><NavigationMenuList><NavigationMenuItem><NavigationMenuLink href="#">${label}</NavigationMenuLink></NavigationMenuItem></NavigationMenuList></NavigationMenu>; }`;
+export const basicCode = code("Overview");
+export const dropdownCode = code("Products");
+export const megaCode = code("Explore");
+export const groupsCode = code("Resources");
+export const activeCode = code("Dashboard");
+export const blurCode = code("Preview").replace(
+  "<NavigationMenuContent>",
+  '<NavigationMenuContent className="bg-neutral-950/65 backdrop-blur-xl">',
+);

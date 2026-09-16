@@ -1,8 +1,20 @@
 import { ComponentCategory } from "../data";
 import { cnFile } from "../common";
 import { separatorCode } from "./code/separatorCode";
-import { ButtonsWithSeparator, CardWithSeparator, GridSeparator, HorizontalSeparator, VerticalSeparator } from "./components";
-import { buttonsWithSeparator, cardWithSeparatorCode, gridWithSeparatorCode, horizontalSeparatorCode, verticalSeparatorCode } from "./code/componentCodes";
+import {
+  ButtonsWithSeparator,
+  CardWithSeparator,
+  GridSeparator,
+  HorizontalSeparator,
+  VerticalSeparator,
+} from "./components";
+import {
+  buttonsWithSeparator,
+  cardWithSeparatorCode,
+  gridWithSeparatorCode,
+  horizontalSeparatorCode,
+  verticalSeparatorCode,
+} from "./code/componentCodes";
 
 export const separatorData: ComponentCategory = {
   cols: 4,
@@ -11,11 +23,7 @@ export const separatorData: ComponentCategory = {
   steps: [
     {
       type: "dependencies",
-      libraries: [
-        "clsx",
-        "tailwind-merge",
-        "@radix-ui/react-separator"
-      ]
+      libraries: ["clsx", "tailwind-merge", "@radix-ui/react-separator"],
     },
     {
       type: "utilities",
@@ -24,43 +32,43 @@ export const separatorData: ComponentCategory = {
           name: "cn.ts",
           path: "@/utils/cn.ts",
           language: "typescript",
-          code: cnFile
-        }
-      ]
+          code: cnFile,
+        },
+      ],
     },
     {
       type: "source",
       name: "Separator.tsx",
       path: "@/components/ui/Separator.tsx",
       language: "tsx",
-      code: separatorCode
-    }
+      code: separatorCode,
+    },
   ],
   components: [
     {
       title: "Horizontal Separator",
       component: HorizontalSeparator,
-      code: horizontalSeparatorCode
+      code: horizontalSeparatorCode,
     },
     {
       title: "Vertical Separator",
       component: VerticalSeparator,
-      code: verticalSeparatorCode
+      code: verticalSeparatorCode,
     },
     {
       title: "Grid Separator",
       component: GridSeparator,
-      code: gridWithSeparatorCode
+      code: gridWithSeparatorCode,
     },
     {
       title: "Card with Separator",
       component: CardWithSeparator,
-      code: cardWithSeparatorCode
+      code: cardWithSeparatorCode,
     },
     {
       title: "Buttons with Separator",
       component: ButtonsWithSeparator,
-      code: buttonsWithSeparator
+      code: buttonsWithSeparator,
     },
   ],
 };

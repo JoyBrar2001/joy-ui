@@ -1,9 +1,107 @@
 "use client";
 import { useState } from "react";
-import { AlignCenter, AlignLeft, AlignRight, Bold, Italic, Link as LinkIcon, Redo2, Undo2 } from "lucide-react";
-import { Toolbar, ToolbarButton, ToolbarLink, ToolbarSeparator, ToolbarToggleGroup, ToolbarToggleItem } from "@/components/ui/Toolbar";
-export function FormattingToolbar() { return <Toolbar aria-label="Formatting toolbar"><ToolbarToggleGroup type="multiple" aria-label="Text style"><ToolbarToggleItem value="bold" aria-label="Bold"><Bold className="size-4" /></ToolbarToggleItem><ToolbarToggleItem value="italic" aria-label="Italic"><Italic className="size-4" /></ToolbarToggleItem></ToolbarToggleGroup><ToolbarSeparator /><ToolbarButton aria-label="Undo"><Undo2 className="size-4" /></ToolbarButton><ToolbarButton aria-label="Redo"><Redo2 className="size-4" /></ToolbarButton></Toolbar>; }
-export function ToolbarWithLinks() { return <Toolbar aria-label="Page actions"><ToolbarLink href="#">Documentation</ToolbarLink><ToolbarLink href="#">Changelog</ToolbarLink><ToolbarSeparator /><ToolbarButton><LinkIcon className="mr-2 size-4" />Share</ToolbarButton></Toolbar>; }
-export function ToolbarWithGroups() { const [align, setAlign] = useState("left"); return <Toolbar aria-label="Alignment toolbar"><ToolbarToggleGroup type="single" value={align} onValueChange={(value) => setAlign(String(value))} aria-label="Text alignment"><ToolbarToggleItem value="left" aria-label="Align left"><AlignLeft className="size-4" /></ToolbarToggleItem><ToolbarToggleItem value="center" aria-label="Align center"><AlignCenter className="size-4" /></ToolbarToggleItem><ToolbarToggleItem value="right" aria-label="Align right"><AlignRight className="size-4" /></ToolbarToggleItem></ToolbarToggleGroup></Toolbar>; }
-export function EditorToolbar() { return <Toolbar orientation="horizontal" aria-label="Editor toolbar"><ToolbarButton>File</ToolbarButton><ToolbarButton>Edit</ToolbarButton><ToolbarSeparator /><ToolbarButton><Bold className="mr-2 size-4" />Format</ToolbarButton><ToolbarSeparator /><ToolbarButton>Preview</ToolbarButton></Toolbar>; }
-export function ToolbarWithToggle() { return <Toolbar aria-label="Document toolbar"><ToolbarButton><Undo2 className="mr-2 size-4" />Undo</ToolbarButton><ToolbarSeparator /><ToolbarToggleGroup type="single" defaultValue="bold"><ToolbarToggleItem value="bold">Bold</ToolbarToggleItem><ToolbarToggleItem value="italic">Italic</ToolbarToggleItem></ToolbarToggleGroup></Toolbar>; }
+import {
+  AlignCenter,
+  AlignLeft,
+  AlignRight,
+  Bold,
+  Italic,
+  Link as LinkIcon,
+  Redo2,
+  Undo2,
+} from "lucide-react";
+import {
+  Toolbar,
+  ToolbarButton,
+  ToolbarLink,
+  ToolbarSeparator,
+  ToolbarToggleGroup,
+  ToolbarToggleItem,
+} from "@/components/ui/Toolbar";
+export function FormattingToolbar() {
+  return (
+    <Toolbar aria-label="Formatting toolbar">
+      <ToolbarToggleGroup type="multiple" aria-label="Text style">
+        <ToolbarToggleItem value="bold" aria-label="Bold">
+          <Bold className="size-4" />
+        </ToolbarToggleItem>
+        <ToolbarToggleItem value="italic" aria-label="Italic">
+          <Italic className="size-4" />
+        </ToolbarToggleItem>
+      </ToolbarToggleGroup>
+      <ToolbarSeparator />
+      <ToolbarButton aria-label="Undo">
+        <Undo2 className="size-4" />
+      </ToolbarButton>
+      <ToolbarButton aria-label="Redo">
+        <Redo2 className="size-4" />
+      </ToolbarButton>
+    </Toolbar>
+  );
+}
+export function ToolbarWithLinks() {
+  return (
+    <Toolbar aria-label="Page actions">
+      <ToolbarLink href="#">Documentation</ToolbarLink>
+      <ToolbarLink href="#">Changelog</ToolbarLink>
+      <ToolbarSeparator />
+      <ToolbarButton>
+        <LinkIcon className="mr-2 size-4" />
+        Share
+      </ToolbarButton>
+    </Toolbar>
+  );
+}
+export function ToolbarWithGroups() {
+  const [align, setAlign] = useState("left");
+  return (
+    <Toolbar aria-label="Alignment toolbar">
+      <ToolbarToggleGroup
+        type="single"
+        value={align}
+        onValueChange={(value) => setAlign(String(value))}
+        aria-label="Text alignment"
+      >
+        <ToolbarToggleItem value="left" aria-label="Align left">
+          <AlignLeft className="size-4" />
+        </ToolbarToggleItem>
+        <ToolbarToggleItem value="center" aria-label="Align center">
+          <AlignCenter className="size-4" />
+        </ToolbarToggleItem>
+        <ToolbarToggleItem value="right" aria-label="Align right">
+          <AlignRight className="size-4" />
+        </ToolbarToggleItem>
+      </ToolbarToggleGroup>
+    </Toolbar>
+  );
+}
+export function EditorToolbar() {
+  return (
+    <Toolbar orientation="horizontal" aria-label="Editor toolbar">
+      <ToolbarButton>File</ToolbarButton>
+      <ToolbarButton>Edit</ToolbarButton>
+      <ToolbarSeparator />
+      <ToolbarButton>
+        <Bold className="mr-2 size-4" />
+        Format
+      </ToolbarButton>
+      <ToolbarSeparator />
+      <ToolbarButton>Preview</ToolbarButton>
+    </Toolbar>
+  );
+}
+export function ToolbarWithToggle() {
+  return (
+    <Toolbar aria-label="Document toolbar">
+      <ToolbarButton>
+        <Undo2 className="mr-2 size-4" />
+        Undo
+      </ToolbarButton>
+      <ToolbarSeparator />
+      <ToolbarToggleGroup type="single" defaultValue="bold">
+        <ToolbarToggleItem value="bold">Bold</ToolbarToggleItem>
+        <ToolbarToggleItem value="italic">Italic</ToolbarToggleItem>
+      </ToolbarToggleGroup>
+    </Toolbar>
+  );
+}

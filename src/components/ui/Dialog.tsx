@@ -6,15 +6,11 @@ import { ComponentPropsWithoutRef } from "react";
 export const Dialog = DialogPrimitive.Root;
 
 export function DialogTrigger(props: DialogPrimitive.DialogTriggerProps) {
-  return (
-    <DialogPrimitive.Trigger asChild {...props} />
-  );
+  return <DialogPrimitive.Trigger asChild {...props} />;
 }
 
 export function DialogClose(props: DialogPrimitive.DialogCloseProps) {
-  return (
-    <DialogPrimitive.Close asChild {...props} />
-  );
+  return <DialogPrimitive.Close asChild {...props} />;
 }
 
 export function DialogContent({
@@ -28,7 +24,7 @@ export function DialogContent({
       <DialogPrimitive.Content
         className={cn(
           "fixed inset-0 m-auto bg-white dark:bg-neutral-950 border border-neutral-600 p-6 rounded-lg shadow-xl max-w-md h-fit max-h-[75vh] overflow-y-auto w-full data-[state=open]:animate-contentShow data-[state=closed]:animate-contentHide",
-          className
+          className,
         )}
         {...props}
       >
@@ -45,10 +41,7 @@ export function DialogHeader({
 }: ComponentPropsWithoutRef<"div">) {
   return (
     <div
-      className={cn(
-        "flex justify-between items-start mb-4",
-        className
-      )}
+      className={cn("flex justify-between items-start mb-4", className)}
       {...props}
     >
       {children}
@@ -62,10 +55,15 @@ export function DialogHeader({
 
 export function DialogTitle({
   className,
-  children
+  children,
 }: React.ComponentProps<typeof DialogPrimitive.Title>) {
   return (
-    <DialogPrimitive.Title className={cn("text-lg font-semibold text-black dark:text-white", className)}>
+    <DialogPrimitive.Title
+      className={cn(
+        "text-lg font-semibold text-black dark:text-white",
+        className,
+      )}
+    >
       {children}
     </DialogPrimitive.Title>
   );
@@ -73,10 +71,12 @@ export function DialogTitle({
 
 export function DialogDescription({
   className,
-  children
+  children,
 }: React.ComponentProps<typeof DialogPrimitive.Description>) {
   return (
-    <DialogPrimitive.Description className={cn("mt-2 text-gray-600 dark:text-gray-300", className)}>
+    <DialogPrimitive.Description
+      className={cn("mt-2 text-gray-600 dark:text-gray-300", className)}
+    >
       {children}
     </DialogPrimitive.Description>
   );
@@ -84,14 +84,12 @@ export function DialogDescription({
 
 export function DialogFooter({
   className,
-  children
+  children,
 }: {
   className?: string;
   children: React.ReactNode;
 }) {
   return (
-    <div className={cn("mt-4 flex justify-end", className)}>
-      {children}
-    </div>
+    <div className={cn("mt-4 flex justify-end", className)}>{children}</div>
   );
 }

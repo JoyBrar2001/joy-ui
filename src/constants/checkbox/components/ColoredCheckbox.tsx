@@ -1,4 +1,8 @@
-import { Checkbox, CheckboxLabel, CheckboxRoot } from "@/components/ui/Checkbox";
+import {
+  Checkbox,
+  CheckboxLabel,
+  CheckboxRoot,
+} from "@/components/ui/Checkbox";
 
 export function ColoredCheckbox() {
   return (

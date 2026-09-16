@@ -1,5 +1,10 @@
 import { Button } from "@/components/ui/Button";
-import { HoverCard, HoverCardArrow, HoverCardContent, HoverCardTrigger } from "@/components/ui/HoverCard";
+import {
+  HoverCard,
+  HoverCardArrow,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/HoverCard";
 
 export function HoverCardWithArrow() {
   return (

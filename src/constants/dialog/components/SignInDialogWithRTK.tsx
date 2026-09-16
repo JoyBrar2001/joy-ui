@@ -4,7 +4,15 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Lock, Mail } from "lucide-react";
 
-import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogClose } from "@/components/ui/Dialog";
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+  DialogClose,
+} from "@/components/ui/Dialog";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 
@@ -21,9 +29,7 @@ export function SignInDialogWithRTK() {
     register,
     handleSubmit,
     reset,
-    formState: {
-      errors
-    }
+    formState: { errors },
   } = useForm<FormValues>({
     defaultValues: { email: "", password: "" },
   });
@@ -56,7 +62,9 @@ export function SignInDialogWithRTK() {
             placeholder="Email"
             rightInlineIcon={<Mail size={20} />}
           />
-          {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+          {errors.email && (
+            <p className="text-red-500 text-sm">{errors.email.message}</p>
+          )}
 
           <Input
             {...register("password", { required: "Password is required" })}
@@ -64,7 +72,9 @@ export function SignInDialogWithRTK() {
             placeholder="Password"
             rightInlineIcon={<Lock size={20} />}
           />
-          {errors.password && <p className="text-red-500 text-sm">{errors.password.message}</p>}
+          {errors.password && (
+            <p className="text-red-500 text-sm">{errors.password.message}</p>
+          )}
 
           <DialogFooter className="flex gap-2">
             <DialogClose>

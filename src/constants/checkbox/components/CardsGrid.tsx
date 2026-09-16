@@ -1,4 +1,9 @@
-import { Checkbox, CheckboxRoot, CheckboxLabel, CheckboxDescription } from "@/components/ui/Checkbox";
+import {
+  Checkbox,
+  CheckboxRoot,
+  CheckboxLabel,
+  CheckboxDescription,
+} from "@/components/ui/Checkbox";
 import { Card, CardContent } from "@/components/ui/Card";
 import { FilmIcon, MoonIcon, BellIcon, SaveIcon } from "lucide-react";
 
@@ -14,9 +19,7 @@ export function CardsGrid() {
               Enable Editing
             </CheckboxLabel>
           </CheckboxRoot>
-          <CheckboxDescription>
-            (Allow modifications)
-          </CheckboxDescription>
+          <CheckboxDescription>(Allow modifications)</CheckboxDescription>
         </CardContent>
       </Card>
 
@@ -29,9 +32,7 @@ export function CardsGrid() {
               Dark Mode
             </CheckboxLabel>
           </CheckboxRoot>
-          <CheckboxDescription>
-            (Reduce eye strain)
-          </CheckboxDescription>
+          <CheckboxDescription>(Reduce eye strain)</CheckboxDescription>
         </CardContent>
       </Card>
 
@@ -44,9 +45,7 @@ export function CardsGrid() {
               Notifications
             </CheckboxLabel>
           </CheckboxRoot>
-          <CheckboxDescription>
-            (Receive alerts)
-          </CheckboxDescription>
+          <CheckboxDescription>(Receive alerts)</CheckboxDescription>
         </CardContent>
       </Card>
 

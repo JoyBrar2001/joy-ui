@@ -22,7 +22,7 @@ import {
   PrimaryButtonWithRightIcon,
   RightIconWithAnimation,
   SecondaryButton,
-  SpacedBetweenButton
+  SpacedBetweenButton,
 } from "./components";
 import {
   authButtonsWithTitlesCode,
@@ -45,9 +45,8 @@ import {
   primaryButtonWithRightIconCode,
   rightIconWithAnimationCode,
   secondaryButtonCode,
-  spacedBetweenButtonCode
+  spacedBetweenButtonCode,
 } from "./code/componentCodes";
-
 
 export const buttonData: ComponentCategory = {
   cols: 4,

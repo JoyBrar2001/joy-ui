@@ -1,8 +1,38 @@
 import { cnFile } from "../common";
 import { ComponentCategory } from "../data";
-import { cardSwitchCode, cardSwitchWithIconCode, customStyledSwitchCode, defaultCheckedSwitchCode, dynamicLabelSwitchCode, labeledSwitchCode, lightDarkDualCode, lightDarkSingleCode, onOffDualCode, onOffSingleCode, simpleSwitchCode, squareSwitchCode, switchSmallCode, thinSwitchCode } from "./code/componentCodes";
+import {
+  cardSwitchCode,
+  cardSwitchWithIconCode,
+  customStyledSwitchCode,
+  defaultCheckedSwitchCode,
+  dynamicLabelSwitchCode,
+  labeledSwitchCode,
+  lightDarkDualCode,
+  lightDarkSingleCode,
+  onOffDualCode,
+  onOffSingleCode,
+  simpleSwitchCode,
+  squareSwitchCode,
+  switchSmallCode,
+  thinSwitchCode,
+} from "./code/componentCodes";
 import { switchCode } from "./code/switchCode";
-import { CardSwitch, CardSwitchWithIcon, CustomStyledSwitch, DefaultCheckedSwitch, DynamicLabelSwitch, LabeledSwitch, LightDarkDual, LightDarkSimple, OnOffDual, OnOffSingle, SimpleSwitch, SquareSwitch, SwitchSmall, ThinSwitch } from "./components";
+import {
+  CardSwitch,
+  CardSwitchWithIcon,
+  CustomStyledSwitch,
+  DefaultCheckedSwitch,
+  DynamicLabelSwitch,
+  LabeledSwitch,
+  LightDarkDual,
+  LightDarkSimple,
+  OnOffDual,
+  OnOffSingle,
+  SimpleSwitch,
+  SquareSwitch,
+  SwitchSmall,
+  ThinSwitch,
+} from "./components";
 
 export const switchData: ComponentCategory = {
   cols: 4,
@@ -11,11 +41,7 @@ export const switchData: ComponentCategory = {
   steps: [
     {
       type: "dependencies",
-      libraries: [
-        "clsx",
-        "tailwind-merge",
-        "@radix-ui/react-switch"
-      ]
+      libraries: ["clsx", "tailwind-merge", "@radix-ui/react-switch"],
     },
     {
       type: "utilities",
@@ -24,88 +50,88 @@ export const switchData: ComponentCategory = {
           name: "cn.ts",
           path: "@/utils/cn.ts",
           language: "typescript",
-          code: cnFile
-        }
-      ]
+          code: cnFile,
+        },
+      ],
     },
     {
       type: "source",
       name: "Switch.tsx",
       path: "@/components/ui/Switch.tsx",
       language: "tsx",
-      code: switchCode
-    }
+      code: switchCode,
+    },
   ],
   components: [
     {
       title: "Simple Switch",
       component: SimpleSwitch,
-      code: simpleSwitchCode
+      code: simpleSwitchCode,
     },
     {
       title: "Switch (sm)",
       component: SwitchSmall,
-      code: switchSmallCode
+      code: switchSmallCode,
     },
     {
       title: "Default Checked",
       component: DefaultCheckedSwitch,
-      code: defaultCheckedSwitchCode
+      code: defaultCheckedSwitchCode,
     },
     {
       title: "Custom Styled Checked",
       component: CustomStyledSwitch,
-      code: customStyledSwitchCode
+      code: customStyledSwitchCode,
     },
     {
       title: "Suqare Checkbox",
       component: SquareSwitch,
-      code: squareSwitchCode
+      code: squareSwitchCode,
     },
     {
       title: "Thin Checkbox",
       component: ThinSwitch,
-      code: thinSwitchCode
+      code: thinSwitchCode,
     },
     {
       title: "Labeled Checkbox",
       component: LabeledSwitch,
-      code: labeledSwitchCode
+      code: labeledSwitchCode,
     },
     {
       title: "Interactive Checkbox",
       component: DynamicLabelSwitch,
-      code: dynamicLabelSwitchCode
+      code: dynamicLabelSwitchCode,
     },
     {
       title: "Light Dark Toggler",
       component: LightDarkSimple,
-      code: lightDarkSingleCode
+      code: lightDarkSingleCode,
     },
     {
       title: "Another Light Dark",
       component: LightDarkDual,
-      code: lightDarkDualCode
+      code: lightDarkDualCode,
     },
     {
       title: "On Off Toggler",
       component: OnOffSingle,
-      code: onOffSingleCode
+      code: onOffSingleCode,
     },
     {
       title: "Another On Off Toggler",
       component: OnOffDual,
-      code: onOffDualCode
+      code: onOffDualCode,
     },
     {
       title: "Card Switch",
       component: CardSwitch,
-      code: cardSwitchCode
+      code: cardSwitchCode,
     },
     {
       title: "Card Switch with Icon",
       component: CardSwitchWithIcon,
-      code: cardSwitchWithIconCode
+      code: cardSwitchWithIconCode,
     },
-  ]
-}
+  ],
+};

@@ -9,10 +9,7 @@ export const inputData: ComponentCategory = {
   steps: [
     {
       type: "dependencies",
-      libraries: [
-        "clsx",
-        "tailwind-merge"
-      ]
+      libraries: ["clsx", "tailwind-merge"],
     },
     {
       type: "utilities",
@@ -26,9 +23,9 @@ import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
-}`
-        }
-      ]
+}`,
+        },
+      ],
     },
     {
       type: "source",
@@ -86,62 +83,107 @@ export default function Input({
       {error && <p className="text-red-500 text-sm">{error}</p>}
     </div>
   );
-}`
-    }
+}`,
+    },
   ],
   components: [
     {
       title: "Simple Input",
       component: () => <Input label="Username" placeholder="Enter Username" />,
-      code: ""
+      code: "",
     },
     {
       title: "Input with Description",
-      component: () => <Input label="Username" description="Username must contain alphabets, at least one numeric value, and no special symbols." placeholder="Enter Username" />,
-      code: ""
+      component: () => (
+        <Input
+          label="Username"
+          description="Username must contain alphabets, at least one numeric value, and no special symbols."
+          placeholder="Enter Username"
+        />
+      ),
+      code: "",
     },
     {
       title: "Input with Left Icon",
-      component: () => <Input label="Search" placeholder="Search for users..." leftIcon={<Search className="size-[18px]" />} />,
-      code: ""
+      component: () => (
+        <Input
+          label="Search"
+          placeholder="Search for users..."
+          leftIcon={<Search className="size-[18px]" />}
+        />
+      ),
+      code: "",
     },
     {
       title: "Input with Right Icon",
-      component: () => <Input label="Password" placeholder="Enter password" type="password" rightIcon={<Lock className="size-[18px]" />} />,
-      code: ""
+      component: () => (
+        <Input
+          label="Password"
+          placeholder="Enter password"
+          type="password"
+          rightIcon={<Lock className="size-[18px]" />}
+        />
+      ),
+      code: "",
     },
     {
       title: "Input with Both Icons",
-      component: () => <Input label="Just for Fun" placeholder="I have 2 icons" leftIcon={<Search className="size-[18px]" />} rightIcon={<Lock className="size-[18px]" />} />,
-      code: ""
+      component: () => (
+        <Input
+          label="Just for Fun"
+          placeholder="I have 2 icons"
+          leftIcon={<Search className="size-[18px]" />}
+          rightIcon={<Lock className="size-[18px]" />}
+        />
+      ),
+      code: "",
     },
     {
       title: "Disabled Input",
-      component: () => <Input label="Username" placeholder="Enter Username" defaultValue="JoyBrar2001" description="Username can no longer be changed" disabled={true} />,
-      code: ""
+      component: () => (
+        <Input
+          label="Username"
+          placeholder="Enter Username"
+          defaultValue="JoyBrar2001"
+          description="Username can no longer be changed"
+          disabled={true}
+        />
+      ),
+      code: "",
     },
     {
       title: "Error Input",
-      component: () => <Input label="Username" placeholder="Enter Username" defaultValue="JoyBrar" error="Invalid Entry - Username must contain one numeric" />,
-      code: ""
+      component: () => (
+        <Input
+          label="Username"
+          placeholder="Enter Username"
+          defaultValue="JoyBrar"
+          error="Invalid Entry - Username must contain one numeric"
+        />
+      ),
+      code: "",
     },
     {
       title: "Left inline icon",
-      component: () => <Input
-        placeholder="Search for things..."
-        leftInlineIcon={<Search size={16} />}
-        label="Search for Anything"
-      />,
-      code: ""
+      component: () => (
+        <Input
+          placeholder="Search for things..."
+          leftInlineIcon={<Search size={16} />}
+          label="Search for Anything"
+        />
+      ),
+      code: "",
     },
     {
       title: "Right inline icon",
-      component: () => <Input
-        placeholder="Search for things..."
-        rightInlineIcon={<Send size={16} />}
-        label="Send Message"
-      />,
-      code: ""
+      component: () => (
+        <Input
+          placeholder="Search for things..."
+          rightInlineIcon={<Send size={16} />}
+          label="Send Message"
+        />
+      ),
+      code: "",
     },
   ],
 };

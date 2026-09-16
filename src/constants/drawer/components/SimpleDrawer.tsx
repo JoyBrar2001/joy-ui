@@ -1,7 +1,13 @@
 "use client";
 
 import { Button } from "@/components/ui/Button";
-import { Drawer, DrawerContainer, DrawerContent, DrawerHeader, DrawerTitle } from "@/components/ui/Drawer";
+import {
+  Drawer,
+  DrawerContainer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+} from "@/components/ui/Drawer";
 import { X } from "lucide-react";
 import { useRef, useState } from "react";
 import { SheetRef } from "react-modal-sheet";
@@ -12,9 +18,7 @@ export function SimpleDrawer() {
 
   return (
     <>
-      <Button onClick={() => setOpen(true)}>
-        Open Drawer
-      </Button>
+      <Button onClick={() => setOpen(true)}>Open Drawer</Button>
 
       <Drawer
         ref={ref}
@@ -37,7 +41,8 @@ export function SimpleDrawer() {
 
           <DrawerContent>
             <p className="text-neutral-300">
-              This is a smooth, draggable modal sheet with different snap points.
+              This is a smooth, draggable modal sheet with different snap
+              points.
             </p>
 
             <ul className="space-y-2">

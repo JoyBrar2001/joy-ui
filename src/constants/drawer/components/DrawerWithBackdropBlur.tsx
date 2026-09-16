@@ -1,7 +1,14 @@
 "use client";
 
 import { Button } from "@/components/ui/Button";
-import { Drawer, DrawerBackdrop, DrawerContainer, DrawerContent, DrawerHeader, DrawerTitle } from "@/components/ui/Drawer";
+import {
+  Drawer,
+  DrawerBackdrop,
+  DrawerContainer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+} from "@/components/ui/Drawer";
 import { X } from "lucide-react";
 import { useRef, useState } from "react";
 import { SheetRef } from "react-modal-sheet";
@@ -12,12 +19,20 @@ export function DrawerWithBackdropBlur() {
 
   return (
     <>
-      <Button onClick={() => setOpen(true)}>
-        Draggable Drawer
-      </Button>
+      <Button onClick={() => setOpen(true)}>Draggable Drawer</Button>
 
-      <Drawer ref={ref} isOpen={isOpen} setOpen={setOpen} snapPoints={[0, 600, 1]} initialSnap={1} disableDrag={false}>
-        <DrawerBackdrop setOpen={setOpen} className="bg-black/70 backdrop-blur-sm" />
+      <Drawer
+        ref={ref}
+        isOpen={isOpen}
+        setOpen={setOpen}
+        snapPoints={[0, 600, 1]}
+        initialSnap={1}
+        disableDrag={false}
+      >
+        <DrawerBackdrop
+          setOpen={setOpen}
+          className="bg-black/70 backdrop-blur-sm"
+        />
 
         <DrawerContainer>
           <DrawerHeader>
@@ -32,7 +47,8 @@ export function DrawerWithBackdropBlur() {
 
           <DrawerContent>
             <p className="text-neutral-300">
-              This is a smooth, draggable modal sheet with different snap points.
+              This is a smooth, draggable modal sheet with different snap
+              points.
             </p>
 
             <ul className="space-y-2">

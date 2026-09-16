@@ -3,13 +3,23 @@
 import { useState } from "react";
 import { Lock, Mail } from "lucide-react";
 
-import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogClose } from "@/components/ui/Dialog";
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+  DialogClose,
+} from "@/components/ui/Dialog";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 
 export function SignInDialog() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [formData, setFormData] = useState<{ email: string, password: string }>({ email: "", password: "" });
+  const [formData, setFormData] = useState<{ email: string; password: string }>(
+    { email: "", password: "" },
+  );
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -19,13 +29,13 @@ export function SignInDialog() {
   const handleSignIn = async () => {
     setLoading(true);
 
-    await new Promise((res) => (
+    await new Promise((res) =>
       setTimeout(() => {
         console.log("Form Data:", formData);
         setLoading(false);
         res(1);
-      }, 2000)
-    ));
+      }, 2000),
+    );
 
     setIsOpen(false);
   };

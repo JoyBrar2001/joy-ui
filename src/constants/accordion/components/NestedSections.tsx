@@ -1,4 +1,9 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/Accordion"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/Accordion";
 
 export function NestedSections() {
   return (
@@ -6,11 +11,16 @@ export function NestedSections() {
       <AccordionItem value="features">
         <AccordionTrigger>Feature Overview</AccordionTrigger>
         <AccordionContent>
-          <Accordion type="single" collapsible className="ml-4 border-l border-neutral-800 pl-4">
+          <Accordion
+            type="single"
+            collapsible
+            className="ml-4 border-l border-neutral-800 pl-4"
+          >
             <AccordionItem value="nested-1">
               <AccordionTrigger>Custom Styling</AccordionTrigger>
               <AccordionContent>
-                Tailor the look and feel of the components using CSS or utility classes.
+                Tailor the look and feel of the components using CSS or utility
+                classes.
               </AccordionContent>
             </AccordionItem>
 
@@ -27,7 +37,8 @@ export function NestedSections() {
       <AccordionItem value="performance">
         <AccordionTrigger>Performance Optimizations</AccordionTrigger>
         <AccordionContent>
-          Our components are designed for high efficiency and minimal re-renders.
+          Our components are designed for high efficiency and minimal
+          re-renders.
         </AccordionContent>
       </AccordionItem>
     </Accordion>

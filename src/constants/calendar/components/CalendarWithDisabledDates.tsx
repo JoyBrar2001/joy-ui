@@ -5,7 +5,9 @@ import { Calendar } from "@/components/ui/Calendar";
 import { format, addDays, subDays } from "date-fns";
 
 export function CalendarWithDisabledDates() {
-  const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>(
+    new Date(),
+  );
 
   const today = new Date();
 

@@ -1,1 +1,7 @@
-export { FormattingToolbar, ToolbarWithLinks, ToolbarWithGroups, EditorToolbar, ToolbarWithToggle } from "./Examples";
+export {
+  FormattingToolbar,
+  ToolbarWithLinks,
+  ToolbarWithGroups,
+  EditorToolbar,
+  ToolbarWithToggle,
+} from "./Examples";

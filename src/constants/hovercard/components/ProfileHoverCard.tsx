@@ -1,14 +1,28 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar";
 import { Button } from "@/components/ui/Button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/Card";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/HoverCard";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/Card";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/HoverCard";
 
 export function ProfileHoverCard() {
   return (
     <HoverCard>
       <HoverCardTrigger>
         <Avatar className="cursor-pointer">
-          <AvatarImage src="https://avatars.githubusercontent.com/u/194884352?v=4" alt="@radix_ui" />
+          <AvatarImage
+            src="https://avatars.githubusercontent.com/u/194884352?v=4"
+            alt="@radix_ui"
+          />
           <AvatarFallback>JB</AvatarFallback>
         </Avatar>
       </HoverCardTrigger>
@@ -17,7 +31,10 @@ export function ProfileHoverCard() {
         <Card className="rounded-lg bg-white dark:bg-neutral-900 shadow-lg border-none">
           <CardHeader className="flex gap-2 pb-2">
             <Avatar className="cursor-pointer">
-              <AvatarImage src="https://avatars.githubusercontent.com/u/194884352?v=4" alt="@radix_ui" />
+              <AvatarImage
+                src="https://avatars.githubusercontent.com/u/194884352?v=4"
+                alt="@radix_ui"
+              />
               <AvatarFallback>JB</AvatarFallback>
             </Avatar>
 
@@ -29,7 +46,8 @@ export function ProfileHoverCard() {
 
           <CardContent className="text-sm text-neutral-600 dark:text-neutral-300">
             <p className="text-neutral-500 dark:text-neutral-400">
-              Full stack developer, mind behind Joy UI (obviously), and proficient in Next js. React, Typescript...
+              Full stack developer, mind behind Joy UI (obviously), and
+              proficient in Next js. React, Typescript...
             </p>
           </CardContent>
 
@@ -42,7 +60,9 @@ export function ProfileHoverCard() {
               <p className="text-lg font-semibold">2,900</p>
               <p className="text-xs text-neutral-500">Followers</p>
             </div>
-            <Button variant="outline" className="text-sm">Follow</Button>
+            <Button variant="outline" className="text-sm">
+              Follow
+            </Button>
           </CardFooter>
         </Card>
       </HoverCardContent>

@@ -55,17 +55,19 @@ export default async function ComponentPage({ params }: Props) {
       </h6>
 
       <div className="mt-6 grid w-full min-w-0 grid-cols-12 gap-4 overflow-hidden sm:gap-8">
-        {componentData.components.map(({ title, component: Component, code }, index) => (
-          <ComponentWrapper
-            key={index}
-            title={title}
-            cols={componentData.cols}
-            steps={componentData.steps}
-            code={code}
-          >
-            <Component />
-          </ComponentWrapper>
-        ))}
+        {componentData.components.map(
+          ({ title, component: Component, code }, index) => (
+            <ComponentWrapper
+              key={index}
+              title={title}
+              cols={componentData.cols}
+              steps={componentData.steps}
+              code={code}
+            >
+              <Component />
+            </ComponentWrapper>
+          ),
+        )}
       </div>
     </section>
   );

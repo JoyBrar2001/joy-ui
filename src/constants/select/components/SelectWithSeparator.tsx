@@ -1,4 +1,13 @@
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue, SelectViewport } from "@/components/ui/Select";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+  SelectViewport,
+} from "@/components/ui/Select";
 import { Separator } from "@/components/ui/Separator";
 
 export function SelectWithSeparator() {
@@ -16,7 +25,7 @@ export function SelectWithSeparator() {
             <SelectItem value="dark">Dark</SelectItem>
             <SelectItem value="system">System</SelectItem>
           </SelectGroup>
-          
+
           <Separator className="mt-2" />
 
           <SelectGroup className="mt-2">

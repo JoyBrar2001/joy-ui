@@ -1,1 +1,7 @@
-export { BasicContextMenu, CheckboxContextMenu, NestedContextMenu, FileContextMenu, SelectionContextMenu } from "./Examples";
+export {
+  BasicContextMenu,
+  CheckboxContextMenu,
+  NestedContextMenu,
+  FileContextMenu,
+  SelectionContextMenu,
+} from "./Examples";

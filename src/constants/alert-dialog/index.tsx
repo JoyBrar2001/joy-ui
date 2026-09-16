@@ -1,5 +1,54 @@
 import type { ComponentCategory } from "../data";
 import { alertDialogCode } from "./code/alertDialogCode";
-import { confirmCode, deleteCode, logoutCode, resetCode, unsavedCode } from "./code/componentCodes";
-import { ConfirmAlert, DeleteAlert, LogoutAlert, ResetAlert, UnsavedAlert } from "./components";
-export const alertDialogData: ComponentCategory = { cols: 6, title: "Alert Dialog", subtitle: "Focused confirmation dialogs for destructive, irreversible, and important actions.", steps: [{ type: "dependencies", libraries: ["clsx", "tailwind-merge", "@radix-ui/react-alert-dialog"] }, { type: "source", name: "AlertDialog.tsx", path: "@/components/ui/AlertDialog.tsx", language: "tsx", code: alertDialogCode }], components: [{ title: "Delete Alert", component: DeleteAlert, code: deleteCode }, { title: "Unsaved Changes Alert", component: UnsavedAlert, code: unsavedCode }, { title: "Logout Alert", component: LogoutAlert, code: logoutCode }, { title: "Reset Preferences Alert", component: ResetAlert, code: resetCode }, { title: "Publish Confirmation", component: ConfirmAlert, code: confirmCode }] };
+import {
+  confirmCode,
+  deleteCode,
+  logoutCode,
+  resetCode,
+  unsavedCode,
+} from "./code/componentCodes";
+import {
+  ConfirmAlert,
+  DeleteAlert,
+  LogoutAlert,
+  ResetAlert,
+  UnsavedAlert,
+} from "./components";
+export const alertDialogData: ComponentCategory = {
+  cols: 6,
+  title: "Alert Dialog",
+  subtitle:
+    "Focused confirmation dialogs for destructive, irreversible, and important actions.",
+  steps: [
+    {
+      type: "dependencies",
+      libraries: ["clsx", "tailwind-merge", "@radix-ui/react-alert-dialog"],
+    },
+    {
+      type: "source",
+      name: "AlertDialog.tsx",
+      path: "@/components/ui/AlertDialog.tsx",
+      language: "tsx",
+      code: alertDialogCode,
+    },
+  ],
+  components: [
+    { title: "Delete Alert", component: DeleteAlert, code: deleteCode },
+    {
+      title: "Unsaved Changes Alert",
+      component: UnsavedAlert,
+      code: unsavedCode,
+    },
+    { title: "Logout Alert", component: LogoutAlert, code: logoutCode },
+    {
+      title: "Reset Preferences Alert",
+      component: ResetAlert,
+      code: resetCode,
+    },
+    {
+      title: "Publish Confirmation",
+      component: ConfirmAlert,
+      code: confirmCode,
+    },
+  ],
+};

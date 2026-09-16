@@ -1,5 +1,61 @@
 import type { ComponentCategory } from "../data";
 import { toggleGroupCode } from "./code/toggleGroupCode";
-import { alignmentCode, disabledCode, filterCode, multipleCode, verticalCode, viewCode } from "./code/componentCodes";
-import { DisabledToggleGroup, FilterGroup, MultipleToggleGroup, TextAlignmentGroup, VerticalToggleGroup, ViewModeGroup } from "./components";
-export const toggleGroupData: ComponentCategory = { cols: 6, title: "Toggle Group", subtitle: "Keyboard-friendly single and multiple selection groups for filters, views, formatting, and preferences.", steps: [{ type: "dependencies", libraries: ["@radix-ui/react-toggle-group", "@radix-ui/react-toggle"] }, { type: "source", name: "ToggleGroup.tsx", path: "@/components/ui/ToggleGroup.tsx", language: "tsx", code: toggleGroupCode }], components: [{ title: "Text Alignment", component: TextAlignmentGroup, code: alignmentCode }, { title: "View Mode", component: ViewModeGroup, code: viewCode }, { title: "Filter Group", component: FilterGroup, code: filterCode }, { title: "Multiple Selection", component: MultipleToggleGroup, code: multipleCode }, { title: "Disabled Group", component: DisabledToggleGroup, code: disabledCode }, { title: "Vertical Group", component: VerticalToggleGroup, code: verticalCode }] };
+import {
+  alignmentCode,
+  disabledCode,
+  filterCode,
+  multipleCode,
+  verticalCode,
+  viewCode,
+} from "./code/componentCodes";
+import {
+  DisabledToggleGroup,
+  FilterGroup,
+  MultipleToggleGroup,
+  TextAlignmentGroup,
+  VerticalToggleGroup,
+  ViewModeGroup,
+} from "./components";
+export const toggleGroupData: ComponentCategory = {
+  cols: 6,
+  title: "Toggle Group",
+  subtitle:
+    "Keyboard-friendly single and multiple selection groups for filters, views, formatting, and preferences.",
+  steps: [
+    {
+      type: "dependencies",
+      libraries: ["@radix-ui/react-toggle-group", "@radix-ui/react-toggle"],
+    },
+    {
+      type: "source",
+      name: "ToggleGroup.tsx",
+      path: "@/components/ui/ToggleGroup.tsx",
+      language: "tsx",
+      code: toggleGroupCode,
+    },
+  ],
+  components: [
+    {
+      title: "Text Alignment",
+      component: TextAlignmentGroup,
+      code: alignmentCode,
+    },
+    { title: "View Mode", component: ViewModeGroup, code: viewCode },
+    { title: "Filter Group", component: FilterGroup, code: filterCode },
+    {
+      title: "Multiple Selection",
+      component: MultipleToggleGroup,
+      code: multipleCode,
+    },
+    {
+      title: "Disabled Group",
+      component: DisabledToggleGroup,
+      code: disabledCode,
+    },
+    {
+      title: "Vertical Group",
+      component: VerticalToggleGroup,
+      code: verticalCode,
+    },
+  ],
+};

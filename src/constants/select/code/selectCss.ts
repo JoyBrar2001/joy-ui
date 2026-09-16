@@ -29,4 +29,4 @@ export const selectCss = `@import "tailwindcss";
       opacity: 1;
     }
   }
-}`
+}`;

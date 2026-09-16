@@ -6,4 +6,4 @@ export function SquareSwitch() {
       <SwitchThumb className="rounded-sm" />
     </Switch>
   );
-} 
+}

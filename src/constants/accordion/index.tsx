@@ -1,15 +1,22 @@
 import { cnFile } from "../common";
-import { ComponentCategory } from "../data"
+import { ComponentCategory } from "../data";
 import { accordionCss, accordionCode } from "./code";
-import { accordionWithIconsCode, customStyledAccordionCode, leftIconsCode, nestedSectionsCode, outlinedAccordionCode, simpleAccordionCode } from "./code/componentCodes";
+import {
+  accordionWithIconsCode,
+  customStyledAccordionCode,
+  leftIconsCode,
+  nestedSectionsCode,
+  outlinedAccordionCode,
+  simpleAccordionCode,
+} from "./code/componentCodes";
 import {
   SimpleAccordion,
   LeftIcons,
   OutlinedAccordion,
   NestedSections,
   AccordionWithIcons,
-  CustomStyledAccordion
-} from "./components"
+  CustomStyledAccordion,
+} from "./components";
 
 export const accordionData: ComponentCategory = {
   cols: 6,
@@ -22,8 +29,8 @@ export const accordionData: ComponentCategory = {
         "clsx",
         "tailwind-merge",
         "lucide-react",
-        "@radix-ui/react-accordion"
-      ]
+        "@radix-ui/react-accordion",
+      ],
     },
     {
       type: "utilities",
@@ -32,23 +39,23 @@ export const accordionData: ComponentCategory = {
           name: "cn.ts",
           path: "@/utils/cn.ts",
           language: "typescript",
-          code: cnFile
+          code: cnFile,
         },
         {
           name: "globals.css",
           path: "@/globals.css",
           language: "css",
-          code: accordionCss
-        }
-      ]
+          code: accordionCss,
+        },
+      ],
     },
     {
       type: "source",
       name: "Accordion.tsx",
       path: "@/components/ui/Accordion.tsx",
       language: "tsx",
-      code: accordionCode
-    }
+      code: accordionCode,
+    },
   ],
   components: [
     {
@@ -59,27 +66,27 @@ export const accordionData: ComponentCategory = {
     {
       title: "Left Icons",
       component: LeftIcons,
-      code: leftIconsCode
+      code: leftIconsCode,
     },
     {
       title: "Outlined Accodion",
       component: OutlinedAccordion,
-      code: outlinedAccordionCode
+      code: outlinedAccordionCode,
     },
     {
       title: "Nested Sections",
       component: NestedSections,
-      code: nestedSectionsCode
+      code: nestedSectionsCode,
     },
     {
       title: "Accordion with Icons",
       component: AccordionWithIcons,
-      code: accordionWithIconsCode
+      code: accordionWithIconsCode,
     },
     {
       title: "Custom Styled Accordion",
       component: CustomStyledAccordion,
-      code: customStyledAccordionCode
+      code: customStyledAccordionCode,
     },
-  ]
+  ],
 };

@@ -45,4 +45,4 @@ export const dialogCss = `@import "tailwindcss";
       transform: translateY(24px) scale(0.96);
     }
   }
-}`
+}`;

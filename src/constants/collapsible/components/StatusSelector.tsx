@@ -1,7 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { Collapsible, CollapsibleCard, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/Collapsible";
+import {
+  Collapsible,
+  CollapsibleCard,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/Collapsible";
 import { ChevronsUpDown, X } from "lucide-react";
 import { cn } from "@/utils";
 
@@ -20,28 +25,40 @@ export function StatusSelector() {
   const [selectedOption, setSelectedOption] = useState(options[0]);
   const [otherOptions, setOtherOptions] = useState(options.slice(1));
 
-  const handleSelectOption = (option: typeof options[number]) => {
-    setOtherOptions([selectedOption, ...otherOptions.filter((op) => op.id !== option.id)]);
+  const handleSelectOption = (option: (typeof options)[number]) => {
+    setOtherOptions([
+      selectedOption,
+      ...otherOptions.filter((op) => op.id !== option.id),
+    ]);
     setSelectedOption(option);
     setOpen(false);
   };
 
   return (
-    <Collapsible open={open} onOpenChange={setOpen} className="w-64 items-center justify-between">
+    <Collapsible
+      open={open}
+      onOpenChange={setOpen}
+      className="w-64 items-center justify-between"
+    >
       <div className="flex items-center justify-between">
-        <span className="text-sm leading-6 text-white">
-          Pick your repo
-        </span>
+        <span className="text-sm leading-6 text-white">Pick your repo</span>
 
         <CollapsibleTrigger asChild>
           <button className="text-white inline-flex items-center justify-center p-1.5 rounded-full transition duration-200 hover:bg-neutral-800 group data-[state=open]:bg-neutral-800">
             <X size={16} className="hidden group-data-[state=open]:block" />
-            <ChevronsUpDown size={16} className="block group-data-[state=open]:hidden" />
+            <ChevronsUpDown
+              size={16}
+              className="block group-data-[state=open]:hidden"
+            />
           </button>
         </CollapsibleTrigger>
       </div>
 
-      <CollapsibleCard variant="outline" onClick={() => setOpen(true)} className="cursor-pointer hover:bg-neutral-800">
+      <CollapsibleCard
+        variant="outline"
+        onClick={() => setOpen(true)}
+        className="cursor-pointer hover:bg-neutral-800"
+      >
         <div className="flex justify-start items-center gap-2">
           <div className={cn("size-2 rounded-full", selectedOption.bg)} />
           <p className="text-sm font-medium">{selectedOption.status}</p>

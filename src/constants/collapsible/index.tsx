@@ -1,9 +1,27 @@
 import { ComponentCategory } from "../data";
 import { cnFile } from "../common";
 import { collapsibleCode } from "./code/collapsibleCode";
-import { AnimatedCollapsible, ProfileSelector, ProfileSelectorControlled, SelectableCollapsible, SimpleCollapsible, SimpleCollapsibleOutlined, SimpleCollapsibleSecondary, StatusSelector } from "./components";
+import {
+  AnimatedCollapsible,
+  ProfileSelector,
+  ProfileSelectorControlled,
+  SelectableCollapsible,
+  SimpleCollapsible,
+  SimpleCollapsibleOutlined,
+  SimpleCollapsibleSecondary,
+  StatusSelector,
+} from "./components";
 import { collapsibleCss } from "./code/collapsibleCss";
-import { animatedCollapsibleCode, profileSelectorCode, profileSelectorControlledCode, selectableCollapsibleCode, simpleCollapsibleCode, simpleCollapsibleOutlinedCode, simpleCollapsibleSecondaryCode, statusSelectorCode } from "./code/componentCodes";
+import {
+  animatedCollapsibleCode,
+  profileSelectorCode,
+  profileSelectorControlledCode,
+  selectableCollapsibleCode,
+  simpleCollapsibleCode,
+  simpleCollapsibleOutlinedCode,
+  simpleCollapsibleSecondaryCode,
+  statusSelectorCode,
+} from "./code/componentCodes";
 
 export const collapsibleData: ComponentCategory = {
   cols: 4,
@@ -12,11 +30,7 @@ export const collapsibleData: ComponentCategory = {
   steps: [
     {
       type: "dependencies",
-      libraries: [
-        "clsx",
-        "tailwind-merge",
-        "@radix-ui/react-collapsible"
-      ]
+      libraries: ["clsx", "tailwind-merge", "@radix-ui/react-collapsible"],
     },
     {
       type: "utilities",
@@ -25,64 +39,64 @@ export const collapsibleData: ComponentCategory = {
           name: "cn.ts",
           path: "@/utils/cn.ts",
           language: "typescript",
-          code: cnFile
+          code: cnFile,
         },
         {
           name: "globals.css",
           path: "@/globals.css",
           language: "css",
-          code: collapsibleCss
-        }
-      ]
+          code: collapsibleCss,
+        },
+      ],
     },
     {
       type: "source",
       name: "Collapsible.tsx",
       path: "@/components/ui/Collapsible.tsx",
       language: "tsx",
-      code: collapsibleCode
-    }
+      code: collapsibleCode,
+    },
   ],
   components: [
     {
       title: "Simple Collapsible",
       component: SimpleCollapsible,
-      code: simpleCollapsibleCode
+      code: simpleCollapsibleCode,
     },
     {
       title: "Animated Collapsible",
       component: AnimatedCollapsible,
-      code: animatedCollapsibleCode
+      code: animatedCollapsibleCode,
     },
     {
       title: "Simple Collapsible (Secondary)",
       component: SimpleCollapsibleSecondary,
-      code: simpleCollapsibleSecondaryCode
+      code: simpleCollapsibleSecondaryCode,
     },
     {
       title: "Simple Collapsible (Outlined)",
       component: SimpleCollapsibleOutlined,
-      code: simpleCollapsibleOutlinedCode
+      code: simpleCollapsibleOutlinedCode,
     },
     {
       title: "Selectable Collapsible (Controlled)",
       component: SelectableCollapsible,
-      code: selectableCollapsibleCode
+      code: selectableCollapsibleCode,
     },
     {
       title: "Status Selector (Controlled)",
       component: StatusSelector,
-      code: statusSelectorCode
+      code: statusSelectorCode,
     },
     {
       title: "Profile Selector",
       component: ProfileSelector,
-      code: profileSelectorCode
+      code: profileSelectorCode,
     },
     {
       title: "Profile Selector (Controlled)",
       component: ProfileSelectorControlled,
-      code: profileSelectorControlledCode
+      code: profileSelectorControlledCode,
     },
-  ]
+  ],
 };

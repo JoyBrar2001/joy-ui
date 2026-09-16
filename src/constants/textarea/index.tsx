@@ -45,10 +45,30 @@ export const textareaData: ComponentCategory = {
     },
   ],
   components: [
-    { title: "Simple Textarea", component: SimpleTextarea, code: simpleTextareaCode },
-    { title: "Textarea with Description", component: TextareaWithDescription, code: textareaWithDescriptionCode },
-    { title: "Disabled Textarea", component: DisabledTextarea, code: disabledTextareaCode },
-    { title: "Error Textarea", component: ErrorTextarea, code: errorTextareaCode },
-    { title: "Textarea with Character Count", component: TextareaWithCharacterCount, code: textareaWithCharacterCountCode },
+    {
+      title: "Simple Textarea",
+      component: SimpleTextarea,
+      code: simpleTextareaCode,
+    },
+    {
+      title: "Textarea with Description",
+      component: TextareaWithDescription,
+      code: textareaWithDescriptionCode,
+    },
+    {
+      title: "Disabled Textarea",
+      component: DisabledTextarea,
+      code: disabledTextareaCode,
+    },
+    {
+      title: "Error Textarea",
+      component: ErrorTextarea,
+      code: errorTextareaCode,
+    },
+    {
+      title: "Textarea with Character Count",
+      component: TextareaWithCharacterCount,
+      code: textareaWithCharacterCountCode,
+    },
   ],
 };

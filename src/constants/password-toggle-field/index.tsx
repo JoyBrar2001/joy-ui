@@ -1,5 +1,69 @@
 import type { ComponentCategory } from "../data";
 import { passwordToggleFieldCode } from "./code/passwordToggleFieldCode";
-import { basicPasswordCode, confirmPasswordCode, controlledPasswordCode, hintPasswordCode, newPasswordCode, strengthPasswordCode } from "./code/componentCodes";
-import { BasicPassword, ConfirmPassword, ControlledPassword, NewPassword, PasswordWithHint, PasswordWithStrength } from "./components";
-export const passwordToggleFieldData: ComponentCategory = { cols: 6, title: "Password Toggle Field", subtitle: "Accessible password inputs that preserve focus while toggling password visibility.", steps: [{ type: "dependencies", libraries: ["@radix-ui/react-password-toggle-field", "lucide-react", "zod"] }, { type: "source", name: "PasswordToggleField.tsx", path: "@/components/ui/PasswordToggleField.tsx", language: "tsx", code: passwordToggleFieldCode }], components: [{ title: "Basic Password", component: BasicPassword, code: basicPasswordCode }, { title: "New Password", component: NewPassword, code: newPasswordCode }, { title: "Password Strength", component: PasswordWithStrength, code: strengthPasswordCode }, { title: "Confirm Password", component: ConfirmPassword, code: confirmPasswordCode }, { title: "Password with Hint", component: PasswordWithHint, code: hintPasswordCode }, { title: "Controlled Visibility", component: ControlledPassword, code: controlledPasswordCode }] };
+import {
+  basicPasswordCode,
+  confirmPasswordCode,
+  controlledPasswordCode,
+  hintPasswordCode,
+  newPasswordCode,
+  strengthPasswordCode,
+} from "./code/componentCodes";
+import {
+  BasicPassword,
+  ConfirmPassword,
+  ControlledPassword,
+  NewPassword,
+  PasswordWithHint,
+  PasswordWithStrength,
+} from "./components";
+export const passwordToggleFieldData: ComponentCategory = {
+  cols: 6,
+  title: "Password Toggle Field",
+  subtitle:
+    "Accessible password inputs that preserve focus while toggling password visibility.",
+  steps: [
+    {
+      type: "dependencies",
+      libraries: [
+        "@radix-ui/react-password-toggle-field",
+        "lucide-react",
+        "zod",
+      ],
+    },
+    {
+      type: "source",
+      name: "PasswordToggleField.tsx",
+      path: "@/components/ui/PasswordToggleField.tsx",
+      language: "tsx",
+      code: passwordToggleFieldCode,
+    },
+  ],
+  components: [
+    {
+      title: "Basic Password",
+      component: BasicPassword,
+      code: basicPasswordCode,
+    },
+    { title: "New Password", component: NewPassword, code: newPasswordCode },
+    {
+      title: "Password Strength",
+      component: PasswordWithStrength,
+      code: strengthPasswordCode,
+    },
+    {
+      title: "Confirm Password",
+      component: ConfirmPassword,
+      code: confirmPasswordCode,
+    },
+    {
+      title: "Password with Hint",
+      component: PasswordWithHint,
+      code: hintPasswordCode,
+    },
+    {
+      title: "Controlled Visibility",
+      component: ControlledPassword,
+      code: controlledPasswordCode,
+    },
+  ],
+};

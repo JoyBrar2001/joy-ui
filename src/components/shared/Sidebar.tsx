@@ -8,13 +8,12 @@ import { data } from "@/constants/data";
 import { Button } from "../ui/Button";
 
 const sidebarItems = Array.from(
-  Object
-    .keys(data)
+  Object.keys(data)
     .sort((a, b) => data[a].title.localeCompare(data[b].title))
     .map((component) => ({
       name: capitalize(component),
-      path: `/components/ui/${component}`
-    }))
+      path: `/components/ui/${component}`,
+    })),
 );
 
 export default function Sidebar() {
@@ -23,7 +22,8 @@ export default function Sidebar() {
 
   useEffect(() => {
     const checkScrolled = () => {
-      const scrolled = document.documentElement.scrollTop || document.body.scrollTop;
+      const scrolled =
+        document.documentElement.scrollTop || document.body.scrollTop;
       setScrolled(scrolled > 20);
     };
 
@@ -37,7 +37,7 @@ export default function Sidebar() {
         <h2
           className={cn(
             "mb-2 whitespace-nowrap text-lg font-bold transition-all duration-500 md:mb-4 md:text-xl",
-            scrolled && "md:pt-28"
+            scrolled && "md:pt-28",
           )}
         >
           UI Components
@@ -55,7 +55,7 @@ export default function Sidebar() {
               variant="ghost"
               className={cn(
                 "w-auto justify-start whitespace-nowrap md:w-full",
-                pathname === item.path && "text-white bg-neutral-900"
+                pathname === item.path && "text-white bg-neutral-900",
               )}
             >
               {item.name}

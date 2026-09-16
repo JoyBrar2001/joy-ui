@@ -1,7 +1,4 @@
-export function capitalize(
-  str: string,
-  firstOnly: boolean = true
-) {
+export function capitalize(str: string, firstOnly: boolean = true) {
   if (firstOnly) {
     return str.charAt(0).toUpperCase() + str.slice(1);
   }

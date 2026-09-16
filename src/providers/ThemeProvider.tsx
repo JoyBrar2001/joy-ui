@@ -20,17 +20,28 @@ type ThemeProviderProps = {
 const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 
 function getSystemTheme(): ResolvedTheme {
-  return typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  return typeof window !== "undefined" &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
 }
 
-export function ThemeProvider({ children, defaultTheme = "system", enableSystem = true }: ThemeProviderProps) {
+export function ThemeProvider({
+  children,
+  defaultTheme = "system",
+  enableSystem = true,
+}: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(defaultTheme);
   const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>("light");
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const storedTheme = window.localStorage.getItem("joy-ui-theme");
-    if (storedTheme === "light" || storedTheme === "dark" || (storedTheme === "system" && enableSystem)) {
+    if (
+      storedTheme === "light" ||
+      storedTheme === "dark" ||
+      (storedTheme === "system" && enableSystem)
+    ) {
       // The persisted preference is external browser state and is unavailable during SSR.
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setTheme(storedTheme);
@@ -39,11 +50,19 @@ export function ThemeProvider({ children, defaultTheme = "system", enableSystem 
   }, [enableSystem]);
 
   useEffect(() => {
-    const nextResolvedTheme = theme === "system" && enableSystem ? getSystemTheme() : theme === "dark" ? "dark" : "light";
+    const nextResolvedTheme =
+      theme === "system" && enableSystem
+        ? getSystemTheme()
+        : theme === "dark"
+          ? "dark"
+          : "light";
     // resolvedTheme mirrors the browser's system preference after hydration.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setResolvedTheme(nextResolvedTheme);
-    document.documentElement.classList.toggle("dark", nextResolvedTheme === "dark");
+    document.documentElement.classList.toggle(
+      "dark",
+      nextResolvedTheme === "dark",
+    );
     document.documentElement.style.colorScheme = nextResolvedTheme;
 
     if (ready) window.localStorage.setItem("joy-ui-theme", theme);
@@ -60,9 +79,14 @@ export function ThemeProvider({ children, defaultTheme = "system", enableSystem 
     return () => mediaQuery.removeEventListener("change", handleChange);
   }, [enableSystem, ready, theme]);
 
-  const value = useMemo(() => ({ theme, resolvedTheme, setTheme }), [resolvedTheme, theme]);
+  const value = useMemo(
+    () => ({ theme, resolvedTheme, setTheme }),
+    [resolvedTheme, theme],
+  );
 
-  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
+  return (
+    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+  );
 }
 
 export function useTheme() {

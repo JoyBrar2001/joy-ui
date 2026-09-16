@@ -1,13 +1,48 @@
 import { cnFile } from "../common";
 import { ComponentCategory } from "../data";
 import { calendarCode } from "./code/calendarCode";
-import { basicCalendarCode, dayPickerCode, disabledWeekendsCode, footerCalendarCode, multipleDayCode, rangePickerCode, threeMonthCode, twoMonthRangeCode } from "./code/componentCodes";
-import { BasicCalendar, CalendarWithDisabledDates, CalendarWithDisabledWeekends, CalendarWithDropdown, CalendarWithoutOutsideDays, CalendarWithPresetDays, CalendarWithPresetRange, CustomStyledCalendar, DatePickerWithFooter, DayPickerExample, DropddownCalendar, DropddownCalendarWithPlaceholder, DropdownCalendarWithDefaultValue, DropdownRangeSelector, DropdownRangeWithDefaultValue, DropdownRangeWithMultipleMonths, MultipleDayPicker, MultipleDaysSelector, MultipleMonthsSelector, RangePicker, RangePickerTwoMonths, SimpleCalendar, SimpleRangeSelector, ThreeMonthView } from "./components";
+import {
+  basicCalendarCode,
+  dayPickerCode,
+  disabledWeekendsCode,
+  footerCalendarCode,
+  multipleDayCode,
+  rangePickerCode,
+  threeMonthCode,
+  twoMonthRangeCode,
+} from "./code/componentCodes";
+import {
+  BasicCalendar,
+  CalendarWithDisabledDates,
+  CalendarWithDisabledWeekends,
+  CalendarWithDropdown,
+  CalendarWithoutOutsideDays,
+  CalendarWithPresetDays,
+  CalendarWithPresetRange,
+  CustomStyledCalendar,
+  DatePickerWithFooter,
+  DayPickerExample,
+  DropddownCalendar,
+  DropddownCalendarWithPlaceholder,
+  DropdownCalendarWithDefaultValue,
+  DropdownRangeSelector,
+  DropdownRangeWithDefaultValue,
+  DropdownRangeWithMultipleMonths,
+  MultipleDayPicker,
+  MultipleDaysSelector,
+  MultipleMonthsSelector,
+  RangePicker,
+  RangePickerTwoMonths,
+  SimpleCalendar,
+  SimpleRangeSelector,
+  ThreeMonthView,
+} from "./components";
 
 export const calendarData: ComponentCategory = {
   cols: 6,
   title: "Calendar",
-  subtitle: "Flexible date and range pickers powered by react-day-picker, with responsive month views and accessible selection states.",
+  subtitle:
+    "Flexible date and range pickers powered by react-day-picker, with responsive month views and accessible selection states.",
   steps: [
     {
       type: "dependencies",
@@ -33,14 +68,38 @@ export const calendarData: ComponentCategory = {
     },
   ],
   components: [
-    { title: "Normal Calendar", component: BasicCalendar, code: basicCalendarCode },
+    {
+      title: "Normal Calendar",
+      component: BasicCalendar,
+      code: basicCalendarCode,
+    },
     { title: "Day Picker", component: DayPickerExample, code: dayPickerCode },
     { title: "Range Picker", component: RangePicker, code: rangePickerCode },
-    { title: "Range Picker with Two Month View", component: RangePickerTwoMonths, code: twoMonthRangeCode },
-    { title: "Three Month View", component: ThreeMonthView, code: threeMonthCode },
-    { title: "Multiple Day Picker", component: MultipleDayPicker, code: multipleDayCode },
-    { title: "Date Picker with Footer", component: DatePickerWithFooter, code: footerCalendarCode },
-    { title: "Calendar with Disabled Weekends", component: CalendarWithDisabledWeekends, code: disabledWeekendsCode },
+    {
+      title: "Range Picker with Two Month View",
+      component: RangePickerTwoMonths,
+      code: twoMonthRangeCode,
+    },
+    {
+      title: "Three Month View",
+      component: ThreeMonthView,
+      code: threeMonthCode,
+    },
+    {
+      title: "Multiple Day Picker",
+      component: MultipleDayPicker,
+      code: multipleDayCode,
+    },
+    {
+      title: "Date Picker with Footer",
+      component: DatePickerWithFooter,
+      code: footerCalendarCode,
+    },
+    {
+      title: "Calendar with Disabled Weekends",
+      component: CalendarWithDisabledWeekends,
+      code: disabledWeekendsCode,
+    },
     {
       title: "Simple Calendar",
       component: SimpleCalendar,
@@ -121,5 +180,5 @@ export const calendarData: ComponentCategory = {
       component: DropdownRangeWithDefaultValue,
       code: "",
     },
-  ]
+  ],
 };

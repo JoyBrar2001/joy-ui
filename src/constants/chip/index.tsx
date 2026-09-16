@@ -1,8 +1,28 @@
 import { ComponentCategory } from "../data";
 import { chipCode } from "./code/chipCode";
 import { cnFile } from "../common";
-import { CustomChip, DoneChip, GhostChip, OnlineChip, OutlinedChip, PrimaryChip, RemovableChip, RoundedChip, SecondaryChip } from "./components";
-import { customChipCode, doneChipCode, ghostChipCode, onlineChipCode, outlinedChipCode, primaryChipCode, removableChipCode, roundedChipCode, secondaryChipCode } from "./code/componentCodes";
+import {
+  CustomChip,
+  DoneChip,
+  GhostChip,
+  OnlineChip,
+  OutlinedChip,
+  PrimaryChip,
+  RemovableChip,
+  RoundedChip,
+  SecondaryChip,
+} from "./components";
+import {
+  customChipCode,
+  doneChipCode,
+  ghostChipCode,
+  onlineChipCode,
+  outlinedChipCode,
+  primaryChipCode,
+  removableChipCode,
+  roundedChipCode,
+  secondaryChipCode,
+} from "./code/componentCodes";
 
 export const chipData: ComponentCategory = {
   cols: 4,
@@ -11,10 +31,7 @@ export const chipData: ComponentCategory = {
   steps: [
     {
       type: "dependencies",
-      libraries: [
-        "clsx",
-        "tailwind-merge"
-      ]
+      libraries: ["clsx", "tailwind-merge"],
     },
     {
       type: "utilities",
@@ -23,63 +40,63 @@ export const chipData: ComponentCategory = {
           name: "cn.ts",
           path: "@/utils/cn.ts",
           language: "typescript",
-          code: cnFile
-        }
-      ]
+          code: cnFile,
+        },
+      ],
     },
     {
       type: "source",
       name: "Chip.tsx",
       path: "@/components/ui/Chip.tsx",
       language: "tsx",
-      code: chipCode
-    }
+      code: chipCode,
+    },
   ],
   components: [
     {
       title: "Primary Chip",
       component: PrimaryChip,
-      code: primaryChipCode
+      code: primaryChipCode,
     },
     {
       title: "Secondary Chip",
       component: SecondaryChip,
-      code: secondaryChipCode
+      code: secondaryChipCode,
     },
     {
       title: "Outlined Chip",
       component: OutlinedChip,
-      code: outlinedChipCode
+      code: outlinedChipCode,
     },
     {
       title: "Ghost Chip",
       component: GhostChip,
-      code: ghostChipCode
+      code: ghostChipCode,
     },
     {
       title: "Custom Chip",
       component: CustomChip,
-      code: customChipCode
+      code: customChipCode,
     },
     {
       title: "Rounded Chip",
       component: RoundedChip,
-      code: roundedChipCode
+      code: roundedChipCode,
     },
     {
       title: "Online Chip",
       component: OnlineChip,
-      code: onlineChipCode
+      code: onlineChipCode,
     },
     {
       title: "Done Chip",
       component: DoneChip,
-      code: doneChipCode
+      code: doneChipCode,
     },
     {
       title: "Removable Chip",
       component: RemovableChip,
-      code: removableChipCode
+      code: removableChipCode,
     },
-  ]
+  ],
 };

@@ -1,1 +1,7 @@
-export { BasicMenubar, MenubarWithSubmenu, MenubarWithCheckbox, MenubarWithRadio, ApplicationMenubar } from "./Examples";
+export {
+  BasicMenubar,
+  MenubarWithSubmenu,
+  MenubarWithCheckbox,
+  MenubarWithRadio,
+  ApplicationMenubar,
+} from "./Examples";

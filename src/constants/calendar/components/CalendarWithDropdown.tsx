@@ -6,7 +6,9 @@ import { Calendar } from "@/components/ui/Calendar";
 import { format } from "date-fns";
 
 export function CalendarWithDropdown() {
-  const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>(
+    new Date(),
+  );
 
   return (
     <>

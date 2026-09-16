@@ -3,8 +3,21 @@
 import { useState } from "react";
 
 import { Button } from "@/components/ui/Button";
-import { Checkbox, CheckboxLabel, CheckboxRoot } from "@/components/ui/Checkbox";
-import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/Dialog";
+import {
+  Checkbox,
+  CheckboxLabel,
+  CheckboxRoot,
+} from "@/components/ui/Checkbox";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/Dialog";
 
 export function TermsDialog() {
   const [agreed, setAgreed] = useState(false);
@@ -38,7 +51,9 @@ export function TermsDialog() {
               checked={agreed}
               onCheckedChange={(checked) => setAgreed(!!checked)}
             />
-            <CheckboxLabel htmlFor="terms">Accept Terms and Conditions</CheckboxLabel>
+            <CheckboxLabel htmlFor="terms">
+              Accept Terms and Conditions
+            </CheckboxLabel>
           </CheckboxRoot>
         </div>
 

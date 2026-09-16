@@ -1,6 +1,12 @@
 import { Button } from "@/components/ui/Button";
 import { Card, CardContent } from "@/components/ui/Card";
-import { Checkbox, CheckboxRoot, CheckboxLabel, CheckboxSubLabel, CheckboxDescription } from "@/components/ui/Checkbox";
+import {
+  Checkbox,
+  CheckboxRoot,
+  CheckboxLabel,
+  CheckboxSubLabel,
+  CheckboxDescription,
+} from "@/components/ui/Checkbox";
 import { StarIcon } from "lucide-react";
 
 export function CheckboxWithIcon() {
@@ -15,7 +21,10 @@ export function CheckboxWithIcon() {
             </Button>
 
             <div className="flex flex-col">
-              <CheckboxLabel htmlFor="card2" className="flex items-center gap-2">
+              <CheckboxLabel
+                htmlFor="card2"
+                className="flex items-center gap-2"
+              >
                 Starred Item
                 <CheckboxSubLabel>(Mark as favorite)</CheckboxSubLabel>
               </CheckboxLabel>
@@ -26,6 +35,6 @@ export function CheckboxWithIcon() {
           </div>
         </CheckboxRoot>
       </CardContent>
-    </Card >
+    </Card>
   );
 }

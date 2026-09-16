@@ -9,10 +9,7 @@ export function RadioGroup({
 }: RadioGroupPrimitive.RadioGroupProps) {
   return (
     <RadioGroupPrimitive.Root
-      className={cn(
-        "flex gap-2",
-        className
-      )}
+      className={cn("flex gap-2", className)}
       {...props}
     >
       {children}
@@ -41,20 +38,26 @@ export function RadioGroupItem({
     sm: "size-2.5",
     md: "size-3",
     lg: "size-4",
-  }
+  };
 
   return (
     <RadioGroupPrimitive.Item
       className={cn(
         "flex shrink-0 cursor-pointer items-center justify-center rounded-full border border-neutral-400 bg-neutral-100 shadow-sm transition-all duration-200 hover:border-neutral-900 focus:ring-1 focus:ring-neutral-900 dark:border-neutral-700 dark:bg-neutral-800 dark:hover:border-white dark:focus:ring-white",
-        animate && "data-[state=checked]:animate-scaleUp data-[state=unchecked]:animate-scaleDown",
+        animate &&
+          "data-[state=checked]:animate-scaleUp data-[state=unchecked]:animate-scaleDown",
         itemSize[size],
-        className
+        className,
       )}
       {...props}
     >
       <RadioGroupPrimitive.Indicator className="flex items-center justify-center">
-        <Icon className={cn("fill-current text-neutral-900 dark:text-white", iconSize[size])} />
+        <Icon
+          className={cn(
+            "fill-current text-neutral-900 dark:text-white",
+            iconSize[size],
+          )}
+        />
       </RadioGroupPrimitive.Indicator>
     </RadioGroupPrimitive.Item>
   );

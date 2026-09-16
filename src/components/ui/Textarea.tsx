@@ -28,7 +28,7 @@ export function Textarea({
         className={cn(
           "min-h-24 w-full resize-y rounded-lg border border-neutral-300 bg-white px-3 py-2 text-sm text-neutral-900 shadow-sm outline-none placeholder:text-sm placeholder:text-zinc-400 focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900 disabled:cursor-not-allowed disabled:bg-neutral-100 disabled:opacity-70 dark:border-neutral-600 dark:bg-neutral-950 dark:text-white dark:focus:border-white dark:focus:ring-white dark:disabled:bg-neutral-800",
           error && "border-red-500 focus:border-red-500 focus:ring-red-500",
-          className
+          className,
         )}
         aria-invalid={Boolean(error) || undefined}
         {...props}

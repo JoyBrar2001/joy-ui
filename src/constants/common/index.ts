@@ -1,5 +1,3 @@
 import { cnFile } from "./cnFile";
 
-export {
-  cnFile,
-};
+export { cnFile };

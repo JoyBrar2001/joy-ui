@@ -30,7 +30,9 @@ export function PlansPicker() {
                     <RadioGroupItem value="advanced" id="rc8" />
                     <div className="flex items-center gap-2">
                       <span>Advanced</span>
-                      <Chip rounded className="text-xs">Popular</Chip>
+                      <Chip rounded className="text-xs">
+                        Popular
+                      </Chip>
                     </div>
                   </div>
                   <p className="text-sm text-neutral-400">$15/mo</p>

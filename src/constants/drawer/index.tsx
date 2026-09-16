@@ -1,8 +1,20 @@
 import { cnFile } from "../common";
 import { ComponentCategory } from "../data";
-import { draggableDrawerCode, drawerWithBackdropBlurCode, drawerWithBackdropCode, simpleDrawerCode, snappableDrawerCode } from "./code/componentCodes";
+import {
+  draggableDrawerCode,
+  drawerWithBackdropBlurCode,
+  drawerWithBackdropCode,
+  simpleDrawerCode,
+  snappableDrawerCode,
+} from "./code/componentCodes";
 import { drawerCode } from "./code/drawerCode";
-import { DraggableDrawer, DrawerWithBackdrop, DrawerWithBackdropBlur, SimpleDrawer, SnappableDrawer } from "./components";
+import {
+  DraggableDrawer,
+  DrawerWithBackdrop,
+  DrawerWithBackdropBlur,
+  SimpleDrawer,
+  SnappableDrawer,
+} from "./components";
 
 export const drawerData: ComponentCategory = {
   cols: 4,
@@ -11,11 +23,7 @@ export const drawerData: ComponentCategory = {
   steps: [
     {
       type: "dependencies",
-      libraries: [
-        "clsx",
-        "tailwind-merge",
-        "react-modal-sheet"
-      ]
+      libraries: ["clsx", "tailwind-merge", "react-modal-sheet"],
     },
     {
       type: "utilities",
@@ -24,9 +32,9 @@ export const drawerData: ComponentCategory = {
           name: "cn.ts",
           path: "@/utils/cn.ts",
           language: "typescript",
-          code: cnFile
-        }
-      ]
+          code: cnFile,
+        },
+      ],
     },
     {
       type: "source",
@@ -34,33 +42,33 @@ export const drawerData: ComponentCategory = {
       path: "@/components/ui/Drawer.tsx",
       language: "tsx",
       code: drawerCode,
-    }
+    },
   ],
   components: [
     {
       title: "Simple Drawer",
       component: SimpleDrawer,
-      code: simpleDrawerCode
+      code: simpleDrawerCode,
     },
     {
       title: "Drawer with Backdrop",
       component: DrawerWithBackdrop,
-      code: drawerWithBackdropCode
+      code: drawerWithBackdropCode,
     },
     {
       title: "Drawer with Backdrop Blur",
       component: DrawerWithBackdropBlur,
-      code: drawerWithBackdropBlurCode
+      code: drawerWithBackdropBlurCode,
     },
     {
       title: "Draggable Drawer",
       component: DraggableDrawer,
-      code: draggableDrawerCode
+      code: draggableDrawerCode,
     },
     {
       title: "Snappable Drawer",
       component: SnappableDrawer,
-      code: snappableDrawerCode
+      code: snappableDrawerCode,
     },
-  ]
-}
+  ],
+};

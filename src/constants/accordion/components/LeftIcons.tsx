@@ -1,4 +1,9 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/Accordion"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/Accordion";
 
 export function LeftIcons() {
   return (
@@ -6,14 +11,16 @@ export function LeftIcons() {
       <AccordionItem value="installation">
         <AccordionTrigger left>Installation Guide</AccordionTrigger>
         <AccordionContent>
-          Install the package using npm or yarn and start building your UI instantly.
+          Install the package using npm or yarn and start building your UI
+          instantly.
         </AccordionContent>
       </AccordionItem>
 
       <AccordionItem value="integration">
         <AccordionTrigger left>Easy Integration</AccordionTrigger>
         <AccordionContent>
-          Works seamlessly with popular frameworks like React, Next.js, and Vue.js.
+          Works seamlessly with popular frameworks like React, Next.js, and
+          Vue.js.
         </AccordionContent>
       </AccordionItem>
 

@@ -13,7 +13,9 @@ type DrawerProps = {
 };
 
 function normalizeSnapPoints(points: number[]) {
-  const middlePoints = points.filter((point) => point !== 0 && point !== 1).sort((a, b) => a - b);
+  const middlePoints = points
+    .filter((point) => point !== 0 && point !== 1)
+    .sort((a, b) => a - b);
   return [0, ...middlePoints, 1];
 }
 
@@ -42,14 +44,17 @@ export function Drawer({
 
 export function DrawerBackdrop({
   className,
-  setOpen
+  setOpen,
 }: {
   className?: string;
   setOpen: (open: boolean) => void;
 }) {
   return (
     <DrawerPrimitive.Backdrop
-      className={cn("bg-black/50 transition-opacity pointer-events-auto cursor-pointer", className)}
+      className={cn(
+        "bg-black/50 transition-opacity pointer-events-auto cursor-pointer",
+        className,
+      )}
       onTap={() => setOpen(false)}
     />
   );
@@ -57,13 +62,18 @@ export function DrawerBackdrop({
 
 export function DrawerContainer({
   children,
-  className
+  className,
 }: {
   children: ReactNode;
   className?: string;
 }) {
   return (
-    <DrawerPrimitive.Container className={cn("!rounded-t-3xl !bg-white text-neutral-900 shadow-xl dark:!bg-neutral-900 dark:text-white", className)}>
+    <DrawerPrimitive.Container
+      className={cn(
+        "!rounded-t-3xl !bg-white text-neutral-900 shadow-xl dark:!bg-neutral-900 dark:text-white",
+        className,
+      )}
+    >
       {children}
     </DrawerPrimitive.Container>
   );
@@ -71,13 +81,18 @@ export function DrawerContainer({
 
 export function DrawerHeader({
   children,
-  className
+  className,
 }: {
   children: ReactNode;
   className?: string;
 }) {
   return (
-    <DrawerPrimitive.Header className={cn("flex items-center justify-between border-b border-neutral-200 p-4 dark:border-neutral-700", className)}>
+    <DrawerPrimitive.Header
+      className={cn(
+        "flex items-center justify-between border-b border-neutral-200 p-4 dark:border-neutral-700",
+        className,
+      )}
+    >
       {children}
     </DrawerPrimitive.Header>
   );
@@ -85,21 +100,17 @@ export function DrawerHeader({
 
 export function DrawerTitle({
   children,
-  className
+  className,
 }: {
   children: ReactNode;
   className?: string;
 }) {
-  return (
-    <h2 className={cn("text-xl font-semibold", className)}>
-      {children}
-    </h2>
-  );
+  return <h2 className={cn("text-xl font-semibold", className)}>{children}</h2>;
 }
 
 export function DrawerContent({
   children,
-  className
+  className,
 }: {
   children: ReactNode;
   className?: string;

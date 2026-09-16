@@ -1,1 +1,8 @@
-export { BasicOtp, SixDigitOtp, AlphanumericOtp, SegmentedOtp, OtpWithAutoSubmit, DisabledOtp } from "./Examples";
+export {
+  BasicOtp,
+  SixDigitOtp,
+  AlphanumericOtp,
+  SegmentedOtp,
+  OtpWithAutoSubmit,
+  DisabledOtp,
+} from "./Examples";

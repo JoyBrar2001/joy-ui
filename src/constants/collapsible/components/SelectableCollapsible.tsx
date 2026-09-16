@@ -1,7 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { Collapsible, CollapsibleCard, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/Collapsible";
+import {
+  Collapsible,
+  CollapsibleCard,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/Collapsible";
 import { ChevronsUpDown, X } from "lucide-react";
 
 const repos = [
@@ -16,23 +21,31 @@ export function SelectableCollapsible() {
   const [selectedRepo, setSelectedRepo] = useState(repos[0]);
   const [otherRepos, setOtherRepos] = useState(repos.slice(1));
 
-  const handleSelectRepo = (repo: typeof repos[number]) => {
-    setOtherRepos([selectedRepo, ...otherRepos.filter((r) => r.id !== repo.id)]);
+  const handleSelectRepo = (repo: (typeof repos)[number]) => {
+    setOtherRepos([
+      selectedRepo,
+      ...otherRepos.filter((r) => r.id !== repo.id),
+    ]);
     setSelectedRepo(repo);
     setOpen(false);
   };
 
   return (
-    <Collapsible open={open} onOpenChange={setOpen} className="w-64 items-center justify-between">
+    <Collapsible
+      open={open}
+      onOpenChange={setOpen}
+      className="w-64 items-center justify-between"
+    >
       <div className="flex items-center justify-between">
-        <span className="text-sm leading-6 text-white">
-          Pick your repo
-        </span>
+        <span className="text-sm leading-6 text-white">Pick your repo</span>
 
         <CollapsibleTrigger asChild>
           <button className="text-white inline-flex items-center justify-center p-1.5 rounded-full transition duration-200 hover:bg-neutral-800 group data-[state=open]:bg-neutral-800">
             <X size={16} className="hidden group-data-[state=open]:block" />
-            <ChevronsUpDown size={16} className="block group-data-[state=open]:hidden" />
+            <ChevronsUpDown
+              size={16}
+              className="block group-data-[state=open]:hidden"
+            />
           </button>
         </CollapsibleTrigger>
       </div>

@@ -1,5 +1,11 @@
 import { cn } from "@/utils";
-import { ArrowRight, CircleCheck, Info, AlertTriangle, XCircle } from "lucide-react";
+import {
+  ArrowRight,
+  CircleCheck,
+  Info,
+  AlertTriangle,
+  XCircle,
+} from "lucide-react";
 import Link from "next/link";
 
 type AlertProps = {
@@ -41,14 +47,12 @@ export function Alert({
     <div
       className={cn(
         "flex flex-col w-full px-6 py-4 border rounded-md",
-      colored ? alertColor : "border-neutral-200 dark:border-neutral-800"
+        colored ? alertColor : "border-neutral-200 dark:border-neutral-800",
       )}
     >
       <div className="flex justify-between items-center">
         <div className="flex gap-2 items-center">
-          <span
-            className={alertColor || "text-white"}
-          >
+          <span className={alertColor || "text-white"}>
             {icon || DEFAULT_ICONS[variant]}
           </span>
 
@@ -62,9 +66,7 @@ export function Alert({
           </Link>
         )}
         {buttonText && !link && (
-          <div className="flex items-center gap-1 text-sm">
-            {buttonText}
-          </div>
+          <div className="flex items-center gap-1 text-sm">{buttonText}</div>
         )}
       </div>
     </div>

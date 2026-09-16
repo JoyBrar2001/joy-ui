@@ -1,33 +1,33 @@
 import { ComponentCategory } from "../data";
 import { alertCode } from "./code";
 import { cnFile } from "../common";
-import { 
-  AlertComponent, 
-  AlertColored, 
-  AlertWithButtonAndLink, 
-  Info, 
-  InfoColored, 
-  InfoWithButton, 
-  Success, 
-  SuccessColored, 
-  SuccessWithButton, 
-  Warning, 
-  WarningColored, 
-  WarningWithButtonAndLink 
+import {
+  AlertComponent,
+  AlertColored,
+  AlertWithButtonAndLink,
+  Info,
+  InfoColored,
+  InfoWithButton,
+  Success,
+  SuccessColored,
+  SuccessWithButton,
+  Warning,
+  WarningColored,
+  WarningWithButtonAndLink,
 } from "./components";
-import { 
-  infoCode, 
-  infoColoredCode, 
-  successCode, 
-  successColoredCode, 
-  successWithButtonCode, 
-  warningCode, 
-  warningColoredCode, 
-  warningWithButtonAndLinkCode, 
-  alertComponentCode, 
-  alertColoredCode, 
-  alertWithButtonAndLinkCode, 
-  infoWithButtonCode 
+import {
+  infoCode,
+  infoColoredCode,
+  successCode,
+  successColoredCode,
+  successWithButtonCode,
+  warningCode,
+  warningColoredCode,
+  warningWithButtonAndLinkCode,
+  alertComponentCode,
+  alertColoredCode,
+  alertWithButtonAndLinkCode,
+  infoWithButtonCode,
 } from "./code/componentCodes";
 
 export const alertData: ComponentCategory = {
@@ -37,11 +37,7 @@ export const alertData: ComponentCategory = {
   steps: [
     {
       type: "dependencies",
-      libraries: [
-        "clsx",
-        "tailwind-merge",
-        "lucide-react"
-      ]
+      libraries: ["clsx", "tailwind-merge", "lucide-react"],
     },
     {
       type: "utilities",
@@ -50,78 +46,78 @@ export const alertData: ComponentCategory = {
           name: "cn.ts",
           path: "@/utils/cn.ts",
           language: "typescript",
-          code: cnFile
-        }
-      ]
+          code: cnFile,
+        },
+      ],
     },
     {
       type: "source",
       name: "Alert.tsx",
       path: "@/components/ui/Alert.tsx",
       language: "tsx",
-      code: alertCode
-    }
+      code: alertCode,
+    },
   ],
   components: [
     {
       title: "Info",
       component: Info,
-      code: infoCode
+      code: infoCode,
     },
     {
       title: "Info (Colored)",
       component: InfoColored,
-      code: infoColoredCode
+      code: infoColoredCode,
     },
     {
       title: "Success",
       component: Success,
-      code: successCode
+      code: successCode,
     },
     {
       title: "Success (Colored)",
       component: SuccessColored,
-      code: successColoredCode
+      code: successColoredCode,
     },
     {
       title: "Warning",
       component: Warning,
-      code: warningCode
+      code: warningCode,
     },
     {
       title: "Warning (Colored)",
       component: WarningColored,
-      code: warningColoredCode
+      code: warningColoredCode,
     },
     {
       title: "Alert",
       component: AlertComponent,
-      code: alertComponentCode
+      code: alertComponentCode,
     },
     {
       title: "Alert (Colored)",
       component: AlertColored,
-      code: alertColoredCode
+      code: alertColoredCode,
     },
     {
       title: "Info with Button",
       component: InfoWithButton,
-      code: infoWithButtonCode
+      code: infoWithButtonCode,
     },
     {
       title: "Success with Button",
       component: SuccessWithButton,
-      code: successWithButtonCode
+      code: successWithButtonCode,
     },
     {
       title: "Warning with Button & Link",
       component: WarningWithButtonAndLink,
-      code: warningWithButtonAndLinkCode
+      code: warningWithButtonAndLinkCode,
     },
     {
       title: "Alert with Button & Link",
       component: AlertWithButtonAndLink,
-      code: alertWithButtonAndLinkCode
-    }
+      code: alertWithButtonAndLinkCode,
+    },
   ],
 };

@@ -21,4 +21,4 @@ export const collapsibleCss = `@import "tailwindcss";
       height: 0;
     }
   }
-}`
+}`;

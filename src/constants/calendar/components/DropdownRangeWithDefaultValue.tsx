@@ -7,25 +7,30 @@ import { Calendar as CalendarIcon } from "lucide-react";
 import { cn } from "@/utils";
 import { Button } from "@/components/ui/Button";
 import { Calendar } from "@/components/ui/Calendar";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/Popover";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/Popover";
 import { DateRange } from "react-day-picker";
 
 export function DropdownRangeWithDefaultValue() {
   const [selectedRange, setSelectedRange] = useState<DateRange | undefined>({
     from: new Date(),
-    to: addDays(new Date(), 7)
+    to: addDays(new Date(), 7),
   });
 
   return (
     <>
       <Popover>
         <PopoverTrigger>
-          <Button variant="custom" className={cn(
-            "border border-neutral-800 w-64 justify-between hover:bg-neutral-800",
-            selectedRange === undefined
-              ? "text-neutral-500"
-              : "text-white"
-          )}>
+          <Button
+            variant="custom"
+            className={cn(
+              "border border-neutral-800 w-64 justify-between hover:bg-neutral-800",
+              selectedRange === undefined ? "text-neutral-500" : "text-white",
+            )}
+          >
             {selectedRange?.from && selectedRange?.to
               ? `${format(selectedRange.from, "dd/MM/yyyy")} - ${format(selectedRange.to, "dd/MM/yyyy")}`
               : selectedRange?.from

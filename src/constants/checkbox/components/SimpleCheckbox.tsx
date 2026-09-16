@@ -1,5 +1,5 @@
 import { Checkbox } from "@/components/ui/Checkbox";
 
-export function SimpleCheckbox(){
-  return <Checkbox size="sm" animate={false} />  
+export function SimpleCheckbox() {
+  return <Checkbox size="sm" animate={false} />;
 }

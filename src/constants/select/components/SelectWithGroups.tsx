@@ -1,4 +1,13 @@
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue, SelectViewport } from "@/components/ui/Select";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+  SelectViewport,
+} from "@/components/ui/Select";
 
 export function SelectWithGroups() {
   return (
@@ -15,7 +24,7 @@ export function SelectWithGroups() {
             <SelectItem value="dark">Dark</SelectItem>
             <SelectItem value="system">System</SelectItem>
           </SelectGroup>
-          
+
           <SelectGroup className="mt-2">
             <SelectLabel>Color</SelectLabel>
             <SelectItem value="neutral">Neutral</SelectItem>

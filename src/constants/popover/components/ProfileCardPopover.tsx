@@ -1,7 +1,18 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar";
 import { Button } from "@/components/ui/Button";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/Card";
-import { Popover, PopoverClose, PopoverContent, PopoverTrigger } from "@/components/ui/Popover";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/Card";
+import {
+  Popover,
+  PopoverClose,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/Popover";
 import { User, X } from "lucide-react";
 
 export function ProfileCardPopover() {
@@ -22,8 +33,12 @@ export function ProfileCardPopover() {
                 <AvatarFallback>JD</AvatarFallback>
               </Avatar>
               <div>
-                <CardTitle className="text-lg font-semibold">John Doe</CardTitle>
-                <p className="text-sm text-neutral-500 dark:text-neutral-400">Software Engineer</p>
+                <CardTitle className="text-lg font-semibold">
+                  John Doe
+                </CardTitle>
+                <p className="text-sm text-neutral-500 dark:text-neutral-400">
+                  Software Engineer
+                </p>
               </div>
             </div>
             <PopoverClose className="absolute top-2 right-2 text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200 transition">
@@ -32,12 +47,23 @@ export function ProfileCardPopover() {
           </CardHeader>
 
           <CardContent className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
-            Passionate about building scalable web applications and intuitive user experiences.
+            Passionate about building scalable web applications and intuitive
+            user experiences.
           </CardContent>
 
           <CardFooter className="flex justify-center gap-2 pt-3">
-            <Button variant="outline" className="text-sm whitespace-nowrap flex-1">View Profile</Button>
-            <Button variant="primary" className="text-sm whitespace-nowrap flex-1">Logout</Button>
+            <Button
+              variant="outline"
+              className="text-sm whitespace-nowrap flex-1"
+            >
+              View Profile
+            </Button>
+            <Button
+              variant="primary"
+              className="text-sm whitespace-nowrap flex-1"
+            >
+              Logout
+            </Button>
           </CardFooter>
         </Card>
       </PopoverContent>

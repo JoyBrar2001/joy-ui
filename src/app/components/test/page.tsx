@@ -9,7 +9,9 @@ import { DateRange } from "react-day-picker";
 import { Calendar } from "../../../components/ui/Calendar";
 
 export default function Example() {
-  const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>(
+    new Date(),
+  );
   const [selectedRange, setSelectedRange] = useState<DateRange | undefined>();
 
   return (

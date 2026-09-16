@@ -1,4 +1,9 @@
-import { Collapsible, CollapsibleCard, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/Collapsible";
+import {
+  Collapsible,
+  CollapsibleCard,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/Collapsible";
 import { ChevronsUpDown, X } from "lucide-react";
 
 export function AnimatedCollapsible() {
@@ -12,7 +17,10 @@ export function AnimatedCollapsible() {
         <CollapsibleTrigger asChild>
           <button className="text-white inline-flex items-center justify-center p-1.5 rounded-full transition duration-200 hover:bg-neutral-800 group data-[state=open]:bg-neutral-800">
             <X size={16} className="hidden group-data-[state=open]:block" />
-            <ChevronsUpDown size={16} className="block group-data-[state=open]:hidden" />
+            <ChevronsUpDown
+              size={16}
+              className="block group-data-[state=open]:hidden"
+            />
           </button>
         </CollapsibleTrigger>
       </div>
@@ -25,14 +33,10 @@ export function AnimatedCollapsible() {
 
       <CollapsibleContent>
         <CollapsibleCard>
-          <span className="text-[15px] leading-[25px]">
-            @radix-ui/colors
-          </span>
+          <span className="text-[15px] leading-[25px]">@radix-ui/colors</span>
         </CollapsibleCard>
         <CollapsibleCard>
-          <span className="text-[15px] leading-[25px]">
-            @radix-ui/themes
-          </span>
+          <span className="text-[15px] leading-[25px]">@radix-ui/themes</span>
         </CollapsibleCard>
       </CollapsibleContent>
     </Collapsible>

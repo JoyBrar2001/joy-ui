@@ -9,7 +9,7 @@ import { DateRange } from "react-day-picker";
 export function CustomStyledCalendar() {
   const [selectedRange, setSelectedRange] = useState<DateRange | undefined>({
     from: new Date(),
-    to: addDays(new Date(), 7)
+    to: addDays(new Date(), 7),
   });
 
   return (
@@ -21,8 +21,10 @@ export function CustomStyledCalendar() {
         classNames={{
           day: "my-0.5 rounded-md transition disabled:cursor-not-allowed data-[hidden=true]:bg-black hover:bg-sky-600",
           selected: "",
-          range_start: "bg-sky-500 text-white rounded-l-md rounded-r-none hover:bg-sky-500",
-          range_end: "bg-sky-500 text-white rounded-r-md rounded-l-none hover:bg-sky-500",
+          range_start:
+            "bg-sky-500 text-white rounded-l-md rounded-r-none hover:bg-sky-500",
+          range_end:
+            "bg-sky-500 text-white rounded-r-md rounded-l-none hover:bg-sky-500",
           range_middle: "bg-sky-900 text-white rounded-none",
         }}
       />

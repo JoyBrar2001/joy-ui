@@ -1,10 +1,31 @@
 import type { ComponentCategory } from "./data";
-import ChartExample, { type ChartKind, type ChartVariant } from "@/components/charts/ChartExamples";
+import ChartExample, {
+  type ChartKind,
+  type ChartVariant,
+} from "@/components/charts/ChartExamples";
 
-const dependencies = [{ type: "dependencies" as const, libraries: ["echarts", "echarts-for-react"] }];
-const source = [{ type: "source" as const, name: "EChart.tsx", path: "@/components/charts/EChart.tsx", language: "tsx" as const, code: `"use client";\n\nimport dynamic from "next/dynamic";\nimport type { EChartsOption } from "echarts";\n\nconst ReactECharts = dynamic(() => import("echarts-for-react"), { ssr: false });\n\nexport default function EChart({ option }: { option: EChartsOption }) {\n  return <ReactECharts option={option} opts={{ renderer: "svg" }} />;\n}` }];
+const dependencies = [
+  {
+    type: "dependencies" as const,
+    libraries: ["echarts", "echarts-for-react"],
+  },
+];
+const source = [
+  {
+    type: "source" as const,
+    name: "EChart.tsx",
+    path: "@/components/charts/EChart.tsx",
+    language: "tsx" as const,
+    code: `"use client";\n\nimport dynamic from "next/dynamic";\nimport type { EChartsOption } from "echarts";\n\nconst ReactECharts = dynamic(() => import("echarts-for-react"), { ssr: false });\n\nexport default function EChart({ option }: { option: EChartsOption }) {\n  return <ReactECharts option={option} opts={{ renderer: "svg" }} />;\n}`,
+  },
+];
 
-function chartWithExamples(title: string, subtitle: string, kind: ChartKind, examples: Array<[string, ChartVariant]>): ComponentCategory {
+function chartWithExamples(
+  title: string,
+  subtitle: string,
+  kind: ChartKind,
+  examples: Array<[string, ChartVariant]>,
+): ComponentCategory {
   return {
     cols: 6,
     title,
@@ -31,7 +52,8 @@ const lineExamples: Array<[string, ChartVariant]> = [
 const lineCharts: ComponentCategory = {
   cols: 6,
   title: "Line Charts",
-  subtitle: "Black, white, and gray line chart patterns for trends, rankings, and stacked data.",
+  subtitle:
+    "Black, white, and gray line chart patterns for trends, rankings, and stacked data.",
   steps: [...dependencies, ...source],
   components: lineExamples.map(([title, variant]) => ({
     title,
@@ -40,106 +62,180 @@ const lineCharts: ComponentCategory = {
   })),
 };
 
-const pieCharts = chartWithExamples("Pie Charts", "Monochrome pie patterns for composition, hierarchy, and proportions.", "pie", [
-  ["Simple Pie", "basic"],
-  ["Donut Pie", "donut"],
-  ["Donut Pie with rounded edges", "roundedDonut"],
-  ["Nightingale Chart", "nightingale"],
-  ["Pie with special labels", "specialLabels"],
-  ["Nested Pies", "nested"],
-]);
+const pieCharts = chartWithExamples(
+  "Pie Charts",
+  "Monochrome pie patterns for composition, hierarchy, and proportions.",
+  "pie",
+  [
+    ["Simple Pie", "basic"],
+    ["Donut Pie", "donut"],
+    ["Donut Pie with rounded edges", "roundedDonut"],
+    ["Nightingale Chart", "nightingale"],
+    ["Pie with special labels", "specialLabels"],
+    ["Nested Pies", "nested"],
+  ],
+);
 
-const barCharts = chartWithExamples("Bar Charts", "Monochrome bar patterns for comparisons, ranges, totals, and large data sets.", "bar", [
-  ["Basic Bar Chart", "basic"],
-  ["Set style of single bar", "singleBar"],
-  ["Waterfall chart", "waterfall"],
-  ["Bar with negative axes as well", "negative"],
-  ["Bar Label rotation", "rotatedLabels"],
-  ["Stacked Column Chart", "stacked"],
-  ["Stacked Bar normalization", "normalized"],
-  ["Large Scale Bar chart", "largeScale"],
-]);
+const barCharts = chartWithExamples(
+  "Bar Charts",
+  "Monochrome bar patterns for comparisons, ranges, totals, and large data sets.",
+  "bar",
+  [
+    ["Basic Bar Chart", "basic"],
+    ["Set style of single bar", "singleBar"],
+    ["Waterfall chart", "waterfall"],
+    ["Bar with negative axes as well", "negative"],
+    ["Bar Label rotation", "rotatedLabels"],
+    ["Stacked Column Chart", "stacked"],
+    ["Stacked Bar normalization", "normalized"],
+    ["Large Scale Bar chart", "largeScale"],
+  ],
+);
 
-const radarCharts = chartWithExamples("Radar Charts", "Monochrome radar patterns for single scores, comparisons, and custom metrics.", "radar", [
-  ["Single stat", "singleStat"],
-  ["Radar with multiple stats", "multipleStats"],
-  ["Customized radar chart", "customRadar"],
-]);
+const radarCharts = chartWithExamples(
+  "Radar Charts",
+  "Monochrome radar patterns for single scores, comparisons, and custom metrics.",
+  "radar",
+  [
+    ["Single stat", "singleStat"],
+    ["Radar with multiple stats", "multipleStats"],
+    ["Customized radar chart", "customRadar"],
+  ],
+);
 
-const treeCharts = chartWithExamples("Tree Charts", "Monochrome hierarchy patterns for organization, navigation, and nested data.", "tree", [
-  ["Left to right tree", "basic"],
-  ["Top to bottom tree", "topBottom"],
-  ["Multiple trees", "multipleTrees"],
-  ["Tree with polyline edge", "polyline"],
-  ["Radial tree", "radial"],
-  ["Compact tree", "compactTree"],
-  ["Tree with custom symbols", "customSymbols"],
-]);
+const treeCharts = chartWithExamples(
+  "Tree Charts",
+  "Monochrome hierarchy patterns for organization, navigation, and nested data.",
+  "tree",
+  [
+    ["Left to right tree", "basic"],
+    ["Top to bottom tree", "topBottom"],
+    ["Multiple trees", "multipleTrees"],
+    ["Tree with polyline edge", "polyline"],
+    ["Radial tree", "radial"],
+    ["Compact tree", "compactTree"],
+    ["Tree with custom symbols", "customSymbols"],
+  ],
+);
 
-const treemapCharts = chartWithExamples("Treemap Charts", "Monochrome treemaps for hierarchical proportions, gradients, and storage usage.", "treemap", [
-  ["Basic Treemap", "basic"],
-  ["Gradient Mapping", "gradientMapping"],
-  ["Disk Usage", "diskUsage"],
-]);
+const treemapCharts = chartWithExamples(
+  "Treemap Charts",
+  "Monochrome treemaps for hierarchical proportions, gradients, and storage usage.",
+  "treemap",
+  [
+    ["Basic Treemap", "basic"],
+    ["Gradient Mapping", "gradientMapping"],
+    ["Disk Usage", "diskUsage"],
+  ],
+);
 
-const sankeyCharts = chartWithExamples("Sankey Graphs", "Monochrome flow diagrams for relationships, alignment, labels, and weighted edges.", "sankey", [
-  ["Basic Sankey", "basic"],
-  ["Vertical Sankey", "verticalSankey"],
-  ["Sankey with Label Settings", "labelSettings"],
-  ["Node left align", "leftAlign"],
-  ["Node right align", "rightAlign"],
-  ["Gradient edge", "gradientEdge"],
-]);
+const sankeyCharts = chartWithExamples(
+  "Sankey Graphs",
+  "Monochrome flow diagrams for relationships, alignment, labels, and weighted edges.",
+  "sankey",
+  [
+    ["Basic Sankey", "basic"],
+    ["Vertical Sankey", "verticalSankey"],
+    ["Sankey with Label Settings", "labelSettings"],
+    ["Node left align", "leftAlign"],
+    ["Node right align", "rightAlign"],
+    ["Gradient edge", "gradientEdge"],
+  ],
+);
 
-const sunburstCharts = chartWithExamples("Sunburst Charts", "Hierarchical ring charts for nested proportions and large data sets.", "sunburst", [
-  ["Basic Sunburst", "basic"],
-  ["Rounded Edges", "roundedEdges"],
-  ["Label Rotation", "labelRotate"],
-  ["Large Sunburst with hundreds of entries", "largeSunburst"],
-]);
+const sunburstCharts = chartWithExamples(
+  "Sunburst Charts",
+  "Hierarchical ring charts for nested proportions and large data sets.",
+  "sunburst",
+  [
+    ["Basic Sunburst", "basic"],
+    ["Rounded Edges", "roundedEdges"],
+    ["Label Rotation", "labelRotate"],
+    ["Large Sunburst with hundreds of entries", "largeSunburst"],
+  ],
+);
 
-const parallelCharts = chartWithExamples("Parallel Charts", "Compare multiple dimensions across rows of high-dimensional data.", "parallel", [
-  ["Basic Parallel Coordinates", "parallelBasic"],
-  ["Parallel Comparison", "parallelComparison"],
-  ["Parallel Metrics", "parallelMetrics"],
-]);
+const parallelCharts = chartWithExamples(
+  "Parallel Charts",
+  "Compare multiple dimensions across rows of high-dimensional data.",
+  "parallel",
+  [
+    ["Basic Parallel Coordinates", "parallelBasic"],
+    ["Parallel Comparison", "parallelComparison"],
+    ["Parallel Metrics", "parallelMetrics"],
+  ],
+);
 
-const funnelCharts = chartWithExamples("Funnel Charts", "Conversion and stage-based comparisons with flexible funnel layouts.", "funnel", [
-  ["Basic Funnel", "basic"],
-  ["Upside down funnel", "upsideDown"],
-  ["Funnel compare", "compareFunnels"],
-  ["Customized funnel", "customFunnel"],
-  ["Multiple funnel", "multipleFunnels"],
-]);
+const funnelCharts = chartWithExamples(
+  "Funnel Charts",
+  "Conversion and stage-based comparisons with flexible funnel layouts.",
+  "funnel",
+  [
+    ["Basic Funnel", "basic"],
+    ["Upside down funnel", "upsideDown"],
+    ["Funnel compare", "compareFunnels"],
+    ["Customized funnel", "customFunnel"],
+    ["Multiple funnel", "multipleFunnels"],
+  ],
+);
 
-const calendarCharts = chartWithExamples("Calendar Charts", "Calendar-based heatmaps, activity graphs, and date-driven visualizations.", "calendar", [
-  ["Simple Calendar", "simpleCalendar"],
-  ["Heatmap Calendar", "heatmapCalendar"],
-  ["Calendar Graph", "calendarGraph"],
-  ["Calendar Lunar", "calendarLunar"],
-  ["Calendar Charts", "calendarCharts"],
-  ["Custom Calendar", "customCalendar"],
-  ["Calendar with Pies", "calendarPies"],
-]);
+const calendarCharts = chartWithExamples(
+  "Calendar Charts",
+  "Calendar-based heatmaps, activity graphs, and date-driven visualizations.",
+  "calendar",
+  [
+    ["Simple Calendar", "simpleCalendar"],
+    ["Heatmap Calendar", "heatmapCalendar"],
+    ["Calendar Graph", "calendarGraph"],
+    ["Calendar Lunar", "calendarLunar"],
+    ["Calendar Charts", "calendarCharts"],
+    ["Custom Calendar", "customCalendar"],
+    ["Calendar with Pies", "calendarPies"],
+  ],
+);
 
-const chordCharts = chartWithExamples("Chord Graphs", "Circular relationship graphs for flows between groups and entities.", "chord", [
-  ["Basic Chord Graph", "chordBasic"],
-  ["Directional Chord Graph", "chordDirectional"],
-  ["Weighted Chord Graph", "chordWeighted"],
-  ["Dense Chord Graph", "chordDense"],
-  ["Emphasized Chord Graph", "chordEmphasis"],
-]);
+const chordCharts = chartWithExamples(
+  "Chord Graphs",
+  "Circular relationship graphs for flows between groups and entities.",
+  "chord",
+  [
+    ["Basic Chord Graph", "chordBasic"],
+    ["Directional Chord Graph", "chordDirectional"],
+    ["Weighted Chord Graph", "chordWeighted"],
+    ["Dense Chord Graph", "chordDense"],
+    ["Emphasized Chord Graph", "chordEmphasis"],
+  ],
+);
 
-const candlestickCharts = chartWithExamples("Candlestick Charts", "Financial time-series examples with moving averages, volume, and zooming.", "candlestick", [
-  ["Basic Candlestick", "candlestickBasic"],
-  ["Candlestick with Moving Average", "movingAverage"],
-  ["Candlestick with Volume", "volumeCandlestick"],
-  ["Zoomable Candlestick", "zoomCandlestick"],
-  ["Styled Candlestick", "styledCandlestick"],
-]);
+const candlestickCharts = chartWithExamples(
+  "Candlestick Charts",
+  "Financial time-series examples with moving averages, volume, and zooming.",
+  "candlestick",
+  [
+    ["Basic Candlestick", "candlestickBasic"],
+    ["Candlestick with Moving Average", "movingAverage"],
+    ["Candlestick with Volume", "volumeCandlestick"],
+    ["Zoomable Candlestick", "zoomCandlestick"],
+    ["Styled Candlestick", "styledCandlestick"],
+  ],
+);
 
 function exampleCode(kind: ChartKind, variant: ChartVariant) {
-  const names = { line: "lineOption", bar: "barOption", pie: "pieOption", radar: "radarOption", tree: "treeOption", treemap: "treemapOption", sankey: "sankeyOption", sunburst: "sunburstOption", parallel: "parallelOption", funnel: "funnelOption", calendar: "calendarOption", chord: "chordOption", candlestick: "candlestickOption" };
+  const names = {
+    line: "lineOption",
+    bar: "barOption",
+    pie: "pieOption",
+    radar: "radarOption",
+    tree: "treeOption",
+    treemap: "treemapOption",
+    sankey: "sankeyOption",
+    sunburst: "sunburstOption",
+    parallel: "parallelOption",
+    funnel: "funnelOption",
+    calendar: "calendarOption",
+    chord: "chordOption",
+    candlestick: "candlestickOption",
+  };
   const option = names[kind];
   let body = `xAxis: { type: "category", data: ["Jan", "Feb", "Mar", "Apr"] },\nyAxis: { type: "value" },\nseries: [{ name: "Visitors", type: "line", data: [420, 680, 540, 890] }]`;
 
@@ -155,11 +251,18 @@ function exampleCode(kind: ChartKind, variant: ChartVariant) {
     };
     body = options[variant] ?? body;
   } else if (kind === "pie") {
-    const radius = variant === "basic" || variant === "specialLabels" ? '"62%"' : '["42%", "70%"]';
-    const label = variant === "specialLabels" ? ', label: { formatter: "{b}\\n{c} ({d}%)" }' : "";
-    body = variant === "nested"
-      ? `series: [{ type: "pie", radius: ["28%", "45%"], data: [...] }, { type: "pie", radius: ["52%", "74%"], data: [...] }]`
-      : `series: [{ type: "pie", radius: ${radius}${variant === "nightingale" ? ', roseType: "area"' : ""}${variant === "roundedDonut" ? ', itemStyle: { borderRadius: 10 }' : ""}${label}, data: [{ value: 1048, name: "Direct" }, { value: 735, name: "Search" }, { value: 580, name: "Social" }] }]`;
+    const radius =
+      variant === "basic" || variant === "specialLabels"
+        ? '"62%"'
+        : '["42%", "70%"]';
+    const label =
+      variant === "specialLabels"
+        ? ', label: { formatter: "{b}\\n{c} ({d}%)" }'
+        : "";
+    body =
+      variant === "nested"
+        ? `series: [{ type: "pie", radius: ["28%", "45%"], data: [...] }, { type: "pie", radius: ["52%", "74%"], data: [...] }]`
+        : `series: [{ type: "pie", radius: ${radius}${variant === "nightingale" ? ', roseType: "area"' : ""}${variant === "roundedDonut" ? ", itemStyle: { borderRadius: 10 }" : ""}${label}, data: [{ value: 1048, name: "Direct" }, { value: 735, name: "Search" }, { value: 580, name: "Social" }] }]`;
   } else if (kind === "bar") {
     const options: Record<string, string> = {
       basic: `xAxis: { type: "category", data: ["Design", "Engineering", "Marketing"] },\nyAxis: { type: "value" },\nseries: [{ type: "bar", data: [76, 92, 58] }]`,

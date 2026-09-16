@@ -11,9 +11,14 @@ export function RadioWithDescription() {
             <div className="flex flex-col">
               <div className="flex items-baseline gap-2">
                 <Label htmlFor="r10">Battery Saver</Label>
-                <p className="text-xs text-neutral-500">(Extends battery life)</p>
+                <p className="text-xs text-neutral-500">
+                  (Extends battery life)
+                </p>
               </div>
-              <p className="text-xs text-neutral-500">Minimizes extra apps usage and turns off background apps so as to conserve battery</p>
+              <p className="text-xs text-neutral-500">
+                Minimizes extra apps usage and turns off background apps so as
+                to conserve battery
+              </p>
             </div>
           </div>
           <div className="flex items-center space-x-2">
@@ -22,7 +27,10 @@ export function RadioWithDescription() {
               <div className="flex items-baseline gap-2">
                 <Label htmlFor="r11">Balanced Mode</Label>
               </div>
-              <p className="text-xs text-neutral-500">Uses a mix of performance and battery saving for longer sessions that require performance</p>
+              <p className="text-xs text-neutral-500">
+                Uses a mix of performance and battery saving for longer sessions
+                that require performance
+              </p>
             </div>
           </div>
           <div className="flex items-center space-x-2">
@@ -32,7 +40,10 @@ export function RadioWithDescription() {
                 <Label htmlFor="r12">Performance Mode</Label>
                 <p className="text-xs text-neutral-500">(Higher power usage)</p>
               </div>
-              <p className="text-xs text-neutral-500">Maximizes the performance by extracting everything for your CPU, significantly reducing battery tho</p>
+              <p className="text-xs text-neutral-500">
+                Maximizes the performance by extracting everything for your CPU,
+                significantly reducing battery tho
+              </p>
             </div>
           </div>
         </div>

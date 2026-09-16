@@ -1,1 +1,7 @@
-export { DeleteAlert, UnsavedAlert, LogoutAlert, ResetAlert, ConfirmAlert } from "./Examples";
+export {
+  DeleteAlert,
+  UnsavedAlert,
+  LogoutAlert,
+  ResetAlert,
+  ConfirmAlert,
+} from "./Examples";

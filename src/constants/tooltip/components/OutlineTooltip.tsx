@@ -1,13 +1,15 @@
 import { Button } from "@/components/ui/Button";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/Tooltip";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/Tooltip";
 
 export function OutlineTooltip() {
   return (
     <Tooltip>
       <TooltipTrigger>
-        <Button variant="outline">
-          Outline
-        </Button>
+        <Button variant="outline">Outline</Button>
       </TooltipTrigger>
 
       <TooltipContent variant="outline" side="top">

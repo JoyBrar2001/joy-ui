@@ -12,9 +12,13 @@ export function RemovableChip() {
   }
 
   return (
-    <Chip variant="outline" onClick={() => setVisible(false)} className="cursor-pointer">
+    <Chip
+      variant="outline"
+      onClick={() => setVisible(false)}
+      className="cursor-pointer"
+    >
       <X size={16} />
       Click me
     </Chip>
-  )
+  );
 }

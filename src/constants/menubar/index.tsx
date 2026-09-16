@@ -1,5 +1,58 @@
 import type { ComponentCategory } from "../data";
 import { menubarCode } from "./code/menubarCode";
-import { applicationCode, basicCode, checkboxCode, radioCode, submenuCode } from "./code/componentCodes";
-import { ApplicationMenubar, BasicMenubar, MenubarWithCheckbox, MenubarWithRadio, MenubarWithSubmenu } from "./components";
-export const menubarData: ComponentCategory = { cols: 6, title: "Menubar", subtitle: "Application-style menus with submenus, checkable preferences, and radio selections.", steps: [{ type: "dependencies", libraries: ["clsx", "tailwind-merge", "@radix-ui/react-menubar"] }, { type: "source", name: "Menubar.tsx", path: "@/components/ui/Menubar.tsx", language: "tsx", code: menubarCode }], components: [{ title: "Basic Menubar", component: BasicMenubar, code: basicCode }, { title: "Menubar with Submenu", component: MenubarWithSubmenu, code: submenuCode }, { title: "Menubar with Checkbox", component: MenubarWithCheckbox, code: checkboxCode }, { title: "Menubar with Radio", component: MenubarWithRadio, code: radioCode }, { title: "Application Menubar", component: ApplicationMenubar, code: applicationCode }] };
+import {
+  applicationCode,
+  basicCode,
+  checkboxCode,
+  radioCode,
+  submenuCode,
+} from "./code/componentCodes";
+import {
+  ApplicationMenubar,
+  BasicMenubar,
+  MenubarWithCheckbox,
+  MenubarWithRadio,
+  MenubarWithSubmenu,
+} from "./components";
+export const menubarData: ComponentCategory = {
+  cols: 6,
+  title: "Menubar",
+  subtitle:
+    "Application-style menus with submenus, checkable preferences, and radio selections.",
+  steps: [
+    {
+      type: "dependencies",
+      libraries: ["clsx", "tailwind-merge", "@radix-ui/react-menubar"],
+    },
+    {
+      type: "source",
+      name: "Menubar.tsx",
+      path: "@/components/ui/Menubar.tsx",
+      language: "tsx",
+      code: menubarCode,
+    },
+  ],
+  components: [
+    { title: "Basic Menubar", component: BasicMenubar, code: basicCode },
+    {
+      title: "Menubar with Submenu",
+      component: MenubarWithSubmenu,
+      code: submenuCode,
+    },
+    {
+      title: "Menubar with Checkbox",
+      component: MenubarWithCheckbox,
+      code: checkboxCode,
+    },
+    {
+      title: "Menubar with Radio",
+      component: MenubarWithRadio,
+      code: radioCode,
+    },
+    {
+      title: "Application Menubar",
+      component: ApplicationMenubar,
+      code: applicationCode,
+    },
+  ],
+};

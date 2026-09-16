@@ -1,8 +1,141 @@
 "use client";
 import { useState } from "react";
-import { Menubar, MenubarCheckboxItem, MenubarContent, MenubarItem, MenubarLabel, MenubarMenu, MenubarRadioGroup, MenubarRadioItem, MenubarSeparator, MenubarSub, MenubarSubContent, MenubarSubTrigger, MenubarTrigger } from "@/components/ui/Menubar";
-export function BasicMenubar() { return <Menubar><MenubarMenu value="file"><MenubarTrigger>File</MenubarTrigger><MenubarContent><MenubarItem>New document</MenubarItem><MenubarItem>Open file</MenubarItem><MenubarSeparator /><MenubarItem>Save</MenubarItem></MenubarContent></MenubarMenu><MenubarMenu value="edit"><MenubarTrigger>Edit</MenubarTrigger><MenubarContent><MenubarItem>Undo</MenubarItem><MenubarItem>Redo</MenubarItem><MenubarItem>Find</MenubarItem></MenubarContent></MenubarMenu><MenubarMenu value="view"><MenubarTrigger>View</MenubarTrigger><MenubarContent><MenubarItem>Zoom in</MenubarItem><MenubarItem>Full screen</MenubarItem></MenubarContent></MenubarMenu></Menubar>; }
-export function MenubarWithSubmenu() { return <Menubar><MenubarMenu value="file"><MenubarTrigger>File</MenubarTrigger><MenubarContent><MenubarItem>New</MenubarItem><MenubarSub><MenubarSubTrigger>Export</MenubarSubTrigger><MenubarSubContent><MenubarItem>PDF</MenubarItem><MenubarItem>PNG</MenubarItem><MenubarItem>SVG</MenubarItem></MenubarSubContent></MenubarSub><MenubarSeparator /><MenubarItem>Close</MenubarItem></MenubarContent></MenubarMenu></Menubar>; }
-export function MenubarWithCheckbox() { const [grid, setGrid] = useState(true); return <Menubar><MenubarMenu value="view"><MenubarTrigger>View</MenubarTrigger><MenubarContent><MenubarLabel>Display</MenubarLabel><MenubarCheckboxItem checked={grid} onCheckedChange={(checked) => setGrid(checked === true)}>Show grid</MenubarCheckboxItem><MenubarCheckboxItem checked={!grid} onCheckedChange={() => setGrid(false)}>Compact spacing</MenubarCheckboxItem><MenubarSeparator /></MenubarContent></MenubarMenu></Menubar>; }
-export function MenubarWithRadio() { const [size, setSize] = useState("medium"); return <Menubar><MenubarMenu value="size"><MenubarTrigger>Size</MenubarTrigger><MenubarContent><MenubarRadioGroup value={size} onValueChange={setSize}><MenubarRadioItem value="small">Small</MenubarRadioItem><MenubarRadioItem value="medium">Medium</MenubarRadioItem><MenubarRadioItem value="large">Large</MenubarRadioItem></MenubarRadioGroup></MenubarContent></MenubarMenu></Menubar>; }
-export function ApplicationMenubar() { return <Menubar openOnHover={false} className="w-full justify-between"><div className="flex"><MenubarMenu value="joy"><MenubarTrigger>Joy UI</MenubarTrigger><MenubarContent><MenubarItem>About</MenubarItem><MenubarItem>Preferences</MenubarItem></MenubarContent></MenubarMenu><MenubarMenu value="components"><MenubarTrigger>Components</MenubarTrigger><MenubarContent><MenubarItem>UI library</MenubarItem><MenubarItem>Charts</MenubarItem></MenubarContent></MenubarMenu></div><MenubarMenu value="account"><MenubarTrigger>Account</MenubarTrigger><MenubarContent><MenubarItem>Profile</MenubarItem><MenubarItem>Sign out</MenubarItem></MenubarContent></MenubarMenu></Menubar>; }
+import {
+  Menubar,
+  MenubarCheckboxItem,
+  MenubarContent,
+  MenubarItem,
+  MenubarLabel,
+  MenubarMenu,
+  MenubarRadioGroup,
+  MenubarRadioItem,
+  MenubarSeparator,
+  MenubarSub,
+  MenubarSubContent,
+  MenubarSubTrigger,
+  MenubarTrigger,
+} from "@/components/ui/Menubar";
+export function BasicMenubar() {
+  return (
+    <Menubar>
+      <MenubarMenu value="file">
+        <MenubarTrigger>File</MenubarTrigger>
+        <MenubarContent>
+          <MenubarItem>New document</MenubarItem>
+          <MenubarItem>Open file</MenubarItem>
+          <MenubarSeparator />
+          <MenubarItem>Save</MenubarItem>
+        </MenubarContent>
+      </MenubarMenu>
+      <MenubarMenu value="edit">
+        <MenubarTrigger>Edit</MenubarTrigger>
+        <MenubarContent>
+          <MenubarItem>Undo</MenubarItem>
+          <MenubarItem>Redo</MenubarItem>
+          <MenubarItem>Find</MenubarItem>
+        </MenubarContent>
+      </MenubarMenu>
+      <MenubarMenu value="view">
+        <MenubarTrigger>View</MenubarTrigger>
+        <MenubarContent>
+          <MenubarItem>Zoom in</MenubarItem>
+          <MenubarItem>Full screen</MenubarItem>
+        </MenubarContent>
+      </MenubarMenu>
+    </Menubar>
+  );
+}
+export function MenubarWithSubmenu() {
+  return (
+    <Menubar>
+      <MenubarMenu value="file">
+        <MenubarTrigger>File</MenubarTrigger>
+        <MenubarContent>
+          <MenubarItem>New</MenubarItem>
+          <MenubarSub>
+            <MenubarSubTrigger>Export</MenubarSubTrigger>
+            <MenubarSubContent>
+              <MenubarItem>PDF</MenubarItem>
+              <MenubarItem>PNG</MenubarItem>
+              <MenubarItem>SVG</MenubarItem>
+            </MenubarSubContent>
+          </MenubarSub>
+          <MenubarSeparator />
+          <MenubarItem>Close</MenubarItem>
+        </MenubarContent>
+      </MenubarMenu>
+    </Menubar>
+  );
+}
+export function MenubarWithCheckbox() {
+  const [grid, setGrid] = useState(true);
+  return (
+    <Menubar>
+      <MenubarMenu value="view">
+        <MenubarTrigger>View</MenubarTrigger>
+        <MenubarContent>
+          <MenubarLabel>Display</MenubarLabel>
+          <MenubarCheckboxItem
+            checked={grid}
+            onCheckedChange={(checked) => setGrid(checked === true)}
+          >
+            Show grid
+          </MenubarCheckboxItem>
+          <MenubarCheckboxItem
+            checked={!grid}
+            onCheckedChange={() => setGrid(false)}
+          >
+            Compact spacing
+          </MenubarCheckboxItem>
+          <MenubarSeparator />
+        </MenubarContent>
+      </MenubarMenu>
+    </Menubar>
+  );
+}
+export function MenubarWithRadio() {
+  const [size, setSize] = useState("medium");
+  return (
+    <Menubar>
+      <MenubarMenu value="size">
+        <MenubarTrigger>Size</MenubarTrigger>
+        <MenubarContent>
+          <MenubarRadioGroup value={size} onValueChange={setSize}>
+            <MenubarRadioItem value="small">Small</MenubarRadioItem>
+            <MenubarRadioItem value="medium">Medium</MenubarRadioItem>
+            <MenubarRadioItem value="large">Large</MenubarRadioItem>
+          </MenubarRadioGroup>
+        </MenubarContent>
+      </MenubarMenu>
+    </Menubar>
+  );
+}
+export function ApplicationMenubar() {
+  return (
+    <Menubar openOnHover={false} className="w-full justify-between">
+      <div className="flex">
+        <MenubarMenu value="joy">
+          <MenubarTrigger>Joy UI</MenubarTrigger>
+          <MenubarContent>
+            <MenubarItem>About</MenubarItem>
+            <MenubarItem>Preferences</MenubarItem>
+          </MenubarContent>
+        </MenubarMenu>
+        <MenubarMenu value="components">
+          <MenubarTrigger>Components</MenubarTrigger>
+          <MenubarContent>
+            <MenubarItem>UI library</MenubarItem>
+            <MenubarItem>Charts</MenubarItem>
+          </MenubarContent>
+        </MenubarMenu>
+      </div>
+      <MenubarMenu value="account">
+        <MenubarTrigger>Account</MenubarTrigger>
+        <MenubarContent>
+          <MenubarItem>Profile</MenubarItem>
+          <MenubarItem>Sign out</MenubarItem>
+        </MenubarContent>
+      </MenubarMenu>
+    </Menubar>
+  );
+}

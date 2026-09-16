@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "format": "node scripts/format-code.mjs",
+    "format:check": "node scripts/format-code.mjs --check"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.9.1",
@@ -67,6 +69,7 @@
     "@types/react-syntax-highlighter": "^15.5.13",
     "eslint": "^9.39.5",
     "eslint-config-next": "16.3.4",
+    "prettier": "^3.9.7",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3"
   }

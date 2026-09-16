@@ -1,4 +1,3 @@
-
 import { CodeBlock } from "@/components/ui/CodeBlock";
 
 export function CollapsibleCodeblock() {

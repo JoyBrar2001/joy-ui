@@ -1,4 +1,10 @@
-import { Checkbox, CheckboxRoot, CheckboxDescription, CheckboxLabel, CheckboxSubLabel } from "@/components/ui/Checkbox";
+import {
+  Checkbox,
+  CheckboxRoot,
+  CheckboxDescription,
+  CheckboxLabel,
+  CheckboxSubLabel,
+} from "@/components/ui/Checkbox";
 
 export function CheckboxDescriptionComponent() {
   return (
@@ -7,12 +13,11 @@ export function CheckboxDescriptionComponent() {
       <div className="flex flex-col gap-1">
         <CheckboxLabel htmlFor="terms3">
           Accept Terms and Conditions
-          <CheckboxSubLabel>
-            (Required)
-          </CheckboxSubLabel>
+          <CheckboxSubLabel>(Required)</CheckboxSubLabel>
         </CheckboxLabel>
         <CheckboxDescription>
-          Please go through the terms and conditions throughly before accepting them.
+          Please go through the terms and conditions throughly before accepting
+          them.
         </CheckboxDescription>
       </div>
     </CheckboxRoot>

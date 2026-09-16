@@ -7,7 +7,9 @@ import { addDays, format, subDays } from "date-fns";
 import { Button } from "@/components/ui/Button";
 
 export function CalendarWithPresetDays() {
-  const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>(
+    new Date(),
+  );
 
   const buttons = [
     { label: "Today", date: new Date() },

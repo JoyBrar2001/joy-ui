@@ -40,7 +40,7 @@ import { Input } from "@/components/ui/Input";
 
 const schema = z.object({ email: z.string().email(), password: z.string().min(6) });
 export function SignInWithReactHookForm() { const { register, handleSubmit, formState: { errors } } = useForm({ resolver: zodResolver(schema) }); return <form onSubmit={handleSubmit(console.log)}><Input {...register("email")} error={errors.email?.message} /><Input {...register("password")} type="password" error={errors.password?.message} /><button>Sign in</button></form>; }`;
-export const profileHookFormCode = String.raw`import { Controller, useForm } from "react-hook-form";
+export const profileHookFormCode = `import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Button } from "@/components/ui/Button";
@@ -83,7 +83,7 @@ export function ProfileWithReactHookForm() {
       <Input
         label="Full name"
         placeholder="Joy Brar"
-        error={errors.name?.message}
+        error={\${errors.name?.message}}
         {...register("name")}
       />
 
@@ -105,8 +105,8 @@ export function ProfileWithReactHookForm() {
             </Select>
           )}
         />
-        {errors.role && (
-          <p className="mt-1 text-sm text-red-500">{errors.role.message}</p>
+        {\${errors.role && (
+          <p className="mt-1 text-sm text-red-500">\${errors.role.message}</p>
         )}
       </div>
 
@@ -154,14 +154,58 @@ export const inviteHookFormCode = `import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Input } from "@/components/ui/Input";
+import { Button } from "@/components/ui/Button";
 
-const schema = z.object({ email: z.string().email(), access: z.enum(["viewer", "editor"]) });
-// React Hook Form handles submission while Input displays schema errors.`;
+const inviteSchema = z.object({
+  email: z.string().email("Enter a valid email"),
+  access: z.enum(["viewer", "editor"]),
+});
+
+export function InviteWithReactHookForm() {
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    resolver: zodResolver(inviteSchema),
+    defaultValues: { access: "viewer" },
+  });
+
+  return (
+    <form className="w-full max-w-sm space-y-4" onSubmit={handleSubmit(() => undefined)}>
+      <Input label="Teammate email" type="email" placeholder="teammate@example.com" error={\${errors.email?.message}} {...register("email")} />
+      <label className="flex flex-col gap-2 text-sm">
+        Access
+        <select className="h-10 rounded-md border px-3 dark:bg-neutral-950" {...register("access")}>
+          <option value="viewer">Viewer</option>
+          <option value="editor">Editor</option>
+        </select>
+      </label>
+      <Button type="submit">Send invite</Button>
+    </form>
+  );
+}`;
 export const contactHookFormCode = `import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/Textarea";
+import { Button } from "@/components/ui/Button";
 
-const schema = z.object({ name: z.string().min(2), email: z.string().email(), message: z.string().min(20) });
-// Register each control and pass errors directly to Joy UI components.`;
+const contactSchema = z.object({
+  name: z.string().min(2, "Enter your name"),
+  email: z.string().email("Enter a valid email"),
+  message: z.string().min(20, "Message must be at least 20 characters"),
+});
+
+export function ContactWithReactHookForm() {
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    resolver: zodResolver(contactSchema),
+    mode: "onBlur",
+  });
+
+  return (
+    <form className="w-full max-w-sm space-y-4" onSubmit={handleSubmit(() => undefined)}>
+      <Input label="Name" placeholder="Joy Brar" error={\${errors.name?.message}} {...register("name")} />
+      <Input label="Email" type="email" placeholder="you@example.com" error={\${errors.email?.message}} {...register("email")} />
+      <Textarea label="Message" placeholder="Tell us how we can help" error={\${errors.message?.message}} {...register("message")} />
+      <Button type="submit">Send message</Button>
+    </form>
+  );
+}`;

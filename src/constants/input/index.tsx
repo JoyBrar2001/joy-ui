@@ -1,6 +1,17 @@
 import { Input } from "@/components/ui/Input";
 import { Lock, Search, Send } from "lucide-react";
 import { ComponentCategory } from "../data";
+import {
+  disabledInputCode,
+  errorInputCode,
+  inputWithBothIconsCode,
+  inputWithDescriptionCode,
+  inputWithLeftIconCode,
+  inputWithRightIconCode,
+  leftInlineIconCode,
+  rightInlineIconCode,
+  simpleInputCode,
+} from "./code/componentCodes";
 
 export const inputData: ComponentCategory = {
   cols: 4,
@@ -90,7 +101,7 @@ export default function Input({
     {
       title: "Simple Input",
       component: () => <Input label="Username" placeholder="Enter Username" />,
-      code: "",
+      code: simpleInputCode,
     },
     {
       title: "Input with Description",
@@ -101,7 +112,7 @@ export default function Input({
           placeholder="Enter Username"
         />
       ),
-      code: "",
+      code: inputWithDescriptionCode,
     },
     {
       title: "Input with Left Icon",
@@ -112,7 +123,7 @@ export default function Input({
           leftIcon={<Search className="size-[18px]" />}
         />
       ),
-      code: "",
+      code: inputWithLeftIconCode,
     },
     {
       title: "Input with Right Icon",
@@ -124,7 +135,7 @@ export default function Input({
           rightIcon={<Lock className="size-[18px]" />}
         />
       ),
-      code: "",
+      code: inputWithRightIconCode,
     },
     {
       title: "Input with Both Icons",
@@ -136,7 +147,7 @@ export default function Input({
           rightIcon={<Lock className="size-[18px]" />}
         />
       ),
-      code: "",
+      code: inputWithBothIconsCode,
     },
     {
       title: "Disabled Input",
@@ -149,7 +160,7 @@ export default function Input({
           disabled={true}
         />
       ),
-      code: "",
+      code: disabledInputCode,
     },
     {
       title: "Error Input",
@@ -161,7 +172,7 @@ export default function Input({
           error="Invalid Entry - Username must contain one numeric"
         />
       ),
-      code: "",
+      code: errorInputCode,
     },
     {
       title: "Left inline icon",
@@ -172,7 +183,7 @@ export default function Input({
           label="Search for Anything"
         />
       ),
-      code: "",
+      code: leftInlineIconCode,
     },
     {
       title: "Right inline icon",
@@ -183,7 +194,7 @@ export default function Input({
           label="Send Message"
         />
       ),
-      code: "",
+      code: rightInlineIconCode,
     },
   ],
 };

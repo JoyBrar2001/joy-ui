@@ -3,6 +3,17 @@ import { cnFile } from "../common";
 import { dialogCode } from "./code/dialogCode";
 import { dialogCss } from "./code/dialogCss";
 import {
+  controlledDialogCode,
+  customStyledDialogCode,
+  signInDialogCode,
+  signInDialogWithRtkAndZodCode,
+  signInDialogWithRtkCode,
+  signUpDialogCode,
+  simpleDialogCode,
+  stickyHeaderDialogCode,
+  termsDialogCode,
+} from "./code/componentCodes";
+import {
   ControlledDialog,
   CustomStyledDialog,
   SignInDialog,
@@ -52,47 +63,47 @@ export const dialogData: ComponentCategory = {
     {
       title: "Simple Dialog",
       component: SimpleDialog,
-      code: "",
+      code: simpleDialogCode,
     },
     {
       title: "Simple Dialog (Controlled)",
       component: ControlledDialog,
-      code: "",
+      code: controlledDialogCode,
     },
     {
       title: "Custom Styled Dialog",
       component: CustomStyledDialog,
-      code: "",
+      code: customStyledDialogCode,
     },
     {
       title: "Sticky Header Dialog",
       component: StickyHeaderDialog,
-      code: "",
+      code: stickyHeaderDialogCode,
     },
     {
       title: "Terms & Conditions Dialog",
       component: TermsDialog,
-      code: "",
+      code: termsDialogCode,
     },
     {
       title: "Sign in Dialog",
       component: SignInDialog,
-      code: "",
+      code: signInDialogCode,
     },
     {
       title: "Sign in Dialog with RTK",
       component: SignInDialogWithRTK,
-      code: "",
+      code: signInDialogWithRtkCode,
     },
     {
       title: "Sign in Dialog with RTK and Zod",
       component: SignInDialogWithRTKAndZod,
-      code: "",
+      code: signInDialogWithRtkAndZodCode,
     },
     {
       title: "Sign up Dialog",
       component: SignUpDialog,
-      code: "",
+      code: signUpDialogCode,
     },
   ],
 };

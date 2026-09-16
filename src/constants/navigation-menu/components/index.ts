@@ -1,1 +1,1 @@
-export { BasicNavigation, NavigationWithDropdown, NavigationMegaMenu, NavigationWithGroups, NavigationWithActiveLink } from "./Examples";
+export { BasicNavigation, NavigationWithDropdown, NavigationMegaMenu, NavigationWithGroups, NavigationWithActiveLink, NavigationWithBlurredPopup } from "./Examples";

@@ -37,6 +37,11 @@ import { alertDialogData } from "./alert-dialog";
 import { toolbarData } from "./toolbar";
 import { navigationMenuData } from "./navigation-menu";
 import { menubarData } from "./menubar";
+import { formData } from "./form";
+import { toggleGroupData } from "./toggle-group";
+import { passwordToggleFieldData } from "./password-toggle-field";
+import { oneTimePasswordFieldData } from "./one-time-password-field";
+import { labelData } from "./label";
 
 export type ComponentEntry = {
   title: string;
@@ -98,6 +103,11 @@ export const data: ComponentData = {
   toolbar: toolbarData,
   navigationMenu: navigationMenuData,
   menubar: menubarData,
+  form: formData,
+  toggleGroup: toggleGroupData,
+  passwordToggleField: passwordToggleFieldData,
+  oneTimePasswordField: oneTimePasswordFieldData,
+  label: labelData,
   collapsible: collapsibleData,
   chip: chipData,
   codeblock: codeblockData,

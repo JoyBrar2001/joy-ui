@@ -1,0 +1,7 @@
+const example = (body: string) => `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/ToggleGroup";\n\nexport function ToggleGroupExample() { return (${body}); }`;
+export const alignmentCode = example(`<ToggleGroup type="single" defaultValue="left"><ToggleGroupItem value="left">Left</ToggleGroupItem><ToggleGroupItem value="center">Center</ToggleGroupItem><ToggleGroupItem value="right">Right</ToggleGroupItem></ToggleGroup>`);
+export const viewCode = example(`<ToggleGroup type="single" defaultValue="grid"><ToggleGroupItem value="grid">Grid</ToggleGroupItem><ToggleGroupItem value="list">List</ToggleGroupItem></ToggleGroup>`);
+export const filterCode = example(`<ToggleGroup type="single" defaultValue="all"><ToggleGroupItem value="all">All</ToggleGroupItem><ToggleGroupItem value="active">Active</ToggleGroupItem></ToggleGroup>`);
+export const multipleCode = example(`<ToggleGroup type="multiple" defaultValue={["desktop"]}><ToggleGroupItem value="desktop">Desktop</ToggleGroupItem><ToggleGroupItem value="dark">Dark</ToggleGroupItem></ToggleGroup>`);
+export const disabledCode = example(`<ToggleGroup type="single" disabled defaultValue="standard"><ToggleGroupItem value="standard">Standard</ToggleGroupItem><ToggleGroupItem value="pro">Pro</ToggleGroupItem></ToggleGroup>`);
+export const verticalCode = example(`<ToggleGroup type="single" orientation="vertical" defaultValue="monthly"><ToggleGroupItem value="monthly">Monthly billing</ToggleGroupItem><ToggleGroupItem value="yearly">Yearly billing</ToggleGroupItem></ToggleGroup>`);
